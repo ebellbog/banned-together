@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using TMPro;
 #endif
 
 namespace StarterAssets
@@ -11,6 +12,7 @@ namespace StarterAssets
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+			
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
@@ -32,6 +34,11 @@ namespace StarterAssets
 		public float JumpTimeout = 0.1f;
 		[Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
 		public float FallTimeout = 0.15f;
+
+		[Tooltip("For raycasting.")]
+		public float raycastReach;
+
+		public TextMeshProUGUI crosshair;
 
 		[Header("Player Grounded")]
 		[Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
@@ -59,6 +66,7 @@ namespace StarterAssets
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		private RaycastHit hitInfo;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -115,6 +123,8 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Interact();
+			CheckCrosshair();
 		}
 
 		private void LateUpdate()
@@ -244,6 +254,32 @@ namespace StarterAssets
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
+		}
+
+		private void Interact() {
+			if (_input.interact) {
+				if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, raycastReach))
+				{
+					if (hitInfo.transform.gameObject.GetComponent<YarnInteractable>()) {
+						hitInfo.transform.gameObject.GetComponent<YarnInteractable>().StartConversation();
+					}
+				}
+				_input.interact = false;
+			}
+		}
+
+		private void CheckCrosshair() {
+			if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, raycastReach))
+				{
+					if (hitInfo.transform.gameObject.GetComponent<YarnInteractable>()) {
+						crosshair.color = new Color(0, 1, 0, 1);
+					}
+					else {
+						crosshair.color = new Color(0, 0, 0, 1);
+					}
+
+
+				}
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
