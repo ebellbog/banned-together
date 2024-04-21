@@ -450,7 +450,7 @@ Material:
     - _OutlineTextureStrength: 0
     - _OutlineType: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 2
+    - _Outline_Width: 6
     - _OverlayMode: 0
     - _OverlayMode1: 0
     - _OverlayRotation: 0
@@ -608,7 +608,7 @@ Material:
     - _utsVersionY: 10
     - _utsVersionZ: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.3773585, g: 0.29224747, b: 0.17977929, a: 1}
+    - _1st_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}

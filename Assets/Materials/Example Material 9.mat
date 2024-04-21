@@ -204,7 +204,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.4481132, g: 1, b: 0.98309577, a: 1}
+    - _Color: {r: 0.8018868, g: 0.68551123, b: 0, a: 1}
     - _EmissionColor: {r: 0.8396226, g: 0.74938315, b: 0.21782663, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
