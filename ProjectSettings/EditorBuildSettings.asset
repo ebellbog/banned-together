@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Focus Mode/Level Loader Start.unity
+    guid: 4da02b6fd1d89e34a90ad6f33b5c5c49
+  - enabled: 1
+    path: Assets/Scenes/Focus Mode/Level Loader Destination.unity
+    guid: eca662488f6e9b74aa93801c121b6e6a
   m_configObjects: {}
