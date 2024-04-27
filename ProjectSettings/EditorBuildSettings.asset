@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Focus Mode/Level Loader Start.unity
+    path: Assets/Scenes/Focus Mode/Focus Mode Prototype.unity
     guid: 4da02b6fd1d89e34a90ad6f33b5c5c49
   - enabled: 1
     path: Assets/Scenes/Focus Mode/Level Loader Destination.unity
