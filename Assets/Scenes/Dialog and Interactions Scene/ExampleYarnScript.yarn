@@ -3,15 +3,31 @@
 This thing is using a custom material I created!
 Wow!
 ===
+
 title: Blue_Chair
 ---
 This chair uses the "Posterize + Specular" example material.
 ===
+
 title: Footrest
 ---
 This ottoman uses the "Halftone + Posterize" example material.
 ===
+
 title: Chest
 ---
 This chest uses the "Step + Outline" example material.
+===
+
+title: Dialog_Options
+---
+Narrator: Hi, I'm the narrator for this beginner's guide!
+Narrator: I'm talking to you with Yarn Spinner!
+Narrator: What do you think of all this, then?
+    -> It's alright, I guess.
+        Narrator: Well, that's not very nice.
+        Narrator: I'm trying my best here.
+    -> It's great. I love it.
+        Narrator: Oh, you're too kind.
+        Narrator: I'm just doing my job.
 ===
