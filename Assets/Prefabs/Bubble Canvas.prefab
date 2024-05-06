@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2210314018612593586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1976240683353102986}
+  m_Father: {fileID: 3186624932942090622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3899994, y: 1.199997}
+  m_AnchoredPosition: {x: -1.6774292, y: -2.000267}
   m_SizeDelta: {x: 160.48, y: 93.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9146967083864958886
@@ -160,16 +160,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3563697335022156865}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1976240683353102986}
+  m_Father: {fileID: 3186624932942090622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2}
   m_SizeDelta: {x: 204.7293, y: 148.7748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6971208358608121651
@@ -210,6 +210,56 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4184494329715559407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3186624932942090622}
+  - component: {fileID: 7270846253268598525}
+  m_Layer: 9
+  m_Name: Thought Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3186624932942090622
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184494329715559407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 439411524013099554}
+  - {fileID: 8227430004301058534}
+  m_Father: {fileID: 1976240683353102986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 307.8123, y: 0.49591064}
+  m_SizeDelta: {x: 219.54, y: 161.01}
+  m_Pivot: {x: 0.4, y: 0}
+--- !u!225 &7270846253268598525
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184494329715559407}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4711097964490520007
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +274,7 @@ GameObject:
   - component: {fileID: 1106147852515592462}
   - component: {fileID: 1584076503638877049}
   m_Layer: 9
-  m_Name: Thought bubble
+  m_Name: Bubble Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,15 +292,14 @@ RectTransform:
   m_LocalScale: {x: 0.016, y: 0.016, z: 1.0666667}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 439411524013099554}
-  - {fileID: 8227430004301058534}
+  - {fileID: 3186624932942090622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15.640564, y: 1.0321655}
-  m_SizeDelta: {x: 245.2913, y: 179.726}
-  m_Pivot: {x: 0.36, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -942.4543, y: 1.0321655}
+  m_SizeDelta: {x: 439.0868, y: 161.0141}
+  m_Pivot: {x: 0.54, y: 0}
 --- !u!223 &1816061306182305550
 Canvas:
   m_ObjectHideFlags: 0
@@ -296,7 +345,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1106147852515592462
 MonoBehaviour:
   m_ObjectHideFlags: 0
