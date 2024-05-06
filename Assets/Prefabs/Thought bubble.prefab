@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8227430004301058534}
   - component: {fileID: 9146967083864958886}
   - component: {fileID: 169955549786141280}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000092983, y: 4.7}
-  m_SizeDelta: {x: 163.6025, y: 83.138}
+  m_AnchoredPosition: {x: -0.3899994, y: 1.199997}
+  m_SizeDelta: {x: 160.48, y: 93.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9146967083864958886
 CanvasRenderer:
@@ -93,22 +93,22 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 13.15
   m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
+  m_fontSizeMax: 24
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: -60
-  m_lineSpacingMax: 0
+  m_lineSpacingMax: -7
   m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
+  m_charWidthMaxAdj: 10
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 439411524013099554}
   - component: {fileID: 6971208358608121651}
   - component: {fileID: 6959858028622358186}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2803815940179726947}
   - component: {fileID: 1106147852515592462}
   - component: {fileID: 1584076503638877049}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Thought bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,8 +239,8 @@ RectTransform:
   m_GameObject: {fileID: 4711097964490520007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 38.04}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.016, y: 0.016, z: 1.0666667}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 439411524013099554}
   - {fileID: 8227430004301058534}
@@ -248,9 +248,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 16.19, y: 2.47}
+  m_AnchoredPosition: {x: 15.640564, y: 1.0321655}
   m_SizeDelta: {x: 245.2913, y: 179.726}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.36, y: 0}
 --- !u!223 &1816061306182305550
 Canvas:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1106147852515592462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,3 +327,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DynamicallyScale: 1
+  ScaleReferenceDistance: 14

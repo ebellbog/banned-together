@@ -4,18 +4,16 @@ using UnityEngine.UIElements;
 
 public class Billboard : MonoBehaviour
 {
-    public bool DynamicallyScale = false;
-    
-    private Vector2 startingScale;
-    private float startingDistance;
+    public bool DynamicallyScale = true;
+    public float ScaleReferenceDistance = 5.0f;
 
+    private Vector2 startingScale;
     private Camera mainCamera;
 
     void Start()
     {
         mainCamera = Camera.main;
         startingScale = transform.localScale;
-        startingDistance = Vector3.Distance(mainCamera.transform.position, transform.position);
     }
 
     void LateUpdate()
@@ -25,7 +23,7 @@ public class Billboard : MonoBehaviour
 
         if (DynamicallyScale) {
             float currentDistance = Vector3.Distance(mainCamera.transform.position, transform.position); 
-            transform.localScale = startingScale * (currentDistance / startingDistance);
+            transform.localScale = startingScale * (currentDistance / ScaleReferenceDistance);
         }
     }
 }
