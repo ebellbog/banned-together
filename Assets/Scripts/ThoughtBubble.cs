@@ -15,15 +15,10 @@ public class ThoughtBubble : MonoBehaviour
 
     private CanvasGroup canvasGroup;
     private GameObject animationParent;
+    private TextMeshProUGUI textMesh;
+
     private float currentScale = 0.6f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (bubbleCanvas == null) return;
@@ -57,8 +52,8 @@ public class ThoughtBubble : MonoBehaviour
             new Vector3 (position.x, position.y + size.y / 2 - 0.1f, position.z),
             Quaternion.identity
         );
-        TextMeshProUGUI bubbleText = bubbleCanvas.GetComponentInChildren<TextMeshProUGUI>();
-        bubbleText.SetText(ThoughtText);
+        textMesh = bubbleCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        textMesh.SetText(ThoughtText);
 
         animationParent = bubbleCanvas.transform.GetChild(0).gameObject;
         animationParent.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
@@ -68,12 +63,22 @@ public class ThoughtBubble : MonoBehaviour
     }
 
     public void FadeIn() {
-        currentScale = InitialScale;
+        if (!fadeIn) currentScale = InitialScale;
         fadeIn = true;
     }
 
     public void FadeOut() {
         fadeIn = false;
         fadeOut = true;
+    }
+
+    public void Explode() {
+        Vector3[] vertices = textMesh.mesh.vertices;
+        int characterCount = textMesh.textInfo.characterCount;
+
+        for (int i = 0; i < characterCount; i++) {
+            TMP_CharacterInfo charInfo = textMesh.textInfo.characterInfo[i];
+            int vertexIndex = charInfo.vertexIndex;
+        }
     }
 }
