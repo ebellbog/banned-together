@@ -5,6 +5,8 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// DEPRECATED - use ThoughtSensor instead
+
 [RequireComponent(typeof(Rigidbody))]
 public class ThoughtManager : MonoBehaviour
 {
