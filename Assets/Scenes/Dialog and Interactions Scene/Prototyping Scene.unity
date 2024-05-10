@@ -547,7 +547,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1335415992372505392, guid: 466621a4836aa504c87c15d88722d465, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008750681}
   m_SourcePrefab: {fileID: 100100000, guid: 466621a4836aa504c87c15d88722d465, type: 3}
 --- !u!1 &83240395
 GameObject:
@@ -2628,6 +2631,27 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1008750676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1335415992372505392, guid: 466621a4836aa504c87c15d88722d465, type: 3}
+  m_PrefabInstance: {fileID: 45448422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1008750681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008750676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: Hm, I wonder whether these stairs go anywhere...
+  FadeSpeed: 2.5
+  InitialScale: 0.3
+  bubbleCanvas: {fileID: 0}
 --- !u!1001 &1036621715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2646,11 +2670,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.83
+      value: 11.821107
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000047683716
+      value: -0.00023978949
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2658,31 +2682,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4905389
+      value: 0.49048585
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000010721063
+      value: 0.012894702
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8714193
+      value: 0.8713236
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000019045498
+      value: -0.007258966
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 121.248
+      value: 121.259
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: b56a4b5bd8632fc4e834631925041b34, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3887,8 +3911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BubbleCanvas: {fileID: 4711097964490520007, guid: 50abc68c1cc78054cb7bd7a1d07d1f76, type: 3}
-  MaxDistance: 12
-  ViewAngle: 16
+  MaxDistance: 20
+  ViewAngle: 20
 --- !u!4 &1377224683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
