@@ -376,4 +376,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DynamicallyScale: 1
-  ScaleReferenceDistance: 14
+  ScaleReferenceDistance: 10

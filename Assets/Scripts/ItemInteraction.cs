@@ -81,6 +81,10 @@ namespace StarterAssets
                     {
                         child.gameObject.layer = layerNumber;
                     }
+                    GameObject parentObject = currentObject.transform.parent?.gameObject;
+                    if (parentObject) {
+                        parentObject.layer = layerNumber;
+                    }
 
                     BackgroundMatte.enabled = true;
 
@@ -99,6 +103,10 @@ namespace StarterAssets
                     foreach (Transform child in currentObject.transform)
                     {
                         child.gameObject.layer = 0;
+                    }
+                    GameObject parentObject = currentObject.transform.parent?.gameObject;
+                    if (parentObject) {
+                        parentObject.layer = 0;
                     }
 
                     BackgroundMatte.enabled = false;
