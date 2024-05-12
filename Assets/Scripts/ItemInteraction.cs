@@ -192,20 +192,15 @@ namespace StarterAssets
                     {
                         Debug.Log("Clicked to sit");
 
-                        gameObject.GetComponent<FirstPersonController>().sitting = true;
-
-                        //Switch to seated controls
-
-                        _playerInput.SwitchCurrentActionMap("Sitting");
-
                         currentSeat = hitInfo.transform.gameObject;
                         currentSeat.GetComponent<BoxCollider>().enabled = false;
+                        _playerInput.enabled = false;
 
-                        //Animate camera to sitting position
-
+                        StartCoroutine(ReenableControls(2.2f, "sit"));
                         transform.DOMove(hitInfo.transform.GetChild(0).position, 1.5f);
                         StartCoroutine(RotatePlayerToChair(3f, hitInfo.transform.GetChild(0).rotation));
-                        StartCoroutine(HeightChange("shrink", 1.5f));
+                        StartCoroutine(HeightChange("shrink", 0.5f));
+                        StartCoroutine(SitShake(1.1f));
 
                         //Show weird library
 
@@ -213,17 +208,24 @@ namespace StarterAssets
                             weirdLibraryParent.SetActive(true);
                         }
                         sitting = true;
+                        gameObject.GetComponent<FirstPersonController>().sitting = true;
                     }
                 }
                 _input.interact = false;
 			}
 		}
 
+        IEnumerator SitShake(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            transform.DOShakeRotation(0.6f, new Vector3(0, 0, 3f));
+        }
+
         IEnumerator RotatePlayerToChair(float duration, Quaternion destination)
         {
 
             float timer = 0.0f;
-
             while (timer < duration)
             {
                 timer += Time.deltaTime;
@@ -239,25 +241,45 @@ namespace StarterAssets
             yield return null;
         }
 
+        IEnumerator ReenableControls(float seconds, string action)
+        {
+            
+            yield return new WaitForSeconds(seconds);
+
+            _playerInput.enabled = true;
+            
+            if (action == "sit") { 
+            _playerInput.SwitchCurrentActionMap("Sitting");
+
+            }
+            else if (action == "stand")
+            {
+                _playerInput.SwitchCurrentActionMap("Player");
+
+            }
+
+
+        }
         
         public void OnMove(InputValue value)
         {
             if (sitting)
             {
 
-                StartCoroutine(HeightChange("grow", 1.5f));
+                _playerInput.enabled = false;
+
+                StartCoroutine(HeightChange("grow", 0.25f));
                 if (weirdLibraryParent) {
                     weirdLibraryParent.SetActive(false);
                 }
 
                 StartCoroutine(WaitAndReactivateChair(1.5f));
-
-                _playerInput.SwitchCurrentActionMap("Player");
-
+                StartCoroutine(ReenableControls(0.5f, "stand"));
             }
 
             sitting = false;
             gameObject.GetComponent<FirstPersonController>().sitting = false;
+
 
         }
 
@@ -289,6 +311,7 @@ namespace StarterAssets
                     pointInTime += Time.deltaTime;
                     yield return null;
                 }
+
             }
 
         }
