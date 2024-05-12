@@ -19,7 +19,7 @@ public class ThoughtSensor : MonoBehaviour
     void Update()
     {
         foreach (ThoughtBubble thought in allThoughts) {
-            if (thought.isActiveAndEnabled == false) return;
+            if (thought.isActiveAndEnabled == false) continue;
             Transform thoughtTransform = thought.gameObject.transform;
 
             // Check whether thought is within angle of view

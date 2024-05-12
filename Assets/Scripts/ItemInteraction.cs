@@ -41,6 +41,9 @@ namespace StarterAssets
         // Update is called once per frame
         void Update()
         {
+            if (_input.focus) {
+
+            }
             Interact();
         }
 

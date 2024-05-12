@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Collider))]
 public class ThoughtBubble : MonoBehaviour
 {
     public string ThoughtText;

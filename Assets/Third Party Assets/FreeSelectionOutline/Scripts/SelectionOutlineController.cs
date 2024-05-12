@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering;
+using StarterAssets;
+using System.Linq;
+using UnityEditor;
 
 /*
  *  Not compatible with URP and HDRP at this moment.
@@ -51,6 +54,13 @@ public class SelectionOutlineController : MonoBehaviour
     [Range(0, 1)]
     public float OutlineHardness = 0.85f;
     
+    private GameObject[] allInteractableObjects;
+    public StarterAssetsInputs InputSystem;
+
+    void Start() {
+        allInteractableObjects = GameObject.FindGameObjectsWithTag("Interactable");
+    }
+
     void OnEnale()
     {
 
@@ -196,20 +206,31 @@ public class SelectionOutlineController : MonoBehaviour
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, RaycastReach) && (string.IsNullOrEmpty(FilterByTag) || FilterByTag == hit.transform.tag))
-        {
+        Physics.Raycast(ray, out hit, RaycastReach);
 
+        if (InputSystem.focus) {
+            TargetRenderer = allInteractableObjects[0].transform.GetComponent<Renderer>();
+        } else if (string.IsNullOrEmpty(FilterByTag) || FilterByTag == hit.transform?.tag) {
             TargetRenderer = hit.transform.GetComponent<Renderer>();
+        } else {
+            TargetRenderer = null;
+        }
+
+        if (TargetRenderer)
+        {
             if (lastTarget == null) lastTarget = TargetRenderer;
-            if (SelectionMode == SelMode.AndChildren)
+            if (SelectionMode == SelMode.AndChildren || InputSystem.focus)
             {
                 if (ChildrenRenderers != null)
                 {
                     Array.Clear(ChildrenRenderers, 0, ChildrenRenderers.Length);
                 }
-                ChildrenRenderers = hit.transform.GetComponentsInChildren<Renderer>();
+                if (InputSystem.focus) {
+                    ChildrenRenderers = allInteractableObjects.Select(interactable => interactable.transform.GetComponent<Renderer>()).ToArray();
+                } else {
+                    ChildrenRenderers = hit.transform.GetComponentsInChildren<Renderer>();
+                }
             }
-
 
             if (TargetRenderer != lastTarget || !Selected)
             {
@@ -220,7 +241,7 @@ public class SelectionOutlineController : MonoBehaviour
         }
         else
         {
-            TargetRenderer = null;
+            // TargetRenderer = null;
             lastTarget = null;
             if (Selected)
             {
