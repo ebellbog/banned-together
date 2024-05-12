@@ -14,6 +14,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool interact;
 		public bool focus;
+		public bool stand;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -51,7 +52,7 @@ namespace StarterAssets
 			FocusInput(value.isPressed);
 		}
 
-		public void OnSprint(InputValue value)
+        public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
@@ -83,7 +84,7 @@ namespace StarterAssets
 			focus = newFocusState;
 		}
 
-		public void SprintInput(bool newSprintState)
+        public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
 		}
