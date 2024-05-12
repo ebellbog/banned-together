@@ -3,6 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using DG.Tweening;
+using System;
+using System.Threading;
+using Unity.VisualScripting;
 
 namespace StarterAssets
 {
@@ -11,12 +15,23 @@ namespace StarterAssets
         public Transform ExamineTarget;
         public float RaycastReach;
         public Canvas BackgroundMatte;
+        public GameObject weirdLibraryParent;
+        public Camera playerCamera;
+        public Transform standingUpPosition;
+        public float sittingHeight;
 
         [Header("Cursor settings")]
         public Image CursorImage;
 		public Sprite DefaultIcon;
 		public Sprite InspectIcon;
+        public Sprite SitIcon;
         public Texture2D RotateIcon;
+
+        [Header("Outline colors")]
+        public Color InteractableOutlineColor;
+        public Color InteractableOccludedColor;
+        public Color SittableOutlineColor;
+        public Color SittableOccludedColor;
 
         private StarterAssetsInputs _input;
         private PlayerInput _playerInput;
@@ -30,6 +45,31 @@ namespace StarterAssets
         private bool isInspecting = false;
         private bool isReadyToInspect = false;
 
+        private bool sitting = false;
+        private GameObject currentSeat;
+        private float characterHeight;
+
+        private float timeCount = 0.0f;
+
+        private const float _threshold = 0.01f;
+
+        private float _rotationVelocity;
+
+        private float _yaw;
+
+        private bool IsCurrentDeviceMouse
+        {
+            get
+            {
+#if ENABLE_INPUT_SYSTEM
+                return _playerInput.currentControlScheme == "KeyboardMouse";
+#else
+				return false;
+#endif
+            }
+        }
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -37,6 +77,8 @@ namespace StarterAssets
             _playerInput = GetComponent<PlayerInput>();
             selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
             layerNumber = LayerMask.NameToLayer("Examine Object");
+            weirdLibraryParent.SetActive(false);
+            characterHeight = GetComponent<CharacterController>().height;
         }
 
         // Update is called once per frame
@@ -51,12 +93,37 @@ namespace StarterAssets
 		private void Interact() {
             bool hitInteractable = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach) &&
                     hitInfo.transform.tag == "Interactable";
-            CursorImage.sprite = hitInteractable ? InspectIcon : DefaultIcon;
 
-			if (_input.interact) {
+            bool hitSittable = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach) &&
+                    hitInfo.transform.tag == "Sittable";
+
+            //CursorImage.sprite = hitInteractable ? InspectIcon : DefaultIcon;
+            //CursorImage.sprite = hitSittable ? SitIcon : DefaultIcon;
+
+            if (hitInteractable)
+            {
+                CursorImage.sprite = InspectIcon;
+                selectionOutlineController.FilterByTag = "Interactable";
+                selectionOutlineController.OutlineColor = InteractableOutlineColor;
+                selectionOutlineController.OccludedColor = InteractableOccludedColor;
+            }
+            else if (hitSittable) {
+                CursorImage.sprite = SitIcon;
+                selectionOutlineController.FilterByTag = "Sittable";
+                selectionOutlineController.OutlineColor = SittableOutlineColor;
+                selectionOutlineController.OccludedColor = SittableOccludedColor;
+            }
+            else
+            {
+                CursorImage.sprite = DefaultIcon;
+            }
+
+            if (_input.interact) {
 				if (
                     !isInspecting && hitInteractable
                 ){
+
+                    
                     Debug.Log("Initiating examine object...");
                     StopAllCoroutines();
                     if (currentObject) {
@@ -132,11 +199,113 @@ namespace StarterAssets
                     currentObject = null;
                     isInspecting = false;
                 }
+                else if (_input.interact && hitSittable)
+                {
+                    if (!sitting)
+                    {
+                        Debug.Log("Clicked to sit");
+
+                        gameObject.GetComponent<FirstPersonController>().sitting = true;
+
+                        //Switch to seated controls
+
+                        _playerInput.SwitchCurrentActionMap("Sitting");
+
+                        currentSeat = hitInfo.transform.gameObject;
+                        currentSeat.GetComponent<BoxCollider>().enabled = false;
+
+                        //Animate camera to sitting position
+
+                        transform.DOMove(hitInfo.transform.GetChild(0).position, 1.5f);
+                        StartCoroutine(RotatePlayerToChair(3f, hitInfo.transform.GetChild(0).rotation));
+                        StartCoroutine(HeightChange("shrink", 1.5f));
+
+                        //Show weird library
+
+                        weirdLibraryParent.SetActive(true);
+                        sitting = true;
+                    }
+                    
+
+                }
                 _input.interact = false;
+
 			}
 		}
 
-		public void OnLook(InputValue value)
+        IEnumerator RotatePlayerToChair(float duration, Quaternion destination)
+        {
+
+            float timer = 0.0f;
+
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float t = timer / duration;
+                t = t * t * t * (t * (6f * t - 15f) + 10f);
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, destination, t);
+
+                yield return null;
+
+            }
+
+            yield return null;
+        }
+
+        
+        public void OnMove(InputValue value)
+        {
+            if (sitting)
+            {
+
+                StartCoroutine(HeightChange("grow", 1.5f));
+                weirdLibraryParent.SetActive(false);
+
+                StartCoroutine(WaitAndReactivateChair(1.5f));
+
+                _playerInput.SwitchCurrentActionMap("Player");
+
+            }
+
+            sitting = false;
+            gameObject.GetComponent<FirstPersonController>().sitting = false;
+
+        }
+
+    IEnumerator WaitAndReactivateChair(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        currentSeat.GetComponent<BoxCollider>().enabled = true;
+    }
+
+    IEnumerator HeightChange(string operation, float duration)
+        {
+            if (operation == "grow")
+            {
+                float pointInTime = 0.0f;
+                while (pointInTime <= duration)
+                {
+                    GetComponent<CharacterController>().height = Mathf.Lerp(sittingHeight, characterHeight, pointInTime / duration);
+                    pointInTime += Time.deltaTime;
+                    yield return null;
+                }
+            }
+            else if (operation == "shrink")
+            {
+                float pointInTime = 0.0f;
+                while (pointInTime <= duration)
+                {
+                    GetComponent<CharacterController>().height = Mathf.Lerp(characterHeight, sittingHeight, pointInTime / duration);
+                    pointInTime += Time.deltaTime;
+                    yield return null;
+                }
+            }
+
+        }
+
+    public void OnLook(InputValue value)
 		{
 			if (isInspecting && isReadyToInspect)
 			{
