@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 using StarterAssets;
 using System.Linq;
 using UnityEditor;
+using UnityEngine.EventSystems;
 
 /*
  *  Not compatible with URP and HDRP at this moment.
@@ -210,7 +211,10 @@ public class SelectionOutlineController : MonoBehaviour
 
         if (InputSystem.focus) {
             TargetRenderer = allInteractableObjects[0].transform.GetComponent<Renderer>();
-        } else if (string.IsNullOrEmpty(FilterByTag) || FilterByTag == hit.transform?.tag) {
+        } else if (
+            EventSystem.current.IsPointerOverGameObject() == false && // allow UI elements to block raycasting
+            (string.IsNullOrEmpty(FilterByTag) || FilterByTag == hit.transform?.tag)
+        ){
             TargetRenderer = hit.transform.GetComponent<Renderer>();
         } else {
             TargetRenderer = null;

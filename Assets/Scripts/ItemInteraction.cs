@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -128,6 +129,7 @@ namespace StarterAssets
                         selectionOutlineController.enabled = true;
                     }
 
+                    currentObject = null;
                     isInspecting = false;
                 }
                 _input.interact = false;

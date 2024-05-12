@@ -7,6 +7,7 @@ public class ThoughtSensor : MonoBehaviour
     public GameObject BubbleCanvas;
     public float MaxDistance  = 12.0f;
     public float ViewAngle = 16.0f;
+    public bool ShowThoughts = true;
 
     private ThoughtBubble[] allThoughts;
 
@@ -21,6 +22,12 @@ public class ThoughtSensor : MonoBehaviour
         foreach (ThoughtBubble thought in allThoughts) {
             if (thought.isActiveAndEnabled == false) continue;
             Transform thoughtTransform = thought.gameObject.transform;
+
+            // Hide all thoughts if disabled
+            if (!ShowThoughts) {
+                thought.FadeOut();
+                continue;
+            }
 
             // Check whether thought is within angle of view
             float angleToThought = Vector3.Angle(transform.forward, thoughtTransform.position - transform.position);
