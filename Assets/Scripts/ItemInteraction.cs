@@ -45,26 +45,6 @@ namespace StarterAssets
         private GameObject currentSeat;
         private float characterHeight;
 
-        private float timeCount = 0.0f;
-
-        private const float _threshold = 0.01f;
-
-        private float _rotationVelocity;
-
-        private float _yaw;
-
-        private bool IsCurrentDeviceMouse
-        {
-            get
-            {
-#if ENABLE_INPUT_SYSTEM
-                return _playerInput.currentControlScheme == "KeyboardMouse";
-#else
-				return false;
-#endif
-            }
-        }
-
 
         // Start is called before the first frame update
         void Start()
@@ -246,14 +226,17 @@ namespace StarterAssets
             
             yield return new WaitForSeconds(seconds);
 
-            _playerInput.enabled = true;
             
-            if (action == "sit") { 
-            _playerInput.SwitchCurrentActionMap("Sitting");
+            if (action == "sit") {
+                //_input.look.x = 0;
+                //playerCamera.transform.rotation = Quaternion.Euler(playerCamera.transform.rotation.x, currentSeat.transform.GetChild(0).rotation.y, playerCamera.transform.rotation.z);
+                _playerInput.enabled = true;
+                _playerInput.SwitchCurrentActionMap("Sitting");
 
             }
             else if (action == "stand")
             {
+                _playerInput.enabled = true;
                 _playerInput.SwitchCurrentActionMap("Player");
 
             }
@@ -279,6 +262,10 @@ namespace StarterAssets
 
             sitting = false;
             gameObject.GetComponent<FirstPersonController>().sitting = false;
+            if (weirdLibraryParent)
+            {
+                weirdLibraryParent.SetActive(false);
+            }
 
 
         }

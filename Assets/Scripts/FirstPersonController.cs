@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Windows;
+
 
 
 #if ENABLE_INPUT_SYSTEM
@@ -155,7 +157,6 @@ namespace StarterAssets
                 // clamp our pitch rotation
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
                 _yaw = ClampAngle(_yaw, BottomClamp, TopClamp);
-
                 if (sitting)
 				{
                     CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, _yaw, 0.0f);
