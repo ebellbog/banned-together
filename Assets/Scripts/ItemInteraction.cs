@@ -1,12 +1,8 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using DG.Tweening;
-using System;
-using System.Threading;
-using Unity.VisualScripting;
 
 namespace StarterAssets
 {
@@ -77,8 +73,11 @@ namespace StarterAssets
             _playerInput = GetComponent<PlayerInput>();
             selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
             layerNumber = LayerMask.NameToLayer("Examine Object");
-            weirdLibraryParent.SetActive(false);
             characterHeight = GetComponent<CharacterController>().height;
+
+            if (weirdLibraryParent) {
+                weirdLibraryParent.SetActive(false);
+            }
         }
 
         // Update is called once per frame
@@ -91,14 +90,11 @@ namespace StarterAssets
         }
 
 		private void Interact() {
-            bool hitInteractable = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach) &&
-                    hitInfo.transform.tag == "Interactable";
+            Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach);
 
-            bool hitSittable = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach) &&
-                    hitInfo.transform.tag == "Sittable";
-
-            //CursorImage.sprite = hitInteractable ? InspectIcon : DefaultIcon;
-            //CursorImage.sprite = hitSittable ? SitIcon : DefaultIcon;
+            string hitTag = hitInfo.transform?.tag;
+            bool hitInteractable = hitTag == "Interactable";
+            bool hitSittable = hitTag == "Sittable";
 
             if (hitInteractable)
             {
@@ -119,11 +115,8 @@ namespace StarterAssets
             }
 
             if (_input.interact) {
-				if (
-                    !isInspecting && hitInteractable
-                ){
-
-                    
+				if (hitInteractable && !isInspecting)
+                {
                     Debug.Log("Initiating examine object...");
                     StopAllCoroutines();
                     if (currentObject) {
@@ -147,14 +140,11 @@ namespace StarterAssets
                         selectionOutlineController.enabled = false;
                     }
 
+                    currentObject.GetComponent<Collider>().enabled = false;
                     currentObject.layer = layerNumber;
                     foreach (Transform child in currentObject.transform)
                     {
                         child.gameObject.layer = layerNumber;
-                    }
-                    GameObject parentObject = currentObject.transform.parent?.gameObject;
-                    if (parentObject) {
-                        parentObject.layer = layerNumber;
                     }
 
                     BackgroundMatte.enabled = true;
@@ -166,18 +156,15 @@ namespace StarterAssets
 
                     // hitInfo.transform.gameObject.GetComponent<YarnInteractable>().StartConversation();
                 }
-                else if (currentObject) {
+                else if (isInspecting) {
                     Debug.Log("Exiting examination...");
                     StopAllCoroutines();
 
+                    currentObject.GetComponent<Collider>().enabled = true;
                     currentObject.layer = 0;
                     foreach (Transform child in currentObject.transform)
                     {
                         child.gameObject.layer = 0;
-                    }
-                    GameObject parentObject = currentObject.transform.parent?.gameObject;
-                    if (parentObject) {
-                        parentObject.layer = 0;
                     }
 
                     BackgroundMatte.enabled = false;
@@ -199,7 +186,7 @@ namespace StarterAssets
                     currentObject = null;
                     isInspecting = false;
                 }
-                else if (_input.interact && hitSittable)
+                else if (hitSittable)
                 {
                     if (!sitting)
                     {
@@ -222,14 +209,13 @@ namespace StarterAssets
 
                         //Show weird library
 
-                        weirdLibraryParent.SetActive(true);
+                        if (weirdLibraryParent) {
+                            weirdLibraryParent.SetActive(true);
+                        }
                         sitting = true;
                     }
-                    
-
                 }
                 _input.interact = false;
-
 			}
 		}
 
@@ -260,7 +246,9 @@ namespace StarterAssets
             {
 
                 StartCoroutine(HeightChange("grow", 1.5f));
-                weirdLibraryParent.SetActive(false);
+                if (weirdLibraryParent) {
+                    weirdLibraryParent.SetActive(false);
+                }
 
                 StartCoroutine(WaitAndReactivateChair(1.5f));
 
