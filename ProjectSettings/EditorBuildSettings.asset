@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Portals/Portals.unity
     guid: 4918fc0771b693d4494948cadc66f973
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dialog and Interactions Scene/Prototyping Scene.unity
     guid: 8cf137d7eadeb3745895dc6168d07f35
+  - enabled: 1
+    path: Assets/Scenes/Intro/Intro Scene.unity
+    guid: 694bc2eae66aee24787157c6dfbbb2d6
   - enabled: 1
     path: Assets/Scenes/Environment Design Scene/Better Library.unity
     guid: 024ff2211c1f3e14b974d787b6f6188b

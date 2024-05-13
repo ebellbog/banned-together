@@ -15,6 +15,7 @@ namespace StarterAssets
 		public bool interact;
 		public bool focus;
 		public bool journal;
+		public bool exit;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -23,6 +24,9 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+		public void Start() {
+			SetCursorState(true);
+		}
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
 		{
@@ -54,6 +58,10 @@ namespace StarterAssets
 
 		public void OnJournal(InputValue value) {
 			JournalInput(value.isPressed);
+		}
+
+		public void OnExit(InputValue value) {
+			ExitInput(value.isPressed);
 		}
 
 		public void OnSprint(InputValue value)
@@ -88,8 +96,14 @@ namespace StarterAssets
 			focus = newFocusState;
 		}
 
-		public void JournalInput (bool newJournalState) {
+		public void JournalInput(bool newJournalState)
+		{
 			journal = newJournalState;
+		}
+
+		public void ExitInput(bool newExitState)
+		{
+			exit = newExitState;
 		}
 
 		public void SprintInput(bool newSprintState)
