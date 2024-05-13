@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.Windows;
+using System;
+
+
 
 
 
@@ -58,6 +61,11 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+		[Tooltip("How far in degrees can you move the camera left")]
+
+		public float MaxSeatRotation = 70f;
+		[NonSerialized]
+		public float SeatAngle;
 
 		public bool sitting;
 
@@ -156,17 +164,16 @@ namespace StarterAssets
 
                 // clamp our pitch rotation
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-                _yaw = ClampAngle(_yaw, BottomClamp, TopClamp);
-                if (sitting)
-				{
-                    CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, _yaw, 0.0f);
+                CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
-                } else
+				float newRotation =  transform.eulerAngles.y + _rotationVelocity;
+				float absDifference = Math.Abs(newRotation - SeatAngle);
+				float angleFromSeat = Math.Min(absDifference, 360 - absDifference);
+
+                if (!sitting || (angleFromSeat < MaxSeatRotation))
 				{
-                    CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
                     transform.Rotate(Vector3.up * _rotationVelocity);
                 }
-				
 			}
 		}
 

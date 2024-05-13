@@ -10,6 +10,7 @@ namespace StarterAssets
     {
         public Transform ExamineTarget;
         public float RaycastReach;
+        public float SitDistance = 1.5f;
         public Canvas BackgroundMatte;
         public GameObject weirdLibraryParent;
         public Camera playerCamera;
@@ -31,7 +32,7 @@ namespace StarterAssets
 
         private StarterAssetsInputs _input;
         private PlayerInput _playerInput;
-        private SelectionOutlineController selectionOutlineController;
+        private SelectionOutlineController _selectionOutlineController;
 		private RaycastHit hitInfo;
         private int layerNumber;
 
@@ -44,6 +45,7 @@ namespace StarterAssets
         private bool sitting = false;
         private GameObject currentSeat;
         private float characterHeight;
+        private FirstPersonController _playerController;
 
 
         // Start is called before the first frame update
@@ -51,7 +53,9 @@ namespace StarterAssets
         {
             _input = GetComponent<StarterAssetsInputs>();
             _playerInput = GetComponent<PlayerInput>();
-            selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
+            _playerController = GetComponent<FirstPersonController>();
+            _selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
+
             layerNumber = LayerMask.NameToLayer("Examine Object");
             characterHeight = GetComponent<CharacterController>().height;
 
@@ -74,24 +78,25 @@ namespace StarterAssets
 
             string hitTag = hitInfo.transform?.tag;
             bool hitInteractable = hitTag == "Interactable";
-            bool hitSittable = hitTag == "Sittable";
+            bool hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
 
             if (hitInteractable)
             {
                 CursorImage.sprite = InspectIcon;
-                selectionOutlineController.FilterByTag = "Interactable";
-                selectionOutlineController.OutlineColor = InteractableOutlineColor;
-                selectionOutlineController.OccludedColor = InteractableOccludedColor;
+                _selectionOutlineController.FilterByTag = "Interactable";
+                _selectionOutlineController.OutlineColor = InteractableOutlineColor;
+                _selectionOutlineController.OccludedColor = InteractableOccludedColor;
             }
             else if (hitSittable) {
                 CursorImage.sprite = SitIcon;
-                selectionOutlineController.FilterByTag = "Sittable";
-                selectionOutlineController.OutlineColor = SittableOutlineColor;
-                selectionOutlineController.OccludedColor = SittableOccludedColor;
+                _selectionOutlineController.FilterByTag = "Sittable";
+                _selectionOutlineController.OutlineColor = SittableOutlineColor;
+                _selectionOutlineController.OccludedColor = SittableOccludedColor;
             }
             else
             {
                 CursorImage.sprite = DefaultIcon;
+                _selectionOutlineController.FilterByTag = "None";
             }
 
             if (_input.interact) {
@@ -116,8 +121,8 @@ namespace StarterAssets
 
                     CursorImage.enabled = false;
                     
-                    if (selectionOutlineController) {
-                        selectionOutlineController.enabled = false;
+                    if (_selectionOutlineController) {
+                        _selectionOutlineController.enabled = false;
                     }
 
                     currentObject.GetComponent<Collider>().enabled = false;
@@ -159,38 +164,40 @@ namespace StarterAssets
 
                     CursorImage.enabled = true;
 
-                    if (selectionOutlineController) {
-                        selectionOutlineController.enabled = true;
+                    if (_selectionOutlineController) {
+                        _selectionOutlineController.enabled = true;
                     }
 
                     currentObject = null;
                     isInspecting = false;
                 }
-                else if (hitSittable)
+                else if (hitSittable && !sitting)
                 {
-                    if (!sitting)
-                    {
-                        Debug.Log("Clicked to sit");
+                    _playerInput.enabled = false;
 
-                        currentSeat = hitInfo.transform.gameObject;
-                        currentSeat.GetComponent<BoxCollider>().enabled = false;
-                        _playerInput.enabled = false;
+                    currentSeat = hitInfo.transform.gameObject;
+                    currentSeat.GetComponent<Collider>().enabled = false;
 
-                        StartCoroutine(ReenableControls(2.2f, "sit"));
-                        transform.DOMove(hitInfo.transform.GetChild(0).position, 1.5f);
-                        StartCoroutine(RotatePlayerToChair(3f, hitInfo.transform.GetChild(0).rotation));
-                        StartCoroutine(HeightChange("shrink", 0.5f));
-                        StartCoroutine(SitShake(1.1f));
+                    _playerController.SeatAngle = (currentSeat.transform.eulerAngles.y + 90f) % 360f;
+                    _playerController.sitting = true;
 
-                        //Show weird library
+                    transform.DOMove(hitInfo.transform.GetChild(0).position, 1.5f);
+                    StartCoroutine(RotatePlayerToChair(3f, hitInfo.transform.GetChild(0).rotation));
+                    StartCoroutine(HeightChange("shrink", 0.5f));
+                    StartCoroutine(SitShake(1.1f));
+                    StartCoroutine(ReenableControls(2.3f, "sit"));
 
-                        if (weirdLibraryParent) {
-                            weirdLibraryParent.SetActive(true);
-                        }
-                        sitting = true;
-                        gameObject.GetComponent<FirstPersonController>().sitting = true;
+                    //Show weird library
+                    if (weirdLibraryParent) {
+                        weirdLibraryParent.SetActive(true);
                     }
+
+                    sitting = true;
                 }
+                else if (sitting) {
+                    StandUp();
+                }
+
                 _input.interact = false;
 			}
 		}
@@ -215,7 +222,6 @@ namespace StarterAssets
                 transform.rotation = Quaternion.Slerp(transform.rotation, destination, t);
 
                 yield return null;
-
             }
 
             yield return null;
@@ -223,61 +229,47 @@ namespace StarterAssets
 
         IEnumerator ReenableControls(float seconds, string action)
         {
-            
             yield return new WaitForSeconds(seconds);
 
-            
             if (action == "sit") {
-                //_input.look.x = 0;
-                //playerCamera.transform.rotation = Quaternion.Euler(playerCamera.transform.rotation.x, currentSeat.transform.GetChild(0).rotation.y, playerCamera.transform.rotation.z);
                 _playerInput.enabled = true;
                 _playerInput.SwitchCurrentActionMap("Sitting");
-
+                sitting = true;
             }
             else if (action == "stand")
             {
                 _playerInput.enabled = true;
                 _playerInput.SwitchCurrentActionMap("Player");
-
+                _playerController.sitting = false;
+                sitting = false;
             }
-
-
         }
         
         public void OnMove(InputValue value)
         {
-            if (sitting)
-            {
+            if (sitting) StandUp();
+        }
+ 
+        public void StandUp() {
+            _playerInput.enabled = false;
 
-                _playerInput.enabled = false;
+            StartCoroutine(HeightChange("grow", 0.25f));
+            StartCoroutine(WaitAndReactivateChair(1.5f, currentSeat));
+            StartCoroutine(ReenableControls(0.5f, "stand"));
 
-                StartCoroutine(HeightChange("grow", 0.25f));
-                if (weirdLibraryParent) {
-                    weirdLibraryParent.SetActive(false);
-                }
-
-                StartCoroutine(WaitAndReactivateChair(1.5f));
-                StartCoroutine(ReenableControls(0.5f, "stand"));
-            }
-
-            sitting = false;
-            gameObject.GetComponent<FirstPersonController>().sitting = false;
             if (weirdLibraryParent)
             {
                 weirdLibraryParent.SetActive(false);
             }
-
-
         }
 
-    IEnumerator WaitAndReactivateChair(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
+        IEnumerator WaitAndReactivateChair(float seconds, GameObject targetSeat)
+        {
+            yield return new WaitForSeconds(seconds);
+            targetSeat.GetComponent<Collider>().enabled = true;
+        }
 
-        currentSeat.GetComponent<BoxCollider>().enabled = true;
-    }
-
-    IEnumerator HeightChange(string operation, float duration)
+        IEnumerator HeightChange(string operation, float duration)
         {
             if (operation == "grow")
             {
@@ -303,7 +295,7 @@ namespace StarterAssets
 
         }
 
-    public void OnLook(InputValue value)
+        public void OnLook(InputValue value)
 		{
 			if (isInspecting && isReadyToInspect)
 			{
