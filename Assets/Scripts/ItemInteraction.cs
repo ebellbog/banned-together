@@ -140,7 +140,7 @@ namespace StarterAssets
 
                     StartCoroutine(MoveToTarget(currentObject, ExamineTarget.position, startRotation, 6.0f));
 
-                    // hitInfo.transform.gameObject.GetComponent<YarnInteractable>().StartConversation();
+                    hitInfo.transform.gameObject.GetComponent<YarnInteractable>().StartConversation();
                 }
                 else if (isInspecting) {
                     Debug.Log("Exiting examination...");
