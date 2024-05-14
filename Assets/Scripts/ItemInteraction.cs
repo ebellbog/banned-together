@@ -43,6 +43,7 @@ namespace StarterAssets
         private bool isReadyToInspect = false;
 
         private bool sitting = false;
+        private bool readyToStand = false;
         private GameObject currentSeat;
         private float characterHeight;
         private FirstPersonController _playerController;
@@ -196,6 +197,7 @@ namespace StarterAssets
                 }
                 else if (sitting) {
                     StandUp();
+                    readyToStand = true;
                 }
 
                 _input.interact = false;
@@ -247,14 +249,19 @@ namespace StarterAssets
         
         public void OnMove(InputValue value)
         {
-            if (sitting) StandUp();
+            if (sitting) {
+                StandUp();
+            }
+            if (sitting || readyToStand) {
+                StartCoroutine(WaitAndReactivateChair(1.5f, currentSeat));
+                readyToStand = false;
+            }
         }
- 
+
         public void StandUp() {
             _playerInput.enabled = false;
 
             StartCoroutine(HeightChange("grow", 0.25f));
-            StartCoroutine(WaitAndReactivateChair(1.5f, currentSeat));
             StartCoroutine(ReenableControls(0.5f, "stand"));
 
             if (weirdLibraryParent)
