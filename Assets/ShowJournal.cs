@@ -26,40 +26,57 @@ public class ShowJournal : MonoBehaviour
 
     void Update()
     {
-        if (_input.journal) {
-            if (viewingJournal) { // Exit journal
-                SceneManager.UnloadSceneAsync("Journal Scene");
-
-                thoughtSensor.ShowThoughts = true;
-                BackgroundMatte.enabled = false;
-
-                _playerInput.actions.FindAction("Move").Enable();
-                _input.cursorInputForLook = true;
-
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
-                Cursor.lockState = CursorLockMode.Locked;
-                CursorImage.enabled = true;
-
-                viewingJournal = false;
-            } else { // Open journal
-                if (!SceneManager.GetSceneByName("Journal Scene").isLoaded) {
-                    SceneManager.LoadScene("Journal Scene", LoadSceneMode.Additive);
-                }
-
-                thoughtSensor.ShowThoughts = false;
-                BackgroundMatte.enabled = true;
-
-                _playerInput.actions.FindAction("Move").Disable();
-                _input.cursorInputForLook = false;
-
-                Cursor.SetCursor(ReadingCursor, new Vector2(32, 32), CursorMode.ForceSoftware);
-                Cursor.lockState = CursorLockMode.None;
-                CursorImage.enabled = false;
-
-                viewingJournal = true;
+        if (_input.journal)
+        {
+            if (viewingJournal) {
+                CloseJournal();
+            } else {
+                OpenJournal();
             }
             _input.journal = false;
         }
+        else if (_input.exit && viewingJournal)
+        {
+            CloseJournal();
+            _input.exit = false;
+        }
+    }
+
+    void OpenJournal() {
+        if (!SceneManager.GetSceneByName("Journal Scene").isLoaded) {
+            SceneManager.LoadScene("Journal Scene", LoadSceneMode.Additive);
+        }
+
+        thoughtSensor.ShowThoughts = false;
+        BackgroundMatte.enabled = true;
+
+        _playerInput.actions.FindAction("Move").Disable();
+        _playerInput.actions.FindAction("Interact").Disable();
+        _input.cursorInputForLook = false;
+        _input.look = Vector2.zero;
+
+        Cursor.SetCursor(ReadingCursor, new Vector2(32, 32), CursorMode.ForceSoftware);
+        Cursor.lockState = CursorLockMode.None;
+        CursorImage.enabled = false;
+
+        viewingJournal = true;
+    }
+
+    void CloseJournal() {
+        SceneManager.UnloadSceneAsync("Journal Scene");
+
+        thoughtSensor.ShowThoughts = true;
+        BackgroundMatte.enabled = false;
+
+        _playerInput.actions.FindAction("Move").Enable();
+        _playerInput.actions.FindAction("Interact").Enable();
+        _input.cursorInputForLook = true;
+
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.lockState = CursorLockMode.Locked;
+        CursorImage.enabled = true;
+
+        viewingJournal = false;
     }
 }
 

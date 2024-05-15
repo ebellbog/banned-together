@@ -116,7 +116,9 @@ namespace StarterAssets
 
                     _playerInput.actions.FindAction("Move").Disable();
 
+                    _input.look = Vector2.zero;
                     _input.cursorInputForLook = false;
+
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.SetCursor(RotateIcon, Vector2.zero, CursorMode.ForceSoftware);
 

@@ -448,7 +448,7 @@ Material:
     - _OutlineTextureStrength: 0
     - _OutlineType: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 6
+    - _Outline_Width: 8
     - _OverlayMode: 0
     - _OverlayMode1: 0
     - _OverlayRotation: 0
@@ -549,7 +549,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_ShadingGradeMapLevel: 0
-    - _Tweak_SystemShadowsLevel: 0
+    - _Tweak_SystemShadowsLevel: -0.227
     - _Tweak_transparency: 0
     - _UVAnimationSpeed: 2
     - _UVAnimationSpeedSpec: 2
@@ -606,7 +606,7 @@ Material:
     - _utsVersionY: 10
     - _utsVersionZ: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.5372549, g: 0.70980394, b: 0.7725491, a: 1}
+    - _1st_ShadeColor: {r: 0.32720718, g: 0.48159486, b: 0.5377358, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -632,7 +632,7 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0.02294341, b: 0.24705882, a: 0}
     - _OutlineMaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Outline_Color: {r: 0, g: 0.38835526, b: 1, a: 1}
+    - _Outline_Color: {r: 0.09095763, g: 0.15819737, b: 0.26415092, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimLightMaskColor: {r: 1, g: 0, b: 1, a: 1}
