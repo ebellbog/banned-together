@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro/Intro Scene.unity
     guid: 694bc2eae66aee24787157c6dfbbb2d6
   - enabled: 1
-    path: Assets/Scenes/Environment Design Scene/Better Library.unity
+    path: Assets/Scenes/Game demo/Library.unity
     guid: 024ff2211c1f3e14b974d787b6f6188b
   - enabled: 1
     path: Assets/Scenes/Journal/Journal Scene.unity

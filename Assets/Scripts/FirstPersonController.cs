@@ -67,8 +67,6 @@ namespace StarterAssets
 		[NonSerialized]
 		public float SeatAngle;
 
-		public bool sitting;
-
         // cinemachine
         private float _cinemachineTargetPitch;
 		private float _yaw;
@@ -170,7 +168,7 @@ namespace StarterAssets
 				float absDifference = Math.Abs(newRotation - SeatAngle);
 				float angleFromSeat = Math.Min(absDifference, 360 - absDifference);
 
-                if (!sitting || (angleFromSeat < MaxSeatRotation))
+                if (!GS.isSitting || (angleFromSeat < MaxSeatRotation))
 				{
                     transform.Rotate(Vector3.up * _rotationVelocity);
                 }

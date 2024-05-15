@@ -19,6 +19,8 @@ public class ThoughtSensor : MonoBehaviour
 
     void Update()
     {
+        ShowThoughts = GS.interactionMode == InteractionType.Default && !GS.isSitting;
+
         foreach (ThoughtBubble thought in allThoughts) {
             if (thought.isActiveAndEnabled == false) continue;
             Transform thoughtTransform = thought.gameObject.transform;

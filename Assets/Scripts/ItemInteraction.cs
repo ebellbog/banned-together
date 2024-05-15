@@ -11,7 +11,6 @@ namespace StarterAssets
         public Transform ExamineTarget;
         public float RaycastReach;
         public float SitDistance = 1.5f;
-        public Canvas BackgroundMatte;
         public GameObject weirdLibraryParent;
         public Camera playerCamera;
         public Transform standingUpPosition;
@@ -39,10 +38,8 @@ namespace StarterAssets
         private GameObject currentObject;
         private Vector3 startPosition;
         private Quaternion startRotation;
-        private bool isInspecting = false;
         private bool isReadyToInspect = false;
 
-        private bool sitting = false;
         private bool readyToStand = false;
         private GameObject currentSeat;
         private float characterHeight;
@@ -68,13 +65,11 @@ namespace StarterAssets
         // Update is called once per frame
         void Update()
         {
-            if (_input.focus) {
-
-            }
             Interact();
         }
 
 		private void Interact() {
+            // TODO: replace raycaster in SelectionOutlineController with this one
             Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach);
 
             string hitTag = hitInfo.transform?.tag;
@@ -87,21 +82,28 @@ namespace StarterAssets
                 _selectionOutlineController.FilterByTag = "Interactable";
                 _selectionOutlineController.OutlineColor = InteractableOutlineColor;
                 _selectionOutlineController.OccludedColor = InteractableOccludedColor;
+                _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
             }
             else if (hitSittable) {
                 CursorImage.sprite = SitIcon;
                 _selectionOutlineController.FilterByTag = "Sittable";
                 _selectionOutlineController.OutlineColor = SittableOutlineColor;
                 _selectionOutlineController.OccludedColor = SittableOccludedColor;
+                _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.Whole;
             }
             else
             {
                 CursorImage.sprite = DefaultIcon;
+
                 _selectionOutlineController.FilterByTag = "None";
+
+                // for focus mode
+                _selectionOutlineController.OutlineColor = InteractableOutlineColor;
+                _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
             }
 
             if (_input.interact) {
-				if (hitInteractable && !isInspecting)
+				if (hitInteractable && GS.interactionMode != InteractionType.Examine)
                 {
                     Debug.Log("Initiating examine object...");
                     StopAllCoroutines();
@@ -114,16 +116,9 @@ namespace StarterAssets
                     startPosition = hitInfo.transform.position;
                     startRotation = hitInfo.transform.rotation;
 
-                    _playerInput.actions.FindAction("Move").Disable();
+                    Player.LockPlayer();
+                    UI.UnlockCursor(RotateIcon);
 
-                    _input.look = Vector2.zero;
-                    _input.cursorInputForLook = false;
-
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.SetCursor(RotateIcon, Vector2.zero, CursorMode.ForceSoftware);
-
-                    CursorImage.enabled = false;
-                    
                     if (_selectionOutlineController) {
                         _selectionOutlineController.enabled = false;
                     }
@@ -135,16 +130,17 @@ namespace StarterAssets
                         child.gameObject.layer = layerNumber;
                     }
 
-                    BackgroundMatte.enabled = true;
+                    UI.FadeInMatte();
 
                     isReadyToInspect = false;
-                    isInspecting = true;
+                    GS.interactionMode = InteractionType.Examine;
 
                     StartCoroutine(MoveToTarget(currentObject, ExamineTarget.position, startRotation, 6.0f));
 
                     // hitInfo.transform.gameObject.GetComponent<YarnInteractable>().StartConversation();
                 }
-                else if (isInspecting) {
+                else if (GS.interactionMode == InteractionType.Examine)
+                {
                     Debug.Log("Exiting examination...");
                     StopAllCoroutines();
 
@@ -155,26 +151,21 @@ namespace StarterAssets
                         child.gameObject.layer = 0;
                     }
 
-                    BackgroundMatte.enabled = false;
+                    UI.FadeOutMatte();
 
                     StartCoroutine(MoveToTarget(currentObject, startPosition, startRotation, 8.0f));
 
-                    _playerInput.actions.FindAction("Move").Enable();
-
-                    _input.cursorInputForLook = true;
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-
-                    CursorImage.enabled = true;
+                    Player.UnlockPlayer();
+                    UI.LockCursor();
 
                     if (_selectionOutlineController) {
                         _selectionOutlineController.enabled = true;
                     }
 
                     currentObject = null;
-                    isInspecting = false;
+                    GS.interactionMode = InteractionType.Default;
                 }
-                else if (hitSittable && !sitting)
+                else if (hitSittable && !GS.isSitting)
                 {
                     _playerInput.enabled = false;
 
@@ -182,7 +173,6 @@ namespace StarterAssets
                     currentSeat.GetComponent<Collider>().enabled = false;
 
                     _playerController.SeatAngle = (currentSeat.transform.eulerAngles.y + 90f) % 360f;
-                    _playerController.sitting = true;
 
                     transform.DOMove(hitInfo.transform.GetChild(0).position, 1.5f);
                     StartCoroutine(RotatePlayerToChair(3f, hitInfo.transform.GetChild(0).rotation));
@@ -195,11 +185,16 @@ namespace StarterAssets
                         weirdLibraryParent.SetActive(true);
                     }
 
-                    sitting = true;
+                    GS.isSitting = true;
                 }
-                else if (sitting) {
+                else if (GS.isSitting)
+                {
                     StandUp();
                     readyToStand = true;
+                }
+                else if (GS.interactionMode == InteractionType.Tutorial)
+                {
+                    YarnDispatcher.EndTutorial();
                 }
 
                 _input.interact = false;
@@ -238,23 +233,22 @@ namespace StarterAssets
             if (action == "sit") {
                 _playerInput.enabled = true;
                 _playerInput.SwitchCurrentActionMap("Sitting");
-                sitting = true;
+                GS.isSitting = true;
             }
             else if (action == "stand")
             {
                 _playerInput.enabled = true;
                 _playerInput.SwitchCurrentActionMap("Player");
-                _playerController.sitting = false;
-                sitting = false;
+                GS.isSitting = false;
             }
         }
         
         public void OnMove(InputValue value)
         {
-            if (sitting) {
+            if (GS.isSitting) {
                 StandUp();
             }
-            if (sitting || readyToStand) {
+            if (GS.isSitting || readyToStand) {
                 StartCoroutine(WaitAndReactivateChair(1.5f, currentSeat));
                 readyToStand = false;
             }
@@ -306,7 +300,7 @@ namespace StarterAssets
 
         public void OnLook(InputValue value)
 		{
-			if (isInspecting && isReadyToInspect)
+			if (GS.interactionMode == InteractionType.Examine && isReadyToInspect)
 			{
 				Vector2 look = value.Get<Vector2>();
                 float rotationSpeed = 9.0f;
