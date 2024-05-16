@@ -44,10 +44,8 @@ public class FocusManager : MonoBehaviour
 
     void Update()
     {
-        if (!(GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus)) return;
-
         // Update focus percent
-        if (starterInputs.focus)
+        if (starterInputs.focus && (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus))
         {
             focusPercent = Math.Min(focusPercent + focusSpeed * Time.deltaTime, 1);
         } else
@@ -56,16 +54,17 @@ public class FocusManager : MonoBehaviour
         }
 
         // Logic for entering & exiting focus mode
-        if (focusPercent > 0 && GS.interactionMode != InteractionType.Focus) {
+        if (focusPercent > 0 && GS.interactionMode == InteractionType.Default) {
             particleEffects.Play();
 
             GS.interactionMode = InteractionType.Focus;
             selectionOutlineController.OutlineWidth = maxOutlineWidth;
             selectionOutlineController.OutlineHardness = 0;
         }
-        else if (focusPercent == 0 && GS.interactionMode != InteractionType.Default) {
+        else if (focusPercent == 0 && particleEffects.isPlaying) {
             particleEffects.Stop();
-            GS.interactionMode = InteractionType.Default;
+
+            if (GS.interactionMode == InteractionType.Focus) GS.interactionMode = InteractionType.Default;
 
             selectionOutlineController.OutlineWidth = initialOutlineWidth;
             selectionOutlineController.OutlineHardness = initialOutlineHardness;
@@ -82,18 +81,18 @@ public class FocusManager : MonoBehaviour
         }
         // TODO: scale thought bubbles down?
 
+        Color speedlineColor = Color.white;
+        speedlineColor.a = focusPercent;
+
+        ParticleSystem.MainModule main = particleEffects.main;
+        main.startColor = speedlineColor;
+
         if (GS.interactionMode == InteractionType.Focus)
         {
             currentHue = (currentHue + Time.deltaTime * hueRotateSpeed) % 1;
             Color newColor = Color.HSVToRGB(currentHue, initialSat, initialVal);
             selectionOutlineController.OutlineColor = newColor;
             selectionOutlineController.OccludedColor = newColor;
-
-            Color speedlineColor = Color.white;
-            speedlineColor.a = focusPercent;
-
-            ParticleSystem.MainModule main = particleEffects.main;
-            main.startColor = speedlineColor;
         }
     }
 }

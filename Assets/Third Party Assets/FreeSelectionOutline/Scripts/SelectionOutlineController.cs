@@ -209,7 +209,7 @@ public class SelectionOutlineController : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(ray, out hit, RaycastReach);
 
-        if (InputSystem.focus) {
+        if (InputSystem.focus && GS.interactionMode == InteractionType.Focus) {
             TargetRenderer = allInteractableObjects[0].transform.GetComponent<Renderer>();
         } else if (
             EventSystem.current.IsPointerOverGameObject() == false && // allow UI elements to block raycasting
@@ -223,7 +223,7 @@ public class SelectionOutlineController : MonoBehaviour
         if (TargetRenderer)
         {
             if (lastTarget == null) lastTarget = TargetRenderer;
-            if (SelectionMode == SelMode.AndChildren || InputSystem.focus)
+            if (SelectionMode == SelMode.AndChildren || (InputSystem.focus && GS.interactionMode == InteractionType.Focus))
             {
                 if (ChildrenRenderers != null)
                 {
