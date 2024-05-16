@@ -94,12 +94,7 @@ namespace StarterAssets
             else
             {
                 CursorImage.sprite = DefaultIcon;
-
                 _selectionOutlineController.FilterByTag = "None";
-
-                // for focus mode
-                _selectionOutlineController.OutlineColor = InteractableOutlineColor;
-                _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
             }
 
             if (_input.interact) {

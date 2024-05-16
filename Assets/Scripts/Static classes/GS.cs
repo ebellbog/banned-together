@@ -7,7 +7,8 @@ public enum InteractionType {
     Default,
     Examine,
     Journal,
-    Tutorial
+    Tutorial,
+    Focus
 }
 
 public static class GS
