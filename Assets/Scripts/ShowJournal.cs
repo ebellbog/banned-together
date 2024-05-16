@@ -68,8 +68,6 @@ public class ShowJournal : MonoBehaviour
 
         UI.LockCursor();
         viewingJournal = false;
-
-        // YarnDispatcher.StartTutorial("TutorialTest");
     }
 }
 

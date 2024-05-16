@@ -12,7 +12,7 @@ public class ThoughtBubble : MonoBehaviour
     public GameObject bubbleCanvas;
 
     private bool fadeIn = false;
-    private bool fadeOut = false;
+    private bool fadeOut = true;
 
     private CanvasGroup canvasGroup;
     private GameObject animationParent;
@@ -64,15 +64,23 @@ public class ThoughtBubble : MonoBehaviour
     }
 
     public void FadeIn() {
-        if (!fadeIn) currentScale = InitialScale;
+        if (!fadeIn) {
+            currentScale = InitialScale;
+            GS.concurrentThoughtBubbles++;
+        }
         fadeIn = true;
+        fadeOut = false;
     }
 
     public void FadeOut() {
+        if (!fadeOut) {
+            GS.concurrentThoughtBubbles--;
+        }
         fadeIn = false;
         fadeOut = true;
     }
 
+    // note: WIP; does not work yet
     public void Explode() {
         Vector3[] vertices = textMesh.mesh.vertices;
         int characterCount = textMesh.textInfo.characterCount;

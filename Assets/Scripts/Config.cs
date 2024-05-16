@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using StarterAssets;
 using Yarn.Unity;
+using TMPro;
 
 public class Config : MonoBehaviour
 {
     [Header("Yarn Systems")]
     public DialogueRunner internalMonologueSystem;
     public DialogueRunner tutorialDialogSystem;
+    public TextMeshProUGUI monologueTextMesh;
 
     [Header("UI Management")]
     public UIManager managerComponent;
@@ -21,6 +23,7 @@ public class Config : MonoBehaviour
     {
         YarnDispatcher.internalMonologueSystem = internalMonologueSystem;
         YarnDispatcher.tutorialDialogSystem = tutorialDialogSystem;
+        YarnDispatcher.monologueTextMesh = monologueTextMesh;
 
         UI.uiManager = managerComponent;
         UI.cursorCanvas = cursorCanvas;
