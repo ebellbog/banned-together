@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,8 @@ public class BodyBatteryManager : MonoBehaviour
 
     private bool isPulsing = false;
     private bool isAlarming = false;
+    private bool isVisible = false;
+    private bool isReady = false;
     private bool showTutorial = false;
     private bool didShowTutorial = false;
 
@@ -39,7 +42,10 @@ public class BodyBatteryManager : MonoBehaviour
 
         if (starterInputs.focus)
         {
-            GS.bodyBattery = Math.Max(GS.bodyBattery - exhaustionSpeed * Time.deltaTime, 0);
+            if (isReady) {
+                GS.bodyBattery = Math.Max(GS.bodyBattery - exhaustionSpeed * Time.deltaTime, 0);
+            }
+
             if (GS.bodyBattery == 0)
             {
                 starterInputs.focus = false;
@@ -53,8 +59,14 @@ public class BodyBatteryManager : MonoBehaviour
                     }
                     showTutorial = true;
                 }
-            } else
+            }
+            else if (!isVisible)
             {
+                ShowWatch();
+                StartPulsing();
+                StartCoroutine(SetReadyWithDelay(2.0f));
+            }
+            else {
                 StartPulsing();
             }
         } else
@@ -66,12 +78,38 @@ public class BodyBatteryManager : MonoBehaviour
         {
             StopDrainedAlarm();
             GS.bodyBattery = Math.Min(GS.bodyBattery + restingSpeed * Time.deltaTime, 1);
+
+            if (GS.bodyBattery == 1) {
+                if (isReady) {
+                    StartCoroutine(HideAfterDelay(1.5f));
+                }
+                isReady = false;
+            }
+
+            didShowTutorial = true; // don't tutorialize if player has already figured it out
         }
+    }
+
+    IEnumerator SetReadyWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isReady = true;
+        yield return null;
+    }
+
+    IEnumerator HideAfterDelay(float delay) {
+        yield return new WaitForSeconds(delay);
+        HideWatch();
+        yield return null;
     }
 
     private void OnValidate()
     {
         energyLevel = _energyLevel;
+    }
+
+    public bool IsReady() {
+        return isReady;
     }
 
     public void StartPulsing()
@@ -104,6 +142,24 @@ public class BodyBatteryManager : MonoBehaviour
         if (isAlarming) {
             watchAnimator.SetTrigger("Default");
             isAlarming = false;
+        }
+    }
+
+    public void ShowWatch()
+    {
+        if (!isVisible)
+        {
+            watchAnimator.SetTrigger("Show");
+            isVisible = true;
+        }
+    }
+
+    public void HideWatch()
+    {
+        if (isVisible)
+        {
+            watchAnimator.SetTrigger("Hide");
+            isVisible = false;
         }
     }
 }
