@@ -17,6 +17,7 @@ public static class GS
     public static InteractionType interactionMode = InteractionType.Default;
     public static bool isSitting = false;
     public static int concurrentThoughtBubbles = 0;
+    public static float bodyBattery = 1.0f;
 
     public static void SetInteractionMode(InteractionType newMode) {
         interactionMode = newMode;

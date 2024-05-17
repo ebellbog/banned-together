@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -19,8 +17,8 @@ public class FocusManager : MonoBehaviour
     public float focusPercent = 0;
 
     private Camera mainCamera;
-
     private SelectionOutlineController selectionOutlineController;
+
     private float initialFOV;
     private float initialOutlineWidth;
     private float initialOutlineHardness;
