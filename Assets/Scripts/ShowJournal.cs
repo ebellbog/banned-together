@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.Universal;
 
 public class ShowJournal : MonoBehaviour
 {
@@ -54,6 +50,8 @@ public class ShowJournal : MonoBehaviour
 
         UI.UnlockCursor(ReadingCursor);
         viewingJournal = true;
+
+        AudioManager.instance.CrossfadeMusic("Journal");
     }
 
     void CloseJournal() {
@@ -68,6 +66,8 @@ public class ShowJournal : MonoBehaviour
 
         UI.LockCursor();
         viewingJournal = false;
+
+        AudioManager.instance.CrossfadeMusic("Library");
     }
 }
 
