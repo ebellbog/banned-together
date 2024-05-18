@@ -21,6 +21,7 @@ public static class GS
     public static float bodyBattery = 1.0f;
     public static int paper1Seen = 0;
     public static int dangerousLibrarySeen = 0;
+    public static int tutorialItems = 0;
 
     public static void SetInteractionMode(InteractionType newMode) {
         interactionMode = newMode;

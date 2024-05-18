@@ -66,6 +66,7 @@ namespace StarterAssets
         void Update()
         {
             Interact();
+            Debug.Log(GS.tutorialItems);
         }
 
 		private void Interact() {
@@ -160,6 +161,15 @@ namespace StarterAssets
                     if (currentObject.name == "Paper 1")
                     {
                         GS.paper1Seen = 1;
+                        GS.tutorialItems++;
+                    }
+                    if (currentObject.name == "Paper 2")
+                    {
+                        GS.tutorialItems++;
+                    }
+                    if (currentObject.name == "Gender Queer")
+                    {
+                        GS.tutorialItems++;
                     }
 
                     currentObject = null;
