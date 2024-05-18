@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -12,13 +13,15 @@ public enum ComparatorType {
 }
 
 [System.Serializable]
-public struct StateTrigger {
+public class StateTrigger {
     public string yarnNode;
     public DialogueType dialogueType;
     public string propertyName;
     public ComparatorType comparatorType;
     public int comparisonValue;
     public bool triggerOnlyOnce;
+    internal bool alreadyTriggered;
+    public float triggerAfterDelay;
 }
 
 public class YarnStateTriggers : MonoBehaviour
@@ -30,6 +33,7 @@ public class YarnStateTriggers : MonoBehaviour
         for(int i = triggers.Count - 1; i >= 0; i--)
         {
             StateTrigger trigger = triggers[i];
+            if (trigger.triggerOnlyOnce && trigger.alreadyTriggered) continue;
 
             #nullable enable
             FieldInfo? fieldInfo = typeof(GS).GetField(trigger.propertyName);
@@ -62,19 +66,25 @@ public class YarnStateTriggers : MonoBehaviour
                     break;
             }
 
-            bool didTrigger;
             if (doTrigger) {
-                if (trigger.dialogueType == DialogueType.InternalMonologue) {
-                    didTrigger = YarnDispatcher.StartInternalMonologue(trigger.yarnNode);
-                } else {
-                    didTrigger = YarnDispatcher.StartTutorial(trigger.yarnNode);
-                }
-
-                if (didTrigger && trigger.triggerOnlyOnce) {
-                    triggers.RemoveAt(i);
-                }
+                StartCoroutine(DispatchWithDelay(trigger));
             }
         }
+    }
+
+    IEnumerator DispatchWithDelay(StateTrigger trigger)
+    {
+        if (trigger.triggerAfterDelay > 0) yield return new WaitForSeconds(trigger.triggerAfterDelay);
+
+        bool didTrigger;
+        if (trigger.dialogueType == DialogueType.InternalMonologue) {
+            didTrigger = YarnDispatcher.StartInternalMonologue(trigger.yarnNode);
+        } else {
+            didTrigger = YarnDispatcher.StartTutorial(trigger.yarnNode);
+        }
+
+        if (didTrigger) trigger.alreadyTriggered = true;
+        yield return null;
     }
 
 }
