@@ -59,12 +59,18 @@ public class SelectionOutlineController : MonoBehaviour
     public StarterAssetsInputs InputSystem;
 
     void Start() {
-        allInteractableObjects = GameObject.FindGameObjectsWithTag("Interactable");
+        allInteractableObjects = GameObject
+            .FindGameObjectsWithTag("Interactable")
+            .Where(x => {
+                Renderer r = x.transform.GetComponent<Renderer>();
+                if (r == null) Debug.LogWarning($"Interactable object is missing renderer: {x.name}");
+                return r != null;
+            })
+            .ToArray();
     }
 
     void OnEnale()
     {
-
         Inital();
     }
     void Inital()
