@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public enum InteractionType {
     Default,
@@ -18,8 +19,11 @@ public static class GS
     public static bool isSitting = false;
     public static int concurrentThoughtBubbles = 0;
     public static float bodyBattery = 1.0f;
+    public static int paper1Seen = 0;
+    public static int dangerousLibrarySeen = 0;
 
     public static void SetInteractionMode(InteractionType newMode) {
         interactionMode = newMode;
     }
+
 }

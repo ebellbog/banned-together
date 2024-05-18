@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using Yarn.Unity;
 
 public enum ComparatorType {
     Equals,
@@ -75,4 +76,5 @@ public class YarnStateTriggers : MonoBehaviour
             }
         }
     }
+
 }

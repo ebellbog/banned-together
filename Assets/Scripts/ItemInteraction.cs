@@ -157,8 +157,14 @@ namespace StarterAssets
                         _selectionOutlineController.enabled = true;
                     }
 
+                    if (currentObject.name == "Paper 1")
+                    {
+                        GS.paper1Seen = 1;
+                    }
+
                     currentObject = null;
                     GS.interactionMode = InteractionType.Default;
+
                 }
                 else if (hitSittable && !GS.isSitting)
                 {
