@@ -38,6 +38,14 @@ public static class YarnDispatcher
         return true;
     }
 
+    public static void SkipToEnd() {
+        if (GS.interactionMode == InteractionType.Tutorial) {
+            Debug.Log("Skipping to end");
+            LineView dialogueView = (LineView)tutorialDialogSystem.dialogueViews[0];
+            dialogueView.OnContinueClicked();
+        }
+    }
+
     public static void EndTutorial() {
         if (GS.interactionMode == InteractionType.Tutorial)
             tutorialDialogSystem.Stop();

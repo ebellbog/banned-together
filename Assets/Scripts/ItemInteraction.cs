@@ -149,7 +149,7 @@ namespace StarterAssets
                 }
                 else if (GS.interactionMode == InteractionType.Tutorial)
                 {
-                    YarnDispatcher.EndTutorial();
+                    YarnDispatcher.SkipToEnd();
                 }
                 else
                 {
@@ -161,8 +161,16 @@ namespace StarterAssets
 			}
             else if (_input.anyKey)
             {
-                ExitExamination();
-                YarnDispatcher.EndTutorial();
+                if (GS.interactionMode == InteractionType.Examine)
+                {
+                    ExitExamination();
+                    _input.anyKey = false;
+                } 
+                else if (GS.interactionMode == InteractionType.Tutorial)
+                {
+                    YarnDispatcher.SkipToEnd();
+                    _input.anyKey = false;
+                }
             }
 		}
 
