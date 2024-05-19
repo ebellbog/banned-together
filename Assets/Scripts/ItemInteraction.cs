@@ -216,7 +216,12 @@ namespace StarterAssets
             rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
     
             examineCallback = null;
-            examineCallback += () => currentObject.transform.SetParent(ExamineTarget);
+            examineCallback += () => {
+                currentObject.transform.SetParent(ExamineTarget);
+                
+                InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
+                interactableItem.UpdateGameState(true);
+            };
 
             // Compensate for visually off-center objects
             Renderer currentRenderer = currentObject.GetComponent<Renderer>();
@@ -267,7 +272,7 @@ namespace StarterAssets
             StartCoroutine(MoveForDuration(currentObject, startPosition, startRotation, startScale, putDownDuration));
 
             UI.LockCursor();
-            GS.interactionMode = InteractionType.Default;
+            GS.interactionMode = YarnDispatcher.YarnSpinnerIsActive() ? InteractionType.Monologue : InteractionType.Default;
         }
 
         IEnumerator SitShake(float seconds)
