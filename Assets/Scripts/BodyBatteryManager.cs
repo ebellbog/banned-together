@@ -40,7 +40,18 @@ public class BodyBatteryManager : MonoBehaviour
     {
         energizedImage.fillAmount = GS.bodyBattery;
 
-        if (starterInputs.focus)
+        // Show & hide watch based on mode, even when not pressing focus
+        if (
+            GS.interactionMode == InteractionType.Journal ||
+            GS.interactionMode == InteractionType.Examine ||
+            GS.interactionMode == InteractionType.Tutorial) {
+            // TODO: think through how to handle this in drained state
+            HideWatch();
+        } else if (GS.bodyBattery < 1) {
+            ShowWatch();
+        }
+
+        if (starterInputs.focus && GS.interactionMode == InteractionType.Focus)
         {
             if (isReady) {
                 GS.bodyBattery = Math.Max(GS.bodyBattery - exhaustionSpeed * Time.deltaTime, 0);

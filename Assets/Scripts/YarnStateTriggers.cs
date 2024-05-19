@@ -75,6 +75,7 @@ public class YarnStateTriggers : MonoBehaviour
     IEnumerator DispatchWithDelay(StateTrigger trigger)
     {
         if (trigger.triggerAfterDelay > 0) yield return new WaitForSeconds(trigger.triggerAfterDelay);
+        if (trigger.alreadyTriggered) yield break; // in case this happened in parallel, while waiting
 
         bool didTrigger;
         if (trigger.dialogueType == DialogueType.InternalMonologue) {

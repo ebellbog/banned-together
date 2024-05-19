@@ -16,6 +16,7 @@ namespace StarterAssets
 		public bool focus;
 		public bool journal;
 		public bool exit;
+		public bool anyKey;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -68,6 +69,11 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnAny(InputValue value)
+		{
+			AnyInput(value.isPressed);
+		}
 #endif
 
 
@@ -110,7 +116,12 @@ namespace StarterAssets
 		{
 			sprint = newSprintState;
 		}
-		
+
+		public void AnyInput(bool newAnyState)
+		{
+			anyKey = newAnyState;
+		}
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);

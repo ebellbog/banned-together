@@ -15,7 +15,7 @@ public static class YarnDispatcher
             Debug.LogWarning("No tutorial dialog system is set");
             return false;
         }
-        if (tutorialDialogSystem.Dialogue.IsActive)
+        if (YarnSpinnerIsActive())
         {
             Debug.Log($"Skipping tutorial for {tutorialNode} because dialogue is already active");
             return false;
@@ -50,7 +50,7 @@ public static class YarnDispatcher
             Debug.LogWarning("No internal monologue system is set");
             return false;
         }
-        if (internalMonologueSystem.Dialogue.IsActive)
+        if (YarnSpinnerIsActive())
         {
             Debug.Log($"Skipping monologue for {monologueNode} because dialogue is already active");
             return false;
@@ -64,6 +64,11 @@ public static class YarnDispatcher
         internalMonologueSystem.StartDialogue(monologueNode);
 
         return true;
+    }
+
+    public static bool YarnSpinnerIsActive()
+    {
+        return internalMonologueSystem.Dialogue.IsActive || tutorialDialogSystem.Dialogue.IsActive;
     }
 
     private static void OnMonologueEnd() {

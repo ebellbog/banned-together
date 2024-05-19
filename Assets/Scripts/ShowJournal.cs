@@ -27,11 +27,12 @@ public class ShowJournal : MonoBehaviour
                 OpenJournal();
             }
             _input.journal = false;
+            _input.anyKey = false;
         }
-        else if (_input.exit && viewingJournal)
+        else if (_input.anyKey && viewingJournal)
         {
             CloseJournal();
-            _input.exit = false;
+            _input.anyKey = false;
         }
     }
 

@@ -74,10 +74,22 @@ namespace StarterAssets
             Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach);
 
             string hitTag = hitInfo.transform?.tag;
-            bool hitInteractable = hitTag == "Interactable";
-            bool hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
 
-            if (hitInteractable)
+            bool hitInteractable = false, hitSittable = false;
+            if (GS.interactionMode == InteractionType.Default)
+            {
+                hitInteractable = hitTag == "Interactable";
+                hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
+            }
+
+            if (GS.interactionMode != InteractionType.Default || !(hitInteractable || hitSittable))
+            {
+                CursorImage.sprite = DefaultIcon;
+                _selectionOutlineController.FilterByTag = "None";
+                hitInteractable = false;
+                hitSittable = false;
+            }
+            else if (hitInteractable)
             {
                 CursorImage.sprite = InspectIcon;
                 _selectionOutlineController.FilterByTag = "Interactable";
@@ -92,14 +104,9 @@ namespace StarterAssets
                 _selectionOutlineController.OccludedColor = SittableOccludedColor;
                 _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.Whole;
             }
-            else
-            {
-                CursorImage.sprite = DefaultIcon;
-                _selectionOutlineController.FilterByTag = "None";
-            }
 
             if (_input.interact) {
-				if (hitInteractable && GS.interactionMode != InteractionType.Examine)
+				if (hitInteractable)
                 {
                     Debug.Log("Initiating examine object...");
                     StopAllCoroutines();
@@ -124,6 +131,8 @@ namespace StarterAssets
                     foreach (Transform child in currentObject.transform)
                     {
                         child.gameObject.layer = layerNumber;
+                        Collider childCollider = child.gameObject.GetComponent<Collider>();
+                        if (childCollider) childCollider.enabled = false;
                     }
 
                     UI.FadeInMatte();
@@ -132,49 +141,6 @@ namespace StarterAssets
                     GS.interactionMode = InteractionType.Examine;
 
                     StartCoroutine(MoveToTarget(currentObject, ExamineTarget.position, startRotation, 6.0f));
-
-                    // hitInfo.transform.gameObject.GetComponent<YarnInteractable>().StartConversation();
-                }
-                else if (GS.interactionMode == InteractionType.Examine)
-                {
-                    Debug.Log("Exiting examination...");
-                    StopAllCoroutines();
-
-                    currentObject.GetComponent<Collider>().enabled = true;
-                    currentObject.layer = 0;
-                    foreach (Transform child in currentObject.transform)
-                    {
-                        child.gameObject.layer = 0;
-                    }
-
-                    UI.FadeOutMatte();
-
-                    StartCoroutine(MoveToTarget(currentObject, startPosition, startRotation, 8.0f));
-
-                    Player.UnlockPlayer();
-                    UI.LockCursor();
-
-                    if (_selectionOutlineController) {
-                        _selectionOutlineController.enabled = true;
-                    }
-
-                    if (currentObject.name == "Paper 1")
-                    {
-                        GS.paper1Seen = 1;
-                        GS.tutorialItems++;
-                    }
-                    if (currentObject.name == "Paper 2")
-                    {
-                        GS.tutorialItems++;
-                    }
-                    if (currentObject.name == "Gender Queer")
-                    {
-                        GS.tutorialItems++;
-                    }
-
-                    currentObject = null;
-                    GS.interactionMode = InteractionType.Default;
-
                 }
                 else if (hitSittable && !GS.isSitting)
                 {
@@ -207,10 +173,61 @@ namespace StarterAssets
                 {
                     YarnDispatcher.EndTutorial();
                 }
+                else
+                {
+                    ExitExamination();
+                }
 
                 _input.interact = false;
+                _input.anyKey = false;
 			}
+            else if (_input.anyKey)
+            {
+                ExitExamination();
+            }
 		}
+
+        private void ExitExamination()
+        {
+            if (GS.interactionMode != InteractionType.Examine) return;
+            StopAllCoroutines();
+
+            currentObject.GetComponent<Collider>().enabled = true;
+            currentObject.layer = 0;
+            foreach (Transform child in currentObject.transform)
+            {
+                child.gameObject.layer = 0;
+                // TODO: would we ever actually want to reenable a child collider?
+            }
+
+            UI.FadeOutMatte();
+
+            StartCoroutine(MoveToTarget(currentObject, startPosition, startRotation, 8.0f));
+
+            Player.UnlockPlayer();
+            UI.LockCursor();
+
+            if (_selectionOutlineController) {
+                _selectionOutlineController.enabled = true;
+            }
+
+            if (currentObject.name == "Paper 1")
+            {
+                GS.paper1Seen = 1;
+                GS.tutorialItems++;
+            }
+            if (currentObject.name == "Paper 2")
+            {
+                GS.tutorialItems++;
+            }
+            if (currentObject.name == "Gender Queer")
+            {
+                GS.tutorialItems++;
+            }
+
+            currentObject = null;
+            GS.interactionMode = InteractionType.Default;
+        }
 
         IEnumerator SitShake(float seconds)
         {
