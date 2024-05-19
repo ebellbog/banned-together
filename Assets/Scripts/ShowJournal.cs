@@ -23,7 +23,7 @@ public class ShowJournal : MonoBehaviour
         {
             if (viewingJournal) {
                 CloseJournal();
-            } else {
+            } else if (GS.interactionMode == InteractionType.Default) {
                 OpenJournal();
             }
             _input.journal = false;

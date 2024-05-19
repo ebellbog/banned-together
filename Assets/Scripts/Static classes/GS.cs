@@ -9,6 +9,7 @@ public enum InteractionType {
     Examine,
     Journal,
     Tutorial,
+    Monologue,
     Focus
 }
 

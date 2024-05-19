@@ -56,6 +56,8 @@ public static class YarnDispatcher
             return false;
         }
 
+        GS.interactionMode = InteractionType.Monologue;
+
         internalMonologueSystem.onDialogueComplete.RemoveAllListeners();
         internalMonologueSystem.onDialogueComplete.AddListener(OnMonologueEnd);
 
@@ -66,5 +68,6 @@ public static class YarnDispatcher
 
     private static void OnMonologueEnd() {
         GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{monologueTextMesh.text}";
+        GS.interactionMode = InteractionType.Default;
     }
 }
