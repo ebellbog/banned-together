@@ -168,7 +168,7 @@ Material:
     - _StepHalftoneTexture: 0
     - _StepOffset: -0.228
     - _Strength: 0
-    - _Thicnkess: 0.006
+    - _Thicnkess: 0.002
     - _UVAnimationSpeed: 2
     - _UVAnimationSpeedSpec: 2
     - _UVAnimationSpeedWarp: 2
