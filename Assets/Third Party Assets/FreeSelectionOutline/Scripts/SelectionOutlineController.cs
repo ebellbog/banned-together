@@ -64,9 +64,15 @@ public class SelectionOutlineController : MonoBehaviour
             .Where(x => {
                 Renderer r = x.transform.GetComponent<Renderer>();
                 if (r == null) Debug.LogWarning($"Interactable object is missing renderer: {x.name}");
-                return r != null;
+
+                InteractableItem interactableComponent = x.GetComponent<InteractableItem>();
+                if (interactableComponent == null) Debug.LogWarning($"Interactable object is missing InteractableItem component: {x.name}");
+
+                return r != null && interactableComponent?.highlightInFocusMode == true;
             })
             .ToArray();
+        
+        Debug.Log($"Found {allInteractableObjects.Length} interactable objects");
     }
 
     void OnEnale()

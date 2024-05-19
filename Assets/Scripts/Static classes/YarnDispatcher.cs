@@ -17,7 +17,12 @@ public static class YarnDispatcher
         }
         if (YarnSpinnerIsActive())
         {
-            Debug.Log($"Skipping tutorial for {tutorialNode} because dialogue is already active");
+            Debug.LogWarning($"Skipping tutorial for {tutorialNode} because dialogue is already active");
+            return false;
+        }
+        if (GS.interactionMode != InteractionType.Default)
+        {
+            Debug.LogWarning($"Skipping tutorial for {tutorialNode} because the current interaction mode is {GS.interactionMode}");
             return false;
         }
 
@@ -34,7 +39,8 @@ public static class YarnDispatcher
     }
 
     public static void EndTutorial() {
-        tutorialDialogSystem.Stop();
+        if (GS.interactionMode == InteractionType.Tutorial)
+            tutorialDialogSystem.Stop();
     }
 
     private static void OnDialogueComplete() {
@@ -53,6 +59,11 @@ public static class YarnDispatcher
         if (YarnSpinnerIsActive())
         {
             Debug.Log($"Skipping monologue for {monologueNode} because dialogue is already active");
+            return false;
+        }
+        if (GS.interactionMode != InteractionType.Default && GS.interactionMode != InteractionType.Examine)
+        {
+            Debug.LogWarning($"Skipping tutorial for {monologueNode} because the current interaction mode is {GS.interactionMode}");
             return false;
         }
 
