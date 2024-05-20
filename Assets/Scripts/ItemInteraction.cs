@@ -88,14 +88,16 @@ namespace StarterAssets
             string hitTag = hitInfo.transform?.tag;
 
             bool hitInteractable = false, hitSittable = false;
-            if (GS.interactionMode == InteractionType.Default)
+            if (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus)
             {
                 hitInteractable = hitTag == "Interactable";
                 hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
             }
 
-            if (GS.interactionMode != InteractionType.Default || !(hitInteractable || hitSittable))
-            {
+            if (
+                !(GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus) ||
+                !(hitInteractable || hitSittable)
+            ){
                 CursorImage.sprite = DefaultIcon;
                 _selectionOutlineController.FilterByTag = "None";
                 hitInteractable = false;

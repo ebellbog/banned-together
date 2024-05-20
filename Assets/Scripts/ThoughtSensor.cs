@@ -19,14 +19,44 @@ public class ThoughtSensor : MonoBehaviour
 
     void Update()
     {
-        ShowThoughts = GS.interactionMode == InteractionType.Default && !GS.isSitting;
+        ShowThoughts = (
+            GS.interactionMode == InteractionType.Default ||
+            GS.interactionMode == InteractionType.Focus
+        ) && !GS.isSitting;
 
         foreach (ThoughtBubble thought in allThoughts) {
             if (thought.isActiveAndEnabled == false) continue;
             Transform thoughtTransform = thought.gameObject.transform;
 
             // Hide all thoughts if disabled
-            if (!ShowThoughts) {
+            if (!ShowThoughts)
+            {
+                thought.FadeOut();
+                continue;
+            }
+
+            // Filter for focus thoughts
+            if (GS.interactionMode == InteractionType.Focus &&
+                thought.thoughtType != ThoughtType.Focus)
+            {
+                thought.FadeOut();
+                continue;
+            }
+
+            // Filter for intrusive thoughts
+            if (GS.interactionMode == InteractionType.Default &&
+                GS.bodyBattery > 0 &&
+                thought.thoughtType != ThoughtType.Intrusive)
+            {
+                thought.FadeOut();
+                continue;
+            }
+
+            // Filter for dark thoughts
+            if (GS.interactionMode == InteractionType.Default &&
+                GS.bodyBattery == 0 &&
+                thought.thoughtType != ThoughtType.Dark)
+            {
                 thought.FadeOut();
                 continue;
             }

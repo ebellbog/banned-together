@@ -1,12 +1,19 @@
 using UnityEngine;
 using TMPro;
 
+public enum ThoughtType {
+    Intrusive,
+    Focus,
+    Dark
+}
+
 [RequireComponent(typeof(Collider))]
 public class ThoughtBubble : MonoBehaviour
 {
     public string ThoughtText;
     public float FadeSpeed = 2.5f;
     public float InitialScale = 0.6f;
+    public ThoughtType thoughtType = ThoughtType.Intrusive;
 
     [HideInInspector]
     public GameObject bubbleCanvas;
@@ -55,6 +62,23 @@ public class ThoughtBubble : MonoBehaviour
         );
         textMesh = bubbleCanvas.GetComponentInChildren<TextMeshProUGUI>();
         textMesh.SetText(ThoughtText);
+
+        switch(thoughtType) {
+            case ThoughtType.Intrusive:
+                bubbleCanvas.transform.Find("ThoughtBubble/IntrusiveBg").gameObject.SetActive(true);
+                break;
+            case ThoughtType.Focus:
+                bubbleCanvas.transform.Find("ThoughtBubble/FocusBg").gameObject.SetActive(true);
+                textMesh.color = Color.white;
+                textMesh.fontStyle = FontStyles.Bold;
+                break;
+            case ThoughtType.Dark:
+                bubbleCanvas.transform.Find("ThoughtBubble/DarkBg").gameObject.SetActive(true);
+                textMesh.color = Color.white;
+                break;
+            default:
+                break;
+        }
 
         animationParent = bubbleCanvas.transform.GetChild(0).gameObject;
         animationParent.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
