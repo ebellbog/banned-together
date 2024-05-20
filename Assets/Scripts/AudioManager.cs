@@ -102,6 +102,30 @@ public class AudioManager : MonoBehaviour
         effectsTrack.Play();
     }
 
+    public void MuffleMusic()
+    {
+        audioMixer.SetFloat("LowpassCutoff", 600);
+    }
+    public void UnmuffleMusic()
+    {
+        audioMixer.SetFloat("LowpassCutoff", 22000);
+    }
+    public void ResetMusicEffects()
+    {
+        UnmuffleMusic();
+        UnslowMusic();
+    }
+    public void SlowMusic()
+    {
+        musicTrack1.pitch = .75f;
+        musicTrack2.pitch = .75f;
+    }
+    public void UnslowMusic()
+    {
+        musicTrack1.pitch = 1.0f;
+        musicTrack2.pitch = 1.0f;
+    }
+
     IEnumerator FadeOut(AudioSource audioSource)
     {
         while (audioSource.volume > 0)

@@ -43,7 +43,9 @@ public class FocusManager : MonoBehaviour
     void Update()
     {
         // Update focus percent
-        if (starterInputs.focus && (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus))
+        if (starterInputs.focus &&
+            (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus)
+            && GS.bodyBattery > 0)
         {
             focusPercent = Math.Min(focusPercent + focusSpeed * Time.deltaTime, 1);
         } else
@@ -54,6 +56,7 @@ public class FocusManager : MonoBehaviour
         // Logic for entering & exiting focus mode
         if (focusPercent > 0 && GS.interactionMode == InteractionType.Default) {
             particleEffects.Play();
+            AudioManager.instance.MuffleMusic();
 
             GS.interactionMode = InteractionType.Focus;
             selectionOutlineController.OutlineWidth = maxOutlineWidth;
@@ -61,6 +64,7 @@ public class FocusManager : MonoBehaviour
         }
         else if (focusPercent == 0 && particleEffects.isPlaying) {
             particleEffects.Stop();
+            AudioManager.instance.UnmuffleMusic();
 
             if (GS.interactionMode == InteractionType.Focus) GS.interactionMode = InteractionType.Default;
 

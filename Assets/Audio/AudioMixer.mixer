@@ -17,7 +17,7 @@ AudioMixerEffectController:
     m_GUID: 26ff9716da4a06e4eb1e36593224b498
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
-  m_Bypass: 1
+  m_Bypass: 0
 --- !u!243 &-34015773478143738
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -57,6 +57,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 556f218bc8353b44ea6ca5a7ef7904d5
     name: MusicVolume
+  - guid: 156cf8291df325e47a073cc4e1334598
+    name: LowpassCutoff
   - guid: eb9752dd14328d94a95a938a496d635c
     name: EffectVolume
   m_AudioMixerGroupViews:
@@ -114,14 +116,29 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 73185bfafdea98f4388054a43192ad21
   m_FloatValues:
+    6796b300ff8059646bc3f84afd6f3d61: 0
+    6915d21137e46a34eb7415f4de50810e: 69.6
+    34156b81b1dd28c43b5e8123734fd874: 0
+    3d434632d566bcc4f94f5a3ce1685da1: -34.8
+    76218b92bbea66848a72a23db3fca0e9: 0.755
     31446373bcfac294f9f040be9ba58568: 1.75
+    b33d6615fae5abb4099fc636bf4a1c66: 0.59
+    7465ff6512ac77f40a0b66def791d7c0: 0.744
     d6ff4785b9f71844998d514c2b56a972: 2.2
     6eef16e55e9f12d49b2c4d0e4007c0b7: 0
+    26ff9716da4a06e4eb1e36593224b498: 1
     57d66a37c527c4247a5acb94cb4bfe9d: -25.3
-    156cf8291df325e47a073cc4e1334598: 849
+    c98ec678c527fb44b91ca4eda66c56bb: 0.613
+    c6b5b2982129ce94eb0366d5cf1b3b83: 0.943
+    255c85299e889974d83e6be888351f13: -10000
+    156cf8291df325e47a073cc4e1334598: 22000
     93d33099e54896e4f81399c4ced6cd50: 0.55
+    bb11ac9b1ff01934ea03191777932d6f: 0.1
     b45f5f7c38c2fdd489b28e04bb0e150a: -44.1
     082f7d8e794b80b4783e4b0fcc2f2ff6: 0
+    9219b3fe682cd824091c18a47706f5ac: 0.745
+    eefe132feb09aae4095b7979f62a0dbe: 3422
+    5a95037fc11b45842aa41c0a7adb5473: 0.078
     76cf8cbffb2419b458fe0006081b138a: 111.3
   m_TransitionOverrides: {}
 --- !u!244 &112379374538354155

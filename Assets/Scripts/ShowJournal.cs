@@ -52,7 +52,7 @@ public class ShowJournal : MonoBehaviour
         UI.UnlockCursor(ReadingCursor);
         viewingJournal = true;
 
-        AudioManager.instance.CrossfadeMusic("Journal");
+        AudioManager.instance.MuffleMusic();
     }
 
     void CloseJournal() {
@@ -68,7 +68,7 @@ public class ShowJournal : MonoBehaviour
         UI.LockCursor();
         viewingJournal = false;
 
-        AudioManager.instance.CrossfadeMusic("Library");
+        AudioManager.instance.UnmuffleMusic();
     }
 }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 public enum FlipMode
 {
     RightToLeft,
@@ -59,6 +60,8 @@ public class BookLive : MonoBehaviour {
     Vector3 c;
     //Edge Bottom Right
     Vector3 ebr;
+    //Edge Top Right
+    Vector3 etr;
     //Edge Bottom Left
     Vector3 ebl;
     //follow point 
@@ -100,6 +103,7 @@ public class BookLive : MonoBehaviour {
     {
         sb = new Vector3(0, -BookPanel.rect.height / 2);
         ebr = new Vector3(BookPanel.rect.width / 2, -BookPanel.rect.height / 2);
+        etr = new Vector3(BookPanel.rect.width / 2, BookPanel.rect.height / 2);
         ebl = new Vector3(-BookPanel.rect.width / 2, -BookPanel.rect.height / 2);
         st = new Vector3(0, BookPanel.rect.height / 2);
         radius1 = Vector2.Distance(sb, ebr);
