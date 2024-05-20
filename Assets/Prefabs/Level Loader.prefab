@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef09516192aa50a48a5351a17609510d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 1425125740217681193}
+  transitionTime: 5
+  defaultMusicForLevel:
+  - Journal
+  - Library
 --- !u!1 &4939407759049303126
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +110,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7090687354789914232
 MonoBehaviour:

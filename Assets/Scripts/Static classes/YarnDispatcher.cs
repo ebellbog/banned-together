@@ -59,7 +59,7 @@ public static class YarnDispatcher
     }
 
     public static bool StartInternalMonologue(string monologueNode) {
-        if (!tutorialDialogSystem)
+        if (!internalMonologueSystem)
         {
             Debug.LogWarning("No internal monologue system is set");
             return false;
@@ -88,10 +88,12 @@ public static class YarnDispatcher
 
     public static bool YarnSpinnerIsActive()
     {
-        return internalMonologueSystem.Dialogue.IsActive || tutorialDialogSystem.Dialogue.IsActive;
+        return (internalMonologueSystem && internalMonologueSystem.Dialogue.IsActive) ||
+            (tutorialDialogSystem && tutorialDialogSystem.Dialogue.IsActive);
     }
 
     private static void OnMonologueEnd() {
+        Debug.Log("Monologue ended");
         GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{monologueTextMesh.text}";
         if (GS.interactionMode != InteractionType.Examine) GS.interactionMode = InteractionType.Default;
     }

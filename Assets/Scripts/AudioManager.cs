@@ -40,14 +40,8 @@ public class AudioManager : MonoBehaviour
         if (instance == null) instance = this;
         DontDestroyOnLoad(this);
     }
-    
-    void Start()
-    {
-        // TODO: remove (for feature demo only)
-        instance.CrossfadeMusic("Library");
-    }
 
-    public void CrossfadeMusic(string newMusicName) {
+    public void CrossfadeMusic(string newMusicName, float delay = 0) {
         if (newMusicName == currentMusicInfo?.name)
         {
             Debug.Log($"Already playing ${newMusicName}. Continuing playback...");
@@ -68,7 +62,7 @@ public class AudioManager : MonoBehaviour
             StartCoroutine(FadeOut(musicTrack1));
 
             musicTrack2.clip = audioInfo.clip;
-            StartCoroutine(FadeIn(musicTrack2, audioInfo.startTime, 1.0f + audioInfo.volumeAdjustment));
+            StartCoroutine(FadeIn(musicTrack2, audioInfo.startTime, 1.0f + audioInfo.volumeAdjustment, delay));
 
             isPlayingTrack1 = false;
         } else {
@@ -76,7 +70,7 @@ public class AudioManager : MonoBehaviour
             StartCoroutine(FadeOut(musicTrack2));
 
             musicTrack1.clip = audioInfo.clip;
-            StartCoroutine(FadeIn(musicTrack1, audioInfo.startTime, 1.0f + audioInfo.volumeAdjustment));
+            StartCoroutine(FadeIn(musicTrack1, audioInfo.startTime, 1.0f + audioInfo.volumeAdjustment, delay));
 
             isPlayingTrack1 = true;
         }
@@ -126,8 +120,11 @@ public class AudioManager : MonoBehaviour
         musicTrack2.pitch = 1.0f;
     }
 
-    IEnumerator FadeOut(AudioSource audioSource)
+    IEnumerator FadeOut(AudioSource audioSource, float delay = 0)
     {
+        if (delay > 0)
+            yield return new WaitForSeconds(delay);
+
         while (audioSource.volume > 0)
         {
             audioSource.volume -= fadeSpeed * Time.deltaTime;
@@ -138,8 +135,11 @@ public class AudioManager : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator FadeIn(AudioSource audioSource, float startTime = 0, float maxVolume = 1f)
+    IEnumerator FadeIn(AudioSource audioSource, float startTime = 0, float maxVolume = 1f, float delay = 0)
     {
+        if (delay > 0)
+            yield return new WaitForSeconds(delay);
+
         audioSource.volume = 0;
 
         if (startTime > 0) audioSource.time = startTime;
