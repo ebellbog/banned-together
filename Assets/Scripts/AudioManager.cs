@@ -48,12 +48,14 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        #nullable enable
         AudioInfo? infoOrNull = musicClips.FirstOrDefault(a => a.name == newMusicName || a.clip.name == newMusicName);
         if (infoOrNull == null) {
             Debug.LogWarning($"Couldn't find music: {newMusicName}");
             return;
         }
         AudioInfo audioInfo = infoOrNull;
+        #nullable disable
 
         StopAllCoroutines();
 

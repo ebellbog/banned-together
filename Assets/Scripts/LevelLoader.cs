@@ -22,14 +22,14 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
-    // public void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Escape))
-    //     {
-    //         Debug.Log("Trying to quit - standalone build only");
-    //         Application.Quit();
-    //     }
-    // }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Intro Scene")
+        {
+            Debug.Log("Trying to quit - standalone build only");
+            Application.Quit();
+        }
+    }
 
     public void LoadNextLevel()
     {
