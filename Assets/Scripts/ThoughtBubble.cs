@@ -12,12 +12,13 @@ public class ThoughtBubble : MonoBehaviour
 {
     public string ThoughtText;
     public float FadeSpeed = 2.5f;
-    public float InitialScale = 0.6f;
+    public float scale = 1.0f;
     public ThoughtType thoughtType = ThoughtType.Intrusive;
 
     [HideInInspector]
     public GameObject bubbleCanvas;
 
+    private float InitialScale = 0.6f;
     private bool fadeIn = false;
     private bool fadeOut = true;
 
@@ -78,6 +79,11 @@ public class ThoughtBubble : MonoBehaviour
                 break;
             default:
                 break;
+        }
+
+        if (scale != 1) {
+            Billboard billboardComponent = bubbleCanvas.GetComponent<Billboard>();
+            billboardComponent.ScaleReferenceDistance /= scale;
         }
 
         animationParent = bubbleCanvas.transform.GetChild(0).gameObject;

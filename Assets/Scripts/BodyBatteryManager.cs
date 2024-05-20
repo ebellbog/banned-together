@@ -55,7 +55,8 @@ public class BodyBatteryManager : MonoBehaviour
         if (
             GS.interactionMode == InteractionType.Journal ||
             GS.interactionMode == InteractionType.Examine ||
-            GS.interactionMode == InteractionType.Tutorial) {
+            GS.interactionMode == InteractionType.Tutorial ||
+            GS.interactionMode == InteractionType.Paused) {
             // TODO: think through how to handle this in drained state
             HideWatch();
         } else if (GS.bodyBattery < 1) {
