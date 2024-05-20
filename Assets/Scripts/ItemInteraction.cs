@@ -28,6 +28,7 @@ namespace StarterAssets
 		public Sprite DefaultIcon;
 		public Sprite InspectIcon;
         public Sprite SitIcon;
+        public Sprite DoorIcon;
         public Texture2D RotateIcon;
 
         [Header("Outline colors")]
@@ -87,17 +88,21 @@ namespace StarterAssets
 
             string hitTag = hitInfo.transform?.tag;
 
-            bool hitInteractable = false, hitSittable = false;
-            if (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus)
+            bool hitInteractable = false, hitSittable = false, hitDoor = false;
+            if (GS.interactionMode == InteractionType.Default ||
+                GS.interactionMode == InteractionType.Focus ||
+                GS.interactionMode == InteractionType.Monologue)
             {
-                hitInteractable = hitTag == "Interactable";
-                hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
+                if (GS.interactionMode != InteractionType.Monologue)
+                {
+                    hitInteractable = hitTag == "Interactable";
+                    hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
+                }
+                hitDoor = hitTag == "Door";
             }
 
-            if (
-                !(GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus) ||
-                !(hitInteractable || hitSittable)
-            ){
+            if (!(hitInteractable || hitSittable || hitDoor))
+            {
                 CursorImage.sprite = DefaultIcon;
                 _selectionOutlineController.FilterByTag = "None";
                 hitInteractable = false;
@@ -117,6 +122,9 @@ namespace StarterAssets
                 _selectionOutlineController.OutlineColor = SittableOutlineColor;
                 _selectionOutlineController.OccludedColor = SittableOccludedColor;
                 _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.Whole;
+            }
+            else if (hitDoor) {
+                CursorImage.sprite = DoorIcon;
             }
 
             if (_input.interact) {
@@ -148,6 +156,11 @@ namespace StarterAssets
                 {
                     StandUp();
                     readyToStand = true;
+                }
+                else if (hitDoor)
+                {
+                    Door doorComponent = hitInfo.transform.gameObject.GetComponent<Door>();
+                    doorComponent.Open();
                 }
                 else if (GS.interactionMode == InteractionType.Tutorial)
                 {
