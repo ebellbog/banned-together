@@ -34,6 +34,9 @@ public class ShowJournal : MonoBehaviour
             CloseJournal();
             _input.anyKey = false;
         }
+
+        if (GS.interactionMode == InteractionType.Paused && viewingJournal)
+            CloseJournal();
     }
 
     void OpenJournal() {
@@ -57,8 +60,11 @@ public class ShowJournal : MonoBehaviour
 
     void CloseJournal() {
         SceneManager.UnloadSceneAsync("Journal Scene");
+        viewingJournal = false;
 
+        if (GS.interactionMode == InteractionType.Paused) return;
         GS.interactionMode = InteractionType.Default;
+
         UI.FadeOutMatte();
 
         _playerInput.actions.FindAction("Move").Enable();
@@ -66,7 +72,6 @@ public class ShowJournal : MonoBehaviour
         _input.cursorInputForLook = true;
 
         UI.LockCursor();
-        viewingJournal = false;
 
         AudioManager.instance.UnmuffleMusic();
     }

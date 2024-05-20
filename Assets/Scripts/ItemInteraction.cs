@@ -127,7 +127,7 @@ namespace StarterAssets
                 CursorImage.sprite = DoorIcon;
             }
 
-            if (_input.interact) {
+            if (_input.interact && GS.interactionMode != InteractionType.Paused) {
 				if (hitInteractable)
                 {
                     BeginExamination();
@@ -174,6 +174,12 @@ namespace StarterAssets
                 _input.interact = false;
                 _input.anyKey = false;
 			}
+            else if (_input.exit)
+            {
+                PauseManager.instance.PauseGame();
+                _input.exit = false;
+                _input.anyKey = false;
+            }
             else if (_input.anyKey)
             {
                 if (GS.interactionMode == InteractionType.Examine)
@@ -184,6 +190,11 @@ namespace StarterAssets
                 else if (GS.interactionMode == InteractionType.Tutorial)
                 {
                     YarnDispatcher.SkipToEnd();
+                    _input.anyKey = false;
+                }
+                else if (GS.interactionMode == InteractionType.Paused)
+                {
+                    PauseManager.instance.ResumeGame();
                     _input.anyKey = false;
                 }
             }

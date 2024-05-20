@@ -120,6 +120,15 @@ public class AudioManager : MonoBehaviour
         musicTrack2.pitch = 1.0f;
     }
 
+    public void MuteVoiceovers()
+    {
+        audioMixer.SetFloat("VoiceoverVolume", -80);
+    }
+    public void UnmuteVoiceovers()
+    {
+        audioMixer.SetFloat("VoiceoverVolume", 0);
+    }
+
     IEnumerator FadeOut(AudioSource audioSource, float delay = 0)
     {
         if (delay > 0)

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -8,6 +9,11 @@ public static class YarnDispatcher
     public static DialogueRunner internalMonologueSystem;
     public static DialogueRunner tutorialDialogSystem;
     public static TextMeshProUGUI monologueTextMesh;
+
+    private static string lastDispatch;
+    private static bool lastDispatchWasMonologue;
+    private static bool wasInterrupted;
+
 
     public static bool StartTutorial(string tutorialNode) {
         if (!tutorialDialogSystem)
@@ -35,6 +41,9 @@ public static class YarnDispatcher
         tutorialDialogSystem.StartDialogue(tutorialNode);
         tutorialDialogSystem.onDialogueComplete.AddListener(OnDialogueComplete);
 
+        lastDispatch = tutorialNode;
+        lastDispatchWasMonologue = false;
+
         return true;
     }
 
@@ -44,6 +53,45 @@ public static class YarnDispatcher
             LineView dialogueView = (LineView)tutorialDialogSystem.dialogueViews[0];
             dialogueView.OnContinueClicked();
         }
+    }
+
+    public static void Stop()
+    {
+        wasInterrupted = true;
+        if (GS.interactionMode == InteractionType.Tutorial) {
+            tutorialDialogSystem.Stop();
+        }
+        else if (GS.interactionMode == InteractionType.Monologue)
+        {
+            internalMonologueSystem.Stop();
+        }
+        else{
+            wasInterrupted = false;
+        }
+        if (wasInterrupted)
+            Debug.Log("Interrupted dialogue but will retry later");
+    }
+    public static void RetryInterrupted()
+    {
+        if (wasInterrupted)
+        {
+            wasInterrupted = false;
+            if (lastDispatchWasMonologue)
+                StartInternalMonologue(lastDispatch);
+            else
+                StartTutorial(lastDispatch);
+        }
+    }
+
+    public static void PauseVoiceovers()
+    {
+        VoiceOverView voiceOverView = (VoiceOverView)internalMonologueSystem.dialogueViews[1];
+        voiceOverView.audioSource.Pause();
+    }
+    public static void ResumeVoiceovers()
+    {
+        VoiceOverView voiceOverView = (VoiceOverView)internalMonologueSystem.dialogueViews[1];
+        voiceOverView.audioSource.UnPause();
     }
 
     public static void EndTutorial() {
@@ -82,6 +130,9 @@ public static class YarnDispatcher
         internalMonologueSystem.onDialogueComplete.AddListener(OnMonologueEnd);
 
         internalMonologueSystem.StartDialogue(monologueNode);
+
+        lastDispatch = monologueNode;
+        lastDispatchWasMonologue = true;
 
         return true;
     }

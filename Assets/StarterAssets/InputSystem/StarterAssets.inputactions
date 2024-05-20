@@ -281,6 +281,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3feefe79-2c48-4f03-a6ec-33dc6ce7a81d",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8ce1d3be-920a-4365-bd8d-bc2e12063d6b",
                     "path": "<Keyboard>/anyKey",
                     "interactions": "",

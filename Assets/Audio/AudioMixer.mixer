@@ -61,6 +61,8 @@ AudioMixerController:
     name: LowpassCutoff
   - guid: eb9752dd14328d94a95a938a496d635c
     name: EffectVolume
+  - guid: 082f7d8e794b80b4783e4b0fcc2f2ff6
+    name: VoiceoverVolume
   m_AudioMixerGroupViews:
   - guids:
     - 9baf6a022d579fa48b1987f08d745862
