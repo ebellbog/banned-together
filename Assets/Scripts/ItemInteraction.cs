@@ -50,6 +50,7 @@ namespace StarterAssets
         private Quaternion startRotation;
         private Quaternion targetStartRotation;
         private Space rotationSpace; // TODO: consider removing
+        private RotationAxis rotationAxis;
         private bool isReadyToInspect = false;
 
         private bool readyToStand = false;
@@ -176,7 +177,15 @@ namespace StarterAssets
 			}
             else if (_input.exit)
             {
-                PauseManager.instance.PauseGame();
+                if (GS.interactionMode == InteractionType.Examine)
+                {
+                    ExitExamination();
+                }
+                else
+                {
+                    PauseManager.instance.PauseGame();
+                }
+
                 _input.exit = false;
                 _input.anyKey = false;
             }
@@ -240,7 +249,8 @@ namespace StarterAssets
 
             InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
             rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
-    
+            rotationAxis = interactableItem.rotationAxis;
+
             examineCallback = null;
             examineCallback += () => {
                 currentObject.transform.SetParent(ExamineTarget);
@@ -250,12 +260,20 @@ namespace StarterAssets
             };
 
             // Compensate for visually off-center objects
-            Renderer currentRenderer = currentObject.GetComponent<Renderer>();
-            Vector3 offCenterAdjustment = currentRenderer.bounds.center - currentObject.transform.position;
+            Vector3 targetPosition;
+            if (interactableItem.useRenderPivot)
+            {
+                Renderer currentRenderer = currentObject.GetComponent<Renderer>();
+                Vector3 offCenterAdjustment = currentRenderer.bounds.center - currentObject.transform.position;
+                targetPosition = ExamineTarget.position - offCenterAdjustment;
+            }
+            else {
+                targetPosition = ExamineTarget.position;
+            }
 
             StartCoroutine(MoveForDuration(
                 currentObject,
-                ExamineTarget.position - offCenterAdjustment,
+                targetPosition,
                 interactableItem.orientToCamera ? ExamineTarget.rotation : startRotation,
                 startScale * interactableItem.scaleOnInteraction,
                 pickUpDuration
@@ -403,9 +421,15 @@ namespace StarterAssets
 			if (GS.interactionMode == InteractionType.Examine && isReadyToInspect)
 			{
 				Vector2 look = value.Get<Vector2>();
-                // Transform rotationTarget = (rotationSpace == Space.Self) ? ExamineTarget : currentObject.transform;
-                ExamineTarget.Rotate(Vector3.down * look.x * rotationSpeed, Space.Self);
-                ExamineTarget.transform.Rotate(Vector3.left * look.y * rotationSpeed, Space.Self);
+
+                if (rotationAxis == RotationAxis.LeftRight || rotationAxis == RotationAxis.All)
+                {
+                    ExamineTarget.Rotate(Vector3.down * look.x * rotationSpeed, rotationSpace);
+                } 
+                if (rotationAxis == RotationAxis.UpDown || rotationAxis == RotationAxis.All)
+                {
+                    ExamineTarget.Rotate(Vector3.left * look.y * rotationSpeed, Space.Self);
+                }
 			}
 		}
 

@@ -9,10 +9,16 @@ public class StateUpdate {
     internal bool alreadyIncremented = false;
 }
 
+public enum RotationAxis {
+    All, LeftRight, UpDown,
+}
+
 public class InteractableItem : MonoBehaviour
 {
     public bool highlightInFocusMode = true;
     public bool orientToCamera = false;
+    public bool useRenderPivot = true;
+    public RotationAxis rotationAxis = RotationAxis.All;
     public float scaleOnInteraction = 1.0f;
     public StateUpdate[] gameStateUpdates;
 
