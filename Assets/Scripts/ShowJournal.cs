@@ -33,6 +33,7 @@ public class ShowJournal : MonoBehaviour
         {
             CloseJournal();
             _input.anyKey = false;
+            _input.exit = false;
         }
 
         if (GS.interactionMode == InteractionType.Paused && viewingJournal)
