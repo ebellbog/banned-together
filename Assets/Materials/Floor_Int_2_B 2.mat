@@ -25,6 +25,7 @@ Material:
   - _OUTLINE_NML
   - _OVERLAYMODE_HALFTONE
   - _PARALLAXMAP
+  - _USEOUTLINE_ON
   - _USESCREENUVS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -542,7 +543,7 @@ Material:
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
     - _ThicknessMultiplier: 1
-    - _Thicnkess: 0
+    - _Thicnkess: 0.1
     - _TransmissionEnable: 1
     - _TransmissionMask: 1
     - _TransparentBackfaceEnable: 0
@@ -589,7 +590,7 @@ Material:
     - _UseEnvironmentRefletion: 0
     - _UseHatchingConstantScale: 1
     - _UseLightRamp: 2
-    - _UseOutline: 0
+    - _UseOutline: 1
     - _UsePureSketch: 0
     - _UseRimLight: 0
     - _UseScreenUvs: 1
