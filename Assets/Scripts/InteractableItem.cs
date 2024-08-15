@@ -17,7 +17,7 @@ public class InteractableItem : MonoBehaviour
 {
     public bool highlightInFocusMode = true;
     public bool orientToCamera = false;
-    public bool useRenderPivot = true;
+    public bool useRenderPivot = false;
     public RotationAxis rotationAxis = RotationAxis.All;
     public float scaleOnInteraction = 1.0f;
     public StateUpdate[] gameStateUpdates;

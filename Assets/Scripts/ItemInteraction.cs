@@ -29,7 +29,13 @@ namespace StarterAssets
 		public Sprite InspectIcon;
         public Sprite SitIcon;
         public Sprite DoorIcon;
-        public Texture2D RotateIcon;
+
+        [Header("Unlocked cursors")]
+        public Texture2D RotateAllDirections;
+        public Texture2D RotateLeftRight;
+        public Texture2D RotateUpDown;
+        public Texture2D HoverIcon;
+        public Texture2D DefaultUnlocked;
 
         [Header("Outline colors")]
         public Color InteractableOutlineColor;
@@ -51,6 +57,7 @@ namespace StarterAssets
         private Quaternion targetStartRotation;
         private Space rotationSpace; // TODO: consider removing
         private RotationAxis rotationAxis;
+        private bool isDragging = false;
         private bool isReadyToInspect = false;
 
         private bool readyToStand = false;
@@ -85,11 +92,18 @@ namespace StarterAssets
 
 		private void Interact() {
             // TODO: replace raycaster in SelectionOutlineController with this one
-            Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach);
+            if (GS.interactionMode == InteractionType.Examine)
+            {
+                Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, RaycastReach);
+            } else
+            {
+                Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach);
+            }
 
             string hitTag = hitInfo.transform?.tag;
 
-            bool hitInteractable = false, hitSittable = false, hitDoor = false;
+            // Set hit (aka hover) flags, in modes that allow interaction
+            bool hitInteractable = false, hitSittable = false, hitRotatable = false, hitDoor = false;
             if (GS.interactionMode == InteractionType.Default ||
                 GS.interactionMode == InteractionType.Focus ||
                 GS.interactionMode == InteractionType.Monologue)
@@ -102,14 +116,14 @@ namespace StarterAssets
                 hitDoor = hitTag == "Door";
             }
 
-            if (!(hitInteractable || hitSittable || hitDoor))
+            if (!(hitInteractable || hitSittable || hitDoor)) // Reset if nothing hit
             {
                 CursorImage.sprite = DefaultIcon;
                 _selectionOutlineController.FilterByTag = "None";
                 hitInteractable = false;
                 hitSittable = false;
             }
-            else if (hitInteractable)
+            else if (hitInteractable) // Highlight for exaxminable objects
             {
                 CursorImage.sprite = InspectIcon;
                 _selectionOutlineController.FilterByTag = "Interactable";
@@ -117,19 +131,32 @@ namespace StarterAssets
                 _selectionOutlineController.OccludedColor = InteractableOccludedColor;
                 _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
             }
-            else if (hitSittable) {
+            else if (hitSittable)
+            { // Highlight for sittable objects
                 CursorImage.sprite = SitIcon;
                 _selectionOutlineController.FilterByTag = "Sittable";
                 _selectionOutlineController.OutlineColor = SittableOutlineColor;
                 _selectionOutlineController.OccludedColor = SittableOccludedColor;
                 _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.Whole;
             }
-            else if (hitDoor) {
+            else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
             }
 
+            // Set cursor and hit flag for rotating objects during examination
+            if (GS.interactionMode == InteractionType.Examine)
+            {
+                hitRotatable = hitInfo.transform?.gameObject.layer == layerNumber;
+                UI.SetCursor(hitRotatable || isDragging ? GetRotationIcon() : DefaultUnlocked);
+            }
+
+            // Handle clicks, based on mode and hover status
             if (_input.interact && GS.interactionMode != InteractionType.Paused) {
-				if (hitInteractable)
+                if (hitRotatable)
+                {
+                    isDragging = true;
+                }
+                else if (hitInteractable)
                 {
                     BeginExamination();
                 }
@@ -199,6 +226,10 @@ namespace StarterAssets
                     _input.anyKey = false;
                 }
             }
+            else if (_playerInput.actions["interact"].IsPressed() == false)
+            {
+                isDragging = false;
+            }
 		}
 
         private void BeginExamination()
@@ -216,21 +247,14 @@ namespace StarterAssets
             startRotation = hitInfo.transform.rotation;
             targetStartRotation = ExamineTarget.transform.rotation;
 
-            Player.LockPlayer();
-            UI.UnlockCursor(RotateIcon);
-
             if (_selectionOutlineController) {
                 _selectionOutlineController.enabled = false;
             }
 
-            Collider currentCollider = currentObject.GetComponent<Collider>();
-            currentCollider.enabled = false;
             currentObject.layer = layerNumber;
             foreach (Transform child in currentObject.transform)
             {
                 child.gameObject.layer = layerNumber;
-                Collider childCollider = child.gameObject.GetComponent<Collider>();
-                if (childCollider) childCollider.enabled = false;
             }
 
             UI.FadeInMatte();
@@ -242,6 +266,9 @@ namespace StarterAssets
             InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
             rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
             rotationAxis = interactableItem.rotationAxis;
+
+            Player.LockPlayer();
+            UI.UnlockCursor(GetRotationIcon());
 
             examineCallback = null;
             examineCallback += () => {
@@ -281,12 +308,10 @@ namespace StarterAssets
 
             examineCallback = null;
             examineCallback += () => {
-                currentObject.GetComponent<Collider>().enabled = true;
                 currentObject.layer = 0;
                 foreach (Transform child in currentObject.transform)
                 {
                     child.gameObject.layer = 0;
-                    // TODO: would we ever actually want to reenable a child collider?
                 }
 
                 currentObject.transform.SetParent(currentParent.transform);
@@ -410,9 +435,9 @@ namespace StarterAssets
 
         public void OnLook(InputValue value)
 		{
-			if (GS.interactionMode == InteractionType.Examine && isReadyToInspect)
+			if (GS.interactionMode == InteractionType.Examine && isReadyToInspect && isDragging)
 			{
-				Vector2 look = value.Get<Vector2>();
+                Vector2 look = value.Get<Vector2>();
 
                 if (rotationAxis == RotationAxis.LeftRight || rotationAxis == RotationAxis.All)
                 {
@@ -420,10 +445,21 @@ namespace StarterAssets
                 } 
                 if (rotationAxis == RotationAxis.UpDown || rotationAxis == RotationAxis.All)
                 {
-                    ExamineTarget.Rotate(Vector3.left * look.y * rotationSpeed, Space.Self);
+                    ExamineTarget.Rotate(-Camera.main.transform.right * look.y * rotationSpeed, Space.World);
                 }
 			}
 		}
+
+        private Texture2D GetRotationIcon() {
+            switch(rotationAxis) {
+                case RotationAxis.LeftRight:
+                    return RotateLeftRight;
+                case RotationAxis.UpDown:
+                    return RotateUpDown;
+                default:
+                    return RotateAllDirections;
+            }
+        }
 
         IEnumerator MoveToTarget(
             GameObject movedObject,

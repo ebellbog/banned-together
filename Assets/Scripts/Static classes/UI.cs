@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class UI
@@ -37,8 +35,13 @@ public static class UI
     {
         HideCursor();
         if (mouseTexture) {
-            Cursor.SetCursor(mouseTexture, new Vector2(32, 32), CursorMode.ForceSoftware);
+            UI.SetCursor(mouseTexture);
         }
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public static void SetCursor(Texture2D mouseTexture)
+    {
+        Cursor.SetCursor(mouseTexture, new Vector2(32, 32), CursorMode.ForceSoftware);
     }
 }
