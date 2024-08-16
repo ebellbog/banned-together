@@ -8,6 +8,8 @@ public class Door : MonoBehaviour
     public string soundEffect;
     private bool isOpen;
 
+    public bool isButton;
+
     void Start()
     {
         gameObject.tag = "Door";
@@ -17,6 +19,9 @@ public class Door : MonoBehaviour
     {
         if (isOpen) return;
         animator.SetTrigger("Open");
+        
+        if (isButton)
+            gameObject.GetComponent<Animator>().SetTrigger("Press");
 
         if (soundEffect != null)
             AudioManager.instance.PlaySFX(soundEffect);

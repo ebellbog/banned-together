@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_NONE
+  - _OVERLAYMODE_HAFTONE
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_STEP
   m_InvalidKeywords:
@@ -24,8 +24,10 @@ Material:
   - _IS_OUTLINE_CLIPPING_NO
   - _NORMALMAP
   - _OUTLINE_NML
+  - _OVERLAYMODE_HALFTONE
   - _SPECGLOSSMAP
   - _USEENVIRONMENTREFLETION_ON
+  - _USESCREENUVS_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -122,7 +124,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HalftoneTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0c021cea0cf2417459ce7fa844118e17, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Hatch1:
@@ -366,9 +368,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HalftoneEdgeOffset: 0.1
+    - _HalftoneEdgeOffset: -0.09
     - _HalftoneSmoothness: 0.3
-    - _HalftoneThreshold: 0.1
+    - _HalftoneThreshold: 0.15
     - _HalftoneToonAffect: 0
     - _HaltonePatternSize: 0
     - _HeightAmplitude: 0.02
@@ -451,10 +453,10 @@ Material:
     - _OutlineType: 0
     - _OutlineVisible: 1
     - _Outline_Width: 0
-    - _OverlayMode: 0
+    - _OverlayMode: 1
     - _OverlayMode1: 0
-    - _OverlayRotation: 0
-    - _OverlayUVTilling: 0
+    - _OverlayRotation: 45
+    - _OverlayUVTilling: 45
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -582,7 +584,7 @@ Material:
     - _UseOutline: 0
     - _UsePureSketch: 0
     - _UseRimLight: 0
-    - _UseScreenUvs: 0
+    - _UseScreenUvs: 1
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadowThreshold: 0

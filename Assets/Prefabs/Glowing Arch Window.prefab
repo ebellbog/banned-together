@@ -281,7 +281,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3110
+  m_VersionIndex: 3113
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -505,15 +505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108495117021955366, guid: 7a63c9abd174b4847a3c0d7ad1f68b07, type: 3}
       propertyPath: m_Color.b
-      value: 0.8301887
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 108495117021955366, guid: 7a63c9abd174b4847a3c0d7ad1f68b07, type: 3}
       propertyPath: m_Color.g
-      value: 0.4259427
+      value: 0.17600012
       objectReference: {fileID: 0}
     - target: {fileID: 108495117021955366, guid: 7a63c9abd174b4847a3c0d7ad1f68b07, type: 3}
       propertyPath: m_Color.r
-      value: 0.34069067
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
