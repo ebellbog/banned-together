@@ -6,9 +6,9 @@ public class Door : MonoBehaviour
 {
     public Animator animator;
     public string soundEffect;
-    private bool isOpen;
-
     public bool isButton;
+
+    private bool isOpen;
 
     void Start()
     {

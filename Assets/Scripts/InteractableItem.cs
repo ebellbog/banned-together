@@ -20,6 +20,7 @@ public class InteractableItem : MonoBehaviour
     public bool useRenderPivot = false;
     public RotationAxis rotationAxis = RotationAxis.All;
     public float scaleOnInteraction = 1.0f;
+    public bool enablePanning = false;
     public StateUpdate[] gameStateUpdates;
 
     public void Awake()

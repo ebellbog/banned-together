@@ -43,15 +43,19 @@ public class FocusManager : MonoBehaviour
     void Update()
     {
         // Update focus percent
+        float newFocusPercent;
         if (starterInputs.focus &&
             (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus)
             && GS.bodyBattery > 0)
         {
-            focusPercent = Math.Min(focusPercent + focusSpeed * Time.deltaTime, 1);
+            newFocusPercent = Math.Min(focusPercent + focusSpeed * Time.deltaTime, 1);
         } else
         {
-            focusPercent = Math.Max(focusPercent - focusSpeed * Time.deltaTime, 0);
+            newFocusPercent = Math.Max(focusPercent - focusSpeed * Time.deltaTime, 0);
         }
+        bool focusDidChange = newFocusPercent != focusPercent;
+        if (!focusDidChange) return;
+        focusPercent = newFocusPercent;
 
         // Logic for entering & exiting focus mode
         if (focusPercent > 0 && GS.interactionMode == InteractionType.Default) {

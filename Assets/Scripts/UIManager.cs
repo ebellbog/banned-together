@@ -2,41 +2,66 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour {
     public CanvasGroup backgroundMatte;
+    public CanvasGroup itemInteractionUI;
     public float FadeSpeed = 1f;
 
-    private bool isFadingIn = false;
+    private bool isFadingInMatte = false;
+    private bool isFadingInUI = false;
 
-    public void FadeInMatte() {
-        isFadingIn = true;
+    public void FadeInMatte()
+    {
+        isFadingInMatte = true;
+    }
+    public void FadeOutMatte()
+    {
+        isFadingInMatte = false;
     }
 
-    public void FadeOutMatte() {
-        isFadingIn = false;
+    public void FadeInInteractionUI()
+    {
+        isFadingInUI = true;
+    }
+    public void FadeOutInteractionUI()
+    {
+        isFadingInUI = false;
     }
 
-    void Update() {
+    void Awake()
+    {
+        backgroundMatte.alpha = 0;
+        itemInteractionUI.alpha = 0;
+    }
+
+    void Update()
+    {
+        incrementFade(backgroundMatte, isFadingInMatte);
+        incrementFade(itemInteractionUI, isFadingInUI);
+    }
+
+    private void incrementFade(CanvasGroup canvasGroup, bool isFadingIn)
+    {
         if (isFadingIn)
         {
-            if (backgroundMatte.alpha < 1)
+            if (canvasGroup.alpha < 1)
             {
-                backgroundMatte.alpha += FadeSpeed * Time.deltaTime;
+                canvasGroup.alpha += FadeSpeed * Time.deltaTime;
             }
             else
             {
-                backgroundMatte.blocksRaycasts = true;
-                backgroundMatte.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.interactable = true;
             }
         }
         else
         {
-            if (backgroundMatte.alpha > 0)
+            if (canvasGroup.alpha > 0)
             {
-                backgroundMatte.alpha -= FadeSpeed * Time.deltaTime;
+                canvasGroup.alpha -= FadeSpeed * Time.deltaTime;
             }
             else
             {
-                backgroundMatte.blocksRaycasts = false;
-                backgroundMatte.interactable = false;
+                canvasGroup.blocksRaycasts = false;
+                canvasGroup.interactable = false;
             }
         }
     }

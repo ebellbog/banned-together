@@ -4,19 +4,21 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using DG.Tweening;
 using System;
-using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 namespace StarterAssets
 {
     public class ItemInteraction : MonoBehaviour
     {
         [Header("Examine mode")]
+        public Camera ExamineCamera;
         public Transform ExamineTarget;
         public float RaycastReach;
         public float rotationSpeed = 7.5f;
         public float pickUpDuration = 0.6f;
         public float putDownDuration = .35f;
         public float SitDistance = 1.5f;
+        public float PanSpeed = 0.02f; 
 
         [Header("Sitting mode")]
         public GameObject weirdLibraryParent; // private until we actually implement this
@@ -55,10 +57,16 @@ namespace StarterAssets
         private Vector3 startScale;
         private Quaternion startRotation;
         private Quaternion targetStartRotation;
-        private Space rotationSpace; // TODO: consider removing
+        
+        [SerializeField]
+        private Vector3? targetStartPosition;
+        private Space rotationSpace;
         private RotationAxis rotationAxis;
         private bool isDragging = false;
+        private bool hitRotatable = false;
         private bool isReadyToInspect = false;
+        private bool isAnimating = false;
+        private bool panningEnabled = false;
 
         private bool readyToStand = false;
         private GameObject currentSeat;
@@ -94,7 +102,7 @@ namespace StarterAssets
             // TODO: replace raycaster in SelectionOutlineController with this one
             if (GS.interactionMode == InteractionType.Examine)
             {
-                Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, RaycastReach);
+                Physics.Raycast(ExamineCamera.ScreenPointToRay(Input.mousePosition), out hitInfo, RaycastReach);
             } else
             {
                 Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, RaycastReach);
@@ -103,7 +111,8 @@ namespace StarterAssets
             string hitTag = hitInfo.transform?.tag;
 
             // Set hit (aka hover) flags, in modes that allow interaction
-            bool hitInteractable = false, hitSittable = false, hitRotatable = false, hitDoor = false;
+            bool hitInteractable = false, hitSittable = false, hitDoor = false;
+            hitRotatable = false;
             if (GS.interactionMode == InteractionType.Default ||
                 GS.interactionMode == InteractionType.Focus ||
                 GS.interactionMode == InteractionType.Monologue)
@@ -146,12 +155,24 @@ namespace StarterAssets
             // Set cursor and hit flag for rotating objects during examination
             if (GS.interactionMode == InteractionType.Examine)
             {
-                hitRotatable = hitInfo.transform?.gameObject.layer == layerNumber;
+                int? hitLayer = hitInfo.transform?.gameObject.layer;
+                hitRotatable = hitLayer == layerNumber;
                 UI.SetCursor(hitRotatable || isDragging ? GetRotationIcon() : DefaultUnlocked);
+
+                if (ZoomManager.GetZoom() >= 1 && !isAnimating)
+                {
+                    RestoreTargetPosition();
+                }
             }
 
             // Handle clicks, based on mode and hover status
             if (_input.interact && GS.interactionMode != InteractionType.Paused) {
+                // Skip code if clicking UI element
+                if (EventSystem.current.currentSelectedGameObject != null) {
+                    _input.interact = false;
+                    return;
+                } 
+
                 if (hitRotatable)
                 {
                     isDragging = true;
@@ -232,6 +253,22 @@ namespace StarterAssets
             }
 		}
 
+        private void RestoreTargetPosition(float duration = 0.6f)
+        {
+            if (targetStartPosition == null || targetStartPosition == ExamineTarget.position) return;
+
+            Debug.Log("Restoring target position");
+            StartCoroutine(MoveForDuration(
+                ExamineTarget.gameObject,
+                targetStartPosition,
+                null,
+                null,
+                duration
+            ));
+
+            targetStartPosition = null;
+        }
+
         private void BeginExamination()
         {
             StopAllCoroutines();
@@ -242,10 +279,13 @@ namespace StarterAssets
 
             currentObject = hitInfo.transform.gameObject;
             currentParent = hitInfo.transform.parent?.gameObject;
+
             startPosition = hitInfo.transform.position;
             startScale = hitInfo.transform.localScale;
             startRotation = hitInfo.transform.rotation;
+
             targetStartRotation = ExamineTarget.transform.rotation;
+            targetStartPosition = ExamineTarget.transform.position;
 
             if (_selectionOutlineController) {
                 _selectionOutlineController.enabled = false;
@@ -258,22 +298,24 @@ namespace StarterAssets
             }
 
             UI.FadeInMatte();
+            UI.FadeInInteractionUI();
 
             isReadyToInspect = false;
             GS.interactionMode = InteractionType.Examine;
 
-
             InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
             rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
             rotationAxis = interactableItem.rotationAxis;
+            panningEnabled = interactableItem.enablePanning;
 
             Player.LockPlayer();
             UI.UnlockCursor(GetRotationIcon());
 
             examineCallback = null;
             examineCallback += () => {
+                isReadyToInspect = true;
                 currentObject.transform.SetParent(ExamineTarget);
-                
+
                 InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
                 interactableItem.UpdateGameState(true);
             };
@@ -304,7 +346,11 @@ namespace StarterAssets
             if (GS.interactionMode != InteractionType.Examine) return;
             StopAllCoroutines();
 
+            RestoreTargetPosition(putDownDuration); // Important that this duration <= putDownDuration
+            ZoomManager.ResetZoom();
+
             UI.FadeOutMatte();
+            UI.FadeOutInteractionUI();
 
             examineCallback = null;
             examineCallback += () => {
@@ -323,11 +369,11 @@ namespace StarterAssets
                     _selectionOutlineController.enabled = true;
                 }
 
-
                 InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
                 interactableItem.UpdateGameState();
 
                 currentObject = null;
+                examineCallback = null;
             };
 
             StartCoroutine(MoveForDuration(currentObject, startPosition, startRotation, startScale, putDownDuration));
@@ -435,17 +481,24 @@ namespace StarterAssets
 
         public void OnLook(InputValue value)
 		{
-			if (GS.interactionMode == InteractionType.Examine && isReadyToInspect && isDragging)
+			if (GS.interactionMode == InteractionType.Examine && isReadyToInspect)
 			{
                 Vector2 look = value.Get<Vector2>();
-
-                if (rotationAxis == RotationAxis.LeftRight || rotationAxis == RotationAxis.All)
+                if (isDragging)
                 {
-                    ExamineTarget.Rotate(Vector3.down * look.x * rotationSpeed, rotationSpace);
-                } 
-                if (rotationAxis == RotationAxis.UpDown || rotationAxis == RotationAxis.All)
+                    if (rotationAxis == RotationAxis.LeftRight || rotationAxis == RotationAxis.All)
+                    {
+                        ExamineTarget.Rotate(Vector3.down * look.x * rotationSpeed, rotationSpace);
+                    } 
+                    if (rotationAxis == RotationAxis.UpDown || rotationAxis == RotationAxis.All)
+                    {
+                        ExamineTarget.Rotate(-Camera.main.transform.right * look.y * rotationSpeed, Space.World);
+                    }
+                } else if (panningEnabled && !isAnimating && hitRotatable && ZoomManager.GetZoom() < 1)
                 {
-                    ExamineTarget.Rotate(-Camera.main.transform.right * look.y * rotationSpeed, Space.World);
+                    ExamineTarget.transform.position = ExamineTarget.transform.position
+                        - Camera.main.transform.right * look.x * PanSpeed
+                        + Camera.main.transform.up * look.y * PanSpeed;
                 }
 			}
 		}
@@ -487,29 +540,32 @@ namespace StarterAssets
 
         IEnumerator MoveForDuration(
             GameObject movedObject,
-            Vector3 targetPosition,
-            Quaternion targetRotation,
-            Vector3 targetScale,
+            Vector3? targetPosition,
+            Quaternion? targetRotation,
+            Vector3? targetScale,
             float duration
         ) {
-
             float counter = 0;
             Vector3 oldPos = movedObject.transform.position;
             Vector3 oldScale = movedObject.transform.localScale;
             Quaternion oldRot = movedObject.transform.rotation;
 
-            while (counter < duration)
+            if (targetPosition != null || targetRotation != null || targetScale != null)
             {
-                counter += Time.deltaTime;
-                float timePercent = counter / duration;
+                isAnimating = true;
+                while (counter < duration)
+                {
+                    counter += Time.deltaTime;
+                    float timePercent = counter / duration;
 
-                movedObject.transform.position = Vector3.Lerp(oldPos, targetPosition, timePercent);
-                movedObject.transform.localScale = Vector3.Lerp(oldScale, targetScale, timePercent);
-                movedObject.transform.rotation = Quaternion.Lerp(oldRot, targetRotation, timePercent);
-                yield return null;
+                    if (targetPosition != null) movedObject.transform.position = Vector3.Lerp(oldPos, (Vector3)targetPosition, timePercent);
+                    if (targetScale != null) movedObject.transform.localScale = Vector3.Lerp(oldScale, (Vector3)targetScale, timePercent);
+                    if (targetRotation != null) movedObject.transform.rotation = Quaternion.Lerp(oldRot, (Quaternion)targetRotation, timePercent);
+                    yield return null;
+                }
+                isAnimating = false;
             }
 
-            isReadyToInspect = true;
             if (examineCallback != null) examineCallback();
             yield return null;
         }

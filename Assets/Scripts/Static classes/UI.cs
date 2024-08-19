@@ -8,10 +8,18 @@ public static class UI
     public static void FadeInMatte() {
         uiManager.FadeInMatte();
     }
-
     public static void FadeOutMatte()
     {
         uiManager.FadeOutMatte();
+    }
+
+    public static void FadeInInteractionUI()
+    {
+        uiManager.FadeInInteractionUI();
+    }
+    public static void FadeOutInteractionUI()
+    {
+        uiManager.FadeOutInteractionUI();
     }
 
     public static void ShowCursor()
