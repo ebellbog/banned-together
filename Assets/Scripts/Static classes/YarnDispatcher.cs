@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -13,20 +14,28 @@ public static class YarnDispatcher
     private static string lastDispatch;
     private static bool lastDispatchWasMonologue;
     private static bool wasInterrupted;
+    private static Dictionary<string, bool> playedTutorials = new Dictionary<string, bool>();
 
-
-    public static bool StartTutorial(string tutorialNode) {
-        if (!tutorialDialogSystem)
+    public static bool StartTutorial(string tutorialNode, bool onlyShowOnce = true) {
+        bool didPlayTutorial;
+        if (onlyShowOnce && playedTutorials.TryGetValue(tutorialNode, out didPlayTutorial))
+        {
+            if (didPlayTutorial) {
+                Debug.LogWarning("Already played tutorial: "+tutorialNode);
+                return false;
+            }
+        }
+        else if (!tutorialDialogSystem)
         {
             Debug.LogWarning("No tutorial dialog system is set");
             return false;
         }
-        if (YarnSpinnerIsActive())
+        else if (YarnSpinnerIsActive())
         {
             Debug.LogWarning($"Skipping tutorial for {tutorialNode} because dialogue is already active");
             return false;
         }
-        if (GS.interactionMode != InteractionType.Default)
+        else if (GS.interactionMode != InteractionType.Default)
         {
             Debug.LogWarning($"Skipping tutorial for {tutorialNode} because the current interaction mode is {GS.interactionMode}");
             return false;
@@ -44,6 +53,7 @@ public static class YarnDispatcher
         lastDispatch = tutorialNode;
         lastDispatchWasMonologue = false;
 
+        playedTutorials[tutorialNode] = true;
         return true;
     }
 

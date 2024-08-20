@@ -7,14 +7,15 @@ using UnityEngine.UI;
 
 public class BodyBatteryManager : MonoBehaviour
 {
+    [Header("Component references")]
     public StarterAssetsInputs starterInputs;
     public FirstPersonController firstPersonController;
     public Image energizedImage;
     public Animator watchAnimator;
     public PostProcessVolume exhaustionEffects;
-    public float exhaustionSpeed = .15f;
-    public float restingSpeed = .3f;
-
+    
+    [Space(10)]
+    [Header("Resource management")]
     [SerializeField]
     private float _energyLevel = 1.0f;
     public float energyLevel
@@ -26,6 +27,9 @@ public class BodyBatteryManager : MonoBehaviour
             return GS.bodyBattery;
         }
     }
+    public float exhaustionSpeed = .15f;
+    public float restingSpeed = .3f;
+
 
     private bool isPulsing = false;
     private bool isAlarming = false;
@@ -63,40 +67,40 @@ public class BodyBatteryManager : MonoBehaviour
             ShowWatch();
         }
 
-        if (
-            starterInputs.focus &&
-            GS.interactionMode == InteractionType.Default &&
-            GS.bodyBattery == 0 &&
-            !didShowTutorial
-        ){
-            starterInputs.anyKey = false;
-            YarnDispatcher.StartTutorial("EnergyDrained");
-            didShowTutorial = true;
-        }
-        else if (starterInputs.focus && GS.interactionMode == InteractionType.Focus)
-        {
-            if (isReady) {
-                GS.bodyBattery = Math.Max(GS.bodyBattery - exhaustionSpeed * Time.deltaTime, 0);
-            }
+        // if (
+        //     starterInputs.focus &&
+        //     GS.interactionMode == InteractionType.Default &&
+        //     GS.bodyBattery == 0 &&
+        //     !didShowTutorial
+        // ){
+        //     starterInputs.anyKey = false;
+        //     YarnDispatcher.StartTutorial("EnergyDrained");
+        //     didShowTutorial = true;
+        // }
+        // else if (starterInputs.focus && GS.interactionMode == InteractionType.Focus)
+        // {
+        //     if (isReady) {
+        //         GS.bodyBattery = Math.Max(GS.bodyBattery - exhaustionSpeed * Time.deltaTime, 0);
+        //     }
 
-            if (GS.bodyBattery == 0)
-            {
-                starterInputs.focus = false;
-                StartDrainedAlarm();
-            }
-            else if (!isVisible)
-            {
-                ShowWatch();
-                StartPulsing();
-                StartCoroutine(SetReadyWithDelay(2.0f));
-            }
-            else {
-                StartPulsing();
-            }
-        } else
-        {
-            StopPulsing();
-        }
+        //     if (GS.bodyBattery == 0)
+        //     {
+        //         starterInputs.focus = false;
+        //         StartDrainedAlarm();
+        //     }
+        //     else if (!isVisible)
+        //     {
+        //         ShowWatch();
+        //         StartPulsing();
+        //         StartCoroutine(SetReadyWithDelay(2.0f));
+        //     }
+        //     else {
+        //         StartPulsing();
+        //     }
+        // } else
+        // {
+        //     StopPulsing();
+        // }
 
         if (GS.isSitting)
         {
