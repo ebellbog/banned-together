@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public enum ThoughtType {
     Intrusive,
@@ -14,6 +15,8 @@ public class ThoughtBubble : MonoBehaviour
     public float FadeSpeed = 2.5f;
     public float scale = 1.0f;
     public ThoughtType thoughtType = ThoughtType.Intrusive;
+    public int firstDay = 0;
+    public int lastDay = 999;
 
     [HideInInspector]
     public GameObject bubbleCanvas;

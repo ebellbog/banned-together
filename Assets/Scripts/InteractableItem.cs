@@ -14,6 +14,7 @@ public enum RotationAxis {
 }
 
 [RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Renderer))]
 public class InteractableItem : MonoBehaviour
 {
     public bool highlightInFocusMode = true;
@@ -22,6 +23,7 @@ public class InteractableItem : MonoBehaviour
     public RotationAxis rotationAxis = RotationAxis.All;
     public float scaleOnInteraction = 1.0f;
     public bool enablePanning = false;
+    public GameObject interactionParent;
     public StateUpdate[] gameStateUpdates;
 
     public void Awake()

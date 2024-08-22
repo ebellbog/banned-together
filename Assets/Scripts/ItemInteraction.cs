@@ -52,7 +52,8 @@ namespace StarterAssets
         private int layerNumber;
 
         private GameObject currentObject;
-        private GameObject currentParent;
+        private GameObject activeObject;
+        private GameObject activeParent;
         private Vector3 startPosition;
         private Vector3 startScale;
         private Quaternion startRotation;
@@ -132,7 +133,7 @@ namespace StarterAssets
                 hitInteractable = false;
                 hitSittable = false;
             }
-            else if (hitInteractable) // Highlight for exaxminable objects
+            else if (hitInteractable) // Highlight for examinable objects
             {
                 CursorImage.sprite = InspectIcon;
                 _selectionOutlineController.FilterByTag = "Interactable";
@@ -229,22 +230,25 @@ namespace StarterAssets
                 {
                     ExitExamination();
                     _input.anyKey = false;
+                    _input.exit = false;
                 } 
                 else if (GS.interactionMode == InteractionType.Tutorial)
                 {
                     YarnDispatcher.SkipToEnd();
                     _input.anyKey = false;
+                    _input.exit = false;
                 }
                 else if (GS.interactionMode == InteractionType.Paused)
                 {
                     PauseManager.instance.ResumeGame();
                     _input.anyKey = false;
+                    _input.exit = false;
                 }
-                else if (_input.exit && GS.interactionMode != InteractionType.Journal)
+                else if (_input.exit)
                 {
-                    PauseManager.instance.PauseGame();
                     _input.exit = false;
                     _input.anyKey = false;
+                    if (GS.interactionMode != InteractionType.Journal) PauseManager.instance.PauseGame();
                 }
             }
             else if (_playerInput.actions["interact"].IsPressed() == false)
@@ -272,17 +276,22 @@ namespace StarterAssets
         private void BeginExamination()
         {
             StopAllCoroutines();
-            if (currentObject) {
-                currentObject.transform.position = startPosition;
-                currentObject.transform.rotation = startRotation;
+            if (activeObject) {
+                activeObject.transform.position = startPosition;
+                activeObject.transform.rotation = startRotation;
             }
 
             currentObject = hitInfo.transform.gameObject;
-            currentParent = hitInfo.transform.parent?.gameObject;
 
-            startPosition = hitInfo.transform.position;
-            startScale = hitInfo.transform.localScale;
-            startRotation = hitInfo.transform.rotation;
+            InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
+            activeObject = interactableItem.interactionParent;
+            if (!activeObject) activeObject = currentObject;
+
+            activeParent = activeObject.transform.parent?.gameObject;
+
+            startPosition = activeObject.transform.position;
+            startScale = activeObject.transform.localScale;
+            startRotation = activeObject.transform.rotation;
 
             targetStartRotation = ExamineTarget.transform.rotation;
             targetStartPosition = ExamineTarget.transform.position;
@@ -291,8 +300,8 @@ namespace StarterAssets
                 _selectionOutlineController.enabled = false;
             }
 
-            currentObject.layer = layerNumber;
-            foreach (Transform child in currentObject.transform)
+            activeObject.layer = layerNumber;
+            foreach (Transform child in activeObject.transform)
             {
                 child.gameObject.layer = layerNumber;
             }
@@ -303,7 +312,6 @@ namespace StarterAssets
             isReadyToInspect = false;
             GS.interactionMode = InteractionType.Examine;
 
-            InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
             rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
             rotationAxis = interactableItem.rotationAxis;
             panningEnabled = interactableItem.enablePanning;
@@ -314,9 +322,7 @@ namespace StarterAssets
             examineCallback = null;
             examineCallback += () => {
                 isReadyToInspect = true;
-                currentObject.transform.SetParent(ExamineTarget);
-
-                InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
+                activeObject.transform.SetParent(ExamineTarget);
                 interactableItem.UpdateGameState(true);
             };
 
@@ -333,7 +339,7 @@ namespace StarterAssets
             }
 
             StartCoroutine(MoveForDuration(
-                currentObject,
+                activeObject,
                 targetPosition,
                 interactableItem.orientToCamera ? ExamineTarget.rotation : startRotation,
                 startScale * interactableItem.scaleOnInteraction,
@@ -354,13 +360,13 @@ namespace StarterAssets
 
             examineCallback = null;
             examineCallback += () => {
-                currentObject.layer = 0;
-                foreach (Transform child in currentObject.transform)
+                activeObject.layer = 0;
+                foreach (Transform child in activeObject.transform)
                 {
                     child.gameObject.layer = 0;
                 }
 
-                currentObject.transform.SetParent(currentParent.transform);
+                activeObject.transform.SetParent(activeParent.transform);
                 ExamineTarget.transform.rotation = targetStartRotation;
 
                 Player.UnlockPlayer();
@@ -372,11 +378,11 @@ namespace StarterAssets
                 InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
                 interactableItem.UpdateGameState();
 
-                currentObject = null;
+                activeObject = null;
                 examineCallback = null;
             };
 
-            StartCoroutine(MoveForDuration(currentObject, startPosition, startRotation, startScale, putDownDuration));
+            StartCoroutine(MoveForDuration(activeObject, startPosition, startRotation, startScale, putDownDuration));
 
             UI.LockCursor();
             GS.interactionMode = YarnDispatcher.YarnSpinnerIsActive() ? InteractionType.Monologue : InteractionType.Default;

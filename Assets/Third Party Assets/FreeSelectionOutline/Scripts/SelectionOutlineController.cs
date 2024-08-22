@@ -165,7 +165,18 @@ public class SelectionOutlineController : MonoBehaviour
     {
         Material TargetMat = new Material(TargetShader);
         bool MainTexFlag = false;
-        string[] attrs = target.sharedMaterial.GetTexturePropertyNames();
+
+        Material sharedMaterial = target.sharedMaterial;
+        string[] attrs;
+        if (sharedMaterial)
+        {
+            attrs = sharedMaterial.GetTexturePropertyNames(); 
+        }
+        else
+        {
+            attrs = new string[0];
+        }
+
         foreach (var c in attrs)
         {
             if (c == "_MainTex")

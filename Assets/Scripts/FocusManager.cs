@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
@@ -54,6 +55,9 @@ public class FocusManager : MonoBehaviour
     private bool canFocus = true;
     private int doShowTutorial = 0;
 
+    private List<Light> allSpotLights;
+    private bool didTurnOffShadows = false;
+
     void Start() {
         initialOutlineWidth = selectionOutlineController.OutlineWidth;
         initialOutlineHardness = selectionOutlineController.OutlineHardness;
@@ -64,6 +68,10 @@ public class FocusManager : MonoBehaviour
         initialFOV = mainCamera.fieldOfView;
 
         particleEffects.Stop();
+
+        allSpotLights = FindObjectsByType<Light>(FindObjectsSortMode.None)
+            .Where(light => light.type == LightType.Spot).ToList();
+        Debug.Log($"Number of spotlights found: {allSpotLights.Count}");
     }
 
     void Update()
@@ -101,6 +109,24 @@ public class FocusManager : MonoBehaviour
         else
         {
             canFocus = true;
+        }
+
+        // Prevent graphic glitch with bloom effect and soft shadows
+        if (isFocusing && !didTurnOffShadows)
+        {
+            foreach(Light spotlight in allSpotLights)
+            {
+                spotlight.shadows = LightShadows.None;
+            }
+            didTurnOffShadows = true;
+        }
+        else if (!isFocusing && focusPercent == 0 && didTurnOffShadows)
+        {
+            foreach(Light spotlight in allSpotLights)
+            {
+                spotlight.shadows = LightShadows.Soft;
+            }
+            didTurnOffShadows = false;
         }
 
         fillAmount = Math.Max((focusTimeLimit - focusTimeDepleted) / focusTimeLimit, 0);
