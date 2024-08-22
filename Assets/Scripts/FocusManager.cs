@@ -116,7 +116,7 @@ public class FocusManager : MonoBehaviour
         {
             foreach(Light spotlight in allSpotLights)
             {
-                spotlight.shadows = LightShadows.None;
+                spotlight.shadows = LightShadows.Hard;
             }
             didTurnOffShadows = true;
         }

@@ -56,6 +56,8 @@ public class SelectionOutlineController : MonoBehaviour
     public float OutlineHardness = 0.85f;
     
     private GameObject[] allInteractableObjects;
+    private GameObject[] allDoorButtons; // TODO: combine with interactable item logic
+
     public StarterAssetsInputs InputSystem;
 
     void Start() {
@@ -71,8 +73,18 @@ public class SelectionOutlineController : MonoBehaviour
                 return r != null && interactableComponent?.highlightInFocusMode == true;
             })
             .ToArray();
+
+        allDoorButtons = GameObject
+            .FindGameObjectsWithTag("Door")
+            .Where(x => {
+                Door doorComponent = x.transform.GetComponent<Door>();
+                if (doorComponent == null || doorComponent.isButton == false) return false;
+                return true;
+            })
+            .ToArray(); 
         
         Debug.Log($"Found {allInteractableObjects.Length} interactable objects");
+        Debug.Log($"Found {allDoorButtons.Length} door buttons");
     }
 
     void OnEnale()
@@ -253,7 +265,11 @@ public class SelectionOutlineController : MonoBehaviour
                     Array.Clear(ChildrenRenderers, 0, ChildrenRenderers.Length);
                 }
                 if (InputSystem.focus) {
-                    ChildrenRenderers = allInteractableObjects.Select(interactable => interactable.transform.GetComponent<Renderer>()).ToArray();
+                    // TODO: cache these renderers
+                    ChildrenRenderers = allDoorButtons
+                        .Select(door => door.transform.GetComponent<Renderer>())
+                        .Concat(allInteractableObjects.Select(interactable => interactable.transform.GetComponent<Renderer>()))
+                        .ToArray();
                 } else {
                     ChildrenRenderers = hit.transform.GetComponentsInChildren<Renderer>();
                 }

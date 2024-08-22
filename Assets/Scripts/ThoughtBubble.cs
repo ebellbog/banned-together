@@ -15,7 +15,7 @@ public class ThoughtBubble : MonoBehaviour
     public float FadeSpeed = 2.5f;
     public float scale = 1.0f;
     public ThoughtType thoughtType = ThoughtType.Intrusive;
-    public int firstDay = 0;
+    public int firstDay = 1;
     public int lastDay = 999;
 
     [HideInInspector]

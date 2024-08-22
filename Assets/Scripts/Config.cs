@@ -6,6 +6,9 @@ using TMPro;
 
 public class Config : MonoBehaviour
 {
+    [Header("Game State")]
+    public int currentDay = 1;
+
     [Header("Yarn Systems")]
     public DialogueRunner internalMonologueSystem;
     public DialogueRunner tutorialDialogSystem;
@@ -30,5 +33,17 @@ public class Config : MonoBehaviour
 
         Player.starterInputs = starterAssetsInputs;
         Player.playerInput = playerInput;
+
+        GS.currentDay = currentDay;
+    }
+
+    void OnValidate()
+    {
+        GS.currentDay = currentDay;
+    }
+
+    void Update()
+    {
+        currentDay = GS.currentDay;
     }
 }

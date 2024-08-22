@@ -23,6 +23,8 @@ public static class GS
     public static int paper2Seen;
     public static int poetryBookSeen;
 
+    public static int currentDay = 0;
+
     private static int _currentLevelIdx = -1;
     public static int currentLevelIdx {
         get { return _currentLevelIdx; }

@@ -81,6 +81,13 @@ public class ThoughtSensor : MonoBehaviour
                 continue;
             }
 
+            // Check whether the thought's date range includes the current day
+            if (thought.firstDay > GS.currentDay || thought.lastDay < GS.currentDay)
+            {
+                thought.FadeOut();
+                continue;
+            }
+
             // Check whether thought is obscured by anything else
             RaycastHit hitInfo;
             if (Physics.Linecast(transform.position, thought.transform.position, out hitInfo)
