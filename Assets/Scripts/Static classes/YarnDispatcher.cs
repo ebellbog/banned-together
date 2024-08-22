@@ -58,16 +58,17 @@ public static class YarnDispatcher
     }
 
     public static void SkipToEnd() {
-        if (GS.interactionMode == InteractionType.Tutorial) {
+        if (GS.interactionMode == InteractionType.Tutorial)
+        {
             Debug.Log("Skipping to end");
             LineView dialogueView = (LineView)tutorialDialogSystem.dialogueViews[0];
             dialogueView.OnContinueClicked();
-        }
+        } 
     }
 
-    public static void Stop()
+    public static void Stop(bool doRetry = true)
     {
-        wasInterrupted = true;
+        wasInterrupted = doRetry;
         if (GS.interactionMode == InteractionType.Tutorial) {
             tutorialDialogSystem.Stop();
         }
@@ -102,11 +103,6 @@ public static class YarnDispatcher
     {
         VoiceOverView voiceOverView = (VoiceOverView)internalMonologueSystem.dialogueViews[1];
         voiceOverView.audioSource.UnPause();
-    }
-
-    public static void EndTutorial() {
-        if (GS.interactionMode == InteractionType.Tutorial)
-            tutorialDialogSystem.Stop();
     }
 
     private static void OnDialogueComplete() {

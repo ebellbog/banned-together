@@ -77,7 +77,7 @@ public class FocusManager : MonoBehaviour
         {
             doShowTutorial = 2;
         }
-        else if (starterInputs.focus && doShowTutorial == 2)
+        if (starterInputs.focus && doShowTutorial == 2)
         {
             YarnDispatcher.StartTutorial("FocusDrained");
             doShowTutorial = -1;
@@ -94,7 +94,7 @@ public class FocusManager : MonoBehaviour
             if (!starterInputs.focus) focusTimeDepleted = Math.Max(focusTimeDepleted - Time.deltaTime * focusRecoveryRate, 0);
             focusPercent = Math.Max(focusPercent - focusSpeed * Time.deltaTime, 0);
 
-            canFocus = false;
+            canFocus = false; // Can't focus while focus is recharging
             if (doShowTutorial == 0) doShowTutorial++;
         }
         else
@@ -121,6 +121,7 @@ public class FocusManager : MonoBehaviour
         else if (scaleAmount > 1)
         {
             scaleAmount = Math.Max(scaleAmount - Time.deltaTime * focusSpeed, 1);
+            if (doShowTutorial != -1) doShowTutorial = 0;
         }
         focusCursor.transform.localScale = isDefaultCursor ? new UnityEngine.Vector3(scaleAmount, scaleAmount, 1) : new UnityEngine.Vector3(1, 1, 1);
 

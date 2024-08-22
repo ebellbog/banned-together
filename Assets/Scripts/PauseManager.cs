@@ -62,7 +62,7 @@ public class PauseManager : MonoBehaviour
         GS.interactionMode = InteractionType.Paused;
 
         Player.LockPlayer();
-    
+
         AudioManager.instance.MuffleMusic();
         UI.FadeInMatte();
         FadeInPauseScreen();

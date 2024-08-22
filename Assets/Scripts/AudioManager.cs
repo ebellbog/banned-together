@@ -97,6 +97,10 @@ public class AudioManager : MonoBehaviour
 
         effectsTrack.Play();
     }
+    public void StopSFX()
+    {
+        if (effectsTrack.isPlaying) effectsTrack.Stop();
+    }
 
     public void MuffleMusic()
     {

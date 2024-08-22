@@ -13,6 +13,7 @@ public enum RotationAxis {
     All, LeftRight, UpDown,
 }
 
+[RequireComponent(typeof(Collider))]
 public class InteractableItem : MonoBehaviour
 {
     public bool highlightInFocusMode = true;
