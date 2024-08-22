@@ -130557,7 +130557,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8634998132991076042}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -20,10 +20,7 @@ public static class YarnDispatcher
         bool didPlayTutorial;
         if (onlyShowOnce && playedTutorials.TryGetValue(tutorialNode, out didPlayTutorial))
         {
-            if (didPlayTutorial) {
-                Debug.LogWarning("Already played tutorial: "+tutorialNode);
-                return false;
-            }
+            if (didPlayTutorial) return false;
         }
         else if (!tutorialDialogSystem)
         {

@@ -12,6 +12,7 @@ public class FocusManager : MonoBehaviour
     public Image focusCursor;
     public ParticleSystem particleEffects;
     public PostProcessVolume postprocessVolume;
+    public SelectionOutlineController selectionOutlineController;
 
     [Space(10)]
     [Header("Resource management")]
@@ -38,7 +39,6 @@ public class FocusManager : MonoBehaviour
     public string defaultCursorName;
 
     private Camera mainCamera;
-    private SelectionOutlineController selectionOutlineController;
 
     private float initialFOV;
     private float initialOutlineWidth;
@@ -55,7 +55,6 @@ public class FocusManager : MonoBehaviour
     private int doShowTutorial = 0;
 
     void Start() {
-        selectionOutlineController = GetComponent<SelectionOutlineController>();
         initialOutlineWidth = selectionOutlineController.OutlineWidth;
         initialOutlineHardness = selectionOutlineController.OutlineHardness;
 
@@ -70,8 +69,10 @@ public class FocusManager : MonoBehaviour
     void Update()
     {
         bool isFocusing = starterInputs.focus && canFocus && 
+            (allowSpendingBodyBattery || GS.bodyBattery > 0) &&
             (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus);
-        bool isDefaultCursor = focusCursor.sprite.name == defaultCursorName;  // TODO: don't hard code default sprite name
+
+        bool isDefaultCursor = focusCursor.sprite.name == defaultCursorName;
 
         if (!starterInputs.focus && doShowTutorial > 0)
         {

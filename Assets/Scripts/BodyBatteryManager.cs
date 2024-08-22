@@ -27,28 +27,45 @@ public class BodyBatteryManager : MonoBehaviour
             return GS.bodyBattery;
         }
     }
+
     public float exhaustionSpeed = .15f;
-    public float restingSpeed = .3f;
+    // public float restingSpeed = .3f;
 
+    public static BodyBatteryManager Main { get; private set; }
 
+    private bool isDraining = false;
     private bool isPulsing = false;
     private bool isAlarming = false;
     private bool isVisible = false;
     private bool isReady = false;
-    private bool didShowTutorial = false;
+    // private bool didShowTutorial = false;
+
     private float exhaustionEffectLevel = 0;
     private float effectTransitionSpeed = 1.0f;
+
+    void Awake()
+    {
+        Main = this;
+    }
 
     void Start()
     {
         _energyLevel = energyLevel;
+
     }
 
     void Update()
     {
         energizedImage.fillAmount = GS.bodyBattery;
 
-        if (GS.bodyBattery == 0) {
+        if (isDraining && isReady)
+        {
+            energyLevel = Math.Max(energyLevel - exhaustionSpeed * Time.deltaTime, 0);
+        }
+
+        // Animate postprocessing effect
+        if (energyLevel == 0) {
+            StartDrainedAlarm();
             exhaustionEffectLevel = Math.Min(exhaustionEffectLevel + effectTransitionSpeed * Time.deltaTime, 1);
         } else {
             exhaustionEffectLevel = Math.Max(exhaustionEffectLevel - effectTransitionSpeed * Time.deltaTime, 0);
@@ -57,14 +74,15 @@ public class BodyBatteryManager : MonoBehaviour
 
         // Show & hide watch based on mode, even when not pressing focus
         if (
-            GS.interactionMode == InteractionType.Journal ||
-            GS.interactionMode == InteractionType.Examine ||
-            GS.interactionMode == InteractionType.Tutorial ||
+            // GS.interactionMode == InteractionType.Journal ||
+            // GS.interactionMode == InteractionType.Examine ||
+            // GS.interactionMode == InteractionType.Tutorial ||
             GS.interactionMode == InteractionType.Paused) {
-            // TODO: think through how to handle this in drained state
             HideWatch();
-        } else if (GS.bodyBattery < 1) {
+        }
+        else if (isDraining || energyLevel < 1) {
             ShowWatch();
+            if (energyLevel < .8) YarnDispatcher.StartTutorial("EnergyDraining");
         }
 
         // if (
@@ -102,19 +120,38 @@ public class BodyBatteryManager : MonoBehaviour
         //     StopPulsing();
         // }
 
-        if (GS.isSitting)
+        // if (GS.isSitting)
+        // {
+        //     StopDrainedAlarm();
+        //     GS.bodyBattery = Math.Min(GS.bodyBattery + restingSpeed * Time.deltaTime, 1);
+
+        //     if (GS.bodyBattery == 1) {
+        //         if (isReady) {
+        //             StartCoroutine(HideAfterDelay(1.5f));
+        //         }
+        //         isReady = false;
+        //     }
+
+        //     didShowTutorial = true; // don't tutorialize if player has already figured it out
+        // }
+    }
+
+    public void StartDrainingBattery()
+    {
+        if (!isDraining)
         {
-            StopDrainedAlarm();
-            GS.bodyBattery = Math.Min(GS.bodyBattery + restingSpeed * Time.deltaTime, 1);
-
-            if (GS.bodyBattery == 1) {
-                if (isReady) {
-                    StartCoroutine(HideAfterDelay(1.5f));
-                }
-                isReady = false;
-            }
-
-            didShowTutorial = true; // don't tutorialize if player has already figured it out
+            isDraining = true;
+            if (energyLevel > 0) StartPulsing();
+            StartCoroutine(SetReadyWithDelay(1.5f));
+        }
+    }
+    public void StopDrainingBattery()
+    {
+        if (isDraining)
+        {
+            StopPulsing();
+            isDraining = false;
+            isReady = false;
         }
     }
 
@@ -140,15 +177,14 @@ public class BodyBatteryManager : MonoBehaviour
         return isReady;
     }
 
-    public void StartPulsing()
+    private void StartPulsing()
     {
         if (!isPulsing) {
             watchAnimator.SetTrigger("Pulse");
             isPulsing = true;
         }
     }
-
-    public void StopPulsing()
+    private void StopPulsing()
     {
         if (isPulsing) {
             watchAnimator.SetTrigger("Default");
@@ -156,9 +192,9 @@ public class BodyBatteryManager : MonoBehaviour
         }
     }
 
-    public void StartDrainedAlarm()
+    private void StartDrainedAlarm()
     {
-        if (isPulsing && !isAlarming) {
+        if (!isAlarming) {
             watchAnimator.SetTrigger("Drained");
             AudioManager.instance.SlowMusic();
             firstPersonController.MoveSpeed = 2f;
@@ -167,8 +203,7 @@ public class BodyBatteryManager : MonoBehaviour
             isAlarming = true;
         }
     }
-
-    public void StopDrainedAlarm()
+    private void StopDrainedAlarm()
     {
         if (isAlarming) {
             watchAnimator.SetTrigger("Default");

@@ -8,6 +8,7 @@ public class ThoughtSensor : MonoBehaviour
     public float MaxDistance  = 12.0f;
     public float ViewAngle = 16.0f;
     public bool ShowThoughts = true;
+    public bool AlwaysShowDarkThoughts = true;
 
     private ThoughtBubble[] allThoughts;
 
@@ -24,6 +25,7 @@ public class ThoughtSensor : MonoBehaviour
             GS.interactionMode == InteractionType.Focus
         ) && !GS.isSitting;
 
+        int darkThoughtsVisible = 0;
         foreach (ThoughtBubble thought in allThoughts) {
             if (thought.isActiveAndEnabled == false) continue;
             Transform thoughtTransform = thought.gameObject.transform;
@@ -46,13 +48,17 @@ public class ThoughtSensor : MonoBehaviour
             // Filter for intrusive thoughts
             if (GS.interactionMode == InteractionType.Default &&
                 GS.bodyBattery > 0 &&
-                thought.thoughtType != ThoughtType.Intrusive)
-            {
+                (
+                    thought.thoughtType == ThoughtType.Focus ||
+                    (AlwaysShowDarkThoughts == false && thought.thoughtType == ThoughtType.Dark)
+                )
+            ){
                 thought.FadeOut();
                 continue;
             }
 
             // Filter for dark thoughts
+            // TODO: reconsider how to differentiate this experience better, if dark thoughts are always showing
             if (GS.interactionMode == InteractionType.Default &&
                 GS.bodyBattery == 0 &&
                 thought.thoughtType != ThoughtType.Dark)
@@ -84,9 +90,19 @@ public class ThoughtSensor : MonoBehaviour
                     thought.InstantiateBubble(BubbleCanvas);
                 }
                 thought.FadeIn();
+                if (thought.thoughtType == ThoughtType.Dark)
+                    darkThoughtsVisible++;
             } else {
                 thought.FadeOut();
             }
+        }
+        if (darkThoughtsVisible > 0)
+        {
+            BodyBatteryManager.Main.StartDrainingBattery();
+        }
+        else
+        {
+            BodyBatteryManager.Main.StopDrainingBattery();
         }
     }
 }
