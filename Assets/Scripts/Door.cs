@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     public Animator animator;
     public string soundEffect;
     public bool isButton;
+    public bool isLocked;
 
     private bool isOpen;
 
@@ -18,15 +19,21 @@ public class Door : MonoBehaviour
     public void Open()
     {
         if (isOpen) return;
-        animator.SetTrigger("Open");
-        
-        if (isButton)
-            gameObject.GetComponent<Animator>().SetTrigger("Press");
+
+        if (!isLocked)
+        {
+            animator.SetTrigger("Open");
+
+            gameObject.tag = "Untagged";
+            isOpen = true;
+
+            if (isButton)
+                gameObject.GetComponent<Animator>().SetTrigger("Press");
+        }        
 
         if (soundEffect != null)
             AudioManager.instance.PlaySFX(soundEffect);
 
-        gameObject.tag = "Untagged";
-        isOpen = true;
+        
     }
 }
