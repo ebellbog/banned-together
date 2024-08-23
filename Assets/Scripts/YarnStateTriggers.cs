@@ -28,16 +28,13 @@ public class YarnStateTriggers : MonoBehaviour
 {
     public List<StateTrigger> triggers;
 
-    void Awake()
+    void Update()
     {
         if (GS.yarnStateTriggers == null)
         {
             GS.yarnStateTriggers = triggers;
         }
-    }
 
-    void Update()
-    {
         for(int i = GS.yarnStateTriggers.Count - 1; i >= 0; i--)
         {
             StateTrigger trigger = GS.yarnStateTriggers[i];

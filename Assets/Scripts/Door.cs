@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Reflection;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     public string soundEffect;
     public bool isButton;
     public bool isLocked;
+    public string statePropertyName;
 
     private bool isOpen;
 
@@ -34,6 +35,21 @@ public class Door : MonoBehaviour
         if (soundEffect != null)
             AudioManager.instance.PlaySFX(soundEffect);
 
+        if (statePropertyName != null && statePropertyName.Length > 0)
+        { 
+            Type staticClassType = typeof(GS); 
+            FieldInfo fieldInfo = staticClassType.GetField(statePropertyName, BindingFlags.Static | BindingFlags.Public);
+
+            if (fieldInfo != null)
+            {
+                fieldInfo.SetValue(null, 1);
+                Debug.Log($"Set property {statePropertyName} of game state to 1");
+            }
+            else
+            {
+                Debug.Log($"Couldn't find property {statePropertyName} on game state");
+            }
+        }
         
     }
 }

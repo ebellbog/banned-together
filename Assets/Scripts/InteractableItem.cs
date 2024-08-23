@@ -24,6 +24,7 @@ public class InteractableItem : MonoBehaviour
     public float scaleOnInteraction = 1.0f;
     public bool enablePanning = false;
     public GameObject interactionParent;
+    public string journalEntry;
     public StateUpdate[] gameStateUpdates;
 
     public void Awake()

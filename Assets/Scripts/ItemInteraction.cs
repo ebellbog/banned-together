@@ -378,6 +378,8 @@ namespace StarterAssets
                 InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
                 interactableItem.UpdateGameState();
 
+                JournalManager.Main.AddToJournal(interactableItem.journalEntry);
+
                 activeObject = null;
                 examineCallback = null;
             };

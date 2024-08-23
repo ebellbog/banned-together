@@ -99,9 +99,10 @@ public class LevelLoader : MonoBehaviour
 
     public void StartNextDay()
     {
+        StartCoroutine(LoadLevel(GS.currentSceneIdx));
         GS.ResetDaily();
         GS.currentDay++;
-        StartCoroutine(LoadLevel(GS.currentSceneIdx));
+        JournalManager.Main.AddDayBreak();
         // AudioManager.instance.ResetMusicEffects();
     }
 

@@ -69,7 +69,10 @@ public class BodyBatteryManager : MonoBehaviour
 
         // Show & hide watch based on mode, even when not pressing focus
         if (
-            GS.interactionMode == InteractionType.Paused) {
+            GS.interactionMode == InteractionType.Paused ||
+            GS.interactionMode == InteractionType.Monologue ||
+            GS.interactionMode == InteractionType.Tutorial)
+        {
             StopPulsing();
             isAlarming = false; // TODO: handle these transitions better
             HideWatch();
