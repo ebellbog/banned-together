@@ -122,7 +122,7 @@ public static class YarnDispatcher
         }
         if (GS.interactionMode != InteractionType.Default && GS.interactionMode != InteractionType.Examine)
         {
-            Debug.LogWarning($"Skipping tutorial for {monologueNode} because the current interaction mode is {GS.interactionMode}");
+            Debug.LogWarning($"Skipping monologue for {monologueNode} because the current interaction mode is {GS.interactionMode}");
             return false;
         }
 

@@ -14,17 +14,27 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1.0f;
     public string[] defaultMusicForLevel;
     public TextMeshProUGUI skipText;
+    public static LevelLoader current {get; private set;}
 
-    public void Start()
+    void Awake()
     {
-        if (GS.currentLevelIdx < 0)
+        current = this;
+    }
+
+    void Start()
+    {
+        if (GS.currentSceneIdx < 0)
         {
-            GS.Reset();
-            GS.currentLevelIdx = SceneManager.GetActiveScene().buildIndex;
+            GS.ResetAll();
+            GS.currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
         }
-        if (defaultMusicForLevel.Length > GS.currentLevelIdx)
+        if (defaultMusicForLevel.Length > GS.currentSceneIdx)
         {
-            AudioManager.instance.CrossfadeMusic(defaultMusicForLevel[GS.currentLevelIdx]);
+            AudioManager.instance.CrossfadeMusic(defaultMusicForLevel[GS.currentSceneIdx]);
+        }
+        else
+        {
+            Debug.Log("No default music for level");
         }
         if (skipText) skipText.enabled = false;
     }
@@ -86,9 +96,16 @@ public class LevelLoader : MonoBehaviour
 
     public void StartGame()
     {
-        GS.Reset();
+        GS.ResetAll();
         LoadNextLevel();
         StartCoroutine(_StartGame());
+    }
+
+    public void StartNextDay()
+    {
+        GS.ResetDaily();
+        GS.currentDay++;
+        StartCoroutine(LoadLevel(GS.currentSceneIdx));
     }
 
     IEnumerator _StartGame()
@@ -105,6 +122,6 @@ public class LevelLoader : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex, loadAdditively ? LoadSceneMode.Additive : LoadSceneMode.Single);
-        GS.currentLevelIdx = levelIndex;
+        GS.currentSceneIdx = levelIndex;
     }
 }

@@ -118,11 +118,11 @@ namespace StarterAssets
                 GS.interactionMode == InteractionType.Focus ||
                 GS.interactionMode == InteractionType.Monologue)
             {
-                if (GS.interactionMode != InteractionType.Monologue)
-                {
-                    hitInteractable = hitTag == "Interactable";
-                    hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
-                }
+                // if (GS.interactionMode != InteractionType.Monologue)
+                // {
+                hitInteractable = hitTag == "Interactable";
+                hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
+                // }
                 hitDoor = hitTag == "Door";
             }
 

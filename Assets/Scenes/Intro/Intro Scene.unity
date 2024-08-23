@@ -45742,7 +45742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].clip
@@ -45779,6 +45779,22 @@ PrefabInstance:
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.data[1].name
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b64b00e9af25cd41b480e51befc8133, type: 3}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[2].name
+      value: StoneDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 24d630a22b439304683c8dd428f5a9db, type: 3}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[3].name
+      value: LockedDoor
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].volumeAdjustment
@@ -90136,17 +90152,6 @@ Transform:
   - {fileID: 1418299936}
   m_Father: {fileID: 1676418886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422009740 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3510359332624250329, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-  m_PrefabInstance: {fileID: 745696534}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb87ae987c60e9d4f8346202d271648d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1423235153
 GameObject:
   m_ObjectHideFlags: 0
@@ -100819,7 +100824,7 @@ PrefabInstance:
     - target: {fileID: 8881547451600958215, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
       propertyPath: dialogueViews.Array.data[1]
       value: 
-      objectReference: {fileID: 1422009740}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -132592,6 +132597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f72b850ff851d48b0b5d0300da8b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentDay: 1
   internalMonologueSystem: {fileID: 1070819352}
   tutorialDialogSystem: {fileID: 0}
   monologueTextMesh: {fileID: 716546361}

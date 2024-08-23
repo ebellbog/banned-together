@@ -16,6 +16,7 @@ namespace StarterAssets
 		public bool interact;
 		public bool focus;
 		public bool journal;
+		public bool sleep;
 		public bool exit;
 		public bool anyKey;
 
@@ -67,6 +68,10 @@ namespace StarterAssets
 			ExitInput(value.isPressed);
 		}
 
+		public void OnSleep(InputValue value) {
+			SleepInput(value.isPressed);
+		}
+
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
@@ -112,6 +117,11 @@ namespace StarterAssets
 		public void ExitInput(bool newExitState)
 		{
 			exit = newExitState;
+		}
+
+		public void SleepInput(bool newSleepState)
+		{
+			sleep = newSleepState;
 		}
 
 		public void SprintInput(bool newSprintState)

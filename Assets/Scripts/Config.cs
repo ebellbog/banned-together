@@ -33,13 +33,11 @@ public class Config : MonoBehaviour
 
         Player.starterInputs = starterAssetsInputs;
         Player.playerInput = playerInput;
-
-        GS.currentDay = currentDay;
     }
 
     void OnValidate()
     {
-        GS.currentDay = currentDay;
+        if (GS.interactionMode == InteractionType.Paused) GS.currentDay = currentDay;
     }
 
     void Update()

@@ -17,9 +17,9 @@ public enum RotationAxis {
 [RequireComponent(typeof(Renderer))]
 public class InteractableItem : MonoBehaviour
 {
-    public bool highlightInFocusMode = true;
+    public bool highlightInFocusMode = false;
     public bool orientToCamera = false;
-    public bool useRenderPivot = false;
+    public bool useRenderPivot = true;
     public RotationAxis rotationAxis = RotationAxis.All;
     public float scaleOnInteraction = 1.0f;
     public bool enablePanning = false;

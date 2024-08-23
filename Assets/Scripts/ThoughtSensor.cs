@@ -103,7 +103,7 @@ public class ThoughtSensor : MonoBehaviour
                 thought.FadeOut();
             }
         }
-        if (darkThoughtsVisible > 0)
+        if (darkThoughtsVisible > 0 && GS.interactionMode == InteractionType.Default)
         {
             BodyBatteryManager.Main.StartDrainingBattery();
         }

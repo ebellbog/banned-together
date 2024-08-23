@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlaySFX(string sfxName) {
-        if (effectsTrack.isPlaying) return;
+        if (effectsTrack.isPlaying) StopSFX();
 
         AudioInfo? infoOrNull = soundEffectClips.FirstOrDefault(a => a.name == sfxName || a.clip.name == sfxName); 
         if (infoOrNull == null) {
