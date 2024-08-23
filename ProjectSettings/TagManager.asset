@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Sittable
   - Door
+  - Bookshelf
   layers:
   - Default
   - TransparentFX

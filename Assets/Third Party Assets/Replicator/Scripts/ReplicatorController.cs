@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System;
+using System.Linq;
 
 namespace Replicator
 {
@@ -78,6 +77,9 @@ namespace Replicator
         public bool twistEnable;
         private Vector3 twistAxis;
 
+        //extras
+        private ReplicatorExtras replicatorExtras;
+
         public bool DeformValuesChanged = false;
 
         public void Initialize(ModificationValues modificationValues, ShapeValues shapeValues, DeformValues deformValues)
@@ -132,6 +134,14 @@ namespace Replicator
 
         private void Update()
         {
+            if (replicatorExtras == null) replicatorExtras = GetComponent<ReplicatorExtras>();
+            if (replicatorExtras)
+            {
+                int siblingIdx = transform.parent.parent.GetSiblingIndex();
+                if (replicatorExtras.useSequentialRandom)
+                    randomSeed = transform.parent.parent.GetSiblingIndex();
+            }
+
             ApplyValues();
 
             // If the animation component exists
@@ -154,7 +164,10 @@ namespace Replicator
                     //Arranger.LookAt(replicatedObjectInstances, lookAt,objectRotationOffset);
                     Arranger.OffsetScaleInspector(replicatedObjectInstances, objectScaleOffsetXYZ, originalShapeScales,objectScaleOffset);
                     Arranger.ModifyRandomScaleInspector(replicatedObjectInstances, randomSeed, objectScaleRandomXYZ, objectScaleRandom);
-                    Arranger.ModifyObjectsInspector(replicatedObjectInstances, objectPositionOffset, objectRotationOffset, objectPositionRandom, objectRotationRandom, randomSeed, originalShapePositions, originalShapeRotations);
+                    if (replicatorExtras == null || replicatorExtras.lockRotation == false)
+                    {
+                        Arranger.ModifyObjectsInspector(replicatedObjectInstances, objectPositionOffset, objectRotationOffset, objectPositionRandom, objectRotationRandom, randomSeed, originalShapePositions, originalShapeRotations);
+                    }
                     ArrangeObjects();
                     Arranger.ModifyRandomPosition(replicatedObjectInstances, randomSeed, objectPositionRandom);
                     if (noiseEnable == true || twistEnable == true)
@@ -168,7 +181,10 @@ namespace Replicator
                 else if (lookAt != null)
                 {
                     //apply modifications
-                    Arranger.ModifyRotation(replicatedObjectInstances, lookAt, objectRotationOffset, objectRotationRandom, randomSeed);
+                    if (replicatorExtras == null || replicatorExtras.lockRotation == false)
+                    {
+                        Arranger.ModifyRotation(replicatedObjectInstances, lookAt, objectRotationOffset, objectRotationRandom, randomSeed);
+                    }
                     Arranger.OffsetScaleInspector(replicatedObjectInstances, objectScaleOffsetXYZ,originalShapeScales, objectScaleOffset);
                     Arranger.ModifyRandomScaleInspector(replicatedObjectInstances, randomSeed, objectScaleRandomXYZ, objectScaleRandom);
                     //Arranger.ModifyObjects(objectsToModify, objectPositionOffset, objectRotationOffset, objectPositionRandom, objectRotationRandom, randomSeed);
@@ -186,13 +202,27 @@ namespace Replicator
             }
         }
 
+        private void Shuffle<T>(List<T> list, int seed)
+        {
+            System.Random rng = new System.Random(seed);
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
         void ArrangeObjects()
         {
-            List<GameObject> objectsToArrange = new List<GameObject>();
+            List<GameObject> objectsToArrange = new List<GameObject>(replicatedObjectInstances);
+            Shuffle(objectsToArrange, randomSeed);
 
-            objectsToArrange = replicatedObjectInstances;
+            if (replicatorExtras) gridSize = replicatorExtras.gridSize;
 
-            //Debug.Log("rearranging "+replicatedObjects.Count +" objects into "+currentReplicatorShape);
             switch (currentReplicatorShape)
             {
                 case ReplicatorShape.Line:
