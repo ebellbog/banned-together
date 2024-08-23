@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         if (instance == null) instance = this;
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
     }
 
     public void CrossfadeMusic(string newMusicName, float delay = 0) {

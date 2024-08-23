@@ -45797,6 +45797,10 @@ PrefabInstance:
       value: LockedDoor
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: musicClips.Array.data[1].volumeAdjustment
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].volumeAdjustment
       value: -0.5
       objectReference: {fileID: 0}
@@ -101618,37 +101622,6 @@ Transform:
   - {fileID: 1454187073}
   m_Father: {fileID: 775842421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1625000314
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1625000315}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1625000315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625000314}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5548447, y: -1.3181884, z: -10.326173}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625959361
 GameObject:
   m_ObjectHideFlags: 0
@@ -132610,6 +132583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDay: 1
+  hideBooks: 0
   internalMonologueSystem: {fileID: 1070819352}
   tutorialDialogSystem: {fileID: 0}
   monologueTextMesh: {fileID: 716546361}
@@ -132629,4 +132603,3 @@ SceneRoots:
   - {fileID: 1611622346}
   - {fileID: 27879897}
   - {fileID: 1162640190}
-  - {fileID: 1625000315}

@@ -46,10 +46,10 @@ public class LevelLoader : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Intro Scene")
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Quit();
-            }
+            // if (Input.GetKeyDown(KeyCode.Escape))
+            // {
+            //     Quit();
+            // }
             if (Input.anyKeyDown && YarnDispatcher.YarnSpinnerIsActive())
             {
                 if ((bool)skipText?.enabled)
@@ -102,6 +102,7 @@ public class LevelLoader : MonoBehaviour
         GS.ResetDaily();
         GS.currentDay++;
         StartCoroutine(LoadLevel(GS.currentSceneIdx));
+        // AudioManager.instance.ResetMusicEffects();
     }
 
     IEnumerator _StartGame()
