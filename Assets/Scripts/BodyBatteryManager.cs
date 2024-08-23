@@ -81,7 +81,6 @@ public class BodyBatteryManager : MonoBehaviour
 
         // Animate postprocessing effect
         if (energyLevel == 0) {
-            starterInputs.sprint = false; // can't sprint when fatigued
             StartDrainedAlarm();
             if (GS.interactionMode == InteractionType.Default)
             {

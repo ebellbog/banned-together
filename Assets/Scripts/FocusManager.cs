@@ -78,7 +78,11 @@ public class FocusManager : MonoBehaviour
     {
         bool isFocusing = starterInputs.focus && canFocus && 
             (allowSpendingBodyBattery || GS.bodyBattery > 0) &&
-            (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Focus);
+            (
+                GS.interactionMode == InteractionType.Default ||
+                GS.interactionMode == InteractionType.Focus ||
+                GS.interactionMode == InteractionType.Monologue
+            );
 
         bool isDefaultCursor = focusCursor.sprite.name == defaultCursorName;
 

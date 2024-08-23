@@ -45808,6 +45808,18 @@ PrefabInstance:
       propertyPath: musicClips.Array.data[4].volumeAdjustment
       value: -0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[0].volumeAdjustment
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[2].volumeAdjustment
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[3].volumeAdjustment
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8644326674742428020, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: m_Name
       value: Audio

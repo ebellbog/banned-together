@@ -1,12 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using StarterAssets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using Yarn.Unity;
 
 public class LevelLoader : MonoBehaviour
 {

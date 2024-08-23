@@ -60,7 +60,7 @@ public static class GS
         tutorialItems = 0;
         fidgetSpinnerSeen = 0;
 
-        journalContent = "10/22/24 \n \nI'm taking poetry workshop this semester, and I haven't told mom about it. She's always been so excited that I'm majoring in journalism. But sometimes I get off track, and I can't explain it to her, or anyone. Especially when I'm supposed to be doing research, my mind seems to want to go off somewhere else. It would mean a lot if I could really break this disappearing books story for the Birchwood Daily. Even if sometimes I just want to hide away and write a poem. \n 10/23/24";
+        journalContent = "10/22/24 \n \nI'm taking poetry workshop this semester, and I haven't told mom about it. She's always been so excited that I'm majoring in journalism. But sometimes I get off track, and I can't explain it to her, or anyone. Especially when I'm supposed to be doing research, my mind seems to want to go off somewhere else. It would mean a lot if I could really break this disappearing books story for the Birchwood Chronicle. Even if sometimes I just want to hide away and write a poem. \n 10/23/24";
     }
 
     public static void ResetDaily()
