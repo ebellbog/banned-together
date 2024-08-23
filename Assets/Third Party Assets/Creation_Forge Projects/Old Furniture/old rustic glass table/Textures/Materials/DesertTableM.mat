@@ -16,7 +16,6 @@ Material:
   - _OVERLAYMODE_NONE
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_STEP
-  - _USESPECULAR_ON
   m_InvalidKeywords:
   - _USEOUTLINE_ON
   m_LightmapFlags: 4
@@ -197,7 +196,7 @@ Material:
     - _UseScreenUvs: 0
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
-    - _UseSpecular: 1
+    - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _WarpStrength: 0
     - _WarpTextureRotation: 0
