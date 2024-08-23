@@ -54,7 +54,7 @@ public static class GS
     public static void ResetAll()
     {
         ResetDaily();
-        JournalManager.Main.Reset();
+        JournalManager.Main?.Reset();
 
         currentDay = 1;
 
