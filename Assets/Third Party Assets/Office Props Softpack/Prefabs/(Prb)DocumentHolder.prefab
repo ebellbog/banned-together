@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7025839238047306420}
   - component: {fileID: 8359771290185139468}
   - component: {fileID: 7539000320395571474}
-  - component: {fileID: 1107252419934073927}
   m_Layer: 0
   m_Name: documentHolder
   m_TagString: Untagged
@@ -106,26 +105,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.40000004, y: 0.09000002, z: 0.3}
   m_Center: {x: 0.0000019669533, y: 0.045, z: -0.0000009760261}
---- !u!114 &1107252419934073927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5922568409776724930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
-  orientToCamera: 0
-  useRenderPivot: 0
-  rotationAxis: 0
-  scaleOnInteraction: 1
-  enablePanning: 0
-  interactionParent: {fileID: 7908366908966946117}
-  gameStateUpdates: []
 --- !u!1 &7908366908966946117
 GameObject:
   m_ObjectHideFlags: 0
