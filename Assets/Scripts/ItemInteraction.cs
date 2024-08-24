@@ -279,6 +279,7 @@ namespace StarterAssets
             if (activeObject) {
                 activeObject.transform.position = startPosition;
                 activeObject.transform.rotation = startRotation;
+                activeObject.transform.SetParent(activeParent.transform);
             }
 
             currentObject = hitInfo.transform.gameObject;
