@@ -1,3 +1,4 @@
+using System.Collections;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,7 @@ public class ShowJournal : MonoBehaviour
     private StarterAssetsInputs _input;
     private PlayerInput _playerInput;
     private bool viewingJournal = false;
+    private bool isReady = true;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class ShowJournal : MonoBehaviour
         {
             if (viewingJournal) {
                 CloseJournal();
-            } else if (GS.interactionMode == InteractionType.Default) {
+            } else if (GS.interactionMode == InteractionType.Default && isReady) {
                 OpenJournal();
             }
             _input.journal = false;
@@ -41,12 +43,12 @@ public class ShowJournal : MonoBehaviour
     }
 
     void OpenJournal() {
+        GS.interactionMode = InteractionType.Journal;
+        UI.FadeInMatte();
+
         if (!SceneManager.GetSceneByName("Journal Scene").isLoaded) {
             SceneManager.LoadScene("Journal Scene", LoadSceneMode.Additive);
         }
-
-        GS.interactionMode = InteractionType.Journal;
-        UI.FadeInMatte();
 
         _playerInput.actions.FindAction("Move").Disable();
         _playerInput.actions.FindAction("Interact").Disable();
@@ -61,13 +63,21 @@ public class ShowJournal : MonoBehaviour
     }
 
     void CloseJournal() {
-        SceneManager.UnloadSceneAsync("Journal Scene");
-        viewingJournal = false;
+        isReady = false;
+        StartCoroutine(_CloseJournal());
+    }
 
-        if (GS.interactionMode == InteractionType.Paused) return;
+    IEnumerator _CloseJournal() {
+        viewingJournal = false;
         GS.interactionMode = InteractionType.Default;
 
         UI.FadeOutMatte();
+        AudioManager.instance.UnmuffleMusic();
+
+        yield return new WaitForSeconds(1); // Allow time for animating out
+        SceneManager.UnloadSceneAsync("Journal Scene");
+
+        if (GS.interactionMode == InteractionType.Paused) yield return null;
 
         _playerInput.actions.FindAction("Move").Enable();
         _playerInput.actions.FindAction("Interact").Enable();
@@ -75,7 +85,8 @@ public class ShowJournal : MonoBehaviour
 
         UI.LockCursor();
 
-        AudioManager.instance.UnmuffleMusic();
+        isReady = true;
+        yield return null;
     }
 }
 

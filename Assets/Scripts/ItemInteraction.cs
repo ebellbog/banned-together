@@ -369,8 +369,9 @@ namespace StarterAssets
 
                 activeObject.transform.SetParent(activeParent.transform);
                 ExamineTarget.transform.rotation = targetStartRotation;
-
-                Player.UnlockPlayer();
+                
+                if (GS.interactionMode != InteractionType.Journal && GS.interactionMode != InteractionType.Paused)
+                    Player.UnlockPlayer();
 
                 if (_selectionOutlineController) {
                     _selectionOutlineController.enabled = true;
