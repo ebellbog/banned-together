@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 2129922385391926140}
   - component: {fileID: 3847255697728804884}
   - component: {fileID: 7481762782286530745}
+  - component: {fileID: 5604723470017780295}
+  - component: {fileID: 1799853987961700598}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -115,6 +117,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5604723470017780295
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204876407741820626}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -0.0000000018626451, z: 0.0000000018626451}
+--- !u!114 &1799853987961700598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204876407741820626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &245186712607981357
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +170,8 @@ GameObject:
   - component: {fileID: 7413749961163917982}
   - component: {fileID: 490566014687753771}
   - component: {fileID: 6969685397313503034}
+  - component: {fileID: 997274251700583607}
+  - component: {fileID: 3581632703827341743}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -198,6 +244,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &997274251700583607
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245186712607981357}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524587, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -0.0000000023283064, z: 0}
+--- !u!114 &3581632703827341743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245186712607981357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &430860829713807192
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +329,8 @@ GameObject:
   - component: {fileID: 2837253041633026369}
   - component: {fileID: 4640626907929082332}
   - component: {fileID: 5991863534981438615}
+  - component: {fileID: 4265326704221082017}
+  - component: {fileID: 9008994882763478660}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -313,6 +403,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4265326704221082017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466395100016428643}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704278, y: 0.0006524585, z: 0.0043341694}
+  m_Center: {x: 1.6653345e-16, y: -9.313226e-10, z: 0.0000000018626451}
+--- !u!114 &9008994882763478660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466395100016428643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &475740693127623968
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +456,8 @@ GameObject:
   - component: {fileID: 4471619331709550188}
   - component: {fileID: 2255787603079843739}
   - component: {fileID: 4184403251454061726}
+  - component: {fileID: 2898531745188734560}
+  - component: {fileID: 1000717980724661144}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -396,6 +530,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2898531745188734560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475740693127623968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524587, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: -0.0000000018626451, z: 0}
+--- !u!114 &1000717980724661144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475740693127623968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &575014992039839281
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +679,8 @@ GameObject:
   - component: {fileID: 4136585273344812268}
   - component: {fileID: 3970164066921704103}
   - component: {fileID: 13007030662560070}
+  - component: {fileID: 7260629209616623070}
+  - component: {fileID: 9153345207581179220}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -575,6 +753,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7260629209616623070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615942790797439721}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524584, z: 0.004334169}
+  m_Center: {x: 1.110223e-16, y: -0.0000000018626451, z: 0}
+--- !u!114 &9153345207581179220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615942790797439721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &633571045971688893
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +838,8 @@ GameObject:
   - component: {fileID: 6163820866835736836}
   - component: {fileID: 2563807056292968008}
   - component: {fileID: 8947064111634975959}
+  - component: {fileID: 535730986362083551}
+  - component: {fileID: 7997935167074630093}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -690,6 +912,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &535730986362083551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662214578428413288}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 1.110223e-16, y: -0.000000004656613, z: 4.656613e-10}
+--- !u!114 &7997935167074630093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662214578428413288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &664135968161682243
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +965,8 @@ GameObject:
   - component: {fileID: 5147538801424063046}
   - component: {fileID: 648727779733476138}
   - component: {fileID: 6769411763616557896}
+  - component: {fileID: 7511938237205806856}
+  - component: {fileID: 3362395379576910101}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -773,6 +1039,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7511938237205806856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664135968161682243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524585, z: 0.0043341685}
+  m_Center: {x: 2.220446e-16, y: -4.656613e-10, z: 0}
+--- !u!114 &3362395379576910101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664135968161682243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &719070867967537692
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +1138,7 @@ Transform:
   m_GameObject: {fileID: 761663828948769752}
   serializedVersion: 2
   m_LocalRotation: {x: 0.727684, y: -0, z: -0, w: -0.6859125}
-  m_LocalPosition: {x: 3.5527137e-15, y: 0, z: 0.2639443}
+  m_LocalPosition: {x: 3.5527137e-15, y: 0, z: 0.26391375}
   m_LocalScale: {x: 0.8307421, y: 1.4, z: 0.99508137}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -848,6 +1156,8 @@ GameObject:
   - component: {fileID: 8583959309412677208}
   - component: {fileID: 7705854280107856143}
   - component: {fileID: 6941955074317539200}
+  - component: {fileID: 7447437602942097526}
+  - component: {fileID: 7860958232581499600}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -920,6 +1230,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7447437602942097526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762183065472371200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524585, z: 0.0043341713}
+  m_Center: {x: 2.220446e-16, y: -0.0000000027939677, z: 9.313226e-10}
+--- !u!114 &7860958232581499600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762183065472371200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &792686969356827677
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,6 +1347,8 @@ GameObject:
   - component: {fileID: 3818621016488608034}
   - component: {fileID: 1257631824059088543}
   - component: {fileID: 3552992885590115414}
+  - component: {fileID: 8378495703681777362}
+  - component: {fileID: 3865692126220794636}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1067,6 +1421,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8378495703681777362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813894018802979488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245834, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -9.313226e-10, z: 0}
+--- !u!114 &3865692126220794636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813894018802979488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &823739907108350457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1474,8 @@ GameObject:
   - component: {fileID: 8210579637481360554}
   - component: {fileID: 6784501934853024692}
   - component: {fileID: 5073726871734584374}
+  - component: {fileID: 7437986753405939601}
+  - component: {fileID: 4326401705830621171}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1150,6 +1548,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7437986753405939601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823739907108350457}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 1.110223e-16, y: -0.0000000013969839, z: 0}
+--- !u!114 &4326401705830621171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823739907108350457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &835214586990785095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1601,8 @@ GameObject:
   - component: {fileID: 4295969478577209421}
   - component: {fileID: 329675671698313889}
   - component: {fileID: 8843294019104095428}
+  - component: {fileID: 4000066816346943205}
+  - component: {fileID: 8130473116383856625}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1233,6 +1675,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4000066816346943205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835214586990785095}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524585, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -4.656613e-10, z: 0}
+--- !u!114 &8130473116383856625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835214586990785095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &897048052598521426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1760,8 @@ GameObject:
   - component: {fileID: 2727331331423052758}
   - component: {fileID: 7359957820095605444}
   - component: {fileID: 1115530380495998122}
+  - component: {fileID: 6082370214543084072}
+  - component: {fileID: 333231860691955637}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1348,6 +1834,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6082370214543084072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043420707341066460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524585, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -9.313226e-10, z: -0.0000000018626451}
+--- !u!114 &333231860691955637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043420707341066460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1090925799176228818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1887,8 @@ GameObject:
   - component: {fileID: 4954006681007373293}
   - component: {fileID: 4835842956302903962}
   - component: {fileID: 26625005396224896}
+  - component: {fileID: 5358688977912003063}
+  - component: {fileID: 3872956144996221087}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1431,6 +1961,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5358688977912003063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090925799176228818}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524588, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: 8.1490725e-10, z: -0.0000000018626451}
+--- !u!114 &3872956144996221087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090925799176228818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1244572408965524536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +2014,8 @@ GameObject:
   - component: {fileID: 8390780463786807225}
   - component: {fileID: 8960772645151818329}
   - component: {fileID: 1910968608273043781}
+  - component: {fileID: 7242485597420612165}
+  - component: {fileID: 6188841919546133884}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1514,6 +2088,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7242485597420612165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244572408965524536}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704278, y: 0.0006524587, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: 9.313226e-10, z: 0.0000000037252903}
+--- !u!114 &6188841919546133884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244572408965524536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1363927838968981310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +2141,8 @@ GameObject:
   - component: {fileID: 5802647257660262723}
   - component: {fileID: 9189790600431528124}
   - component: {fileID: 448073909657119796}
+  - component: {fileID: 2997691139558917633}
+  - component: {fileID: 6481313745130247468}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1597,6 +2215,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2997691139558917633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363927838968981310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245834, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: -0.0000000018626451, z: -0.0000000037252903}
+--- !u!114 &6481313745130247468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363927838968981310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1370845088422430140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +2268,8 @@ GameObject:
   - component: {fileID: 4156054318288997326}
   - component: {fileID: 4265416257428794171}
   - component: {fileID: 2117273438197863832}
+  - component: {fileID: 3227745805802752928}
+  - component: {fileID: 6758117237695899739}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1680,6 +2342,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3227745805802752928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370845088422430140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704278, y: 0.00065245864, z: 0.0043341694}
+  m_Center: {x: -1.110223e-16, y: -0.0000000055879354, z: 0.0000000037252903}
+--- !u!114 &6758117237695899739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370845088422430140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1515469485937922586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +2459,8 @@ GameObject:
   - component: {fileID: 691303051806602942}
   - component: {fileID: 8388477719395065473}
   - component: {fileID: 184512432097336837}
+  - component: {fileID: 6653677971087522324}
+  - component: {fileID: 2839363984687778799}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1827,6 +2533,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6653677971087522324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648459193433395358}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -0.0000000018626451, z: -0.0000000018626451}
+--- !u!114 &2839363984687778799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648459193433395358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1699055314849209238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +2586,8 @@ GameObject:
   - component: {fileID: 7277472791809432293}
   - component: {fileID: 1909347952545780050}
   - component: {fileID: 4019519276373058602}
+  - component: {fileID: 3253068868701667325}
+  - component: {fileID: 723853017190399465}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -1910,6 +2660,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3253068868701667325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699055314849209238}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 0, y: -0.0000000055879354, z: 0}
+--- !u!114 &723853017190399465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699055314849209238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1717408785770097410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +2777,8 @@ GameObject:
   - component: {fileID: 4756829727729154540}
   - component: {fileID: 5170534861893481440}
   - component: {fileID: 6271029817897261833}
+  - component: {fileID: 4484540367371285368}
+  - component: {fileID: 2391489310001664884}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -2057,6 +2851,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4484540367371285368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864248509286794419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245834, z: 0.004334167}
+  m_Center: {x: 2.220446e-16, y: -2.3283064e-10, z: 0}
+--- !u!114 &2391489310001664884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864248509286794419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &1926480539079147453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +3064,8 @@ GameObject:
   - component: {fileID: 2973361395700383669}
   - component: {fileID: 7742236903457199513}
   - component: {fileID: 6703283863938271058}
+  - component: {fileID: 447353512166517297}
+  - component: {fileID: 2726725772851196140}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -2300,6 +3138,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &447353512166517297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292425613521589619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524585, z: 0.0043341694}
+  m_Center: {x: 1.110223e-16, y: -0.0000000037252903, z: 0}
+--- !u!114 &2726725772851196140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292425613521589619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2344432956703534096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,6 +3223,8 @@ GameObject:
   - component: {fileID: 860714241948771832}
   - component: {fileID: 786749241731341951}
   - component: {fileID: 4086794995525614038}
+  - component: {fileID: 428713549568254486}
+  - component: {fileID: 2745195669048706645}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -2415,6 +3297,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &428713549568254486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379959141210103753}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524585, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: 0, z: 9.313226e-10}
+--- !u!114 &2745195669048706645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379959141210103753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2424011850326392362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +3382,8 @@ GameObject:
   - component: {fileID: 5849718969291190051}
   - component: {fileID: 373151449497176262}
   - component: {fileID: 7868744375963744923}
+  - component: {fileID: 1220416841261747017}
+  - component: {fileID: 7097357254779510466}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -2530,6 +3456,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1220416841261747017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437070710036584264}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.0043341685}
+  m_Center: {x: 2.220446e-16, y: -0.0000000055879354, z: 0}
+--- !u!114 &7097357254779510466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437070710036584264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2447674984566681038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +3541,8 @@ GameObject:
   - component: {fileID: 1046910853084417982}
   - component: {fileID: 3852888863906628743}
   - component: {fileID: 5581293577354483047}
+  - component: {fileID: 8927199613444482405}
+  - component: {fileID: 2387016572875849424}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -2645,6 +3615,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8927199613444482405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2469933823578713628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.0043341704}
+  m_Center: {x: 1.110223e-16, y: -0.0000000018626451, z: 0}
+--- !u!114 &2387016572875849424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2469933823578713628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2527463580618126104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +3700,8 @@ GameObject:
   - component: {fileID: 8709315105196051066}
   - component: {fileID: 1345491800833207841}
   - component: {fileID: 8396313865965021489}
+  - component: {fileID: 3270846373592752376}
+  - component: {fileID: 1372854400087331298}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -2760,6 +3774,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3270846373592752376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534924648488590165}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524583, z: 0.0043341685}
+  m_Center: {x: 3.330669e-16, y: 0, z: 0}
+--- !u!114 &1372854400087331298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534924648488590165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2569135933431567693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +3987,8 @@ GameObject:
   - component: {fileID: 7362419761456014914}
   - component: {fileID: 4891639934359272931}
   - component: {fileID: 1708761135395780105}
+  - component: {fileID: 3277552917192561305}
+  - component: {fileID: 8546853762369457244}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3003,6 +4061,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3277552917192561305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836479478672654549}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245875, z: 0.0043341713}
+  m_Center: {x: 3.330669e-16, y: -0.0000000037252903, z: 0}
+--- !u!114 &8546853762369457244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836479478672654549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2949203868131459940
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +4114,8 @@ GameObject:
   - component: {fileID: 5043999792448405801}
   - component: {fileID: 7225346749099157025}
   - component: {fileID: 7549846135196389135}
+  - component: {fileID: 8982993591419835489}
+  - component: {fileID: 5041343783485134399}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3086,6 +4188,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8982993591419835489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949203868131459940}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: 0.0000000018626451, z: 0}
+--- !u!114 &5041343783485134399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949203868131459940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2973718539303922601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +4241,8 @@ GameObject:
   - component: {fileID: 2308906603998948652}
   - component: {fileID: 6090974411429369814}
   - component: {fileID: 2584307903684230202}
+  - component: {fileID: 2254697270635069863}
+  - component: {fileID: 52023389234763548}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3169,6 +4315,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2254697270635069863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973718539303922601}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524587, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: 0.0000000012223609, z: 0}
+--- !u!114 &52023389234763548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973718539303922601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &2994964545383851227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +4368,8 @@ GameObject:
   - component: {fileID: 3887277195482229888}
   - component: {fileID: 3640814765825105138}
   - component: {fileID: 1858836843153517423}
+  - component: {fileID: 6140007395593209000}
+  - component: {fileID: 3105949753484722279}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3252,6 +4442,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6140007395593209000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994964545383851227}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524587, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: -0.0000000018626451, z: -6.9849193e-10}
+--- !u!114 &3105949753484722279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994964545383851227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3072650560464719706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,6 +4495,8 @@ GameObject:
   - component: {fileID: 6912771258207109283}
   - component: {fileID: 1489761379325135356}
   - component: {fileID: 1496373512754654355}
+  - component: {fileID: 7016621091457524485}
+  - component: {fileID: 943028089020570799}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3335,6 +4569,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7016621091457524485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072650560464719706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524587, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: -9.313226e-10, z: 0}
+--- !u!114 &943028089020570799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072650560464719706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3125518599963159383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,6 +4622,8 @@ GameObject:
   - component: {fileID: 4234975652532349854}
   - component: {fileID: 5138239341454517536}
   - component: {fileID: 7797849127084128652}
+  - component: {fileID: 3983202735333504137}
+  - component: {fileID: 7088154996835816908}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3418,6 +4696,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3983202735333504137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125518599963159383}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524587, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -0.0000000037252903, z: -0.0000000018626451}
+--- !u!114 &7088154996835816908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125518599963159383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3150123394017178871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,6 +4749,8 @@ GameObject:
   - component: {fileID: 6063262059982062950}
   - component: {fileID: 7248831090666046312}
   - component: {fileID: 749388573838028040}
+  - component: {fileID: 4509633540194169535}
+  - component: {fileID: 4166448846563863790}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3501,6 +4823,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4509633540194169535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150123394017178871}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 1.110223e-16, y: -0.000000004656613, z: 0.0000000018626451}
+--- !u!114 &4166448846563863790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150123394017178871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3311604874840054743
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,6 +4940,8 @@ GameObject:
   - component: {fileID: 9067467301556258312}
   - component: {fileID: 5658689326513117321}
   - component: {fileID: 712933811543457420}
+  - component: {fileID: 7269277403566905033}
+  - component: {fileID: 1024858858630937277}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3648,6 +5014,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7269277403566905033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356454603467248859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 0, y: -0.0000000018626451, z: -2.3283064e-10}
+--- !u!114 &1024858858630937277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356454603467248859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3426473906437006925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,6 +5163,8 @@ GameObject:
   - component: {fileID: 5566458369133577210}
   - component: {fileID: 524741604837951905}
   - component: {fileID: 3710354780191031357}
+  - component: {fileID: 1701580343701997024}
+  - component: {fileID: 8616898915513951448}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3827,6 +5237,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1701580343701997024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604212569469349160}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 5.551115e-16, y: 8.1490725e-10, z: 0}
+--- !u!114 &8616898915513951448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604212569469349160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3610095517908869887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,6 +5290,8 @@ GameObject:
   - component: {fileID: 3489025782529704934}
   - component: {fileID: 3575970191771645336}
   - component: {fileID: 7382692440769363979}
+  - component: {fileID: 8213959277660613883}
+  - component: {fileID: 5961175537477647924}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -3910,6 +5364,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8213959277660613883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610095517908869887}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.004334169}
+  m_Center: {x: 1.110223e-16, y: -9.313226e-10, z: 0}
+--- !u!114 &5961175537477647924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610095517908869887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3640886191033608759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,6 +5513,8 @@ GameObject:
   - component: {fileID: 8542223881754363883}
   - component: {fileID: 7679118361939396887}
   - component: {fileID: 1485297014321057628}
+  - component: {fileID: 9201637453585727148}
+  - component: {fileID: 4652810090058188113}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4089,6 +5587,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9201637453585727148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698688083997238056}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: 0, z: 0}
+--- !u!114 &4652810090058188113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698688083997238056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3750874354375671764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,6 +5640,8 @@ GameObject:
   - component: {fileID: 2858194393323925546}
   - component: {fileID: 8507101524028633137}
   - component: {fileID: 7457025252509433832}
+  - component: {fileID: 8287109213552631129}
+  - component: {fileID: 6048152526419795917}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4172,6 +5714,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8287109213552631129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750874354375671764}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 5.551115e-17, y: -0.0000000037252903, z: 0.0000000018626451}
+--- !u!114 &6048152526419795917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750874354375671764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &3755633711476906212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,7 +5813,7 @@ Transform:
   m_GameObject: {fileID: 3834704987303022701}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6859913, y: -0, z: -0, w: -0.7276099}
-  m_LocalPosition: {x: 7.1054274e-15, y: 1.17, z: 0.6161325}
+  m_LocalPosition: {x: 7.1054274e-15, y: 1.17, z: 0.61620027}
   m_LocalScale: {x: 1.1686393, y: 1.4, z: 0.89361763}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4247,6 +5831,8 @@ GameObject:
   - component: {fileID: 4372699385094687080}
   - component: {fileID: 4996644342321405726}
   - component: {fileID: 8932075436275326511}
+  - component: {fileID: 3293456213274747837}
+  - component: {fileID: 8453335290174511819}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4319,6 +5905,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3293456213274747837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978972763728519410}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.00065245846, z: 0.0043341685}
+  m_Center: {x: 3.330669e-16, y: 4.656613e-10, z: 0}
+--- !u!114 &8453335290174511819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978972763728519410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4011653388418194866
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,6 +5958,8 @@ GameObject:
   - component: {fileID: 5051864075935033758}
   - component: {fileID: 4850415984955414542}
   - component: {fileID: 4122079728247968437}
+  - component: {fileID: 4495236568798231024}
+  - component: {fileID: 5713454823037624673}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4402,6 +6032,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4495236568798231024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011653388418194866}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -0.0000000027939677, z: 9.313226e-10}
+--- !u!114 &5713454823037624673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011653388418194866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4011878282623049069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4477,6 +6149,8 @@ GameObject:
   - component: {fileID: 3696931994250340602}
   - component: {fileID: 8108889330545839671}
   - component: {fileID: 72089656101324851}
+  - component: {fileID: 438780434796898959}
+  - component: {fileID: 296774537653294524}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4549,6 +6223,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &438780434796898959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047941455295260419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.004334169}
+  m_Center: {x: 1.6653345e-16, y: -0.0000000018626451, z: 9.313226e-10}
+--- !u!114 &296774537653294524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047941455295260419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4055432383341782268
 GameObject:
   m_ObjectHideFlags: 0
@@ -4592,6 +6308,8 @@ GameObject:
   - component: {fileID: 4371181521385281239}
   - component: {fileID: 2650636725638654144}
   - component: {fileID: 8749997480197012405}
+  - component: {fileID: 9513399014839195}
+  - component: {fileID: 2194752041194233349}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4664,6 +6382,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9513399014839195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200627024937539185}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524584, z: 0.0043341685}
+  m_Center: {x: 5.551115e-16, y: 9.313226e-10, z: 0}
+--- !u!114 &2194752041194233349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200627024937539185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4222636546135288312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +6435,8 @@ GameObject:
   - component: {fileID: 5148761607319506001}
   - component: {fileID: 2061642266588044173}
   - component: {fileID: 7777267361838171493}
+  - component: {fileID: 1843506357474182593}
+  - component: {fileID: 314793520961552889}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4747,6 +6509,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1843506357474182593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222636546135288312}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245834, z: 0.0043341685}
+  m_Center: {x: 2.220446e-16, y: -2.3283064e-10, z: 0}
+--- !u!114 &314793520961552889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222636546135288312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4258497771143183148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +6594,8 @@ GameObject:
   - component: {fileID: 1685491075265764264}
   - component: {fileID: 827741288612099194}
   - component: {fileID: 6048463479340637192}
+  - component: {fileID: 6590273994609958166}
+  - component: {fileID: 6636366647215229003}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4862,6 +6668,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6590273994609958166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4289422727911893309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704278, y: 0.0006524588, z: 0.0043341704}
+  m_Center: {x: 1.110223e-16, y: -0.000000004656613, z: 4.656613e-10}
+--- !u!114 &6636366647215229003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4289422727911893309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4383774402378847062
 GameObject:
   m_ObjectHideFlags: 0
@@ -4873,6 +6721,8 @@ GameObject:
   - component: {fileID: 5024276418408589389}
   - component: {fileID: 1087118152105281180}
   - component: {fileID: 8873796534291899775}
+  - component: {fileID: 5773533791288050985}
+  - component: {fileID: 3632222847436148305}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -4945,6 +6795,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5773533791288050985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383774402378847062}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 1.6653345e-16, y: 0.0000000011641532, z: 0}
+--- !u!114 &3632222847436148305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383774402378847062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4394892139412216182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4988,6 +6880,8 @@ GameObject:
   - component: {fileID: 7097474415205303418}
   - component: {fileID: 6846909059291630882}
   - component: {fileID: 3263083948097566896}
+  - component: {fileID: 1583370506252194150}
+  - component: {fileID: 4896630431094902536}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5060,6 +6954,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1583370506252194150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430965014036209944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524585, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -0.0000000037252903, z: -0.0000000018626451}
+--- !u!114 &4896630431094902536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430965014036209944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4554252880237082774
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,6 +7007,8 @@ GameObject:
   - component: {fileID: 2007876075583881953}
   - component: {fileID: 5410141932115006952}
   - component: {fileID: 5030013442714530425}
+  - component: {fileID: 7141281620094316428}
+  - component: {fileID: 5098631696955600485}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5143,6 +7081,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7141281620094316428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554252880237082774}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -0.0000000027939677, z: 0}
+--- !u!114 &5098631696955600485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554252880237082774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4626319224172615648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,6 +7134,8 @@ GameObject:
   - component: {fileID: 4408202215596517293}
   - component: {fileID: 917957302254952917}
   - component: {fileID: 4013535490341717615}
+  - component: {fileID: 5446547113736458319}
+  - component: {fileID: 4185451161142002246}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5226,6 +7208,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5446547113736458319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626319224172615648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.0043341685}
+  m_Center: {x: 2.7755576e-16, y: 0.0000000014842954, z: 0}
+--- !u!114 &4185451161142002246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626319224172615648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4660844632786822818
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,6 +7293,8 @@ GameObject:
   - component: {fileID: 8028636506390298372}
   - component: {fileID: 7963812962431003169}
   - component: {fileID: 3034145235288279652}
+  - component: {fileID: 8290661270915441374}
+  - component: {fileID: 9120376415342924290}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5341,6 +7367,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8290661270915441374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667755176592827950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 1.110223e-16, y: -9.313226e-10, z: 0}
+--- !u!114 &9120376415342924290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667755176592827950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4682374105222601833
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,6 +7452,8 @@ GameObject:
   - component: {fileID: 151363426897769620}
   - component: {fileID: 2456142234330827265}
   - component: {fileID: 8846298885621609431}
+  - component: {fileID: 1299687859928759234}
+  - component: {fileID: 5495733991953510310}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5456,6 +7526,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1299687859928759234
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752213581268386034}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524585, z: 0.0043341694}
+  m_Center: {x: 2.220446e-16, y: -4.656613e-10, z: 0}
+--- !u!114 &5495733991953510310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752213581268386034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4770046499913782468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5531,6 +7643,8 @@ GameObject:
   - component: {fileID: 8413697763238207322}
   - component: {fileID: 8254488076334686645}
   - component: {fileID: 5958206903478834916}
+  - component: {fileID: 2662860634857729267}
+  - component: {fileID: 4642521562411807250}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5603,6 +7717,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2662860634857729267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953198500082948119}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.00433417}
+  m_Center: {x: 3.330669e-16, y: -0.0000000027939677, z: -0.0000000018626451}
+--- !u!114 &4642521562411807250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953198500082948119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &4958016428144611914
 GameObject:
   m_ObjectHideFlags: 0
@@ -5660,7 +7816,7 @@ Transform:
   m_GameObject: {fileID: 5027549661514135932}
   serializedVersion: 2
   m_LocalRotation: {x: 0.68941796, y: -0, z: -0, w: -0.72436386}
-  m_LocalPosition: {x: 7.1054274e-15, y: 0, z: 0.70417035}
+  m_LocalPosition: {x: 7.1054274e-15, y: 0, z: 0.7042572}
   m_LocalScale: {x: 1.141596, y: 1.4, z: 0.9692978}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5838,6 +7994,8 @@ GameObject:
   - component: {fileID: 794489699281752154}
   - component: {fileID: 574812558118680017}
   - component: {fileID: 4138583685598472288}
+  - component: {fileID: 2473712063178088851}
+  - component: {fileID: 9200523389721443213}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -5910,6 +8068,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2473712063178088851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248018662453371621}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245864, z: 0.00433417}
+  m_Center: {x: 1.110223e-16, y: 4.656613e-10, z: -0.0000000018626451}
+--- !u!114 &9200523389721443213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248018662453371621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5324889354446108239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,6 +8153,8 @@ GameObject:
   - component: {fileID: 757484022666076931}
   - component: {fileID: 9117262788604657070}
   - component: {fileID: 1858250489392972800}
+  - component: {fileID: 9165837920336492115}
+  - component: {fileID: 1133942169402936244}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6025,6 +8227,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9165837920336492115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506565061577563233}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 2.220446e-16, y: 0.0000000013096724, z: -2.3283064e-10}
+--- !u!114 &1133942169402936244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506565061577563233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5519890038476146844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,6 +8280,8 @@ GameObject:
   - component: {fileID: 2047468510592686112}
   - component: {fileID: 5986534756555385418}
   - component: {fileID: 694810025838668221}
+  - component: {fileID: 5759052266429108149}
+  - component: {fileID: 7731794314402552852}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6108,6 +8354,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5759052266429108149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519890038476146844}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.004334169}
+  m_Center: {x: 3.330669e-16, y: 0.0000000013969839, z: -0.0000000018626451}
+--- !u!114 &7731794314402552852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519890038476146844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5624015296633640384
 GameObject:
   m_ObjectHideFlags: 0
@@ -6119,6 +8407,8 @@ GameObject:
   - component: {fileID: 3501334483192699212}
   - component: {fileID: 1265361293963379704}
   - component: {fileID: 7732607768193199663}
+  - component: {fileID: 1589204220962399630}
+  - component: {fileID: 3779006637557099110}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6191,6 +8481,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1589204220962399630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624015296633640384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524584, z: 0.004334168}
+  m_Center: {x: 3.330669e-16, y: -0.0000000027939677, z: 0}
+--- !u!114 &3779006637557099110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624015296633640384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5624845646251121209
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,6 +8630,8 @@ GameObject:
   - component: {fileID: 7599877328903645006}
   - component: {fileID: 3080421022361939722}
   - component: {fileID: 1250057145067279507}
+  - component: {fileID: 8673838367510158968}
+  - component: {fileID: 7514021808787760539}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6370,6 +8704,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8673838367510158968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671588781537795039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -9.313226e-10, z: -0.0000000037252903}
+--- !u!114 &7514021808787760539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671588781537795039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5698143359385404417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6381,6 +8757,8 @@ GameObject:
   - component: {fileID: 7177147338124809228}
   - component: {fileID: 7036177675550352912}
   - component: {fileID: 6582391957669838647}
+  - component: {fileID: 3435082434644974836}
+  - component: {fileID: 6585271514694807078}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6453,6 +8831,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3435082434644974836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698143359385404417}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524585, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -4.656613e-10, z: -0.0000000018626451}
+--- !u!114 &6585271514694807078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698143359385404417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5712315570171205806
 GameObject:
   m_ObjectHideFlags: 0
@@ -6464,6 +8884,8 @@ GameObject:
   - component: {fileID: 670494820994975909}
   - component: {fileID: 2798901402158731098}
   - component: {fileID: 6998686165904303141}
+  - component: {fileID: 8346139531637243565}
+  - component: {fileID: 2927732757971619592}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6536,6 +8958,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8346139531637243565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712315570171205806}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524588, z: 0.0043341704}
+  m_Center: {x: 3.330669e-16, y: -0.0000000027939677, z: 0}
+--- !u!114 &2927732757971619592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712315570171205806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5764795732733676807
 GameObject:
   m_ObjectHideFlags: 0
@@ -6611,6 +9075,8 @@ GameObject:
   - component: {fileID: 82056165979525847}
   - component: {fileID: 4774947117114166419}
   - component: {fileID: 5206684576666584324}
+  - component: {fileID: 4462514724828008438}
+  - component: {fileID: 6659222304347804900}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6683,6 +9149,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4462514724828008438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5814410422499084238}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524584, z: 0.0043341685}
+  m_Center: {x: 1.110223e-16, y: 0.0000000022118911, z: -2.3283064e-10}
+--- !u!114 &6659222304347804900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5814410422499084238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &5872392371970335910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6694,6 +9202,8 @@ GameObject:
   - component: {fileID: 5944333538143353783}
   - component: {fileID: 307160096739335033}
   - component: {fileID: 4907592746799878613}
+  - component: {fileID: 1836777671079978927}
+  - component: {fileID: 1390094922624904308}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6766,6 +9276,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1836777671079978927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872392371970335910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.0043341713}
+  m_Center: {x: 5.551115e-16, y: 2.3283064e-10, z: 0}
+--- !u!114 &1390094922624904308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872392371970335910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6028210348974959784
 GameObject:
   m_ObjectHideFlags: 0
@@ -6777,6 +9329,8 @@ GameObject:
   - component: {fileID: 5674355236213014802}
   - component: {fileID: 423586055984574214}
   - component: {fileID: 6890542778391729129}
+  - component: {fileID: 4753216291485609793}
+  - component: {fileID: 7217062110514029196}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6849,6 +9403,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4753216291485609793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028210348974959784}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245834, z: 0.0043341676}
+  m_Center: {x: 4.440892e-16, y: 0.0000000013969839, z: 0}
+--- !u!114 &7217062110514029196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028210348974959784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6032154037853641395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6860,6 +9456,8 @@ GameObject:
   - component: {fileID: 6622947152541350926}
   - component: {fileID: 7716529925169781374}
   - component: {fileID: 3847845454569169883}
+  - component: {fileID: 8943552369990352510}
+  - component: {fileID: 7680918583655905058}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -6932,6 +9530,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8943552369990352510
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032154037853641395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524584, z: 0.0043341685}
+  m_Center: {x: -1.110223e-16, y: -0.000000004656613, z: 0}
+--- !u!114 &7680918583655905058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032154037853641395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6124235208952341425
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,6 +9583,8 @@ GameObject:
   - component: {fileID: 7132180927028503811}
   - component: {fileID: 4119092953959183408}
   - component: {fileID: 7928721606789955660}
+  - component: {fileID: 3718151576662721617}
+  - component: {fileID: 1781911068977406898}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7015,6 +9657,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3718151576662721617
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124235208952341425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245864, z: 0.004334169}
+  m_Center: {x: 1.110223e-16, y: -0.0000000037252903, z: 0.0000000018626451}
+--- !u!114 &1781911068977406898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124235208952341425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6208991894144241863
 GameObject:
   m_ObjectHideFlags: 0
@@ -7058,6 +9742,8 @@ GameObject:
   - component: {fileID: 5841943434645493147}
   - component: {fileID: 4677786246068964614}
   - component: {fileID: 3384736052546803760}
+  - component: {fileID: 1437860451141919027}
+  - component: {fileID: 369038501783275447}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7130,6 +9816,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1437860451141919027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308475381009440112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.00065245864, z: 0.00433417}
+  m_Center: {x: 1.110223e-16, y: -0.0000000018626451, z: 0}
+--- !u!114 &369038501783275447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308475381009440112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6353179616922112283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7141,6 +9869,8 @@ GameObject:
   - component: {fileID: 7905081960916230850}
   - component: {fileID: 9070190273347312110}
   - component: {fileID: 4833842866926360336}
+  - component: {fileID: 6675908753472579064}
+  - component: {fileID: 4297686376752429937}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7213,6 +9943,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6675908753472579064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353179616922112283}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -0.0000000037252903, z: 0}
+--- !u!114 &4297686376752429937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353179616922112283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6407059414889870909
 GameObject:
   m_ObjectHideFlags: 0
@@ -7224,6 +9996,8 @@ GameObject:
   - component: {fileID: 6805506671991217123}
   - component: {fileID: 4209758055319049843}
   - component: {fileID: 1022355701967655686}
+  - component: {fileID: 2821193530566908030}
+  - component: {fileID: 109659560534046013}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7296,6 +10070,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2821193530566908030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407059414889870909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245864, z: 0.0043341694}
+  m_Center: {x: 1.110223e-16, y: -0.0000000011641532, z: 0}
+--- !u!114 &109659560534046013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407059414889870909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6411831245379698654
 GameObject:
   m_ObjectHideFlags: 0
@@ -7307,6 +10123,8 @@ GameObject:
   - component: {fileID: 1610090337124036620}
   - component: {fileID: 7949474715105458625}
   - component: {fileID: 1354015345251554741}
+  - component: {fileID: 8263177263138431833}
+  - component: {fileID: 6651815429440674877}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7379,6 +10197,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8263177263138431833
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411831245379698654}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524585, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -0.0000000037252903, z: 0}
+--- !u!114 &6651815429440674877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411831245379698654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6427405392093620927
 GameObject:
   m_ObjectHideFlags: 0
@@ -7390,6 +10250,8 @@ GameObject:
   - component: {fileID: 2193299073528030099}
   - component: {fileID: 3097463677756367879}
   - component: {fileID: 3708738990794016905}
+  - component: {fileID: 8785692821927486077}
+  - component: {fileID: 8128895111081687289}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7462,6 +10324,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8785692821927486077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6427405392093620927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245846, z: 0.0043341694}
+  m_Center: {x: 1.110223e-16, y: 0, z: 0}
+--- !u!114 &8128895111081687289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6427405392093620927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6454681888480523082
 GameObject:
   m_ObjectHideFlags: 0
@@ -7473,6 +10377,8 @@ GameObject:
   - component: {fileID: 1203889003481583450}
   - component: {fileID: 3516130897063562595}
   - component: {fileID: 3650272968625226628}
+  - component: {fileID: 3682057064060701131}
+  - component: {fileID: 3877128333850905236}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7545,6 +10451,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3682057064060701131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454681888480523082}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.00433417}
+  m_Center: {x: 1.110223e-16, y: -9.313226e-10, z: 0}
+--- !u!114 &3877128333850905236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454681888480523082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6501286347236627692
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,6 +10504,8 @@ GameObject:
   - component: {fileID: 2925153112371665022}
   - component: {fileID: 469540185410285247}
   - component: {fileID: 1982191457792995774}
+  - component: {fileID: 8554982527513940659}
+  - component: {fileID: 6969239946272402119}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7628,6 +10578,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8554982527513940659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501286347236627692}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524585, z: 0.004334169}
+  m_Center: {x: 1.110223e-16, y: -0.0000000037252903, z: 0}
+--- !u!114 &6969239946272402119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501286347236627692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6634235353087807377
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,7 +10645,7 @@ Transform:
   m_GameObject: {fileID: 6634235353087807377}
   serializedVersion: 2
   m_LocalRotation: {x: 0.736362, y: -0, z: -0, w: -0.6765879}
-  m_LocalPosition: {x: 1.4210855e-14, y: 0.38999996, z: 1.0563729}
+  m_LocalPosition: {x: 1.4210855e-14, y: 0.38999996, z: 1.0565773}
   m_LocalScale: {x: 0.7577569, y: 1.4, z: 0.92275864}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7735,6 +10727,8 @@ GameObject:
   - component: {fileID: 5915747697855114537}
   - component: {fileID: 7586991464284415152}
   - component: {fileID: 8519901950371758429}
+  - component: {fileID: 3443838432607570001}
+  - component: {fileID: 6232399331367215234}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -7807,6 +10801,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3443838432607570001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928900707637958229}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524584, z: 0.0043341694}
+  m_Center: {x: 1.6653345e-16, y: -9.313226e-10, z: -0.0000000037252903}
+--- !u!114 &6232399331367215234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928900707637958229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &6950984467872251501
 GameObject:
   m_ObjectHideFlags: 0
@@ -7946,6 +10982,8 @@ GameObject:
   - component: {fileID: 467196832648039439}
   - component: {fileID: 1600351501460943226}
   - component: {fileID: 1545626908608576086}
+  - component: {fileID: 3115145933005002235}
+  - component: {fileID: 1926283957637580447}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8018,6 +11056,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3115145933005002235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073591117777886487}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 5.551115e-17, y: -0.0000000027939677, z: 0}
+--- !u!114 &1926283957637580447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073591117777886487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7091411047838981527
 GameObject:
   m_ObjectHideFlags: 0
@@ -8093,6 +11173,8 @@ GameObject:
   - component: {fileID: 2184997314254502498}
   - component: {fileID: 8766608640249138524}
   - component: {fileID: 3487502450938896252}
+  - component: {fileID: 9216083392996525681}
+  - component: {fileID: 8202853160767372503}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8165,6 +11247,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9216083392996525681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146677302607647399}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.0043341694}
+  m_Center: {x: 3.330669e-16, y: -0.0000000037252903, z: 0}
+--- !u!114 &8202853160767372503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146677302607647399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7147482769213835119
 GameObject:
   m_ObjectHideFlags: 0
@@ -8176,6 +11300,8 @@ GameObject:
   - component: {fileID: 2270669106302678312}
   - component: {fileID: 750343271284824159}
   - component: {fileID: 3624915442045511631}
+  - component: {fileID: 8131053259417666656}
+  - component: {fileID: 709640765871841226}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8248,6 +11374,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8131053259417666656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147482769213835119}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 3.330669e-16, y: -9.313226e-10, z: 0}
+--- !u!114 &709640765871841226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147482769213835119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7179452730140418693
 GameObject:
   m_ObjectHideFlags: 0
@@ -8323,6 +11491,8 @@ GameObject:
   - component: {fileID: 7052043734417565108}
   - component: {fileID: 6370957771698154387}
   - component: {fileID: 5074019100667390137}
+  - component: {fileID: 1155565800816339918}
+  - component: {fileID: 8665240595869316584}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8395,6 +11565,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1155565800816339918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395799459831328551}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.0043341704}
+  m_Center: {x: 2.220446e-16, y: 0, z: 0}
+--- !u!114 &8665240595869316584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395799459831328551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7410169980076640856
 GameObject:
   m_ObjectHideFlags: 0
@@ -8438,6 +11650,8 @@ GameObject:
   - component: {fileID: 6017039062345272370}
   - component: {fileID: 2962817242846003963}
   - component: {fileID: 2228721517668186658}
+  - component: {fileID: 5126544761088596027}
+  - component: {fileID: 8945344118104059385}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8510,6 +11724,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5126544761088596027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479842795465092241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -0.000000004656613, z: -4.656613e-10}
+--- !u!114 &8945344118104059385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479842795465092241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7693637274575127174
 GameObject:
   m_ObjectHideFlags: 0
@@ -8521,6 +11777,8 @@ GameObject:
   - component: {fileID: 5305136333353441549}
   - component: {fileID: 1140629485932599567}
   - component: {fileID: 3492151698544248253}
+  - component: {fileID: 7138543141576350131}
+  - component: {fileID: 8211379616674151288}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8593,6 +11851,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7138543141576350131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693637274575127174}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245846, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: 0, z: 0.0000000018626451}
+--- !u!114 &8211379616674151288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693637274575127174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7717606894853607511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8604,6 +11904,8 @@ GameObject:
   - component: {fileID: 2662861045491462934}
   - component: {fileID: 8324850098059958841}
   - component: {fileID: 4994831936927392553}
+  - component: {fileID: 6548153552828042523}
+  - component: {fileID: 5307108972611370157}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8676,6 +11978,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6548153552828042523
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717606894853607511}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.00433417}
+  m_Center: {x: 4.440892e-16, y: 8.1490725e-10, z: 0}
+--- !u!114 &5307108972611370157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717606894853607511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7813736486874962930
 GameObject:
   m_ObjectHideFlags: 0
@@ -8687,6 +12031,8 @@ GameObject:
   - component: {fileID: 1370095718623314194}
   - component: {fileID: 9088047311730092771}
   - component: {fileID: 5722053103345776749}
+  - component: {fileID: 5226550039085911616}
+  - component: {fileID: 5456895815046373061}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8759,6 +12105,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5226550039085911616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813736486874962930}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524585, z: 0.004334169}
+  m_Center: {x: 1.110223e-16, y: -0.0000000027939677, z: 9.313226e-10}
+--- !u!114 &5456895815046373061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813736486874962930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &7911388267123785362
 GameObject:
   m_ObjectHideFlags: 0
@@ -8770,6 +12158,8 @@ GameObject:
   - component: {fileID: 8613283927630731274}
   - component: {fileID: 527084300633861838}
   - component: {fileID: 3423602310883893283}
+  - component: {fileID: 4326300340797413514}
+  - component: {fileID: 2892291878135590955}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8842,6 +12232,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4326300340797413514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7911388267123785362}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 0, y: -0.0000000023283064, z: 0}
+--- !u!114 &2892291878135590955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7911388267123785362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &8113416613885474902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8885,6 +12317,8 @@ GameObject:
   - component: {fileID: 3671197417418751140}
   - component: {fileID: 6383880623704306756}
   - component: {fileID: 7064526201548026087}
+  - component: {fileID: 7125031844428589113}
+  - component: {fileID: 3259478462835531519}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -8957,6 +12391,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7125031844428589113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186454527747571546}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524586, z: 0.004334169}
+  m_Center: {x: 2.220446e-16, y: -0.0000000027939677, z: -2.3283064e-10}
+--- !u!114 &3259478462835531519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186454527747571546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &8231777734109391139
 GameObject:
   m_ObjectHideFlags: 0
@@ -9096,6 +12572,8 @@ GameObject:
   - component: {fileID: 8227044288981712102}
   - component: {fileID: 757098192007065652}
   - component: {fileID: 3400576176692214384}
+  - component: {fileID: 3542320490363008150}
+  - component: {fileID: 9116626340710323889}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -9168,6 +12646,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3542320490363008150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567729239560609281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.0043341694}
+  m_Center: {x: 1.110223e-16, y: -0.000000004656613, z: 4.656613e-10}
+--- !u!114 &9116626340710323889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567729239560609281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &8748484424229066437
 GameObject:
   m_ObjectHideFlags: 0
@@ -9211,6 +12731,8 @@ GameObject:
   - component: {fileID: 4332771050335793222}
   - component: {fileID: 3829842627967211161}
   - component: {fileID: 8717506442867570573}
+  - component: {fileID: 8421063185105905101}
+  - component: {fileID: 7940436608265408646}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -9283,6 +12805,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8421063185105905101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893456216499198017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.0006524586, z: 0.00433417}
+  m_Center: {x: 3.330669e-16, y: 6.9849193e-10, z: 0}
+--- !u!114 &7940436608265408646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893456216499198017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &8920594338031879671
 GameObject:
   m_ObjectHideFlags: 0
@@ -9294,6 +12858,8 @@ GameObject:
   - component: {fileID: 1216918596362923169}
   - component: {fileID: 7788927592974409872}
   - component: {fileID: 4032103131277071148}
+  - component: {fileID: 8684452554152632160}
+  - component: {fileID: 6751006899932579019}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -9366,6 +12932,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8684452554152632160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8920594338031879671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245875, z: 0.0043341704}
+  m_Center: {x: 3.330669e-16, y: 0.0000000017462298, z: 0}
+--- !u!114 &6751006899932579019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8920594338031879671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &8936085510894694890
 GameObject:
   m_ObjectHideFlags: 0
@@ -9441,6 +13049,8 @@ GameObject:
   - component: {fileID: 4795280755353438374}
   - component: {fileID: 5846378976094611441}
   - component: {fileID: 5286907411719051850}
+  - component: {fileID: 2318512905725951655}
+  - component: {fileID: 8578033094339963623}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -9513,6 +13123,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2318512905725951655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989660706156360570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003070429, y: 0.0006524587, z: 0.0043341704}
+  m_Center: {x: 2.220446e-16, y: 0, z: 0}
+--- !u!114 &8578033094339963623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989660706156360570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &9008206553817288095
 GameObject:
   m_ObjectHideFlags: 0
@@ -9524,6 +13176,8 @@ GameObject:
   - component: {fileID: 6221499309344592021}
   - component: {fileID: 3106998037738344753}
   - component: {fileID: 9198792194792253155}
+  - component: {fileID: 425526803837600454}
+  - component: {fileID: 1759856572992124785}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -9596,6 +13250,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &425526803837600454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008206553817288095}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704285, y: 0.00065245864, z: 0.0043341704}
+  m_Center: {x: 2.220446e-16, y: -0.0000000018626451, z: 0}
+--- !u!114 &1759856572992124785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008206553817288095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &9063302126504697578
 GameObject:
   m_ObjectHideFlags: 0
@@ -9703,6 +13399,8 @@ GameObject:
   - component: {fileID: 7742824370523715995}
   - component: {fileID: 4401103522363722848}
   - component: {fileID: 5208674047494762488}
+  - component: {fileID: 2041788337629271478}
+  - component: {fileID: 5748212940146638077}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -9775,6 +13473,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2041788337629271478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104227136062072584}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030704283, y: 0.00065245864, z: 0.00433417}
+  m_Center: {x: 3.330669e-16, y: -0.0000000018626451, z: 2.3283064e-10}
+--- !u!114 &5748212940146638077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104227136062072584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightInFocusMode: 0
+  orientToCamera: 0
+  useRenderPivot: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  interactionParent: {fileID: 0}
+  journalEntry: 
+  gameStateUpdates: []
 --- !u!1 &9180793162654398945
 GameObject:
   m_ObjectHideFlags: 0
@@ -10730,7 +14470,6 @@ MonoBehaviour:
   gridSize: {x: 1, y: 5, z: 16}
   useSequentialRandom: 1
   lockRotation: 1
-  deactivateAllBooks: 1
 --- !u!1 &9186843912006754039
 GameObject:
   m_ObjectHideFlags: 0

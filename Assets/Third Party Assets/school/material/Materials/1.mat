@@ -366,7 +366,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HalftoneEdgeOffset: -0.156
-    - _HalftoneSmoothness: 1.176
+    - _HalftoneSmoothness: 1.175
     - _HalftoneThreshold: 0.0264
     - _HalftoneToonAffect: 0
     - _HaltonePatternSize: 0
@@ -453,7 +453,7 @@ Material:
     - _OverlayMode: 1
     - _OverlayMode1: 0
     - _OverlayRotation: 20.5
-    - _OverlayUVTilling: 50
+    - _OverlayUVTilling: 45
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5

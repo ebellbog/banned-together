@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public enum InteractionType {
     Default,
@@ -12,6 +13,7 @@ public enum InteractionType {
 
 public static class GS
 {
+    public static bool isReady = false;
     public static string journalContent;
     public static InteractionType interactionMode;
     public static bool isSitting;
@@ -25,6 +27,7 @@ public static class GS
     public static int paper2Seen;
     public static int poetryBookSeen;
     public static int lockedDoorSeen;
+    public static int lostBooksSeen;
 
     public static List<StateTrigger> yarnStateTriggers;
 
@@ -60,11 +63,27 @@ public static class GS
 
         concurrentThoughtBubbles = 0;
         tutorialItems = 0;
+
         fidgetSpinnerSeen = 0;
+        genderQueerSeen = 0;
+        paper1Seen = 0;
+        paper2Seen = 0;
+        poetryBookSeen = 0;
+        lockedDoorSeen = 0;
+        lostBooksSeen = 0;
 
         journalContent = "10/22/23 \n \nI'm taking poetry workshop this semester, and I haven't told mom about it. She's always been so excited that I'm majoring in journalism. But sometimes I get off track, and I can't explain it to her, or anyone. Especially when I'm supposed to be doing research, my mind seems to want to go off somewhere else. It would mean a lot if I could really break this disappearing books story for the Birchwood Chronicle. Even if sometimes I just want to hide away and write a poem. \n 10/23/23";
+        
+        currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
+        prevLevelIdx = 0;
 
-        yarnStateTriggers = null;
+        if (yarnStateTriggers != null)
+        {
+            foreach(StateTrigger trigger in yarnStateTriggers)
+            {
+                trigger.alreadyTriggered = false;
+            }
+        }
     }
 
     public static void ResetDaily()

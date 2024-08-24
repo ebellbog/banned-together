@@ -19,10 +19,10 @@ public class LevelLoader : MonoBehaviour
 
     void Start()
     {
-        if (GS.currentSceneIdx < 0)
+        if (!GS.isReady)
         {
             GS.ResetAll();
-            GS.currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
+            GS.isReady = true;
         }
         if (defaultMusicForLevel.Length > GS.currentSceneIdx)
         {

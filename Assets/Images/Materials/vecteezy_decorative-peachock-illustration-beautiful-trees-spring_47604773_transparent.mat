@@ -16,7 +16,6 @@ Material:
   - _OVERLAYMODE_NONE
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_STEP
-  - _USESPECULAR_ON
   m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
   - _OUTLINE_NML
@@ -580,7 +579,7 @@ Material:
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadowThreshold: 0
-    - _UseSpecular: 1
+    - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _Use_1stAs2nd: 0
     - _Use_BaseAs1st: 0

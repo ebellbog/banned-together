@@ -33,6 +33,7 @@ public class JournalManager : MonoBehaviour
     void Awake()
     {
         if (!Main) Main = this;
+        OnValidate();
     }
 
     void OnValidate()
@@ -60,24 +61,26 @@ public class JournalManager : MonoBehaviour
     public void AddToJournal(string key)
     {
         if (key == null || key.Length == 0) key = defaultJournalEntry;
-        Debug.Log($"Trying to add {key} to journal");
 
-        JournalEntry data = entryDict[key];
-        if (data == null)
+        JournalEntry data;
+        if (entryDict.TryGetValue(key, out data))
         {
-            Debug.Log("No matching journal entry found");
-            return;
-        }
-        if (data.alreadyAdded) 
-        {
-            Debug.Log("Journal entry already added.");
-            return;
-        }
+            if (data == null)
+            {
+                Debug.Log("No matching journal entry found");
+                return;
+            }
+            if (data.alreadyAdded) 
+            {
+                Debug.Log("Journal entry already added.");
+                return;
+            }
 
-        GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{data.content}";
-        data.alreadyAdded = true;
+            GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{data.content}";
 
-        unreadNotifications = true;
+            data.alreadyAdded = true;
+            unreadNotifications = true;
+        }
     }
 
     public void AddDayBreak()

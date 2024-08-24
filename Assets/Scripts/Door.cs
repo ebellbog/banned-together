@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Door : MonoBehaviour
     public bool isButton;
     public bool isLocked;
     public string statePropertyName;
+    public List<Door> connectedDoors;
 
     private bool isOpen;
 
@@ -30,7 +32,7 @@ public class Door : MonoBehaviour
 
             if (isButton)
                 gameObject.GetComponent<Animator>().SetTrigger("Press");
-        }        
+        }
 
         if (soundEffect != null)
             AudioManager.instance.PlaySFX(soundEffect);
@@ -50,6 +52,13 @@ public class Door : MonoBehaviour
                 Debug.Log($"Couldn't find property {statePropertyName} on game state");
             }
         }
-        
+
+        if (connectedDoors != null)
+        {
+            foreach(Door door in connectedDoors)
+            {
+                door.Open();
+            }
+        }
     }
 }
