@@ -21,7 +21,7 @@ namespace StarterAssets
         public float PanSpeed = 0.02f; 
 
         [Header("Sitting mode")]
-        public GameObject weirdLibraryParent; // private until we actually implement this
+        private GameObject weirdLibraryParent; // private until we actually implement this
         public Transform standingUpPosition;
         public float sittingHeight;
 
@@ -31,12 +31,12 @@ namespace StarterAssets
 		public Sprite InspectIcon;
         public Sprite SitIcon;
         public Sprite DoorIcon;
+        public Sprite HoverIcon;
 
         [Header("Unlocked cursors")]
         public Texture2D RotateAllDirections;
         public Texture2D RotateLeftRight;
         public Texture2D RotateUpDown;
-        public Texture2D HoverIcon;
         public Texture2D DefaultUnlocked;
 
         [Header("Outline colors")]
@@ -68,6 +68,7 @@ namespace StarterAssets
         private bool isReadyToInspect = false;
         private bool isAnimating = false;
         private bool panningEnabled = false;
+        private bool affectsBodyBattery = false;
 
         private bool readyToStand = false;
         private GameObject currentSeat;
@@ -112,21 +113,19 @@ namespace StarterAssets
             string hitTag = hitInfo.transform?.tag;
 
             // Set hit (aka hover) flags, in modes that allow interaction
-            bool hitInteractable = false, hitSittable = false, hitDoor = false;
+            bool hitInteractable = false, hitSittable = false, hitDoor = false, hitSwitch = false;
             hitRotatable = false;
             if (GS.interactionMode == InteractionType.Default ||
                 GS.interactionMode == InteractionType.Focus ||
                 GS.interactionMode == InteractionType.Monologue)
             {
-                // if (GS.interactionMode != InteractionType.Monologue)
-                // {
                 hitInteractable = hitTag == "Interactable";
                 hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
-                // }
                 hitDoor = hitTag == "Door";
+                hitSwitch = hitTag == "Switch";
             }
 
-            if (!(hitInteractable || hitSittable || hitDoor)) // Reset if nothing hit
+            if (!(hitInteractable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
             {
                 CursorImage.sprite = DefaultIcon;
                 _selectionOutlineController.FilterByTag = "None";
@@ -140,6 +139,7 @@ namespace StarterAssets
                 _selectionOutlineController.OutlineColor = InteractableOutlineColor;
                 _selectionOutlineController.OccludedColor = InteractableOccludedColor;
                 _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
+                _selectionOutlineController.UpdateOutlineType();
             }
             else if (hitSittable)
             { // Highlight for sittable objects
@@ -147,10 +147,16 @@ namespace StarterAssets
                 _selectionOutlineController.FilterByTag = "Sittable";
                 _selectionOutlineController.OutlineColor = SittableOutlineColor;
                 _selectionOutlineController.OccludedColor = SittableOccludedColor;
+                _selectionOutlineController.OccludedColor.a = 0;
                 _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.Whole;
+                _selectionOutlineController.UpdateOutlineType();
             }
             else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
+            }
+            else if (hitSwitch)
+            {
+                CursorImage.sprite = HoverIcon;
             }
 
             // Set cursor and hit flag for rotating objects during examination
@@ -211,6 +217,11 @@ namespace StarterAssets
                 {
                     Door doorComponent = hitInfo.transform.gameObject.GetComponent<Door>();
                     doorComponent.Open();
+                }
+                else if (hitSwitch)
+                {
+                    LightSwitch switchComponent = hitInfo.transform.gameObject.GetComponent<LightSwitch>();
+                    switchComponent.SwitchLight();
                 }
                 else if (GS.interactionMode == InteractionType.Tutorial)
                 {
@@ -280,6 +291,11 @@ namespace StarterAssets
                 activeObject.transform.position = startPosition;
                 activeObject.transform.rotation = startRotation;
                 activeObject.transform.SetParent(activeParent.transform);
+
+                if (targetStartPosition != null)
+                    ExamineTarget.transform.position = (Vector3)targetStartPosition;
+                if (targetStartRotation != null)
+                    ExamineTarget.transform.rotation = targetStartRotation;
             }
 
             currentObject = hitInfo.transform.gameObject;
@@ -316,6 +332,7 @@ namespace StarterAssets
             rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
             rotationAxis = interactableItem.rotationAxis;
             panningEnabled = interactableItem.enablePanning;
+            affectsBodyBattery = interactableItem.affectsBodyBattery;
 
             Player.LockPlayer();
             UI.UnlockCursor(GetRotationIcon());
@@ -504,6 +521,7 @@ namespace StarterAssets
                     {
                         ExamineTarget.Rotate(-Camera.main.transform.right * look.y * rotationSpeed, Space.World);
                     }
+                    if (affectsBodyBattery) BodyBatteryManager.Main.FidgetToRecover();
                 } else if (panningEnabled && !isAnimating && hitRotatable && ZoomManager.GetZoom() < 1)
                 {
                     ExamineTarget.transform.position = ExamineTarget.transform.position

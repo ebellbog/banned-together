@@ -33,7 +33,14 @@ public class BodyBatteryManager : MonoBehaviour
     }
 
     public float exhaustionSpeed = .15f;
-    // public float restingSpeed = .3f;
+
+    public float sittingRecoverySpeed = .08f;
+    public float maxSittingRecovery = .4f;
+    private float remainingSittingRecovery;
+
+    public float fidgetRecoverySpeed = .04f;
+    public float maxFidgetRecovery = .4f;
+    private float remainingFidgetRecovery;
 
     public static BodyBatteryManager Main { get; private set; }
 
@@ -55,7 +62,17 @@ public class BodyBatteryManager : MonoBehaviour
     void Start()
     {
         _energyLevel = energyLevel;
+        remainingSittingRecovery = maxSittingRecovery;
+        remainingFidgetRecovery = maxFidgetRecovery;
+    }
 
+    public void FidgetToRecover()
+    {
+        if (energyLevel < 1 && remainingFidgetRecovery > 0)
+        {
+            energyLevel = Math.Min(energyLevel + fidgetRecoverySpeed * Time.deltaTime, 1.0f);
+            remainingFidgetRecovery -= fidgetRecoverySpeed * Time.deltaTime;
+        }
     }
 
     void Update()
@@ -65,6 +82,10 @@ public class BodyBatteryManager : MonoBehaviour
         if (isDraining && isReady)
         {
             energyLevel = Math.Max(energyLevel - exhaustionSpeed * Time.deltaTime, 0);
+        } else if (GS.isSitting && energyLevel < 1 && remainingSittingRecovery > 0)
+        {
+            energyLevel = Math.Min(energyLevel + sittingRecoverySpeed * Time.deltaTime, 1.0f);
+            remainingSittingRecovery -= sittingRecoverySpeed * Time.deltaTime;
         }
 
         // Show & hide watch based on mode, even when not pressing focus
@@ -81,6 +102,10 @@ public class BodyBatteryManager : MonoBehaviour
             ShowWatch();
             if (energyLevel < .8) YarnDispatcher.StartTutorial("EnergyDraining");
         }
+        else if (energyLevel >= 1)
+        {
+            HideWatch();
+        }
 
         // Animate postprocessing effect
         if (energyLevel == 0) {
@@ -95,6 +120,8 @@ public class BodyBatteryManager : MonoBehaviour
             exhaustionEffectLevel = Math.Min(exhaustionEffectLevel + effectTransitionSpeed * Time.deltaTime, 1);
         } else {
             exhaustionEffectLevel = Math.Max(exhaustionEffectLevel - effectTransitionSpeed * Time.deltaTime, 0);
+            StopDrainedAlarm();
+            HideGoToBed();
         }
         exhaustionEffects.weight = exhaustionEffectLevel;
 

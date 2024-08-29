@@ -9,6 +9,8 @@ TagManager:
   - Sittable
   - Door
   - Bookshelf
+  - Focusable
+  - Switch
   layers:
   - Default
   - TransparentFX

@@ -52,6 +52,11 @@ public static class YarnDispatcher
         return true;
     }
 
+    public static void Reset()
+    {
+        playedTutorials.Clear();
+    }
+
     public static void SkipToEnd() {
         if (GS.interactionMode == InteractionType.Tutorial)
         {

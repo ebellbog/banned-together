@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Animator animator;
+    public Animator animator; // For buttons, set this to the associated door's animator
     public string soundEffect;
     public bool isButton;
     public bool isLocked;
     public string statePropertyName;
+    public bool useSpatialAudio = true;
     public List<Door> connectedDoors;
 
     private bool isOpen;
@@ -35,7 +36,7 @@ public class Door : MonoBehaviour
         }
 
         if (soundEffect != null)
-            AudioManager.instance.PlaySFX(soundEffect);
+            AudioManager.instance.PlaySFX(soundEffect, useSpatialAudio && animator ? animator.gameObject.transform.position : null);
 
         if (statePropertyName != null && statePropertyName.Length > 0)
         { 

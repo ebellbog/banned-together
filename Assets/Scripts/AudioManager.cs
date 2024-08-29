@@ -80,7 +80,7 @@ public class AudioManager : MonoBehaviour
         currentMusicInfo = audioInfo;
     }
 
-    public void PlaySFX(string sfxName) {
+    public void PlaySFX(string sfxName, Vector3? position = null) {
         if (effectsTrack.isPlaying) StopSFX();
 
         AudioInfo? infoOrNull = soundEffectClips.FirstOrDefault(a => a.name == sfxName || a.clip.name == sfxName); 
@@ -94,6 +94,16 @@ public class AudioManager : MonoBehaviour
 
         effectsTrack.clip = audioInfo.clip;
         effectsTrack.time = audioInfo.startTime;
+
+        if (position != null)
+        {
+            effectsTrack.transform.position = (Vector3)position;
+            effectsTrack.spatialBlend = 1.0f;
+
+        } else
+        {
+            effectsTrack.spatialBlend = 0;
+        }
 
         effectsTrack.Play();
     }

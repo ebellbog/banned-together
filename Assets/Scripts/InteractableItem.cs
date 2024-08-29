@@ -25,6 +25,7 @@ public class InteractableItem : MonoBehaviour
     public bool enablePanning = false;
     public GameObject interactionParent;
     public string journalEntry;
+    public bool affectsBodyBattery = false;
     public StateUpdate[] gameStateUpdates;
 
     public void Awake()

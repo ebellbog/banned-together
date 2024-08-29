@@ -22,6 +22,11 @@ public class StateTrigger {
     public bool triggerOnlyOnce;
     internal bool alreadyTriggered;
     public float triggerAfterDelay;
+
+    public void Reset()
+    {
+        alreadyTriggered = false;
+    }
 }
 
 public class YarnStateTriggers : MonoBehaviour

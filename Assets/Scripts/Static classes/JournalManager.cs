@@ -20,7 +20,6 @@ public class JournalEntry
 
 public class JournalManager : MonoBehaviour
 {
-    private Dictionary<string, JournalEntry> entryDict = new Dictionary<string, JournalEntry>();
     public List<JournalEntry> journalEntries = new List<JournalEntry>();
     public Animator notificationAnimator;
     public string defaultJournalEntry = "firstItem";
@@ -31,21 +30,25 @@ public class JournalManager : MonoBehaviour
     public static JournalManager Main {get; private set;}
 
     void Awake()
-    {
+    { 
         if (!Main) Main = this;
-        OnValidate();
     }
 
     void OnValidate()
     {
+        if (GS.journalDict == null) GS.journalDict = new Dictionary<string, JournalEntry>();
         foreach(JournalEntry data in journalEntries)
         {
-            entryDict.TryAdd(data.key, data);
+            GS.journalDict.TryAdd(data.key, data);
         }
     }
 
     void Update()
     {
+        if (GS.journalDict == null)
+        {
+            OnValidate();
+        }
         if (unreadNotifications && !isShowingNotification && GS.interactionMode == InteractionType.Default)
         {
             notificationAnimator.SetTrigger("Show");
@@ -63,7 +66,7 @@ public class JournalManager : MonoBehaviour
         if (key == null || key.Length == 0) key = defaultJournalEntry;
 
         JournalEntry data;
-        if (entryDict.TryGetValue(key, out data))
+        if (GS.journalDict.TryGetValue(key, out data))
         {
             if (data == null)
             {
@@ -91,15 +94,5 @@ public class JournalManager : MonoBehaviour
     public void MarkAsRead()
     {
         unreadNotifications = false;
-    }
-
-    public void Reset()
-    {
-        entryDict.Clear();
-        foreach(JournalEntry data in journalEntries)
-        {
-            data.alreadyAdded = false;
-            entryDict.TryAdd(data.key, data);
-        }
     }
 }

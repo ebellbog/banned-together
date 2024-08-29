@@ -7,6 +7,7 @@ using StarterAssets;
 using System.Linq;
 using UnityEditor;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 /*
  *  Not compatible with URP and HDRP at this moment.
@@ -55,8 +56,9 @@ public class SelectionOutlineController : MonoBehaviour
     [Range(0, 1)]
     public float OutlineHardness = 0.85f;
     
-    private GameObject[] allInteractableObjects;
-    private GameObject[] allDoorButtons; // TODO: combine with interactable item logic
+    private List<Renderer> allInteractableObjects;
+    private List<Renderer> allDoorButtons; // TODO: combine with interactable item logic
+    private List<Renderer> allFocusableObjects;
 
     public StarterAssetsInputs InputSystem;
 
@@ -64,27 +66,49 @@ public class SelectionOutlineController : MonoBehaviour
         allInteractableObjects = GameObject
             .FindGameObjectsWithTag("Interactable")
             .Where(x => {
-                Renderer r = x.transform.GetComponent<Renderer>();
-                if (r == null) Debug.LogWarning($"Interactable object is missing renderer: {x.name}");
-
                 InteractableItem interactableComponent = x.GetComponent<InteractableItem>();
                 if (interactableComponent == null) Debug.LogWarning($"Interactable object is missing InteractableItem component: {x.name}");
-
-                return r != null && interactableComponent?.highlightInFocusMode == true;
+                return interactableComponent?.highlightInFocusMode == true;
             })
-            .ToArray();
+            .Select(x => {
+                Renderer r = x.transform.GetComponent<Renderer>();
+                if (r == null) Debug.LogWarning($"Interactable object is missing renderer: {x.name}");
+                else r.shadowCastingMode = ShadowCastingMode.Off; // Important for isVisible to work correctly
+                return r;
+            })
+            .Where(r => r) // Filter out null
+            .ToList();
 
         allDoorButtons = GameObject
             .FindGameObjectsWithTag("Door")
             .Where(x => {
                 Door doorComponent = x.transform.GetComponent<Door>();
-                if (doorComponent == null || doorComponent.isButton == false) return false;
-                return true;
+                if (doorComponent == null) Debug.LogWarning($"Object with Door tag is missing Door component: {x.name}");
+                return doorComponent?.isButton == true;
             })
-            .ToArray(); 
-        
-        Debug.Log($"Found {allInteractableObjects.Length} interactable objects");
-        Debug.Log($"Found {allDoorButtons.Length} door buttons");
+            .Select(x => {
+                Renderer r = x.transform.GetComponent<Renderer>();
+                if (r == null) Debug.LogWarning($"Door object is missing renderer: {x.name}");
+                else r.shadowCastingMode = ShadowCastingMode.Off;
+                return r;
+            })
+            .Where(r => r)
+            .ToList(); 
+
+        allFocusableObjects = GameObject
+            .FindGameObjectsWithTag("Focusable")
+            .Select(x => {
+                Renderer r = x.transform.GetComponent<Renderer>();
+                if (r == null) Debug.LogWarning($"Focusable object is missing renderer: {x.name}");
+                else r.shadowCastingMode = ShadowCastingMode.Off;
+                return r;
+            })
+            .Where(r => r)
+            .ToList(); 
+
+        Debug.Log($"Found {allInteractableObjects.Count} interactable objects");
+        Debug.Log($"Found {allDoorButtons.Count} door buttons");
+        Debug.Log($"Found {allFocusableObjects.Count} other focusable objects");
     }
 
     void OnEnale()
@@ -130,6 +154,15 @@ public class SelectionOutlineController : MonoBehaviour
         cam.AddCommandBuffer(CameraEvent.BeforeImageEffects, cmd);
         Ini = true;
     }
+
+    public void UpdateOutlineType()
+    {
+        if (OutlineType == OutlineMode.OnlyVisible)
+            Shader.EnableKeyword("_OCCLUDED");
+        else
+            Shader.DisableKeyword("_OCCLUDED");
+    }
+
     private void OnValidate()
     {
         if (!Ini)
@@ -237,6 +270,7 @@ public class SelectionOutlineController : MonoBehaviour
         Graphics.ExecuteCommandBuffer(cmd);
         cmd.Clear();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -264,18 +298,21 @@ public class SelectionOutlineController : MonoBehaviour
                 {
                     Array.Clear(ChildrenRenderers, 0, ChildrenRenderers.Length);
                 }
+
                 if (InputSystem.focus) {
-                    // TODO: cache these renderers
-                    ChildrenRenderers = allDoorButtons
-                        .Select(door => door.transform.GetComponent<Renderer>())
-                        .Concat(allInteractableObjects.Select(interactable => interactable.transform.GetComponent<Renderer>()))
-                        .ToArray();
+                    IEnumerable<Renderer> getVisible(List<Renderer> renderers) => renderers.Where(r => r.isVisible);
+
+                    IEnumerable<Renderer> visibleInteractable = getVisible(allInteractableObjects);
+                    IEnumerable<Renderer> visibleFocusable = getVisible(allFocusableObjects);
+                    IEnumerable<Renderer> visibleDoors = getVisible(allDoorButtons);
+
+                    ChildrenRenderers = visibleInteractable.Concat(visibleFocusable).Concat(visibleDoors).ToArray();
                 } else {
                     ChildrenRenderers = hit.transform.GetComponentsInChildren<Renderer>();
                 }
             }
 
-            if (TargetRenderer != lastTarget || !Selected)
+            if (TargetRenderer != lastTarget || !Selected || (InputSystem.focus && InputSystem.look != Vector2.zero))
             {
                 SetTarget();
             }

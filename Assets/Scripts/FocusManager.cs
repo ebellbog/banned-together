@@ -5,6 +5,7 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
+using Unity.VisualScripting;
 
 public class FocusManager : MonoBehaviour
 {
@@ -160,13 +161,16 @@ public class FocusManager : MonoBehaviour
         float cursorGB = starterInputs.focus && !canFocus ? 0 : 1;
         focusCursor.color = new Color(1, cursorGB, cursorGB, cursorAlpha);
 
-        if (isFocusing && GS.interactionMode == InteractionType.Default) { // Enter Focus mode
+        if (isFocusing && (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Monologue)) { // Enter Focus mode
             particleEffects.Play();
             AudioManager.instance.MuffleMusic();
 
-            GS.interactionMode = InteractionType.Focus;
             selectionOutlineController.OutlineWidth = maxOutlineWidth;
             selectionOutlineController.OutlineHardness = 0;
+            selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.ColorizeOccluded;
+            selectionOutlineController.UpdateOutlineType();
+
+            GS.interactionMode = InteractionType.Focus;
         }
         else if (focusPercent == 0 && particleEffects.isPlaying) { // Exit Focus mode
             particleEffects.Stop();
@@ -176,6 +180,8 @@ public class FocusManager : MonoBehaviour
 
             selectionOutlineController.OutlineWidth = initialOutlineWidth;
             selectionOutlineController.OutlineHardness = initialOutlineHardness;
+            selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
+            selectionOutlineController.UpdateOutlineType();
         }
 
         // Update properties based on focus percent

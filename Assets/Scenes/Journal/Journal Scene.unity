@@ -1308,7 +1308,6 @@ MonoBehaviour:
   - {fileID: 8400000, guid: 65097b562e3141f48aff8dfce35862e9, type: 2}
   - {fileID: 8400000, guid: d4d649cd7b0323a4a94f606e1a4831d4, type: 2}
   - {fileID: 8400000, guid: 0d0581d349341eb4da5bda55ae34b752, type: 2}
-  - {fileID: 8400000, guid: df77d05dc0ebea44faf909142cea860d, type: 2}
   - {fileID: 2800000, guid: 6e67f8fd6d26021438a8efe25ba551ce, type: 3}
   interactable: 1
   enableShadowEffect: 1

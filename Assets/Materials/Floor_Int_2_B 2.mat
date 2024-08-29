@@ -25,7 +25,6 @@ Material:
   - _OUTLINE_NML
   - _OVERLAYMODE_HALFTONE
   - _PARALLAXMAP
-  - _USEOUTLINE_ON
   - _USESCREENUVS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -155,7 +154,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 49d210a9bd12a7a4fb0f514a39cbd693, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2ef73767ada6bda429dc2a9f1c90254e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -184,7 +183,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.3, y: 0.3}
+        m_Scale: {x: 0.34, y: 0.3}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
         m_Texture: {fileID: 0}
@@ -590,7 +589,7 @@ Material:
     - _UseEnvironmentRefletion: 0
     - _UseHatchingConstantScale: 1
     - _UseLightRamp: 2
-    - _UseOutline: 1
+    - _UseOutline: 0
     - _UsePureSketch: 0
     - _UseRimLight: 0
     - _UseScreenUvs: 1
@@ -627,7 +626,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6698113, g: 0.5478874, b: 0.4518067, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
