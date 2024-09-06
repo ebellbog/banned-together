@@ -8,24 +8,24 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sittable Chair
-  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_HAFTONE
-  - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_DIFFUSERAMP
-  m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
-  - _INVERSEMASK_ON
   - _IS_ANGELRING_OFF
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
-  - _NORMALMAP
   - _OUTLINE_NML
-  - _OVERLAYMODE_HALFTONE
   - _PARALLAXMAP
+  m_InvalidKeywords:
+  - _INVERSEMASK_ON
+  - _NORMALMAP
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_HAFTONE
+  - _OVERLAYMODE_HALFTONE
+  - _USEHATCHINGCONSTANTSCALE_ON
+  - _USELIGHTRAMP_DIFFUSERAMP
   - _USESCREENUVSSPECULAR_ON
   - _USESCREENUVS_ON
   - _USESPECULARMASK_ON
@@ -35,13 +35,14 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: 3b2e1382449f14d4d9595c92a59efb44, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
@@ -266,11 +267,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _1st2nd_Shades_Feather: 0.0001
-    - _1st_ShadeColor_Feather: 0.64
-    - _1st_ShadeColor_Step: 0.271
-    - _2nd_ShadeColor_Feather: 0.0001
-    - _2nd_ShadeColor_Step: 0
+    - _1st2nd_Shades_Feather: 0.06
+    - _1st_ShadeColor_Feather: 0.172
+    - _1st_ShadeColor_Step: 0.386
+    - _2nd_ShadeColor_Feather: 0.06
+    - _2nd_ShadeColor_Step: 0.131
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ARSampler_AlphaOn: 0
@@ -302,8 +303,8 @@ Material:
     - _BacklightIntensity: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
-    - _BaseColor_Step: 0.271
-    - _BaseShade_Feather: 0.64
+    - _BaseColor_Step: 0.386
+    - _BaseShade_Feather: 0.172
     - _Base_Speed: 0
     - _BlendMode: 0
     - _BlurLevelMatcap: 0
@@ -453,7 +454,7 @@ Material:
     - _OutlineTextureStrength: 0
     - _OutlineType: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 0
+    - _Outline_Width: 10
     - _OverlayMode: 1
     - _OverlayMode1: 0
     - _OverlayRotation: 20.5
@@ -489,7 +490,7 @@ Material:
     - _SecondShadeOverridden: 0
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0
+    - _ShadeColor_Step: 0.131
     - _ShapeSmoothness: 0.203
     - _SideShineAmount: 0.2717647
     - _SideShineHardness: 0
@@ -611,15 +612,15 @@ Material:
     - _utsVersionY: 10
     - _utsVersionZ: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
-    - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _1st_ShadeColor: {r: 1, g: 0.4733819, b: 0.19182372, a: 1}
+    - _2nd_ShadeColor: {r: 1, g: 0.6610249, b: 0.34901965, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.72156864, g: 0.21652064, b: 0, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.7529412, g: 0.44313726, b: 0.09803922, a: 1}
+    - _Color: {r: 0.72156864, g: 0.21652064, b: 0, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
@@ -637,7 +638,7 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineMaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Outline_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Outline_Color: {r: 0.5849056, g: 0.19073008, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimLightMaskColor: {r: 1, g: 0, b: 1, a: 1}

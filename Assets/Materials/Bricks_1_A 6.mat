@@ -8,24 +8,24 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bricks_1_A 6
-  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_HAFTONE
-  - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_DIFFUSERAMP
-  m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
-  - _INVERSEMASK_ON
   - _IS_ANGELRING_OFF
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
-  - _NORMALMAP
   - _OUTLINE_NML
-  - _OVERLAYMODE_HALFTONE
   - _PARALLAXMAP
+  m_InvalidKeywords:
+  - _INVERSEMASK_ON
+  - _NORMALMAP
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_HAFTONE
+  - _OVERLAYMODE_HALFTONE
+  - _USEHATCHINGCONSTANTSCALE_ON
+  - _USELIGHTRAMP_DIFFUSERAMP
   - _USESCREENUVSSPECULAR_ON
   - _USESCREENUVS_ON
   - _USESPECULARMASK_ON
@@ -35,13 +35,22 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Base_Map:
+        m_Texture: {fileID: 2800000, guid: 25b1e86dec04b924789e861275854380, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Normal_Map:
+        m_Texture: {fileID: 2800000, guid: 532235ea18feba64aa1fdae6c3e585a7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: 3b2e1382449f14d4d9595c92a59efb44, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
@@ -264,11 +273,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Normal_Blend: 0.5
     - _1st2nd_Shades_Feather: 0.0001
     - _1st_ShadeColor_Feather: 0.64
-    - _1st_ShadeColor_Step: 0.271
+    - _1st_ShadeColor_Step: 0
     - _2nd_ShadeColor_Feather: 0.0001
     - _2nd_ShadeColor_Step: 0
     - _AORemapMax: 1
@@ -302,7 +324,7 @@ Material:
     - _BacklightIntensity: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
-    - _BaseColor_Step: 0.271
+    - _BaseColor_Step: 0
     - _BaseShade_Feather: 0.64
     - _Base_Speed: 0
     - _BlendMode: 0
@@ -321,6 +343,9 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Darken: 0
+    - _DecalMeshBiasType: 0
+    - _DecalMeshDepthBias: 0
+    - _DecalMeshViewBias: 0
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
     - _DetailNormalMapScale: 1
@@ -352,6 +377,7 @@ Material:
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 1
+    - _DrawOrder: 0
     - _DstBlend: 0
     - _EMISSIVE: 0
     - _EmissiveColorMode: 1
@@ -654,3 +680,16 @@ Material:
     - _ViewShift: {r: 0, g: 0, b: 0, a: 1}
     - emissive: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &2203462157879299524
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

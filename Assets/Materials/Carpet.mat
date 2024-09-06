@@ -8,21 +8,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Carpet
-  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_HAFTONE
-  - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_STEP
-  m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
   - _IS_ANGELRING_OFF
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
   - _OUTLINE_NML
+  m_InvalidKeywords:
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_HAFTONE
   - _OVERLAYMODE_HALFTONE
+  - _USEHATCHINGCONSTANTSCALE_ON
+  - _USELIGHTRAMP_STEP
   - _USESCREENUVS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -30,6 +30,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -152,8 +153,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a57bd2cef3687184c96afa40dc270e2c, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
         m_Texture: {fileID: 0}
@@ -606,7 +607,7 @@ Material:
     - _utsVersionY: 10
     - _utsVersionZ: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.7264151, g: 0.5722232, b: 0.616278, a: 1}
+    - _1st_ShadeColor: {r: 0.8805031, g: 0.8805031, b: 0.8805031, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}

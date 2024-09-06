@@ -8,22 +8,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: chandelier
-  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_NONE
-  - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_STEP
-  m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
   - _IS_ANGELRING_OFF
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
-  - _NORMALMAP
   - _OUTLINE_NML
+  m_InvalidKeywords:
+  - _NORMALMAP
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_NONE
   - _SPECGLOSSMAP
+  - _USEHATCHINGCONSTANTSCALE_ON
+  - _USELIGHTRAMP_STEP
   - _USEOUTLINE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -31,6 +31,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -612,10 +613,10 @@ Material:
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.61635214, g: 0.61635214, b: 0.61635214, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.61635214, g: 0.61635214, b: 0.61635214, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

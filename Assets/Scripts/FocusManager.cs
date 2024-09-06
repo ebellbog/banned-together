@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Rendering.PostProcessing;
 using Unity.VisualScripting;
+using UnityEngine.Rendering;
 
 public class FocusManager : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class FocusManager : MonoBehaviour
     public StarterAssetsInputs starterInputs;
     public Image focusCursor;
     public ParticleSystem particleEffects;
-    public PostProcessVolume postprocessVolume;
+    public Volume postprocessVolume;
     public SelectionOutlineController selectionOutlineController;
 
     [Space(10)]

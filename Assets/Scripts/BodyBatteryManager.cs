@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using StarterAssets;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+// using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class BodyBatteryManager : MonoBehaviour
@@ -16,7 +16,7 @@ public class BodyBatteryManager : MonoBehaviour
     public Sprite drainedSprite;
     public Animator watchAnimator;
     public Animator goToBedAnimator;
-    public PostProcessVolume exhaustionEffects;
+    // public PostProcessVolume exhaustionEffects;
 
     [Space(10)]
     [Header("Resource management")]
@@ -123,7 +123,7 @@ public class BodyBatteryManager : MonoBehaviour
             StopDrainedAlarm();
             HideGoToBed();
         }
-        exhaustionEffects.weight = exhaustionEffectLevel;
+        // exhaustionEffects.weight = exhaustionEffectLevel;
 
         // Go to sleep
         if (starterInputs.sleep)

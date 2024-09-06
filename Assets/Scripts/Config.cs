@@ -23,8 +23,11 @@ public class Config : MonoBehaviour
     public Canvas cursorCanvas;
 
     [Header("Player Control")]
+    public GameObject player;
     public StarterAssetsInputs starterAssetsInputs;
     public PlayerInput playerInput;
+    public GameObject playerStartPosition;
+    public bool startPlayerAtPosition = false;
 
     void Start()
     {
@@ -37,6 +40,11 @@ public class Config : MonoBehaviour
 
         Player.starterInputs = starterAssetsInputs;
         Player.playerInput = playerInput;
+
+        if (startPlayerAtPosition && playerStartPosition) {
+            player.transform.position = playerStartPosition.transform.position;
+            player.transform.rotation = playerStartPosition.transform.rotation;
+        }
     }
 
     #if UNITY_EDITOR

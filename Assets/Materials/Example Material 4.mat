@@ -8,20 +8,20 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Example Material 4
-  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
+  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_NONE
-  - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_STEP
-  m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
   - _IS_ANGELRING_OFF
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
   - _OUTLINE_NML
+  m_InvalidKeywords:
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_NONE
+  - _USEHATCHINGCONSTANTSCALE_ON
+  - _USELIGHTRAMP_STEP
   - _USEOUTLINE_ON
   - _USESCREENUVS_ON
   m_LightmapFlags: 4
@@ -30,13 +30,14 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _1st_ShadeMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a35216cf1895fac409b4d89c3def4cac, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
@@ -153,7 +154,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: a35216cf1895fac409b4d89c3def4cac, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 3.5, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
         m_Texture: {fileID: 0}
@@ -263,7 +264,7 @@ Material:
     m_Floats:
     - _1st2nd_Shades_Feather: 0.0001
     - _1st_ShadeColor_Feather: 0.0001
-    - _1st_ShadeColor_Step: 0.244
+    - _1st_ShadeColor_Step: 0.241
     - _2nd_ShadeColor_Feather: 0.0001
     - _2nd_ShadeColor_Step: 0.004
     - _AORemapMax: 1
@@ -297,7 +298,7 @@ Material:
     - _BacklightIntensity: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
-    - _BaseColor_Step: 0.244
+    - _BaseColor_Step: 0.241
     - _BaseShade_Feather: 0.0001
     - _Base_Speed: 0
     - _BlendMode: 0
@@ -549,7 +550,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_ShadingGradeMapLevel: 0
-    - _Tweak_SystemShadowsLevel: -0.105
+    - _Tweak_SystemShadowsLevel: -0.094
     - _Tweak_transparency: 0
     - _UVAnimationSpeed: 2
     - _UVAnimationSpeedSpec: 2
@@ -606,15 +607,15 @@ Material:
     - _utsVersionY: 10
     - _utsVersionZ: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.3490566, g: 0.20589198, b: 0.09385012, a: 1}
+    - _1st_ShadeColor: {r: 0.91823894, g: 0.6543618, b: 0.4417941, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 0}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.5471698, g: 0.32906413, b: 0.19357423, a: 1}
+    - _BaseColor: {r: 0.6226415, g: 0.3859202, b: 0.24083298, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6289307, g: 0.4259974, b: 0.29468763, a: 1}
+    - _Color: {r: 0.6226415, g: 0.3859202, b: 0.24083298, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
