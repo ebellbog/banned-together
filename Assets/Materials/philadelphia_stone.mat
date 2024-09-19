@@ -21,24 +21,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: philadelphia_stone
-  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a10fe865b2460b9459b284a97685cecf, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _EMISSIVE_SIMPLE
-  - _IS_ANGELRING_OFF
-  - _IS_CLIPPING_OFF
-  - _IS_OUTLINE_CLIPPING_NO
-  - _OUTLINE_NML
-  m_InvalidKeywords:
-  - _SPECULARHIGHLIGHTS_OFF
+  - _USE_SCREEN_SPACE
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
-    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -71,6 +65,10 @@ Material:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 8b37c9a7dcb13304391329e5bd833213, type: 3}
         m_Scale: {x: 0.15, y: 0.15}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Texture:
+        m_Texture: {fileID: 2800000, guid: 8b37c9a7dcb13304391329e5bd833213, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
         m_Texture: {fileID: 0}
@@ -331,6 +329,7 @@ Material:
     - _BumpScale: 1
     - _BumpScaleMatcap: 1
     - _CameraRolling_Stabilizer: 0
+    - _Circle_Density: 42
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ClippingMatteMode: 0
@@ -388,6 +387,7 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _EnvironmentReflections: 1
+    - _Falloff_Threshold: 0.7
     - _Farthest_Distance: 100
     - _FirstShadeOverridden: 0
     - _FirstShadeVisible: 1
@@ -457,6 +457,7 @@ Material:
     - _LightRampOffset: -1
     - _Lighten: 0
     - _LinkDetailsWithBase: 1
+    - _Lit_Threshold: 0.7
     - _MainLightIntesity: 1
     - _MatCap: 0
     - _MaterialID: 1
@@ -492,6 +493,7 @@ Material:
     - _PPDPrimitiveWidth: 1
     - _PaperTilling: 1
     - _Parallax: 0.01
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
     - _ReceiveShadows: 1
@@ -510,6 +512,7 @@ Material:
     - _Rotate_EmissiveUV: 0
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
+    - _Rotation: 40
     - _SPRDefaultUnlitColorMask: 15
     - _SRPDefaultUnlitColMode: 1
     - _SSRefractionProjectionModel: 0
@@ -519,6 +522,7 @@ Material:
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
     - _ShadeColor_Step: 0
+    - _Shading_Multiplier: 0.5
     - _ShapeSmoothness: 0.203
     - _Shininess: 0
     - _SideShineAmount: 0.2717647
@@ -530,6 +534,7 @@ Material:
     - _SmoothnessRemapMin: 0
     - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
+    - _Softness: 0.1
     - _SpecSource: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -590,6 +595,7 @@ Material:
     - _Tweak_ShadingGradeMapLevel: 0
     - _Tweak_SystemShadowsLevel: 0.011
     - _Tweak_transparency: 0
+    - _USE_SCREEN_SPACE: 1
     - _UVAnimationSpeed: 0.95
     - _UVAnimationSpeedSpec: 0
     - _UVAnimationSpeedWarp: 2
@@ -654,6 +660,7 @@ Material:
     - _BaseColor: {r: 0.55345905, g: 0.55345905, b: 0.55345905, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_Color: {r: 0.408805, g: 0.37923732, b: 0.37923732, a: 0}
     - _Color: {r: 0.55345905, g: 0.55345905, b: 0.55345905, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
