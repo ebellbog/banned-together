@@ -8,30 +8,33 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Default_ColorPallete
-  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _OUTLINETYPE_NORMAL
+  - _OVERLAYMODE1_NONE
+  - _OVERLAYMODE_HAFTONE
+  - _RIMSPLITCOLOR_NOSPLIT
+  - _USEADAPTIVESCREENUVS_ON
+  - _USEADDITIONALLIGHTSDIFFUSE_ON
+  - _USEHATCHINGCONSTANTSCALE_ON
+  - _USELIGHTRAMP_POSTERIZE
+  - _USESCREENUVS_ON
+  m_InvalidKeywords:
   - _EMISSIVE_SIMPLE
   - _IS_ANGELRING_OFF
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
   - _OUTLINE_NML
-  m_InvalidKeywords:
-  - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_HAFTONE
   - _OVERLAYMODE_HALFTONE
-  - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_POSTERIZE
-  - _USEOUTLINE_ON
-  - _USESCREENUVS_ON
+  - _USESHADOWS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
-    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -261,6 +264,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _1st2nd_Shades_Feather: 0.0001
@@ -277,6 +292,10 @@ Material:
     - _AdaptiveThicnkess: 0
     - _AddPrecomputedVelocity: 0
     - _Add_Antipodean_RimLight: 0
+    - _AdditionalLightsAmount: 0
+    - _AdditionalLightsFaloff: 0
+    - _AdditionalLightsIntesity: 1
+    - _AdditionalLightsSmoothnessMultiplier: 1
     - _AlbedoAffectEmissive: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
@@ -316,7 +335,7 @@ Material:
     - _ComposerMaskMode: 0
     - _CullMode: 2
     - _CullModeForward: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.562
     - _Darken: 0
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
@@ -324,8 +343,8 @@ Material:
     - _DetailNormalScale: 1
     - _DetailSmoothnessScale: 1
     - _DiffusePosterizeOffset: -0.059
-    - _DiffusePosterizePower: 1
-    - _DiffusePosterizeSteps: 3
+    - _DiffusePosterizePower: 0.5
+    - _DiffusePosterizeSteps: 3.24
     - _DiffuseWarpAffectHalftone: 0
     - _DiffuseWarpBrightnessOffset: 1.12
     - _DiffusionProfile: 0
@@ -366,10 +385,10 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.14
     - _GlossyReflections: 1
-    - _HalftoneEdgeOffset: 0.034
-    - _HalftoneSmoothness: 0.778
-    - _HalftoneThreshold: 0.0868
-    - _HalftoneToonAffect: 0
+    - _HalftoneEdgeOffset: -0.12
+    - _HalftoneSmoothness: 0.76
+    - _HalftoneThreshold: 0.122
+    - _HalftoneToonAffect: 0.312
     - _HaltonePatternSize: 0
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
@@ -454,7 +473,7 @@ Material:
     - _OverlayMode: 1
     - _OverlayMode1: 0
     - _OverlayRotation: 21.3
-    - _OverlayUVTilling: 50
+    - _OverlayUVTilling: 70
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -462,7 +481,10 @@ Material:
     - _PPDPrimitiveWidth: 1
     - _PaperTilling: 1
     - _Parallax: 0.02
+    - _QueueControl: -1
+    - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
+    - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _RefractionModel: 0
     - _RimLight: 0
@@ -487,7 +509,7 @@ Material:
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
     - _ShadeColor_Step: 0
-    - _ShapeSmoothness: 0.626
+    - _ShapeSmoothness: 0.555
     - _SideShineAmount: 0.2717647
     - _SideShineHardness: 0
     - _SideShineIntensity: 1
@@ -567,9 +589,10 @@ Material:
     - _UVSrcrollAngleSpec: 0
     - _UVSrcrollAngleWarp: 0
     - _Unlit_Intensity: 0
-    - _UseAdaptiveScreenUvs: 0
+    - _UseAdaptiveScreenUvs: 1
     - _UseAdaptiveScreenUvsWarp: 0
     - _UseAdaptiveUvsSpecular: 0
+    - _UseAdditionalLightsDiffuse: 1
     - _UseBacklight: 0
     - _UseDiffuseWarp: 0
     - _UseDiffuseWarpAsOverlay: 0
@@ -579,13 +602,14 @@ Material:
     - _UseEnvironmentRefletion: 0
     - _UseHatchingConstantScale: 1
     - _UseLightRamp: 2
-    - _UseOutline: 1
+    - _UseOutline: 0
     - _UsePureSketch: 0
     - _UseRimLight: 0
     - _UseScreenUvs: 1
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadowThreshold: 0
+    - _UseShadows: 1
     - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _Use_1stAs2nd: 0
@@ -616,7 +640,7 @@ Material:
     - _BaseColor: {r: 0.6792453, g: 0.63866144, b: 0.63866144, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6792453, g: 0.63866144, b: 0.63866144, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
