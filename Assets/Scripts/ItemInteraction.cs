@@ -10,20 +10,25 @@ namespace StarterAssets
 {
     public class ItemInteraction : MonoBehaviour
     {
-        [Header("Examine mode")]
+        [Header("General settings")]
+        public float RaycastReach;
+
+        [Header("Outline settings")]
+        public Color DefaultExaminableColor = Color.white;
+        public Color DefaultSittableColor = Color.white;
+        public ScreenSpaceOutlines outlineManager;
+
+        [Header("Examination")]
         public Camera ExamineCamera;
         public Transform ExamineTarget;
-        public float RaycastReach;
         public float rotationSpeed = 7.5f;
         public float pickUpDuration = 0.6f;
         public float putDownDuration = .35f;
-        public float SitDistance = 1.5f;
-        public float PanSpeed = 0.02f; 
+        public float PanSpeed = 0.02f;
 
-        [Header("Sitting mode")]
-        private GameObject weirdLibraryParent; // private until we actually implement this
-        public Transform standingUpPosition;
-        public float sittingHeight;
+        [Header("Sitting")]
+        public float SitDistance = 1.75f;
+        public float sittingHeight = 1.25f;
 
         [Header("Cursor settings")]
         public Image CursorImage;
@@ -39,14 +44,8 @@ namespace StarterAssets
         public Texture2D RotateUpDown;
         public Texture2D DefaultUnlocked;
 
-        [Header("Outline settings")]
-        public Color DefaultExaminableColor = Color.white;
-        public Color DefaultSittableColor = Color.white;
-        public ScreenSpaceOutlines outlineManager;
-
         private StarterAssetsInputs _input;
         private PlayerInput _playerInput;
-        // private SelectionOutlineController _selectionOutlineController;
 		private RaycastHit hitInfo;
         private int examineLayerIdx;
         private int outlineLayerIdx;
@@ -78,51 +77,21 @@ namespace StarterAssets
 
         private Action examineCallback;
 
-        // Start is called before the first frame update
         void Start()
         {
             _input = GetComponent<StarterAssetsInputs>();
             _playerInput = GetComponent<PlayerInput>();
             _playerController = GetComponent<FirstPersonController>();
-            // _selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
 
             examineLayerIdx = LayerMask.NameToLayer("Examine Object");
             outlineLayerIdx = LayerMask.NameToLayer("Outlined");
 
             characterHeight = GetComponent<CharacterController>().height;
-
-            if (weirdLibraryParent) {
-                weirdLibraryParent.SetActive(false);
-            }
         }
 
-        // Update is called once per frame
         void Update()
         {
             Interact();
-        }
-
-        private void SetLayer(GameObject targetObject, int layerIdx)
-        {
-            targetObject.layer = layerIdx;
-            foreach (Transform child in targetObject.transform)
-            {
-                child.gameObject.layer = layerIdx;
-            }
-        }
-        private void SetOutlined(GameObject gameObject)
-        {
-            ClearOutlined();
-            SetLayer(gameObject, outlineLayerIdx);
-            outlinedObject = gameObject;
-        }
-        private void ClearOutlined()
-        {
-            if (outlinedObject)
-            {
-                SetLayer(outlinedObject, 0);
-                outlinedObject = null;
-            }
         }
 
 		private void Interact() {
@@ -220,11 +189,6 @@ namespace StarterAssets
                     StartCoroutine(HeightChange("shrink", 0.5f));
                     StartCoroutine(SitShake(1.1f));
                     StartCoroutine(ReenableControls(2.3f, "sit"));
-
-                    //Show weird library
-                    if (weirdLibraryParent) {
-                        weirdLibraryParent.SetActive(true);
-                    }
                 }
                 else if (GS.isSitting)
                 {
@@ -286,6 +250,32 @@ namespace StarterAssets
             }
 		}
 
+        /* HELPER METHODS */
+        private void SetLayer(GameObject targetObject, int layerIdx)
+        {
+            targetObject.layer = layerIdx;
+            foreach (Transform child in targetObject.transform)
+            {
+                child.gameObject.layer = layerIdx;
+            }
+        }
+        private void SetOutlined(GameObject gameObject)
+        {
+            ClearOutlined();
+            SetLayer(gameObject, outlineLayerIdx);
+            outlinedObject = gameObject;
+        }
+        private void ClearOutlined()
+        {
+            if (outlinedObject)
+            {
+                SetLayer(outlinedObject, 0);
+                outlinedObject = null;
+            }
+        }
+
+        /* EXAMINE METHODS */
+
         private void RestoreTargetPosition(float duration = 0.6f)
         {
             if (targetStartPosition == null || targetStartPosition == ExamineTarget.position) return;
@@ -331,11 +321,7 @@ namespace StarterAssets
             targetStartRotation = ExamineTarget.transform.rotation;
             targetStartPosition = ExamineTarget.transform.position;
 
-            // TODO: move all objects off outline layer
-            // if (_selectionOutlineController) {
-            //     _selectionOutlineController.enabled = false;
-            // }
-
+            ClearOutlined();
             SetLayer(activeObject, examineLayerIdx);
 
             UI.FadeInMatte();
@@ -418,103 +404,6 @@ namespace StarterAssets
 
             UI.LockCursor();
             GS.interactionMode = YarnDispatcher.YarnSpinnerIsActive() ? InteractionType.Monologue : InteractionType.Default;
-        }
-
-        IEnumerator SitShake(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-
-            transform.DOShakeRotation(0.6f, new Vector3(0, 0, 3f));
-        }
-
-        IEnumerator RotatePlayerToChair(float duration, Quaternion destination)
-        {
-
-            float timer = 0.0f;
-            while (timer < duration)
-            {
-                timer += Time.deltaTime;
-                float t = timer / duration;
-                t = t * t * t * (t * (6f * t - 15f) + 10f);
-
-                transform.rotation = Quaternion.Slerp(transform.rotation, destination, t);
-
-                yield return null;
-            }
-
-            yield return null;
-        }
-
-        IEnumerator ReenableControls(float seconds, string action)
-        {
-            yield return new WaitForSeconds(seconds);
-
-            if (action == "sit") {
-                _playerInput.enabled = true;
-                _playerInput.SwitchCurrentActionMap("Sitting");
-                GS.isSitting = true;
-            }
-            else if (action == "stand")
-            {
-                _playerInput.enabled = true;
-                _playerInput.SwitchCurrentActionMap("Player");
-                GS.isSitting = false;
-            }
-        }
-        
-        public void OnMove(InputValue value)
-        {
-            if (GS.isSitting) {
-                StandUp();
-            }
-            if (GS.isSitting || readyToStand) {
-                StartCoroutine(WaitAndReactivateChair(1.5f, currentSeat));
-                readyToStand = false;
-            }
-        }
-
-        public void StandUp() {
-            _playerInput.enabled = false;
-
-            StartCoroutine(HeightChange("grow", 0.25f));
-            StartCoroutine(ReenableControls(0.5f, "stand"));
-
-            if (weirdLibraryParent)
-            {
-                weirdLibraryParent.SetActive(false);
-            }
-        }
-
-        IEnumerator WaitAndReactivateChair(float seconds, GameObject targetSeat)
-        {
-            yield return new WaitForSeconds(seconds);
-            targetSeat.GetComponent<Collider>().enabled = true;
-        }
-
-        IEnumerator HeightChange(string operation, float duration)
-        {
-            if (operation == "grow")
-            {
-                float pointInTime = 0.0f;
-                while (pointInTime <= duration)
-                {
-                    GetComponent<CharacterController>().height = Mathf.Lerp(sittingHeight, characterHeight, pointInTime / duration);
-                    pointInTime += Time.deltaTime;
-                    yield return null;
-                }
-            }
-            else if (operation == "shrink")
-            {
-                float pointInTime = 0.0f;
-                while (pointInTime <= duration)
-                {
-                    GetComponent<CharacterController>().height = Mathf.Lerp(characterHeight, sittingHeight, pointInTime / duration);
-                    pointInTime += Time.deltaTime;
-                    yield return null;
-                }
-
-            }
-
         }
 
         public void OnLook(InputValue value)
@@ -607,6 +496,100 @@ namespace StarterAssets
 
             if (examineCallback != null) examineCallback();
             yield return null;
+        }
+
+        /* SITTING METHODS */
+
+        IEnumerator SitShake(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            transform.DOShakeRotation(0.6f, new Vector3(0, 0, 3f));
+        }
+
+        IEnumerator RotatePlayerToChair(float duration, Quaternion destination)
+        {
+
+            float timer = 0.0f;
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float t = timer / duration;
+                t = t * t * t * (t * (6f * t - 15f) + 10f);
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, destination, t);
+
+                yield return null;
+            }
+
+            yield return null;
+        }
+
+        IEnumerator ReenableControls(float seconds, string action)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            if (action == "sit") {
+                _playerInput.enabled = true;
+                _playerInput.SwitchCurrentActionMap("Sitting");
+                GS.isSitting = true;
+            }
+            else if (action == "stand")
+            {
+                _playerInput.enabled = true;
+                _playerInput.SwitchCurrentActionMap("Player");
+                GS.isSitting = false;
+            }
+        }
+        
+        public void OnMove(InputValue value)
+        {
+            if (GS.isSitting) {
+                StandUp();
+            }
+            if (GS.isSitting || readyToStand) {
+                StartCoroutine(WaitAndReactivateChair(1.5f, currentSeat));
+                readyToStand = false;
+            }
+        }
+
+        public void StandUp() {
+            _playerInput.enabled = false;
+
+            StartCoroutine(HeightChange("grow", 0.25f));
+            StartCoroutine(ReenableControls(0.5f, "stand"));
+        }
+
+        IEnumerator WaitAndReactivateChair(float seconds, GameObject targetSeat)
+        {
+            yield return new WaitForSeconds(seconds);
+            targetSeat.GetComponent<Collider>().enabled = true;
+        }
+
+        IEnumerator HeightChange(string operation, float duration)
+        {
+            if (operation == "grow")
+            {
+                float pointInTime = 0.0f;
+                while (pointInTime <= duration)
+                {
+                    GetComponent<CharacterController>().height = Mathf.Lerp(sittingHeight, characterHeight, pointInTime / duration);
+                    pointInTime += Time.deltaTime;
+                    yield return null;
+                }
+            }
+            else if (operation == "shrink")
+            {
+                float pointInTime = 0.0f;
+                while (pointInTime <= duration)
+                {
+                    GetComponent<CharacterController>().height = Mathf.Lerp(characterHeight, sittingHeight, pointInTime / duration);
+                    pointInTime += Time.deltaTime;
+                    yield return null;
+                }
+
+            }
+
         }
     }
 }

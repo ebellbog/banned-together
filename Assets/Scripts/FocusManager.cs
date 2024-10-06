@@ -14,7 +14,7 @@ public class FocusManager : MonoBehaviour
     public Image focusCursor;
     public ParticleSystem particleEffects;
     public Volume postprocessVolume;
-    public SelectionOutlineController selectionOutlineController;
+    // public SelectionOutlineController selectionOutlineController;
 
     [Space(10)]
     [Header("Resource management")]
@@ -60,10 +60,10 @@ public class FocusManager : MonoBehaviour
     private bool didTurnOffShadows = false;
 
     void Start() {
-        initialOutlineWidth = selectionOutlineController.OutlineWidth;
-        initialOutlineHardness = selectionOutlineController.OutlineHardness;
+        // initialOutlineWidth = selectionOutlineController.OutlineWidth;
+        // initialOutlineHardness = selectionOutlineController.OutlineHardness;
 
-        Color.RGBToHSV(selectionOutlineController.OutlineColor, out currentHue, out initialSat, out initialVal);
+        // Color.RGBToHSV(selectionOutlineController.OutlineColor, out currentHue, out initialSat, out initialVal);
 
         mainCamera = Camera.main;
         initialFOV = mainCamera.fieldOfView;
@@ -165,10 +165,10 @@ public class FocusManager : MonoBehaviour
             particleEffects.Play();
             AudioManager.instance.MuffleMusic();
 
-            selectionOutlineController.OutlineWidth = maxOutlineWidth;
-            selectionOutlineController.OutlineHardness = 0;
-            selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.ColorizeOccluded;
-            selectionOutlineController.UpdateOutlineType();
+            // selectionOutlineController.OutlineWidth = maxOutlineWidth;
+            // selectionOutlineController.OutlineHardness = 0;
+            // selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.ColorizeOccluded;
+            // selectionOutlineController.UpdateOutlineType();
 
             GS.interactionMode = InteractionType.Focus;
         }
@@ -178,10 +178,10 @@ public class FocusManager : MonoBehaviour
 
             if (GS.interactionMode == InteractionType.Focus) GS.interactionMode = InteractionType.Default;
 
-            selectionOutlineController.OutlineWidth = initialOutlineWidth;
-            selectionOutlineController.OutlineHardness = initialOutlineHardness;
-            selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
-            selectionOutlineController.UpdateOutlineType();
+            // selectionOutlineController.OutlineWidth = initialOutlineWidth;
+            // selectionOutlineController.OutlineHardness = initialOutlineHardness;
+            // selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
+            // selectionOutlineController.UpdateOutlineType();
         }
 
         // Update properties based on focus percent
@@ -208,8 +208,8 @@ public class FocusManager : MonoBehaviour
         {
             currentHue = (currentHue + Time.deltaTime * hueRotateSpeed) % 1;
             Color newColor = Color.HSVToRGB(currentHue, initialSat, initialVal);
-            selectionOutlineController.OutlineColor = newColor;
-            selectionOutlineController.OccludedColor = newColor;
+            // selectionOutlineController.OutlineColor = newColor;
+            // selectionOutlineController.OccludedColor = newColor;
         }
     }
 }

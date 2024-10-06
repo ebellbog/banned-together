@@ -17,14 +17,23 @@ public enum RotationAxis {
 [RequireComponent(typeof(Renderer))]
 public class InteractableItem : MonoBehaviour
 {
-    public bool highlightInFocusMode = false;
+    public GameObject interactionParent;
+
+    [Header("Focus settings")]
+    public bool isFocusable = true;
+
+    [Header("Examination settings")]
+    public bool isExaminable = true;
     public bool orientToCamera = false;
     public bool useRenderPivot = true;
     public RotationAxis rotationAxis = RotationAxis.All;
     public float scaleOnInteraction = 1.0f;
     public bool enablePanning = false;
-    public GameObject interactionParent;
+
+    [Header("Journal settings")]
     public string journalEntry;
+
+    [Header("Game state settings")]
     public bool affectsBodyBattery = false;
     public StateUpdate[] gameStateUpdates;
 
