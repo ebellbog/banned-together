@@ -12,13 +12,17 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _OUTLINETYPE_NORMAL
   - _OVERLAYMODE1_NONE
   - _OVERLAYMODE_NONE
+  - _RIMSPLITCOLOR_NOSPLIT
+  - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_STEP
+  - _USEOUTLINE_ON
   m_InvalidKeywords:
   - _USEDIFFUSEWARP_ON
-  - _USEOUTLINE_ON
+  - _USESHADOWS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -101,9 +105,26 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AdaptiveThicnkess: 0
+    - _AdditionalLightsAmount: 1
+    - _AdditionalLightsFaloff: 1
+    - _AdditionalLightsIntesity: 1
+    - _AdditionalLightsSmoothnessMultiplier: 1
+    - _AlphaCutoff: 0.5
     - _BacklightAmount: 0.5
     - _BacklightHardness: 0
     - _BacklightIntensity: 1
@@ -147,7 +168,10 @@ Material:
     - _OverlayUVTilling: 0
     - _PaperTilling: 1
     - _Parallax: 0.02
+    - _QueueControl: -1
+    - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
+    - _ReceiveShadows: 1
     - _RimPower: 12
     - _RimSmoothness: 0
     - _RimSplitColor: 0
@@ -183,6 +207,7 @@ Material:
     - _UseAdaptiveScreenUvs: 0
     - _UseAdaptiveScreenUvsWarp: 0
     - _UseAdaptiveUvsSpecular: 0
+    - _UseAdditionalLightsDiffuse: 1
     - _UseBacklight: 0
     - _UseDiffuseWarp: 1
     - _UseDiffuseWarpAsOverlay: 0
@@ -197,6 +222,7 @@ Material:
     - _UseScreenUvs: 0
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
+    - _UseShadows: 1
     - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _WarpStrength: 0
@@ -205,7 +231,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
-    - _Color: {r: 0.5852389, g: 0.13163051, b: 0.9622642, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.79459, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
