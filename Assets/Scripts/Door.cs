@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     public bool useSpatialAudio = true;
     public List<Door> connectedDoors;
 
-    private bool isOpen;
+    public bool isOpen;
 
     void Start()
     {
