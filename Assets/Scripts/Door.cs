@@ -30,8 +30,8 @@ public class Door : MonoBehaviour
                 if (closeSoundEffect != null)
                     AudioManager.instance.PlaySFX(closeSoundEffect, useSpatialAudio && animator ? animator.gameObject.transform.position : null);
                 isOpen = false;
-                return;
             }
+            return;
         }
 
         if (!isLocked)
