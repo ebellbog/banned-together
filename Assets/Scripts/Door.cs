@@ -7,13 +7,15 @@ public class Door : MonoBehaviour
 {
     public Animator animator; // For buttons, set this to the associated door's animator
     public string soundEffect;
+    public string closeSoundEffect;
     public bool isButton;
     public bool isLocked;
     public string statePropertyName;
     public bool useSpatialAudio = true;
     public List<Door> connectedDoors;
+    public bool closeable;
 
-    public bool isOpen;
+    [HideInInspector] public bool isOpen;
 
     void Start()
     {
@@ -22,14 +24,25 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
-        if (isOpen) return;
+        if (isOpen) { 
+            if (closeable) {
+                animator.SetTrigger("Close");
+                if (closeSoundEffect != null)
+                    AudioManager.instance.PlaySFX(closeSoundEffect, useSpatialAudio && animator ? animator.gameObject.transform.position : null);
+                isOpen = false;
+                return;
+            }
+        }
 
         if (!isLocked)
         {
             animator.SetTrigger("Open");
-
-            gameObject.tag = "Untagged";
             isOpen = true;
+
+            if (!closeable)
+            {
+                gameObject.tag = "Untagged";
+            }
 
             if (isButton)
                 gameObject.GetComponent<Animator>().SetTrigger("Press");
