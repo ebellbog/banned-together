@@ -39,19 +39,20 @@ namespace StarterAssets
         public Texture2D RotateUpDown;
         public Texture2D DefaultUnlocked;
 
-        [Header("Outline colors")]
-        public Color InteractableOutlineColor;
-        public Color InteractableOccludedColor;
-        public Color SittableOutlineColor;
-        public Color SittableOccludedColor;
+        [Header("Outline settings")]
+        public Color DefaultExaminableColor = Color.white;
+        public Color DefaultSittableColor = Color.white;
+        public ScreenSpaceOutlines outlineManager;
 
         private StarterAssetsInputs _input;
         private PlayerInput _playerInput;
-        private SelectionOutlineController _selectionOutlineController;
+        // private SelectionOutlineController _selectionOutlineController;
 		private RaycastHit hitInfo;
-        private int layerNumber;
+        private int examineLayerIdx;
+        private int outlineLayerIdx;
 
         private GameObject currentObject;
+        private GameObject outlinedObject;
         private GameObject activeObject;
         private GameObject activeParent;
         private Vector3 startPosition;
@@ -77,16 +78,17 @@ namespace StarterAssets
 
         private Action examineCallback;
 
-
         // Start is called before the first frame update
         void Start()
         {
             _input = GetComponent<StarterAssetsInputs>();
             _playerInput = GetComponent<PlayerInput>();
             _playerController = GetComponent<FirstPersonController>();
-            _selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
+            // _selectionOutlineController = Camera.main.GetComponent<SelectionOutlineController>();
 
-            layerNumber = LayerMask.NameToLayer("Examine Object");
+            examineLayerIdx = LayerMask.NameToLayer("Examine Object");
+            outlineLayerIdx = LayerMask.NameToLayer("Outlined");
+
             characterHeight = GetComponent<CharacterController>().height;
 
             if (weirdLibraryParent) {
@@ -98,6 +100,29 @@ namespace StarterAssets
         void Update()
         {
             Interact();
+        }
+
+        private void SetLayer(GameObject targetObject, int layerIdx)
+        {
+            targetObject.layer = layerIdx;
+            foreach (Transform child in targetObject.transform)
+            {
+                child.gameObject.layer = layerIdx;
+            }
+        }
+        private void SetOutlined(GameObject gameObject)
+        {
+            ClearOutlined();
+            SetLayer(gameObject, outlineLayerIdx);
+            outlinedObject = gameObject;
+        }
+        private void ClearOutlined()
+        {
+            if (outlinedObject)
+            {
+                SetLayer(outlinedObject, 0);
+                outlinedObject = null;
+            }
         }
 
 		private void Interact() {
@@ -128,28 +153,21 @@ namespace StarterAssets
             if (!(hitInteractable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
             {
                 CursorImage.sprite = DefaultIcon;
-                _selectionOutlineController.FilterByTag = "None";
+                ClearOutlined();
                 hitInteractable = false;
                 hitSittable = false;
             }
             else if (hitInteractable) // Highlight for examinable objects
             {
                 CursorImage.sprite = InspectIcon;
-                _selectionOutlineController.FilterByTag = "Interactable";
-                _selectionOutlineController.OutlineColor = InteractableOutlineColor;
-                _selectionOutlineController.OccludedColor = InteractableOccludedColor;
-                _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.OnlyVisible;
-                _selectionOutlineController.UpdateOutlineType();
+                outlineManager.SetOutlineColor(DefaultExaminableColor);
+                SetOutlined(hitInfo.transform.gameObject);
             }
             else if (hitSittable)
             { // Highlight for sittable objects
                 CursorImage.sprite = SitIcon;
-                _selectionOutlineController.FilterByTag = "Sittable";
-                _selectionOutlineController.OutlineColor = SittableOutlineColor;
-                _selectionOutlineController.OccludedColor = SittableOccludedColor;
-                _selectionOutlineController.OccludedColor.a = 0;
-                _selectionOutlineController.OutlineType = SelectionOutlineController.OutlineMode.Whole;
-                _selectionOutlineController.UpdateOutlineType();
+                outlineManager.SetOutlineColor(DefaultSittableColor);
+                SetOutlined(hitInfo.transform.gameObject);
             }
             else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
@@ -163,7 +181,7 @@ namespace StarterAssets
             if (GS.interactionMode == InteractionType.Examine)
             {
                 int? hitLayer = hitInfo.transform?.gameObject.layer;
-                hitRotatable = hitLayer == layerNumber;
+                hitRotatable = hitLayer == examineLayerIdx;
                 UI.SetCursor(hitRotatable || isDragging ? GetRotationIcon() : DefaultUnlocked);
 
                 if (ZoomManager.GetZoom() >= 1 && !isAnimating)
@@ -313,15 +331,12 @@ namespace StarterAssets
             targetStartRotation = ExamineTarget.transform.rotation;
             targetStartPosition = ExamineTarget.transform.position;
 
-            if (_selectionOutlineController) {
-                _selectionOutlineController.enabled = false;
-            }
+            // TODO: move all objects off outline layer
+            // if (_selectionOutlineController) {
+            //     _selectionOutlineController.enabled = false;
+            // }
 
-            activeObject.layer = layerNumber;
-            foreach (Transform child in activeObject.transform)
-            {
-                child.gameObject.layer = layerNumber;
-            }
+            SetLayer(activeObject, examineLayerIdx);
 
             UI.FadeInMatte();
             UI.FadeInInteractionUI();
@@ -378,11 +393,7 @@ namespace StarterAssets
 
             examineCallback = null;
             examineCallback += () => {
-                activeObject.layer = 0;
-                foreach (Transform child in activeObject.transform)
-                {
-                    child.gameObject.layer = 0;
-                }
+                SetLayer(activeObject, 0);
 
                 activeObject.transform.SetParent(activeParent.transform);
                 ExamineTarget.transform.rotation = targetStartRotation;
@@ -390,9 +401,9 @@ namespace StarterAssets
                 if (GS.interactionMode != InteractionType.Journal && GS.interactionMode != InteractionType.Paused)
                     Player.UnlockPlayer();
 
-                if (_selectionOutlineController) {
-                    _selectionOutlineController.enabled = true;
-                }
+                // if (_selectionOutlineController) {
+                //     _selectionOutlineController.enabled = true;
+                // }
 
                 InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
                 interactableItem.UpdateGameState();

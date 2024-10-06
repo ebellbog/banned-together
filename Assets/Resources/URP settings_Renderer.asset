@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7843632314151360199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb9fef2ac88a7140aced90514f0501d, type: 3}
+  m_Name: ScreenSpaceOutlines
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  renderPassEvent: 600
+  outlinesLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  outlineSettings:
+    outlineColor: {r: 0, g: 0.98742133, b: 0.022789793, a: 1}
+    outlineScale: 1.75
+    depthThreshold: 9.3
+    robertsCrossMultiplier: 0
+    normalThreshold: 1
+    steepAngleThreshold: 0.033
+    steepAngleMultiplier: 8
+    colorFormat: 0
+    depthBufferBits: 0
+    filterMode: 0
+    backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+    perObjectData: 0
+    enableDynamicBatching: 0
+    enableInstancing: 0
 --- !u!114 &-6489973438718231856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,7 +85,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -6489973438718231856}
   - {fileID: 306423373551084547}
-  m_RendererFeatureMap: d0ba7af78afbeea503a4634b6fa24004
+  - {fileID: -7843632314151360199}
+  m_RendererFeatureMap: d0ba7af78afbeea503a4634b6fa2400439a93bb6f7d12593
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
