@@ -30,7 +30,9 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
         if (bookMasterIndex == booksPressed)
         {
+            Debug.Log("Correct");
             StartCoroutine(OpenSecretDoor());
+            booksPressed = "";
         }
         if (safeMasterIndex == booksPressed)
         {
@@ -39,8 +41,9 @@ public class BookButtonPuzzleManager : MonoBehaviour
         else
         {
             if (buttonCount == 5 && bookMasterIndex != booksPressed) {
-                StartCoroutine(Reset());
                 buttonCount = 0;
+                StartCoroutine(Reset());
+
             }
         }
     }
