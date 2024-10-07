@@ -7,25 +7,21 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
     public GameObject[] bookButtons;
     private string bookMasterIndex;
+    private string safeMasterIndex;
     private string booksPressed;
     private int buttonCount;
     public GameObject doorToOpen;
     public string soundEffect;
     public string resetSoundEffect;
     public bool useSpatialAudio = true;
-    public Animator animator;
+    public Animator secretDoorAnimator;
+    public Animator safeAnimator;
 
     void Start()
     {
         buttonCount = 0;
-        bookMasterIndex = "";
-
-        foreach (GameObject book in bookButtons)
-        {
-            bookMasterIndex += book.GetComponent<BookButtonPuzzle>().bookIndex;
-            Debug.Log(bookMasterIndex);
-        }
-
+        bookMasterIndex = "ABCDE";
+        safeMasterIndex = "CBDEA";
     }
 
     // Update is called once per frame
@@ -34,13 +30,15 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
         if (bookMasterIndex == booksPressed)
         {
-            Debug.Log("Correct!");
             StartCoroutine(OpenSecretDoor());
+        }
+        if (safeMasterIndex == booksPressed)
+        {
+
         }
         else
         {
             if (buttonCount == 5 && bookMasterIndex != booksPressed) {
-                Debug.Log("Incorrect!");
                 StartCoroutine(Reset());
                 buttonCount = 0;
             }
@@ -59,14 +57,27 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.12f);
 
-        animator.SetTrigger("Open");
+        secretDoorAnimator.SetTrigger("Open");
 
         //Not working?
         if (soundEffect != null)
-            AudioManager.instance.PlaySFX(soundEffect, useSpatialAudio && animator ? animator.gameObject.transform.position : null);
+            AudioManager.instance.PlaySFX(soundEffect);
+
+        StartCoroutine(Reset());
     }
 
-    IEnumerator Reset()
+    IEnumerator OpenSafe()
+    {
+        yield return new WaitForSeconds(1.12f);
+        safeAnimator.SetTrigger("Open");
+
+        if (soundEffect != null)
+            AudioManager.instance.PlaySFX(soundEffect, useSpatialAudio && secretDoorAnimator ? secretDoorAnimator.gameObject.transform.position : null);
+
+        StartCoroutine(Reset());
+    }
+
+        IEnumerator Reset()
     {
         yield return new WaitForSeconds(1.12f);
 
@@ -78,7 +89,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
             book.tag = "Door";
 
             if (resetSoundEffect != null)
-                AudioManager.instance.PlaySFX(resetSoundEffect, useSpatialAudio && animator ? animator.gameObject.transform.position : null);
+                AudioManager.instance.PlaySFX(resetSoundEffect);
         }
 
         buttonCount = 0;

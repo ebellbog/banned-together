@@ -14,7 +14,7 @@ Material:
   m_ValidKeywords:
   - _OUTLINETYPE_NORMAL
   - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_HAFTONE
+  - _OVERLAYMODE_NONE
   - _RIMSPLITCOLOR_NOSPLIT
   - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
@@ -25,7 +25,6 @@ Material:
   - _IS_CLIPPING_OFF
   - _IS_OUTLINE_CLIPPING_NO
   - _OUTLINE_NML
-  - _OVERLAYMODE_HALFTONE
   - _USESHADOWS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -468,7 +467,7 @@ Material:
     - _OutlineType: 0
     - _OutlineVisible: 1
     - _Outline_Width: 8
-    - _OverlayMode: 1
+    - _OverlayMode: 0
     - _OverlayMode1: 0
     - _OverlayRotation: 0
     - _OverlayUVTilling: 0
