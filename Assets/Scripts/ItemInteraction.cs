@@ -289,7 +289,6 @@ namespace StarterAssets
 
         private void SetLayer(GameObject targetObject, int layerIdx)
         {
-            Debug.Log($"Moving object {targetObject} to layer {layerIdx}");
             targetObject.layer = layerIdx;
             foreach (Transform child in targetObject.transform)
             {

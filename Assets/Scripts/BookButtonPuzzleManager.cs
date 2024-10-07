@@ -30,21 +30,19 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
         if (bookMasterIndex == booksPressed)
         {
-            Debug.Log("Correct");
-            StartCoroutine(OpenSecretDoor());
             booksPressed = "";
+            buttonCount = 0;
+            StartCoroutine(OpenSecretDoor());
         }
-        if (safeMasterIndex == booksPressed)
+        else if (safeMasterIndex == booksPressed)
         {
-
+            booksPressed = "";
+            buttonCount = 0;
         }
-        else
+        else if (buttonCount == 5)
         {
-            if (buttonCount == 5 && bookMasterIndex != booksPressed) {
-                buttonCount = 0;
-                StartCoroutine(Reset());
-
-            }
+            buttonCount = 0;
+            StartCoroutine(Reset());
         }
     }
 
@@ -66,12 +64,11 @@ public class BookButtonPuzzleManager : MonoBehaviour
         if (soundEffect != null)
         {
             AudioManager.instance.PlaySFX(soundEffect);
-            Debug.Log(soundEffect);
         }
 
         yield return new WaitForSeconds(1.12f);
 
-        StartCoroutine(Reset());
+        StartCoroutine("Reset", false);
     }
 
     IEnumerator OpenSafe()
@@ -82,10 +79,10 @@ public class BookButtonPuzzleManager : MonoBehaviour
         if (soundEffect != null)
             AudioManager.instance.PlaySFX(soundEffect, useSpatialAudio && secretDoorAnimator ? secretDoorAnimator.gameObject.transform.position : null);
 
-        StartCoroutine(Reset());
+        StartCoroutine("Reset", false);
     }
 
-        IEnumerator Reset()
+    IEnumerator Reset(bool playSFX = true)
     {
         yield return new WaitForSeconds(1.12f);
 
@@ -96,12 +93,11 @@ public class BookButtonPuzzleManager : MonoBehaviour
             book.GetComponent<BookButtonPuzzle>().pressed = false;
             book.tag = "Door";
 
-            if (resetSoundEffect != null)
+            if (playSFX && resetSoundEffect != null)
                 AudioManager.instance.PlaySFX(resetSoundEffect);
         }
 
         buttonCount = 0;
         booksPressed = "";
-
     }
 }
