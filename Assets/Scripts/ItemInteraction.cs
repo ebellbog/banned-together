@@ -53,6 +53,7 @@ namespace StarterAssets
         private GameObject currentObject;
         private InteractableItem currentInteractable;
         private GameObject outlinedObject;
+        private int prevLayerIdx;
         private GameObject activeObject;
         private GameObject activeParent;
         private Vector3 startPosition;
@@ -287,7 +288,7 @@ namespace StarterAssets
 
         /* HELPER METHODS */
 
-        private void SetLayer(GameObject targetObject, int layerIdx)
+        private void SetLayer(GameObject targetObject, int layerIdx = 0)
         {
             targetObject.layer = layerIdx;
             foreach (Transform child in targetObject.transform)
@@ -299,6 +300,7 @@ namespace StarterAssets
         private void SetOutlined(GameObject gameObject)
         {
             ClearOutlined();
+            prevLayerIdx = gameObject.layer;
             SetLayer(gameObject, outlineLayerIdx);
             outlinedObject = gameObject;
         }
@@ -306,7 +308,7 @@ namespace StarterAssets
         {
             if (outlinedObject)
             {
-                SetLayer(outlinedObject, 0);
+                SetLayer(outlinedObject, prevLayerIdx);
                 outlinedObject = null;
             }
         }

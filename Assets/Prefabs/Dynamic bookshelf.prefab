@@ -150,14 +150,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &245186712607981357
 GameObject:
@@ -277,14 +284,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &430860829713807192
 GameObject:
@@ -436,14 +450,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &475740693127623968
 GameObject:
@@ -563,14 +584,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &575014992039839281
 GameObject:
@@ -786,14 +814,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &633571045971688893
 GameObject:
@@ -945,14 +980,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &664135968161682243
 GameObject:
@@ -1072,14 +1114,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &719070867967537692
 GameObject:
@@ -1138,7 +1187,7 @@ Transform:
   m_GameObject: {fileID: 761663828948769752}
   serializedVersion: 2
   m_LocalRotation: {x: 0.727684, y: -0, z: -0, w: -0.6859125}
-  m_LocalPosition: {x: 3.5527137e-15, y: 0, z: 0.26391375}
+  m_LocalPosition: {x: 3.5527137e-15, y: 0, z: 0.26391268}
   m_LocalScale: {x: 0.8307421, y: 1.4, z: 0.99508137}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1263,14 +1312,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &792686969356827677
 GameObject:
@@ -1454,14 +1510,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &823739907108350457
 GameObject:
@@ -1581,14 +1644,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &835214586990785095
 GameObject:
@@ -1708,14 +1778,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &897048052598521426
 GameObject:
@@ -1867,14 +1944,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1090925799176228818
 GameObject:
@@ -1994,14 +2078,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1244572408965524536
 GameObject:
@@ -2121,14 +2212,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1363927838968981310
 GameObject:
@@ -2248,14 +2346,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1370845088422430140
 GameObject:
@@ -2375,14 +2480,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1515469485937922586
 GameObject:
@@ -2566,14 +2678,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1699055314849209238
 GameObject:
@@ -2693,14 +2812,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1717408785770097410
 GameObject:
@@ -2884,14 +3010,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &1926480539079147453
 GameObject:
@@ -3171,14 +3304,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2344432956703534096
 GameObject:
@@ -3330,14 +3470,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2424011850326392362
 GameObject:
@@ -3489,14 +3636,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2447674984566681038
 GameObject:
@@ -3648,14 +3802,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2527463580618126104
 GameObject:
@@ -3807,14 +3968,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2569135933431567693
 GameObject:
@@ -4094,14 +4262,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2949203868131459940
 GameObject:
@@ -4221,14 +4396,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2973718539303922601
 GameObject:
@@ -4348,14 +4530,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &2994964545383851227
 GameObject:
@@ -4475,14 +4664,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3072650560464719706
 GameObject:
@@ -4602,14 +4798,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3125518599963159383
 GameObject:
@@ -4729,14 +4932,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3150123394017178871
 GameObject:
@@ -4856,14 +5066,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3311604874840054743
 GameObject:
@@ -5047,14 +5264,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3426473906437006925
 GameObject:
@@ -5270,14 +5494,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3610095517908869887
 GameObject:
@@ -5397,14 +5628,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3640886191033608759
 GameObject:
@@ -5620,14 +5858,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3750874354375671764
 GameObject:
@@ -5747,14 +5992,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &3755633711476906212
 GameObject:
@@ -5813,7 +6065,7 @@ Transform:
   m_GameObject: {fileID: 3834704987303022701}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6859913, y: -0, z: -0, w: -0.7276099}
-  m_LocalPosition: {x: 7.1054274e-15, y: 1.17, z: 0.61620027}
+  m_LocalPosition: {x: 7.1054274e-15, y: 1.17, z: 0.6162026}
   m_LocalScale: {x: 1.1686393, y: 1.4, z: 0.89361763}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5938,14 +6190,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4011653388418194866
 GameObject:
@@ -6065,14 +6324,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4011878282623049069
 GameObject:
@@ -6256,14 +6522,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4055432383341782268
 GameObject:
@@ -6415,14 +6688,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4222636546135288312
 GameObject:
@@ -6542,14 +6822,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4258497771143183148
 GameObject:
@@ -6701,14 +6988,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4383774402378847062
 GameObject:
@@ -6828,14 +7122,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4394892139412216182
 GameObject:
@@ -6987,14 +7288,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4554252880237082774
 GameObject:
@@ -7114,14 +7422,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4626319224172615648
 GameObject:
@@ -7241,14 +7556,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4660844632786822818
 GameObject:
@@ -7400,14 +7722,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4682374105222601833
 GameObject:
@@ -7559,14 +7888,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4770046499913782468
 GameObject:
@@ -7750,14 +8086,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &4958016428144611914
 GameObject:
@@ -7816,7 +8159,7 @@ Transform:
   m_GameObject: {fileID: 5027549661514135932}
   serializedVersion: 2
   m_LocalRotation: {x: 0.68941796, y: -0, z: -0, w: -0.72436386}
-  m_LocalPosition: {x: 7.1054274e-15, y: 0, z: 0.7042572}
+  m_LocalPosition: {x: 7.1054274e-15, y: 0, z: 0.70426035}
   m_LocalScale: {x: 1.141596, y: 1.4, z: 0.9692978}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8101,14 +8444,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5324889354446108239
 GameObject:
@@ -8260,14 +8610,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5519890038476146844
 GameObject:
@@ -8387,14 +8744,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5624015296633640384
 GameObject:
@@ -8514,14 +8878,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5624845646251121209
 GameObject:
@@ -8737,14 +9108,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5698143359385404417
 GameObject:
@@ -8864,14 +9242,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5712315570171205806
 GameObject:
@@ -8991,14 +9376,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5764795732733676807
 GameObject:
@@ -9182,14 +9574,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &5872392371970335910
 GameObject:
@@ -9309,14 +9708,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6028210348974959784
 GameObject:
@@ -9436,14 +9842,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6032154037853641395
 GameObject:
@@ -9563,14 +9976,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6124235208952341425
 GameObject:
@@ -9690,14 +10110,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6208991894144241863
 GameObject:
@@ -9849,14 +10276,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6353179616922112283
 GameObject:
@@ -9976,14 +10410,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6407059414889870909
 GameObject:
@@ -10103,14 +10544,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6411831245379698654
 GameObject:
@@ -10230,14 +10678,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6427405392093620927
 GameObject:
@@ -10357,14 +10812,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6454681888480523082
 GameObject:
@@ -10484,14 +10946,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6501286347236627692
 GameObject:
@@ -10611,14 +11080,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6634235353087807377
 GameObject:
@@ -10645,7 +11121,7 @@ Transform:
   m_GameObject: {fileID: 6634235353087807377}
   serializedVersion: 2
   m_LocalRotation: {x: 0.736362, y: -0, z: -0, w: -0.6765879}
-  m_LocalPosition: {x: 1.4210855e-14, y: 0.38999996, z: 1.0565773}
+  m_LocalPosition: {x: 1.4210855e-14, y: 0.38999996, z: 1.0565844}
   m_LocalScale: {x: 0.7577569, y: 1.4, z: 0.92275864}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10834,14 +11310,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &6950984467872251501
 GameObject:
@@ -11089,14 +11572,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7091411047838981527
 GameObject:
@@ -11280,14 +11770,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7147482769213835119
 GameObject:
@@ -11407,14 +11904,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7179452730140418693
 GameObject:
@@ -11598,14 +12102,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7410169980076640856
 GameObject:
@@ -11757,14 +12268,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7693637274575127174
 GameObject:
@@ -11884,14 +12402,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7717606894853607511
 GameObject:
@@ -12011,14 +12536,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7813736486874962930
 GameObject:
@@ -12138,14 +12670,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &7911388267123785362
 GameObject:
@@ -12265,14 +12804,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &8113416613885474902
 GameObject:
@@ -12424,14 +12970,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &8231777734109391139
 GameObject:
@@ -12679,14 +13232,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &8748484424229066437
 GameObject:
@@ -12838,14 +13398,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &8920594338031879671
 GameObject:
@@ -12965,14 +13532,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &8936085510894694890
 GameObject:
@@ -13156,14 +13730,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &9008206553817288095
 GameObject:
@@ -13283,14 +13864,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &9063302126504697578
 GameObject:
@@ -13506,14 +14094,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightInFocusMode: 0
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
   orientToCamera: 0
-  useRenderPivot: 1
+  pivotAroundVisualCenter: 1
   rotationAxis: 0
   scaleOnInteraction: 1
   enablePanning: 0
-  interactionParent: {fileID: 0}
-  journalEntry: 
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  componentActions: []
+  audioActions: []
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!1 &9180793162654398945
 GameObject:

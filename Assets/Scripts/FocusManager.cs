@@ -43,8 +43,8 @@ public class FocusManager : MonoBehaviour
     private Camera mainCamera;
 
     private float initialFOV;
-    private float initialOutlineWidth;
-    private float initialOutlineHardness;
+    // private float initialOutlineWidth;
+    // private float initialOutlineHardness;
 
     private float currentHue;
     private float initialSat;
@@ -56,8 +56,8 @@ public class FocusManager : MonoBehaviour
     private bool canFocus = true;
     private int doShowTutorial = 0;
 
-    private List<Light> allSpotLights;
-    private bool didTurnOffShadows = false;
+    // private List<Light> allSpotLights;
+    // private bool didTurnOffShadows = false;
 
     void Start() {
         // initialOutlineWidth = selectionOutlineController.OutlineWidth;
@@ -70,9 +70,9 @@ public class FocusManager : MonoBehaviour
 
         particleEffects.Stop();
 
-        allSpotLights = FindObjectsByType<Light>(FindObjectsSortMode.None)
-            .Where(light => light.type == LightType.Spot).ToList();
-        Debug.Log($"Number of spotlights found: {allSpotLights.Count}");
+        // allSpotLights = FindObjectsByType<Light>(FindObjectsSortMode.None)
+        //     .Where(light => light.type == LightType.Spot).ToList();
+        // Debug.Log($"Number of spotlights found: {allSpotLights.Count}");
     }
 
     void Update()
@@ -116,23 +116,23 @@ public class FocusManager : MonoBehaviour
             canFocus = true;
         }
 
-        // Prevent graphic glitch with bloom effect and soft shadows
-        if (isFocusing && !didTurnOffShadows)
-        {
-            foreach(Light spotlight in allSpotLights)
-            {
-                spotlight.shadows = LightShadows.Hard;
-            }
-            didTurnOffShadows = true;
-        }
-        else if (!isFocusing && focusPercent == 0 && didTurnOffShadows)
-        {
-            foreach(Light spotlight in allSpotLights)
-            {
-                spotlight.shadows = LightShadows.Soft;
-            }
-            didTurnOffShadows = false;
-        }
+        // // Prevent graphic glitch with bloom effect and soft shadows
+        // if (isFocusing && !didTurnOffShadows)
+        // {
+        //     foreach(Light spotlight in allSpotLights)
+        //     {
+        //         spotlight.shadows = LightShadows.Hard;
+        //     }
+        //     didTurnOffShadows = true;
+        // }
+        // else if (!isFocusing && focusPercent == 0 && didTurnOffShadows)
+        // {
+        //     foreach(Light spotlight in allSpotLights)
+        //     {
+        //         spotlight.shadows = LightShadows.Soft;
+        //     }
+        //     didTurnOffShadows = false;
+        // }
 
         fillAmount = Math.Max((focusTimeLimit - focusTimeDepleted) / focusTimeLimit, 0);
         focusCursor.fillAmount = isDefaultCursor ? fillAmount : 1.0f;
@@ -204,12 +204,12 @@ public class FocusManager : MonoBehaviour
         ParticleSystem.MainModule main = particleEffects.main;
         main.startColor = speedlineColor;
 
-        if (GS.interactionMode == InteractionType.Focus)
-        {
-            currentHue = (currentHue + Time.deltaTime * hueRotateSpeed) % 1;
-            Color newColor = Color.HSVToRGB(currentHue, initialSat, initialVal);
+        // if (GS.interactionMode == InteractionType.Focus)
+        // {
+        //     currentHue = (currentHue + Time.deltaTime * hueRotateSpeed) % 1;
+        //     Color newColor = Color.HSVToRGB(currentHue, initialSat, initialVal);
             // selectionOutlineController.OutlineColor = newColor;
             // selectionOutlineController.OccludedColor = newColor;
-        }
+        // }
     }
 }

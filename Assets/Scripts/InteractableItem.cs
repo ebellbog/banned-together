@@ -79,6 +79,7 @@ public class InteractableItem : MonoBehaviour
     public void Awake()
     {
         gameObject.tag = "Interactable";
+        // if (isFocusable) gameObject.layer = LayerMask.NameToLayer("No post");
     }
 
     // TODO: maybe DRY up some of this code?
