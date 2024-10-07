@@ -15,7 +15,6 @@ public class ThoughtSensor : MonoBehaviour
     void Start()
     {
         allThoughts = Object.FindObjectsByType<ThoughtBubble>(FindObjectsSortMode.None);
-        Debug.Log("Found "+allThoughts.Length+" thoughts");
     }
 
     void Update()
@@ -103,13 +102,13 @@ public class ThoughtSensor : MonoBehaviour
                 thought.FadeOut();
             }
         }
-        if (darkThoughtsVisible > 0 && GS.interactionMode == InteractionType.Default)
-        {
-            BodyBatteryManager.Main.StartDrainingBattery();
-        }
-        else
-        {
-            BodyBatteryManager.Main.StopDrainingBattery();
-        }
+        // if (darkThoughtsVisible > 0 && GS.interactionMode == InteractionType.Default)
+        // {
+        //     BodyBatteryManager.Main.StartDrainingBattery();
+        // }
+        // else
+        // {
+        //     BodyBatteryManager.Main.StopDrainingBattery();
+        // }
     }
 }

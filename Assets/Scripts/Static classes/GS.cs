@@ -20,6 +20,7 @@ public static class GS
     public static bool isSitting;
     public static int concurrentThoughtBubbles;
     public static float bodyBattery;
+    public static float speedReduction;
     public static int currentJournalPage;
 
     public static int tutorialItems;
@@ -93,6 +94,7 @@ public static class GS
         interactionMode = InteractionType.Default;
         isSitting = false;
         bodyBattery = 1.0f;
+        speedReduction = 1.0f;
     }
 
 }

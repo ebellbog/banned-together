@@ -51,6 +51,7 @@ namespace StarterAssets
         private int outlineLayerIdx;
 
         private GameObject currentObject;
+        private InteractableItem currentInteractable;
         private GameObject outlinedObject;
         private GameObject activeObject;
         private GameObject activeParent;
@@ -58,7 +59,7 @@ namespace StarterAssets
         private Vector3 startScale;
         private Quaternion startRotation;
         private Quaternion targetStartRotation;
-        
+
         [SerializeField]
         private Vector3? targetStartPosition;
         private Space rotationSpace;
@@ -94,8 +95,14 @@ namespace StarterAssets
             Interact();
         }
 
+        private bool ModeSupportsInteraction()
+        {
+            return GS.interactionMode == InteractionType.Default ||
+                GS.interactionMode == InteractionType.Focus ||
+                GS.interactionMode == InteractionType.Monologue;
+        }
+
 		private void Interact() {
-            // TODO: replace raycaster in SelectionOutlineController with this one
             if (GS.interactionMode == InteractionType.Examine)
             {
                 Physics.Raycast(ExamineCamera.ScreenPointToRay(Input.mousePosition), out hitInfo, RaycastReach);
@@ -105,32 +112,64 @@ namespace StarterAssets
             }
 
             string hitTag = hitInfo.transform?.tag;
+            currentObject = hitInfo.transform?.gameObject;
+
+            // Handle hover and hover exit behaviors
+
+            #nullable enable
+
+            InteractableItem? interactableItem = currentObject?.GetComponent<InteractableItem>();
+            if (currentInteractable && currentInteractable != interactableItem)
+            {
+                currentInteractable.ApplyCustomEffects(ActionTiming.onHoverExit);
+            }
+            currentInteractable = interactableItem; // TODO: figure out the appropriate place for this
+
+            if (currentInteractable != null && ModeSupportsInteraction())
+            {
+                currentInteractable.ApplyCustomEffects(ActionTiming.onHover);
+
+                // Manage outline
+                Color? outlineColor = null;
+                if (currentInteractable.isExaminable) outlineColor = DefaultExaminableColor;
+                if (currentInteractable.showOutline && currentInteractable.outlineColorOverride != Color.clear)
+                    outlineColor = currentInteractable.outlineColorOverride;
+                if (outlineColor != null) {
+                    outlineManager.SetOutlineColor((Color)outlineColor);
+                    SetOutlined(currentObject);
+                } else {
+                    ClearOutlined();
+                }
+
+                // Manage cursor
+                if (currentInteractable.cursorOverride) CursorImage.sprite = currentInteractable.cursorOverride;
+                else if (currentInteractable.isExaminable) CursorImage.sprite = InspectIcon;
+                else CursorImage.sprite = HoverIcon;
+            } else
+            {
+                ClearOutlined();
+                CursorImage.sprite = DefaultIcon;
+            }
+
+            #nullable disable
 
             // Set hit (aka hover) flags, in modes that allow interaction
-            bool hitInteractable = false, hitSittable = false, hitDoor = false, hitSwitch = false;
+            bool hitExaminable = false, hitSittable = false, hitDoor = false, hitSwitch = false;
             hitRotatable = false;
-            if (GS.interactionMode == InteractionType.Default ||
-                GS.interactionMode == InteractionType.Focus ||
-                GS.interactionMode == InteractionType.Monologue)
+            if (ModeSupportsInteraction())
             {
-                hitInteractable = hitTag == "Interactable";
+                hitExaminable = interactableItem && interactableItem.isExaminable;
                 hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
                 hitDoor = hitTag == "Door";
                 hitSwitch = hitTag == "Switch";
             }
 
-            if (!(hitInteractable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
+            if (!(hitExaminable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
             {
                 CursorImage.sprite = DefaultIcon;
-                ClearOutlined();
-                hitInteractable = false;
+                // ClearOutlined();
+                hitExaminable = false;
                 hitSittable = false;
-            }
-            else if (hitInteractable) // Highlight for examinable objects
-            {
-                CursorImage.sprite = InspectIcon;
-                outlineManager.SetOutlineColor(DefaultExaminableColor);
-                SetOutlined(hitInfo.transform.gameObject);
             }
             else if (hitSittable)
             { // Highlight for sittable objects
@@ -140,10 +179,6 @@ namespace StarterAssets
             }
             else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
-            }
-            else if (hitSwitch)
-            {
-                CursorImage.sprite = HoverIcon;
             }
 
             // Set cursor and hit flag for rotating objects during examination
@@ -171,7 +206,7 @@ namespace StarterAssets
                 {
                     isDragging = true;
                 }
-                else if (hitInteractable)
+                else if (hitExaminable)
                 {
                     BeginExamination();
                 }
@@ -251,14 +286,17 @@ namespace StarterAssets
 		}
 
         /* HELPER METHODS */
+
         private void SetLayer(GameObject targetObject, int layerIdx)
         {
+            Debug.Log($"Moving object {targetObject} to layer {layerIdx}");
             targetObject.layer = layerIdx;
             foreach (Transform child in targetObject.transform)
             {
                 child.gameObject.layer = layerIdx;
             }
         }
+
         private void SetOutlined(GameObject gameObject)
         {
             ClearOutlined();
@@ -306,10 +344,7 @@ namespace StarterAssets
                     ExamineTarget.transform.rotation = targetStartRotation;
             }
 
-            currentObject = hitInfo.transform.gameObject;
-
-            InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
-            activeObject = interactableItem.interactionParent;
+            activeObject = currentInteractable.interactionParent;
             if (!activeObject) activeObject = currentObject;
 
             activeParent = activeObject.transform.parent?.gameObject;
@@ -330,10 +365,10 @@ namespace StarterAssets
             isReadyToInspect = false;
             GS.interactionMode = InteractionType.Examine;
 
-            rotationSpace = interactableItem.orientToCamera ? Space.Self : Space.World;
-            rotationAxis = interactableItem.rotationAxis;
-            panningEnabled = interactableItem.enablePanning;
-            affectsBodyBattery = interactableItem.affectsBodyBattery;
+            rotationSpace = currentInteractable.orientToCamera ? Space.Self : Space.World;
+            rotationAxis = currentInteractable.rotationAxis;
+            panningEnabled = currentInteractable.enablePanning;
+            affectsBodyBattery = currentInteractable.affectsBodyBattery;
 
             Player.LockPlayer();
             UI.UnlockCursor(GetRotationIcon());
@@ -342,12 +377,12 @@ namespace StarterAssets
             examineCallback += () => {
                 isReadyToInspect = true;
                 activeObject.transform.SetParent(ExamineTarget);
-                interactableItem.UpdateGameState(true);
+                currentInteractable.ApplyCustomEffects(ActionTiming.onClick); // Update during examination
             };
 
             // Compensate for visually off-center objects
             Vector3 targetPosition;
-            if (interactableItem.useRenderPivot)
+            if (currentInteractable.pivotAroundVisualCenter)
             {
                 Renderer currentRenderer = currentObject.GetComponent<Renderer>();
                 Vector3 offCenterAdjustment = currentRenderer.bounds.center - currentObject.transform.position;
@@ -360,8 +395,8 @@ namespace StarterAssets
             StartCoroutine(MoveForDuration(
                 activeObject,
                 targetPosition,
-                interactableItem.orientToCamera ? ExamineTarget.rotation : startRotation,
-                startScale * interactableItem.scaleOnInteraction,
+                currentInteractable.orientToCamera ? ExamineTarget.rotation : startRotation,
+                startScale * currentInteractable.scaleOnInteraction,
                 pickUpDuration
             ));
         }
@@ -387,14 +422,7 @@ namespace StarterAssets
                 if (GS.interactionMode != InteractionType.Journal && GS.interactionMode != InteractionType.Paused)
                     Player.UnlockPlayer();
 
-                // if (_selectionOutlineController) {
-                //     _selectionOutlineController.enabled = true;
-                // }
-
-                InteractableItem interactableItem = currentObject.GetComponent<InteractableItem>();
-                interactableItem.UpdateGameState();
-
-                JournalManager.Main.AddToJournal(interactableItem.journalEntry);
+                currentInteractable.ApplyCustomEffects(ActionTiming.afterExamine); // Update after examination
 
                 activeObject = null;
                 examineCallback = null;
