@@ -69,6 +69,8 @@ public class BookButtonPuzzleManager : MonoBehaviour
             Debug.Log(soundEffect);
         }
 
+        yield return new WaitForSeconds(1.12f);
+
         StartCoroutine(Reset());
     }
 
