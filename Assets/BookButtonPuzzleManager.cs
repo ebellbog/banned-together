@@ -61,7 +61,10 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
         //Not working?
         if (soundEffect != null)
+        {
             AudioManager.instance.PlaySFX(soundEffect);
+            Debug.Log(soundEffect);
+        }
 
         StartCoroutine(Reset());
     }
