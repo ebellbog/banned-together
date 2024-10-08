@@ -54,7 +54,7 @@ public class InteractableItem : MonoBehaviour
     public GameObject interactionParent;
 
     [Header("Focus settings")]
-    public bool isFocusable = true;
+    public bool isFocusable = false;
 
     [Header("Examination settings")]
     public bool isExaminable = true;
