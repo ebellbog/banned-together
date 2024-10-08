@@ -250,7 +250,7 @@ namespace StarterAssets
                     ExitExamination();
                 }
 
-                currentInteractable.ApplyCustomEffects(ActionTiming.onClick); // Update during examination
+                currentInteractable?.ApplyCustomEffects(ActionTiming.onClick); // Update during examination
 
                 _input.interact = false;
                 _input.anyKey = false;
