@@ -38,6 +38,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
         {
             booksPressed = "";
             buttonCount = 0;
+            StartCoroutine(OpenSafe());
         }
         else if (buttonCount == 5)
         {
@@ -60,7 +61,6 @@ public class BookButtonPuzzleManager : MonoBehaviour
 
         secretDoorAnimator.SetTrigger("Open");
 
-        //Not working?
         if (soundEffect != null)
         {
             AudioManager.instance.PlaySFX(soundEffect);
@@ -77,7 +77,11 @@ public class BookButtonPuzzleManager : MonoBehaviour
         safeAnimator.SetTrigger("Open");
 
         if (soundEffect != null)
-            AudioManager.instance.PlaySFX(soundEffect, useSpatialAudio && secretDoorAnimator ? secretDoorAnimator.gameObject.transform.position : null);
+        {
+            AudioManager.instance.PlaySFX(soundEffect);
+        }
+
+        yield return new WaitForSeconds(1.12f);
 
         StartCoroutine("Reset", false);
     }
