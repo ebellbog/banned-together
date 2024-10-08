@@ -136,8 +136,11 @@ namespace StarterAssets
                 if (currentInteractable.showOutline && currentInteractable.outlineColorOverride != Color.clear)
                     outlineColor = currentInteractable.outlineColorOverride;
                 if (outlineColor != null) {
-                    outlineManager.SetOutlineColor((Color)outlineColor);
-                    SetOutlined(currentObject);
+                    if (GS.interactionMode != InteractionType.Focus)
+                    {
+                        outlineManager.SetOutlineColor((Color)outlineColor);
+                        SetOutlined(currentObject);
+                    }
                 } else {
                     ClearOutlined();
                 }
@@ -308,9 +311,9 @@ namespace StarterAssets
         }
         private void ClearOutlined()
         {
-            if (outlinedObject)
+            if (outlinedObject && outlinedObject.layer == outlineLayerIdx)
             {
-                SetLayer(outlinedObject, prevLayerIdx);
+                SetLayer(outlinedObject, 0); // TODO: smarter restoration of previous layer?
                 outlinedObject = null;
             }
         }
@@ -351,6 +354,7 @@ namespace StarterAssets
             if (!activeObject) activeObject = currentObject;
 
             activeParent = activeObject.transform.parent?.gameObject;
+            activeObject.transform.SetParent(ExamineTarget);
 
             startPosition = activeObject.transform.position;
             startScale = activeObject.transform.localScale;
@@ -425,6 +429,11 @@ namespace StarterAssets
                     Player.UnlockPlayer();
 
                 currentInteractable.ApplyCustomEffects(ActionTiming.afterExamine); // Update after examination
+                if (currentInteractable.journalUpdates.Count == 0)
+                {
+                    // Add default entry
+                    JournalManager.Main.AddToJournal("");
+                }
 
                 activeObject = null;
                 examineCallback = null;

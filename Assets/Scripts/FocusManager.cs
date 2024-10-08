@@ -14,6 +14,7 @@ public class FocusManager : MonoBehaviour
     public Image focusCursor;
     public ParticleSystem particleEffects;
     public Volume postprocessVolume;
+    public ScreenSpaceOutlines outlineManager;
     // public SelectionOutlineController selectionOutlineController;
 
     [Space(10)]
@@ -46,15 +47,15 @@ public class FocusManager : MonoBehaviour
     // private float initialOutlineWidth;
     // private float initialOutlineHardness;
 
-    private float currentHue;
-    private float initialSat;
-    private float initialVal;
-
+    private float currentHue = 0;
     private float focusTimeDepleted;
     private float fillAmount;
     private float scaleAmount = 1.0f;
     private bool canFocus = true;
     private int doShowTutorial = 0;
+
+    private List<GameObject> allFocusable;
+    private bool isShowingOutlines = false;
 
     // private List<Light> allSpotLights;
     // private bool didTurnOffShadows = false;
@@ -69,6 +70,10 @@ public class FocusManager : MonoBehaviour
         initialFOV = mainCamera.fieldOfView;
 
         particleEffects.Stop();
+
+        allFocusable = FindObjectsByType<InteractableItem>(FindObjectsSortMode.None)
+            .Where(item => item.isFocusable)
+            .Select(item => item.gameObject).ToList();
 
         // allSpotLights = FindObjectsByType<Light>(FindObjectsSortMode.None)
         //     .Where(light => light.type == LightType.Spot).ToList();
@@ -116,6 +121,23 @@ public class FocusManager : MonoBehaviour
             canFocus = true;
         }
 
+        if (isFocusing && !isShowingOutlines)
+        {
+            int layerIdx = LayerMask.NameToLayer("No post");
+            foreach(GameObject focusableObject in allFocusable)
+            {
+                SetLayer(focusableObject, layerIdx);
+            }
+            isShowingOutlines = true;
+        }
+        else if (!isFocusing && focusPercent == 0 && isShowingOutlines)
+        {
+            foreach(GameObject focusableObject in allFocusable)
+            {
+                SetLayer(focusableObject, 0); // TODO: preserve previous layer?
+            }
+            isShowingOutlines = false;
+        }
         // // Prevent graphic glitch with bloom effect and soft shadows
         // if (isFocusing && !didTurnOffShadows)
         // {
@@ -204,12 +226,20 @@ public class FocusManager : MonoBehaviour
         ParticleSystem.MainModule main = particleEffects.main;
         main.startColor = speedlineColor;
 
-        // if (GS.interactionMode == InteractionType.Focus)
-        // {
-        //     currentHue = (currentHue + Time.deltaTime * hueRotateSpeed) % 1;
-        //     Color newColor = Color.HSVToRGB(currentHue, initialSat, initialVal);
-            // selectionOutlineController.OutlineColor = newColor;
-            // selectionOutlineController.OccludedColor = newColor;
-        // }
+        if (GS.interactionMode == InteractionType.Focus)
+        {
+            currentHue = (currentHue + Time.deltaTime * hueRotateSpeed) % 1;
+            Color newColor = Color.HSVToRGB(currentHue, 1, 1);
+            outlineManager.SetOutlineColor(newColor);
+        }
+    }
+
+    private void SetLayer(GameObject targetObject, int layerIdx = 0)
+    {
+        targetObject.layer = layerIdx;
+        foreach (Transform child in targetObject.transform)
+        {
+            child.gameObject.layer = layerIdx;
+        }
     }
 }
