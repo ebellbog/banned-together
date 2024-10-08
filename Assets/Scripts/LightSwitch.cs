@@ -9,6 +9,7 @@ public class LightSwitch : MonoBehaviour
     void Awake()
     {
         tag = "Switch";
+        associatedLight.intensity = 1;
         OnValidate();
     }
 

@@ -291,8 +291,8 @@ Material:
     - _AdaptiveThicnkess: 0
     - _AddPrecomputedVelocity: 0
     - _Add_Antipodean_RimLight: 0
-    - _AdditionalLightsAmount: 0.19
-    - _AdditionalLightsFaloff: 0
+    - _AdditionalLightsAmount: 0.11
+    - _AdditionalLightsFaloff: 0.038
     - _AdditionalLightsIntesity: 1
     - _AdditionalLightsSmoothnessMultiplier: 1
     - _AlbedoAffectEmissive: 0
@@ -384,9 +384,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HalftoneEdgeOffset: -0.156
+    - _HalftoneEdgeOffset: -0.1
     - _HalftoneSmoothness: 1.176
-    - _HalftoneThreshold: 0.0264
+    - _HalftoneThreshold: 0.02
     - _HalftoneToonAffect: 0
     - _HaltonePatternSize: 0
     - _HeightAmplitude: 0.02

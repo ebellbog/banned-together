@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
@@ -21,7 +20,8 @@ public class ThoughtSensor : MonoBehaviour
     {
         ShowThoughts = (
             GS.interactionMode == InteractionType.Default ||
-            GS.interactionMode == InteractionType.Focus
+            GS.interactionMode == InteractionType.Focus ||
+            GS.interactionMode == InteractionType.Monologue
         ) && !GS.isSitting;
 
         int darkThoughtsVisible = 0;
@@ -45,7 +45,7 @@ public class ThoughtSensor : MonoBehaviour
             }
 
             // Filter for intrusive thoughts
-            if (GS.interactionMode == InteractionType.Default &&
+            if (GS.interactionMode != InteractionType.Focus &&
                 GS.bodyBattery > 0 &&
                 (
                     thought.thoughtType == ThoughtType.Focus ||

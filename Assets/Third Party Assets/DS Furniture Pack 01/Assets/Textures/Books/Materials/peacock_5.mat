@@ -20,7 +20,6 @@ Material:
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_POSTERIZE
   - _USEPURESKETCH_ON
-  - _USESPECULAR_ON
   m_InvalidKeywords:
   - _USESHADOWS_ON
   m_LightmapFlags: 2
@@ -187,14 +186,14 @@ Material:
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadows: 1
-    - _UseSpecular: 1
+    - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _WarpStrength: 0
     - _WarpTextureRotation: 0
     - _WarpTextureScale: 1
     m_Colors:
     - _Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
-    - _EmissionColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    - _EmissionColor: {r: 0.15, g: 0.15, b: 0.15, a: 0}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}

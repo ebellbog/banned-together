@@ -17,7 +17,6 @@ Material:
   - _OVERLAYMODE1_NONE
   - _OVERLAYMODE_HAFTONE
   - _RIMSPLITCOLOR_NOSPLIT
-  - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_POSTERIZE
   - _USESCREENUVS_ON
@@ -343,9 +342,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailNormalScale: 1
     - _DetailSmoothnessScale: 1
-    - _DiffusePosterizeOffset: 0.038
-    - _DiffusePosterizePower: 3
-    - _DiffusePosterizeSteps: 1
+    - _DiffusePosterizeOffset: -0.224
+    - _DiffusePosterizePower: 2.45
+    - _DiffusePosterizeSteps: 1.94
     - _DiffuseWarpAffectHalftone: 1
     - _DiffuseWarpBrightnessOffset: 1.12
     - _DiffusionProfile: 0
@@ -384,11 +383,11 @@ Material:
     - _FirstShadeVisible: 1
     - _GI_Intensity: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.814
+    - _Glossiness: 0.43
     - _GlossyReflections: 1
-    - _HalftoneEdgeOffset: -0.45
-    - _HalftoneSmoothness: 1.41
-    - _HalftoneThreshold: 0.087
+    - _HalftoneEdgeOffset: -0.43
+    - _HalftoneSmoothness: 1.24
+    - _HalftoneThreshold: 0.074
     - _HalftoneToonAffect: 0
     - _HaltonePatternSize: 0
     - _HeightAmplitude: 0.02
@@ -404,7 +403,7 @@ Material:
     - _HighlightOverridden: 0
     - _HighlightVisible: 1
     - _IndirectLightAffectOnHatch: 0
-    - _IndirectLightStrength: 0.086
+    - _IndirectLightStrength: 0
     - _InvTilingScale: 1
     - _InverseMask: 0
     - _Inverse_Clipping: 0
@@ -447,7 +446,7 @@ Material:
     - _LightRampOffset: 0
     - _Lighten: 0
     - _LinkDetailsWithBase: 1
-    - _MainLightIntesity: 1.4
+    - _MainLightIntesity: 2.01
     - _MatCap: 0
     - _MaterialID: 1
     - _MaxScaleDependingOnCamera: 1
@@ -474,7 +473,7 @@ Material:
     - _OverlayMode: 1
     - _OverlayMode1: 0
     - _OverlayRotation: 45
-    - _OverlayUVTilling: 28
+    - _OverlayUVTilling: 20
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -515,7 +514,7 @@ Material:
     - _SideShineHardness: 0
     - _SideShineIntensity: 1
     - _Smoothness: 0.5
-    - _SmoothnessMultiplier: 1.68
+    - _SmoothnessMultiplier: 1.45
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
@@ -593,7 +592,7 @@ Material:
     - _UseAdaptiveScreenUvs: 0
     - _UseAdaptiveScreenUvsWarp: 0
     - _UseAdaptiveUvsSpecular: 0
-    - _UseAdditionalLightsDiffuse: 1
+    - _UseAdditionalLightsDiffuse: 0
     - _UseBacklight: 0
     - _UseDiffuseWarp: 0
     - _UseDiffuseWarpAsOverlay: 0
@@ -641,7 +640,7 @@ Material:
     - _BaseColor: {r: 0.4716981, g: 0.22735879, b: 0, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.35220122, g: 0.24757054, b: 0.17610057, a: 1}
+    - _Color: {r: 0.20125782, g: 0.1545508, b: 0.1234128, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
@@ -666,7 +665,7 @@ Material:
     - _RimShadowColor: {r: 0, g: 0.05551431, b: 0.9622642, a: 0}
     - _SecondShadeMaskColor: {r: 0, g: 0, b: 1, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SpecColor: {r: 0.61635214, g: 0.61053747, b: 0.61053747, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}

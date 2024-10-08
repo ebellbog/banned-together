@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
@@ -10,6 +11,7 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1.0f;
     public string[] defaultMusicForLevel;
     public TextMeshProUGUI skipText;
+    public ScriptableRendererFeature ambientOcclusion;
     public static LevelLoader current {get; private set;}
 
     void Awake()
@@ -33,6 +35,8 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("No default music for level");
         }
         if (skipText) skipText.enabled = false;
+
+        ambientOcclusion?.SetActive(SceneManager.GetActiveScene().name != "Intro Scene");
     }
 
     public void Quit()

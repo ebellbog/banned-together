@@ -9,11 +9,13 @@ public class Billboard : MonoBehaviour
 
     private Vector2 startingScale;
     private Camera mainCamera;
+    private GameObject player;
 
     void Start()
     {
         mainCamera = Camera.main;
         startingScale = transform.localScale;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void LateUpdate()
@@ -22,7 +24,7 @@ public class Billboard : MonoBehaviour
         transform.Rotate(0, 180, 0);
 
         if (DynamicallyScale) {
-            float currentDistance = Vector3.Distance(mainCamera.transform.position, transform.position); 
+            float currentDistance = Vector3.Distance(player.transform.position, transform.position); 
             transform.localScale = startingScale * (currentDistance / ScaleReferenceDistance);
         }
     }

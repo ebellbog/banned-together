@@ -20,7 +20,6 @@ Material:
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_POSTERIZE
   - _USEPURESKETCH_ON
-  - _USESPECULAR_ON
   m_InvalidKeywords:
   - _USESHADOWS_ON
   m_LightmapFlags: 2
@@ -187,7 +186,7 @@ Material:
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadows: 1
-    - _UseSpecular: 1
+    - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _WarpStrength: 0
     - _WarpTextureRotation: 0

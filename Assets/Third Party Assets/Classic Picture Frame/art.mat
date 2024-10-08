@@ -19,6 +19,7 @@ Material:
   - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_STEP
+  - _USESCREENUVS_ON
   m_InvalidKeywords:
   - _EMISSION
   - _EMISSIVE_SIMPLE
@@ -126,7 +127,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HalftoneTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0c021cea0cf2417459ce7fa844118e17, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Hatch1:
@@ -294,7 +295,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _Add_Antipodean_RimLight: 0
     - _AdditionalLightsAmount: 1
-    - _AdditionalLightsFaloff: 1
+    - _AdditionalLightsFaloff: 0.568
     - _AdditionalLightsIntesity: 1
     - _AdditionalLightsSmoothnessMultiplier: 1
     - _AlbedoAffectEmissive: 0
@@ -343,7 +344,7 @@ Material:
     - _Cull: 2
     - _CullMode: 2
     - _CullModeForward: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.531
     - _Darken: 0
     - _DepthOffsetEnable: 0
     - _DetailAlbedoMapScale: 1
@@ -396,10 +397,10 @@ Material:
     - _GlossMapScale: 0.643
     - _Glossiness: 0.516
     - _GlossyReflections: 1
-    - _HalftoneEdgeOffset: 0.1
-    - _HalftoneSmoothness: 0.3
-    - _HalftoneThreshold: 0.1
-    - _HalftoneToonAffect: 0
+    - _HalftoneEdgeOffset: 0.41
+    - _HalftoneSmoothness: 0
+    - _HalftoneThreshold: 0.0571
+    - _HalftoneToonAffect: 0.934
     - _HaltonePatternSize: 0
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
@@ -465,11 +466,11 @@ Material:
     - _Mode: 0
     - _Nearest_Distance: 0.5
     - _NormalMapSpace: 0
-    - _NormalMapStrength: 1
+    - _NormalMapStrength: 0.6
     - _NormalScale: 1
     - _OUTLINE: 1
     - _ObjectSpaceUVMapping: 0
-    - _OcclusionStrength: 0.218
+    - _OcclusionStrength: 1
     - _Offset_X_Axis_BLD: -0.05
     - _Offset_Y_Axis_BLD: 0.09
     - _Offset_Z: 0
@@ -483,8 +484,8 @@ Material:
     - _Outline_Width: 8
     - _OverlayMode: 0
     - _OverlayMode1: 0
-    - _OverlayRotation: 0
-    - _OverlayUVTilling: 0
+    - _OverlayRotation: 45
+    - _OverlayUVTilling: 40
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -520,7 +521,7 @@ Material:
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
     - _ShadeColor_Step: 0
-    - _ShapeSmoothness: 0.2
+    - _ShapeSmoothness: 0.018
     - _SideShineAmount: 0.2717647
     - _SideShineHardness: 0
     - _SideShineIntensity: 1
@@ -557,7 +558,7 @@ Material:
     - _StencilWriteMaskGBuffer: 3
     - _StencilWriteMaskMV: 128
     - _StepHalftoneTexture: 0
-    - _StepOffset: 0.048
+    - _StepOffset: -0.127
     - _Strength: 0
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
@@ -628,7 +629,7 @@ Material:
     - _UseOutline: 0
     - _UsePureSketch: 0
     - _UseRimLight: 0
-    - _UseScreenUvs: 0
+    - _UseScreenUvs: 1
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadowThreshold: 0
@@ -664,7 +665,7 @@ Material:
     - _BaseColor: {r: 0.6037736, g: 0.3733333, b: 0.16898061, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.797, g: 0.4916558, b: 0.22253895, a: 1}
+    - _Color: {r: 0.27672952, g: 0.2762755, b: 0.27411884, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

@@ -177,7 +177,7 @@ public class FocusManager : MonoBehaviour
             scaleAmount = Math.Max(scaleAmount - Time.deltaTime * focusSpeed, 1);
             if (doShowTutorial != -1) doShowTutorial = 0;
         }
-        focusCursor.transform.localScale = isDefaultCursor ? new UnityEngine.Vector3(scaleAmount, scaleAmount, 1) : new UnityEngine.Vector3(1, 1, 1);
+        focusCursor.transform.localScale = isDefaultCursor ? new Vector3(scaleAmount, scaleAmount, 1) : new Vector3(1, 1, 1);
 
         float cursorAlpha = isDefaultCursor ? 0.4f + 0.6f * (scaleAmount - 1f) / (focusRingZoom - 1f) : 1;
         float cursorGB = starterInputs.focus && !canFocus ? 0 : 1;
@@ -212,7 +212,7 @@ public class FocusManager : MonoBehaviour
         if (focusPercent > 0)
         {
             float newFOV = initialFOV / (1 + ((maxCameraZoom - 1) * focusPercent));
-            mainCamera.fieldOfView = newFOV; // TODO: (optional) make sure FOV is fully restored 
+            mainCamera.fieldOfView = newFOV; // TODO: (optional) make sure FOV is fully restored
             foreach(Camera cam in additionalCameras)
             {
                 cam.fieldOfView = newFOV;

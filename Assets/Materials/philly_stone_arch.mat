@@ -373,9 +373,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailNormalScale: 1
     - _DetailSmoothnessScale: 1
-    - _DiffusePosterizeOffset: -0.5
-    - _DiffusePosterizePower: 0.5
-    - _DiffusePosterizeSteps: 3.82
+    - _DiffusePosterizeOffset: 0.5
+    - _DiffusePosterizePower: 3
+    - _DiffusePosterizeSteps: 1
     - _DiffuseWarpAffectHalftone: 0
     - _DiffuseWarpBrightnessOffset: 1.12
     - _DiffusionProfile: 0

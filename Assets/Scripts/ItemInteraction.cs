@@ -184,6 +184,10 @@ namespace StarterAssets
             else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
             }
+            else
+            {
+                CursorImage.sprite = HoverIcon;
+            }
 
             // Set cursor and hit flag for rotating objects during examination
             if (GS.interactionMode == InteractionType.Examine)

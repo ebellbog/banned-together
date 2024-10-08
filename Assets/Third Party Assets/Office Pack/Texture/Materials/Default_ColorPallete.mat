@@ -385,9 +385,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.14
     - _GlossyReflections: 1
-    - _HalftoneEdgeOffset: -0.12
-    - _HalftoneSmoothness: 0.76
-    - _HalftoneThreshold: 0.122
+    - _HalftoneEdgeOffset: -0.14
+    - _HalftoneSmoothness: 0.91
+    - _HalftoneThreshold: 0.15
     - _HalftoneToonAffect: 0.312
     - _HaltonePatternSize: 0
     - _HeightAmplitude: 0.02
@@ -509,7 +509,7 @@ Material:
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
     - _ShadeColor_Step: 0
-    - _ShapeSmoothness: 0.555
+    - _ShapeSmoothness: 0.344
     - _SideShineAmount: 0.2717647
     - _SideShineHardness: 0
     - _SideShineIntensity: 1

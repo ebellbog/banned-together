@@ -33,6 +33,8 @@ public class ZoomManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GS.interactionMode == InteractionType.Focus) return; // Prevent zoom jitter, since Focusing also affects FOV
+
         float targetFOV = initialFOV * zoomSteps[currentStep];
         float currentFOV = thisCamera.fieldOfView;
 
