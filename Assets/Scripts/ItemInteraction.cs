@@ -250,6 +250,8 @@ namespace StarterAssets
                     ExitExamination();
                 }
 
+                currentInteractable.ApplyCustomEffects(ActionTiming.onClick); // Update during examination
+
                 _input.interact = false;
                 _input.anyKey = false;
 			}
@@ -378,7 +380,6 @@ namespace StarterAssets
             examineCallback += () => {
                 isReadyToInspect = true;
                 activeObject.transform.SetParent(ExamineTarget);
-                currentInteractable.ApplyCustomEffects(ActionTiming.onClick); // Update during examination
             };
 
             // Compensate for visually off-center objects
