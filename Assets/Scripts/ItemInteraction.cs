@@ -170,8 +170,6 @@ namespace StarterAssets
 
             if (!(hitExaminable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
             {
-                CursorImage.sprite = DefaultIcon;
-                // ClearOutlined();
                 hitExaminable = false;
                 hitSittable = false;
             }

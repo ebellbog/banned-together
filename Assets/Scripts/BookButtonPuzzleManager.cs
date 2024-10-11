@@ -9,6 +9,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
     private string safeMasterIndex;
     private string booksPressed;
     private int buttonCount;
+    private bool doorIsOpen = false;
     public GameObject doorToOpen;
     public string soundEffect;
     public string resetSoundEffect;
@@ -27,7 +28,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
     void Update()
     {
 
-        if (bookMasterIndex == booksPressed)
+        if (!doorIsOpen && (bookMasterIndex == booksPressed || (Application.isEditor && Input.GetKeyDown(KeyCode.Space))))
         {
             booksPressed = "";
             buttonCount = 0;
@@ -42,50 +43,45 @@ public class BookButtonPuzzleManager : MonoBehaviour
         else if (buttonCount == 5)
         {
             buttonCount = 0;
-            StartCoroutine(Reset());
+            StartCoroutine(ResetBooks());
         }
     }
 
     public void Pressed(string bookIndex)
     {  
         booksPressed += bookIndex;
-        Debug.Log("Bookspressed: " + booksPressed);
         buttonCount++;
     }
 
     IEnumerator OpenSecretDoor()
     {
-
-        yield return new WaitForSeconds(1.12f);
+        yield return new WaitForSeconds(.4f);
 
         secretDoorAnimator.SetTrigger("Open");
+        doorIsOpen = true;
 
         if (soundEffect != null)
         {
-            AudioManager.instance.PlaySFX(soundEffect);
+            AudioManager.instance.PlaySFX(soundEffect, secretDoorAnimator.gameObject.transform.position);
         }
 
-        yield return new WaitForSeconds(1.12f);
-
-        StartCoroutine("Reset", false);
+        StartCoroutine("ResetBooks", false);
     }
 
     IEnumerator OpenSafe()
     {
-        yield return new WaitForSeconds(1.12f);
+        yield return new WaitForSeconds(.6f);
         safeAnimator.SetTrigger("Open");
 
         if (soundEffect != null)
         {
-            AudioManager.instance.PlaySFX(soundEffect);
+            AudioManager.instance.PlaySFX(soundEffect, safeAnimator.gameObject.transform.position);
         }
 
-        yield return new WaitForSeconds(1.12f);
-
-        StartCoroutine("Reset", false);
+        StartCoroutine("ResetBooks", false);
     }
 
-    IEnumerator Reset(bool playSFX = true)
+    IEnumerator ResetBooks(bool playSFX = true)
     {
         yield return new WaitForSeconds(1.12f);
 

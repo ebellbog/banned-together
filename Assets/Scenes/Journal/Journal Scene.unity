@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -974,13 +973,65 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7677367276242932809, guid: 556922a869741d041b6ea0a240faee24, type: 3}
       insertIndex: 1
       addedObject: {fileID: 500423635}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1075772326}
   m_SourcePrefab: {fileID: 100100000, guid: 556922a869741d041b6ea0a240faee24, type: 3}
 --- !u!224 &1075772324 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7677367276242932809, guid: 556922a869741d041b6ea0a240faee24, type: 3}
   m_PrefabInstance: {fileID: 1075772323}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1075772325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 1075772323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1075772326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075772325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1001 &1150316095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1308,6 +1359,8 @@ MonoBehaviour:
   - {fileID: 8400000, guid: 65097b562e3141f48aff8dfce35862e9, type: 2}
   - {fileID: 8400000, guid: d4d649cd7b0323a4a94f606e1a4831d4, type: 2}
   - {fileID: 8400000, guid: 0d0581d349341eb4da5bda55ae34b752, type: 2}
+  - {fileID: 8400000, guid: df77d05dc0ebea44faf909142cea860d, type: 2}
+  - {fileID: 8400000, guid: 6166678f61ebe3345a9fca6340400eff, type: 2}
   - {fileID: 2800000, guid: 6e67f8fd6d26021438a8efe25ba551ce, type: 3}
   interactable: 1
   enableShadowEffect: 1
@@ -1482,6 +1535,208 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
       propertyPath: m_text
+      value: "The night of the <color=\"red\">gala</color>, I arrived to work at
+        the conservatory as the sun was setting. The glass building appeared alien,
+        as though it had landed on the hill to capture specimens of the waning December
+        light. Tom dropped me off at the back entrance. I was late, but before he
+        would let me out of the car, he made me put his cock in my mouth. I didn\u2019t
+        have to do anything with it. I think he just wanted to know it had been there,
+        and that knowledge enabled him to drive away.\r\n\r\nThe gala was a fundraising
+        affair for the botanical garden, a schmoozy silent auction and party for
+        a who\u2019s who of the city\u2019s horticultural philanthropists. We had
+        been preparing for months. The approach to the conservatory\u2019s front
+        doors was encrusted in twinkling lights, and out back they\u2019d erected
+        a massive tent. Inside the headhouse, holiday decorations were everywhere,
+        packing material and broken ornaments scattered among the pots and gardening
+        tools. The air bore the distinctive odor of our corpse flower, the massive
+        Amorphophallus titanium. It was blooming, but we\u2019d hidden it back here.
+        No matter how rare and fascinating the plant might be, no one wanted to drink
+        bubbly flutes of Prosecco and slow dance to Christmas jazz next to a fly-pollinated
+        flower that reeked of rotten meat.\r\n\r\nI threw my backpack on the potting
+        station and looked around for my magnetic nametag. Behind me, the doors to
+        the glass house interior opened. The conservatory horticulturist, Mary Margaret,
+        appeared. She was in her 50s, only a few years younger than my mother, and
+        usually wore denim shorts, plus a T-shirt with the garden\u2019s logo on
+        the front. But tonight was different. Her body was sheathed in a synthetic
+        black shift, and a multicolored beaded belt gave her a waist. She teetered
+        on a pair of worn black pumps with kitten heels. Her glasses, ordinarily
+        green with grime, were clean. It felt like I was seeing her eyes for the
+        first time.\r\n\r\nShe said, \u201CAlison. What took you so long?\u201D\r\n\r\n\u201CI
+        had trouble deciding what to wear,\u201D I replied.\r\n\r\nI had ceased to
+        expect she would reprimand me. But I still wanted her to, somehow. I thought
+        it would feel good\u2014like instead of this ambiguity, I could just hate
+        her. But her face was dim. She was somewhere far away, searching for an entry
+        point into her own suffering. \u201CAfter the divorce,\u201D she said finally,
+        \u201Cthis dress was one of the only nice things I had left.\u201D\r\n\r\nI\u2019d
+        been abducted by the conservatory, and Mary Margaret, when the weather got
+        cold. She needed someone to help transform the glass house into a sparkling
+        holiday wonderland, she said, but every other member of the staff was \u201Cbusy\u201D
+        whenever she came around. They did hate her, I realized. When you spend hours
+        pruning and weeding, there\u2019s not much to keep you entertained besides
+        gossip. And they talked about Mary Margaret often, her monstrous tendencies
+        the default subject when there was nothing else to say. I\u2019d started
+        working here in August, so as the newest\u2014and the youngest\u2014gardener,
+        I had no defenses against her. As the rest of the staff planned the spring
+        displays, took out dead branches, and sipped coffee poured from a steaming
+        carafe at lunch, I found myself behind the glass.\r\n\r\n\u201CYou\u2019ll
+        need to greet people at the front doors,\u201D Mary Margaret said. \u201CPoint
+        them in the direction of the tent, and if they need, show them where the
+        bathroom is. Once everyone\u2019s safe inside the tent, just do the rounds
+        and keep the floor clean. We had a woman last year who slipped on a patch
+        of water under the staghorn fern, and broke her clavicle. That was fun.\u201D
+        She laughed, and there was a hard joy in it. I imagined her standing behind
+        the glass walls a year ago, watching the ambulance approach with lusty glee.\r\n\r\nI
+        left the headhouse, exiting into the doors that let out into the back room
+        of the conservatory. As the doors swung shut behind me, the air changed.
+        Out here, the smell was green and rich, a mossy jungle embedded with the
+        scents of tropical flowers. It was warm, almost hot. Across the way the doors
+        to the gala tent gaped open. Within, catering staff hurried back and forth,
+        carrying chairs, adjusting lights, and fanning cocktail napkins out into
+        feathered piles. The string quartet was setting up on the small raised stage
+        at the back of the tent. In college, I had hated parties. But this one, the
+        climax of our conservatory transformation, excited me. Yes, it was another
+        night of work, and I had to come back in the morning, too. But I was nervy
+        with anticipation, imagining guests flowing into this warmly lit interior,
+        wine glasses tinkling, their laughter overwriting the usual white noise of
+        the conservatory\u2019s churning fans, bubbling artificial pools, and the
+        deep generator hum emanating from nowhere and everywhere all at once.\r\n\r\nI
+        headed for my post at the front. Our conservatory was shaped like an upside-down
+        Christian cross. Each transept housed a separate doored wing, closed off
+        to preserve different air and temperature levels. Spanish moss dangled from
+        tree limbs in the west wing, bearding down over plantings of tropical ginger.
+        The centerpiece in that wing was an orchid wall whose flowers cascaded over
+        a reflection pool. My mother worked in the orchid greenhouse that supplied
+        these unusual specimens, and she\u2019d helped me get the job here. I should
+        have been in college this week, working on finals. But I had stopped after
+        only two years."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_overflowMode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_linkedTextComponent
+      value: 
+      objectReference: {fileID: 1794577351}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3671.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.030116
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774212983462076693, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: df77d05dc0ebea44faf909142cea860d, type: 2}
+    - target: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_Name
+      value: Live Page 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1556156857}
+  m_SourcePrefab: {fileID: 100100000, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+--- !u!1 &1556156856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 1556156855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1556156857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556156856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1676161841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 295526825952509264, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_text
+      value: ~  8  ~
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_text
       value: "The night of the gala, I arrived to work at the conservatory as the
         sun was setting. The glass building appeared alien, as though it had landed
         on the hill to capture specimens of the waning December light. Tom dropped
@@ -1565,7 +1820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3671.1
+      value: 3843.6
       objectReference: {fileID: 0}
     - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1606,16 +1861,68 @@ PrefabInstance:
     - target: {fileID: 8774212983462076693, guid: 556922a869741d041b6ea0a240faee24, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: df77d05dc0ebea44faf909142cea860d, type: 2}
+      objectReference: {fileID: 8400000, guid: a05ceba525ef19e478b61b51af6bff69, type: 2}
     - target: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
       propertyPath: m_Name
-      value: Live Page 6
+      value: Live Page 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1676161843}
   m_SourcePrefab: {fileID: 100100000, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+--- !u!1 &1676161842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 1676161841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1676161843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676161842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &1775839566 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
@@ -1627,6 +1934,217 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1794577350
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 295526825952509264, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_text
+      value: ~  7  ~
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_text
+      value: "The night of the gala, I arrived to work at the conservatory as the
+        sun was setting. The glass building appeared alien, as though it had landed
+        on the hill to capture specimens of the waning December light. Tom dropped
+        me off at the back entrance. I was late, but before he would let me out of
+        the car, he made me put his cock in my mouth. I didn\u2019t have to do anything
+        with it. I think he just wanted to know it had been there, and that knowledge
+        enabled him to drive away.\r\n\r\nThe gala was a fundraising affair for the
+        botanical garden, a schmoozy silent auction and party for a who\u2019s who
+        of the city\u2019s horticultural philanthropists. We had been preparing for
+        months. The approach to the conservatory\u2019s front doors was encrusted
+        in twinkling lights, and out back they\u2019d erected a massive tent. Inside
+        the headhouse, holiday decorations were everywhere, packing material and
+        broken ornaments scattered among the pots and gardening tools. The air bore
+        the distinctive odor of our corpse flower, the massive Amorphophallus titanium.
+        It was blooming, but we\u2019d hidden it back here. No matter how rare and
+        fascinating the plant might be, no one wanted to drink bubbly flutes of Prosecco
+        and slow dance to Christmas jazz next to a fly-pollinated flower that reeked
+        of rotten meat.\r\n\r\nI threw my backpack on the potting station and looked
+        around for my magnetic nametag. Behind me, the doors to the glass house interior
+        opened. The conservatory horticulturist, Mary Margaret, appeared. She was
+        in her 50s, only a few years younger than my mother, and usually wore denim
+        shorts, plus a T-shirt with the garden\u2019s logo on the front. But tonight
+        was different. Her body was sheathed in a synthetic black shift, and a multicolored
+        beaded belt gave her a waist. She teetered on a pair of worn black pumps
+        with kitten heels. Her glasses, ordinarily green with grime, were clean.
+        It felt like I was seeing her eyes for the first time.\r\n\r\nShe said, \u201CAlison.
+        What took you so long?\u201D\r\n\r\n\u201CI had trouble deciding what to
+        wear,\u201D I replied.\r\n\r\nI had ceased to expect she would reprimand
+        me. But I still wanted her to, somehow. I thought it would feel good\u2014like
+        instead of this ambiguity, I could just hate her. But her face was dim. She
+        was somewhere far away, searching for an entry point into her own suffering.
+        \u201CAfter the divorce,\u201D she said finally, \u201Cthis dress was one
+        of the only nice things I had left.\u201D\r\n\r\nI\u2019d been abducted by
+        the conservatory, and Mary Margaret, when the weather got cold. She needed
+        someone to help transform the glass house into a sparkling holiday wonderland,
+        she said, but every other member of the staff was \u201Cbusy\u201D whenever
+        she came around. They did hate her, I realized. When you spend hours pruning
+        and weeding, there\u2019s not much to keep you entertained besides gossip.
+        And they talked about Mary Margaret often, her monstrous tendencies the default
+        subject when there was nothing else to say. I\u2019d started working here
+        in August, so as the newest\u2014and the youngest\u2014gardener, I had no
+        defenses against her. As the rest of the staff planned the spring displays,
+        took out dead branches, and sipped coffee poured from a steaming carafe at
+        lunch, I found myself behind the glass.\r\n\r\n\u201CYou\u2019ll need to
+        greet people at the front doors,\u201D Mary Margaret said. \u201CPoint them
+        in the direction of the tent, and if they need, show them where the bathroom
+        is. Once everyone\u2019s safe inside the tent, just do the rounds and keep
+        the floor clean. We had a woman last year who slipped on a patch of water
+        under the staghorn fern, and broke her clavicle. That was fun.\u201D She
+        laughed, and there was a hard joy in it. I imagined her standing behind the
+        glass walls a year ago, watching the ambulance approach with lusty glee.\r\n\r\nI
+        left the headhouse, exiting into the doors that let out into the back room
+        of the conservatory. As the doors swung shut behind me, the air changed.
+        Out here, the smell was green and rich, a mossy jungle embedded with the
+        scents of tropical flowers. It was warm, almost hot. Across the way the doors
+        to the gala tent gaped open. Within, catering staff hurried back and forth,
+        carrying chairs, adjusting lights, and fanning cocktail napkins out into
+        feathered piles. The string quartet was setting up on the small raised stage
+        at the back of the tent. In college, I had hated parties. But this one, the
+        climax of our conservatory transformation, excited me. Yes, it was another
+        night of work, and I had to come back in the morning, too. But I was nervy
+        with anticipation, imagining guests flowing into this warmly lit interior,
+        wine glasses tinkling, their laughter overwriting the usual white noise of
+        the conservatory\u2019s churning fans, bubbling artificial pools, and the
+        deep generator hum emanating from nowhere and everywhere all at once.\r\n\r\nI
+        headed for my post at the front. Our conservatory was shaped like an upside-down
+        Christian cross. Each transept housed a separate doored wing, closed off
+        to preserve different air and temperature levels. Spanish moss dangled from
+        tree limbs in the west wing, bearding down over plantings of tropical ginger.
+        The centerpiece in that wing was an orchid wall whose flowers cascaded over
+        a reflection pool. My mother worked in the orchid greenhouse that supplied
+        these unusual specimens, and she\u2019d helped me get the job here. I should
+        have been in college this week, working on finals. But I had stopped after
+        only two years. My parents said it would be good for me to take a break from
+        playing video games and get some exercise. It would help me figure out what
+        to do after finishing what my mom called \u201Cyour year off.\u201D\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_overflowMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3759.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.030116
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636382049795237268, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774212983462076693, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 6166678f61ebe3345a9fca6340400eff, type: 2}
+    - target: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      propertyPath: m_Name
+      value: Live Page 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1794577353}
+  m_SourcePrefab: {fileID: 100100000, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+--- !u!114 &1794577351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 1794577350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1794577352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 1794577350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1794577353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794577352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &1818118044 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4570010966866056169, guid: 556922a869741d041b6ea0a240faee24, type: 3}
@@ -1777,8 +2295,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2032387494}
   m_SourcePrefab: {fileID: 100100000, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+--- !u!1 &2032387493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 2032387492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2032387494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032387493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1001 &2079941776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2095,8 +2665,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2792936045335655597}
   m_SourcePrefab: {fileID: 100100000, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+--- !u!1 &2792936045335655596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  m_PrefabInstance: {fileID: 2792936045335655595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2792936045335655597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792936045335655596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2111,4 +2733,6 @@ SceneRoots:
   - {fileID: 1005900078}
   - {fileID: 2032387492}
   - {fileID: 1556156855}
+  - {fileID: 1794577350}
+  - {fileID: 1676161841}
   - {fileID: 738699270}

@@ -22,6 +22,13 @@ public class Door : MonoBehaviour
         gameObject.tag = "Door";
     }
 
+    public void UnlockAndOpen()
+    {
+        isLocked = false;
+        soundEffect = "Door";
+        Open();
+    }
+
     public void Open()
     {
         if (isOpen) { 

@@ -5,17 +5,18 @@ public class LightSwitch : MonoBehaviour
 {
     public Light associatedLight;
     public bool onByDefault = false;
+    public float lightIntensity = 1.0f;
 
     void Awake()
     {
         tag = "Switch";
-        associatedLight.intensity = 1;
         OnValidate();
     }
 
     void OnValidate()
     {
         associatedLight.enabled = onByDefault;
+        associatedLight.intensity = lightIntensity;
     }
 
     public void SwitchLight()

@@ -413,7 +413,7 @@ Material:
     - _HighlightOverridden: 0
     - _HighlightVisible: 1
     - _IndirectLightAffectOnHatch: 0
-    - _IndirectLightStrength: 1
+    - _IndirectLightStrength: 0.853
     - _InvTilingScale: 1
     - _InverseMask: 0
     - _Inverse_Clipping: 0

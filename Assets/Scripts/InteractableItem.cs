@@ -48,7 +48,6 @@ public enum RotationAxis {
 }
 
 [RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(Renderer))]
 public class InteractableItem : MonoBehaviour
 {
     public GameObject interactionParent;
