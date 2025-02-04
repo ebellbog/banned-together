@@ -7,6 +7,12 @@
       "dependencies": {},
       "hash": "06c20cafa885cbb9f14791c269cda6b547e0be30"
     },
+    "com.occasoftware.outlines": {
+      "version": "file:com.occasoftware.outlines",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
