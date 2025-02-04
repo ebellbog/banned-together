@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
     m_Value: 0
   paperTextureScale:
     m_OverrideState: 0
-    m_Value: 10
+    m_Value: 0
   paperTextureSpeed:
     m_OverrideState: 0
     m_Value: 0
