@@ -2870,7 +2870,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56059172aa2431f4080af9ab3728b61c, type: 2}
+  - {fileID: 2100000, guid: 55f8d13179fc6764db5da21f562c0e22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9764,7 +9764,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105742123}
   m_CullTransparentMesh: 1
---- !u!21 &1138994824
+--- !u!21 &1167835145
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
