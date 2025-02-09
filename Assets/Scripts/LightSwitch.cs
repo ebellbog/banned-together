@@ -3,24 +3,39 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class LightSwitch : MonoBehaviour
 {
-    public Light associatedLight;
+    public Light[] associatedLight;
     public bool onByDefault = false;
-    public float lightIntensity = 1.0f;
+    //public float lightIntensity = 1.0f;
+    public string soundEffect;
+
 
     void Awake()
     {
         tag = "Switch";
+
         OnValidate();
     }
 
     void OnValidate()
     {
-        associatedLight.enabled = onByDefault;
-        associatedLight.intensity = lightIntensity;
+        for (int i = 0; i < associatedLight.Length; i++)
+        {
+            associatedLight[i].enabled = onByDefault;
+            //associatedLight[i].intensity = lightIntensity;
+        }
+
     }
 
     public void SwitchLight()
     {
-        associatedLight.enabled = !associatedLight.enabled;
+        for (int i = 0; i < associatedLight.Length; i++)
+        {
+            associatedLight[i].enabled = !associatedLight[i].enabled;
+        }
+
+        if (soundEffect != null)
+            AudioManager.instance.PlaySFX(soundEffect, gameObject.transform.position);
+
+
     }
 }
