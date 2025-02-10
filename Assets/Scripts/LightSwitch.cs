@@ -1,9 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider))]
 public class LightSwitch : MonoBehaviour
 {
-    public Light[] associatedLight;
+    public List<Light> associatedLights;
+    public List<GameObject> associatedDecals;
     public bool onByDefault = false;
     //public float lightIntensity = 1.0f;
     public string soundEffect;
@@ -18,24 +20,29 @@ public class LightSwitch : MonoBehaviour
 
     void OnValidate()
     {
-        for (int i = 0; i < associatedLight.Length; i++)
+        foreach (Light associatedLight in associatedLights)
         {
-            associatedLight[i].enabled = onByDefault;
+            associatedLight.enabled = onByDefault;
             //associatedLight[i].intensity = lightIntensity;
         }
-
+        foreach (GameObject decal in associatedDecals)
+        {
+            decal.SetActive(onByDefault);
+        }
     }
 
     public void SwitchLight()
     {
-        for (int i = 0; i < associatedLight.Length; i++)
+        foreach (Light associatedLight in associatedLights)
         {
-            associatedLight[i].enabled = !associatedLight[i].enabled;
+            associatedLight.enabled = !associatedLight.enabled;
+        }
+        foreach (GameObject decal in associatedDecals)
+        {
+            decal.SetActive(!decal.activeSelf);
         }
 
         if (soundEffect != null)
             AudioManager.instance.PlaySFX(soundEffect, gameObject.transform.position);
-
-
     }
 }
