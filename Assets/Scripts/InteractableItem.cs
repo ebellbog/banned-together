@@ -9,6 +9,12 @@ public enum ActionTiming {
     afterExamine
 }
 
+public enum EnabledState {
+    setEnabled,
+    setDisabled,
+    toggleEnabled,
+}
+
 [System.Serializable]
 public class StateUpdate {
     public ActionTiming timing;
@@ -21,11 +27,21 @@ public class StateUpdate {
 public class ComponentAction {
     public ActionTiming timing;
     public MonoBehaviour targetComponent;
+
+    // TODO: replace with a single EnabledState property
     public bool setEnabled;
     public bool setDisabled;
+    public bool toggleEnabled;
     public string callFunctionByName;
     public bool callOnlyOnce = false;
     internal bool alreadyCalled = false;
+}
+
+[System.Serializable]
+public class GameObjectAction {
+    public ActionTiming timing;
+    public GameObject gameObject;
+    public EnabledState action;
 }
 
 [System.Serializable]
@@ -56,7 +72,7 @@ public class InteractableItem : MonoBehaviour
     public bool isFocusable = false;
 
     [Header("Examination settings")]
-    public bool isExaminable = true;
+    public bool isExaminable = false;
     public bool orientToCamera = false;
     public bool pivotAroundVisualCenter = true;
     public RotationAxis rotationAxis = RotationAxis.All;
@@ -70,6 +86,7 @@ public class InteractableItem : MonoBehaviour
     public Sprite cursorOverride;
 
     [Header("Custom effects")]
+    public List<GameObjectAction> gameObjectActions;
     public List<ComponentAction> componentActions;
     public List <AudioAction> audioActions;
     public List <JournalUpdate> journalUpdates;
@@ -120,7 +137,10 @@ public class InteractableItem : MonoBehaviour
             if (action.callOnlyOnce && action.alreadyCalled) continue;
             if (currentTiming != action.timing) continue;
 
-            if (action.setEnabled)
+            if (action.toggleEnabled) {
+                action.targetComponent.enabled = !action.targetComponent.enabled;
+            }
+            else if (action.setEnabled)
             {
                 action.targetComponent.enabled = true;
             }
@@ -134,6 +154,24 @@ public class InteractableItem : MonoBehaviour
             }
 
             action.alreadyCalled = true;
+        }
+
+        foreach(GameObjectAction action in gameObjectActions)
+        {
+            if (currentTiming != action.timing) continue;
+
+            switch(action.action)
+            {
+                case EnabledState.setEnabled:
+                    action.gameObject.SetActive(true);
+                    break;
+                case EnabledState.setDisabled:
+                    action.gameObject.SetActive(false);
+                    break;
+                case EnabledState.toggleEnabled:
+                    action.gameObject.SetActive(!action.gameObject.activeSelf);
+                    break;
+            }
         }
 
         foreach(JournalUpdate journalUpdate in journalUpdates)
