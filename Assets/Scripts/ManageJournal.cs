@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Auto-hides journal and preserves current page
+/// </summary>
 public class ManageJournal : MonoBehaviour
 {
     public TextMeshProUGUI firstPage;
@@ -18,14 +21,14 @@ public class ManageJournal : MonoBehaviour
 
     void Update()
     {
-        if (firstPage.text != GS.journalContent) {
-            firstPage.text = GS.journalContent;
-        }
-        if (GS.interactionMode != InteractionType.Journal && isVisible)
-        {
-            book.gameObject.GetComponent<Animator>().SetTrigger("Hide");
-            isVisible = false;
-        }
+        // if (firstPage.text != GS.journalContent) {
+        //     firstPage.text = GS.journalContent;
+        // }
+        // if (GS.interactionMode != InteractionType.Journal && isVisible)
+        // {
+        //     book.gameObject.GetComponent<Animator>().SetTrigger("Hide");
+        //     isVisible = false;
+        // }
     }
 
     public void SyncGameState()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1035707619433307290}
   - component: {fileID: 4895366135723754351}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Page background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32, y: -403}
+  m_AnchoredPosition: {x: 0, y: -403}
   m_SizeDelta: {x: 453.367, y: 49.703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &464966550725836527
@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 6636382049795237268}
   - component: {fileID: 8774212983462076693}
   - component: {fileID: 7763729891651549589}
+  - component: {fileID: 2933744825648988942}
   - component: {fileID: 1402441611620143373}
   m_Layer: 0
   m_Name: Live Book Page
@@ -610,6 +611,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9071785334113380828}
   m_Enabled: 0
+--- !u!114 &2933744825648988942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071785334113380828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a88b70661c9eb4fb3390343fb0e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageNumber: 1
+  setNumberAutomatically: 1
+  pageSide: 0
+  setSideAutomatically: 1
 --- !u!114 &1402441611620143373
 MonoBehaviour:
   m_ObjectHideFlags: 0

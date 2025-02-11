@@ -18,6 +18,9 @@ public class JournalEntry
     }
 }
 
+/// <summary>
+///  Manages adding content to journal and showing notifications for new content
+/// </summary>
 public class JournalManager : MonoBehaviour
 {
     public List<JournalEntry> journalEntries = new List<JournalEntry>();
