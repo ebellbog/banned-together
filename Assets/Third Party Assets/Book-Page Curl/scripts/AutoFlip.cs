@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(Book))]
+[RequireComponent(typeof(BookLive))]
 public class AutoFlip : MonoBehaviour {
     public FlipMode Mode;
     public float PageFlipTime = 1;
     public float TimeBetweenPages = 1;
     public float DelayBeforeStarting = 0;
     public bool AutoStartFlip=true;
-    public Book ControledBook;
+    public BookLive ControledBook;
     public int AnimationFramesCount = 40;
     bool isFlipping = false;
     // Use this for initialization
     void Start () {
         if (!ControledBook)
-            ControledBook = GetComponent<Book>();
+            ControledBook = GetComponent<BookLive>();
         if (AutoStartFlip)
             StartFlipping();
         ControledBook.OnFlip.AddListener(new UnityEngine.Events.UnityAction(PageFlipped));
@@ -21,6 +21,7 @@ public class AutoFlip : MonoBehaviour {
     void PageFlipped()
     {
         isFlipping = false;
+        ControledBook.interactable = true;
     }
 	public void StartFlipping()
     {
@@ -30,6 +31,7 @@ public class AutoFlip : MonoBehaviour {
     {
         if (isFlipping) return;
         if (ControledBook.currentPage >= ControledBook.TotalPageCount) return;
+        ControledBook.interactable = false;
         isFlipping = true;
         float frameTime = PageFlipTime / AnimationFramesCount;
         float xc = (ControledBook.EndBottomRight.x + ControledBook.EndBottomLeft.x) / 2;
@@ -43,6 +45,7 @@ public class AutoFlip : MonoBehaviour {
     {
         if (isFlipping) return;
         if (ControledBook.currentPage <= 0) return;
+        ControledBook.interactable = false;
         isFlipping = true;
         float frameTime = PageFlipTime / AnimationFramesCount;
         float xc = (ControledBook.EndBottomRight.x + ControledBook.EndBottomLeft.x) / 2;

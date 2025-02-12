@@ -114,12 +114,11 @@ public class BookLive : MonoBehaviour {
 
     public Vector3 transformPoint(Vector3 mouseScreenPos)
     {
+        Vector2 localPos;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
         {
             Vector3 mouseWorldPos = canvas.worldCamera.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, canvas.planeDistance));
-            Vector2 localPos = BookPanel.InverseTransformPoint(mouseWorldPos);
-
-            return localPos;
+            localPos = BookPanel.InverseTransformPoint(mouseWorldPos);
         }
         else if (canvas.renderMode == RenderMode.WorldSpace)
         {
@@ -130,15 +129,22 @@ public class BookLive : MonoBehaviour {
             Plane p = new Plane(globalEBR, globalEBL, globalSt);
             float distance;
             p.Raycast(ray, out distance);
-            Vector2 localPos = BookPanel.InverseTransformPoint(ray.GetPoint(distance));
-            return localPos;
+            Vector2 projectedPoint = ray.GetPoint(distance);
+            localPos = BookPanel.InverseTransformPoint(projectedPoint);
         }
         else
         {
             //Screen Space Overlay
-            Vector2 localPos = BookPanel.InverseTransformPoint(mouseScreenPos);
-            return localPos;
+            localPos = BookPanel.InverseTransformPoint(mouseScreenPos);
         }
+
+        // Drag page horizontally from side, if clicking far enough above page corner
+        if (localPos.y > sb.y / 4)
+        {
+            localPos.y = Mathf.Ceil(sb.y);
+        }
+
+        return localPos;
     }
     void Update()
     {
@@ -206,6 +212,7 @@ public class BookLive : MonoBehaviour {
         RightNext.transform.SetParent(BookPanel.transform, true);
         c = Calc_C_Position(followLocation);
         Vector3 t1;
+
         float clipAngle = CalcClipAngle(c, ebr, out t1);
         if (clipAngle > -90) clipAngle += 180;
 
@@ -372,12 +379,22 @@ public class BookLive : MonoBehaviour {
         LeftNext.texture = (currentPage > 0 && currentPage <= bookPages.Length) ? bookPages[currentPage-1] : background.texture;
         RightNext.texture =(currentPage>=0 &&currentPage<bookPages.Length) ? bookPages[currentPage] : background.texture;
     }
-    public void TweenForward()
+    public void TurnPageLeft()
+    {
+        mode = FlipMode.LeftToRight;
+        TweenForward();
+    }
+    public void TurnPageRight()
+    {
+        mode = FlipMode.RightToLeft;
+        TweenForward();
+    }
+    public void TweenForward(float duration = 0.15f)
     {
         if(mode== FlipMode.RightToLeft)
-        currentCoroutine = StartCoroutine(TweenTo(ebl, 0.15f, () => { Flip(); }));
+        currentCoroutine = StartCoroutine(TweenTo(ebl, duration, () => { Flip(); }));
         else
-        currentCoroutine = StartCoroutine(TweenTo(ebr, 0.15f, () => { Flip(); }));
+        currentCoroutine = StartCoroutine(TweenTo(ebr, duration, () => { Flip(); }));
     }
     void Flip()
     {
@@ -398,11 +415,11 @@ public class BookLive : MonoBehaviour {
         if (OnFlip != null)
             OnFlip.Invoke();
     }
-    public void TweenBack()
+    public void TweenBack(float duration = 0.15f)
     {
         if (mode == FlipMode.RightToLeft)
         {
-            currentCoroutine = StartCoroutine(TweenTo(ebr,0.15f,
+            currentCoroutine = StartCoroutine(TweenTo(ebr, duration,
                 () =>
                 {
                     UpdateSprites();
@@ -417,7 +434,7 @@ public class BookLive : MonoBehaviour {
         }
         else
         {
-            currentCoroutine = StartCoroutine(TweenTo(ebl, 0.15f,
+            currentCoroutine = StartCoroutine(TweenTo(ebl, duration,
                 () =>
                 {
                     UpdateSprites();
