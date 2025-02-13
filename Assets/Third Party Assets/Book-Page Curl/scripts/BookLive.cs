@@ -51,6 +51,9 @@ public class BookLive : MonoBehaviour {
     public RawImage Right;
     public RawImage RightNext;
     public UnityEvent OnFlip;
+    public UnityEvent OnBeginFlipRight;
+    public UnityEvent OnBeginFlipLeft;
+
     float radius1, radius2;
     //Spine Bottom
     Vector3 sb;
@@ -288,10 +291,15 @@ public class BookLive : MonoBehaviour {
     public void DragRightPageToPoint(Vector3 point)
     {
         if (currentPage >= bookPages.Length) return;
-        pageDragging = true;
+        if (!pageDragging)
+        {
+            if (OnBeginFlipRight != null)
+                OnBeginFlipRight.Invoke();
+            pageDragging = true;
+        }
+
         mode = FlipMode.RightToLeft;
         f = point;
-
 
         NextPageClip.rectTransform.pivot = new Vector2(0, 0.12f);
         ClippingPlane.rectTransform.pivot = new Vector2(1, 0.35f);
@@ -322,7 +330,13 @@ public class BookLive : MonoBehaviour {
     public void DragLeftPageToPoint(Vector3 point)
     {
         if (currentPage <= 0) return;
-        pageDragging = true;
+        if (!pageDragging)
+        {
+            if (OnBeginFlipLeft != null)
+                OnBeginFlipLeft.Invoke();
+            pageDragging = true;
+        }
+
         mode = FlipMode.LeftToRight;
         f = point;
 

@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 2933744825648988942}
   - component: {fileID: 1402441611620143373}
   m_Layer: 0
-  m_Name: Live Book Page
+  m_Name: Journal Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,10 +623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a88b70661c9eb4fb3390343fb0e7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pageNumber: 1
-  setNumberAutomatically: 1
-  pageSide: 0
-  setSideAutomatically: 1
 --- !u!114 &1402441611620143373
 MonoBehaviour:
   m_ObjectHideFlags: 0

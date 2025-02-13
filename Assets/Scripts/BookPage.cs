@@ -12,24 +12,61 @@ public enum PageSide {
 
 public class BookPage : MonoBehaviour
 {
-    public int pageNumber = 1;
-    public bool setNumberAutomatically = true;
+    private int _pageNumber = 1;
+    public int pageNumber {
+        get { return _pageNumber; }
+        set { 
+            _pageNumber = value; 
+            pageNumberMesh.text = _pageNumber.ToString();
+            UpdateRenderTexture();
+        }
+    }
 
-    public PageSide pageSide = PageSide.Left;
-    public bool setSideAutomatically = true;
+    private PageSide _pageSide = PageSide.Left;
+    public PageSide pageSide {
+        get { return _pageSide; }
+        set {
+            _pageSide = value;
+
+            Transform backgroundTransform = pageBackground.gameObject.transform;
+            backgroundTransform.localScale = new Vector3(
+                pageSide == PageSide.Left ? 1f : -1f,
+                backgroundTransform.localScale.y, backgroundTransform.localScale.z
+            );
+
+            Transform textTransform = pageTextMesh.gameObject.transform;
+            float textOffset = Mathf.Abs(textTransform.localPosition.x);
+
+            textTransform.localPosition = new Vector3(
+                pageSide == PageSide.Left ? textOffset : -textOffset,
+                textTransform.localPosition.y, textTransform.localPosition.z
+            );
+        }
+    }
+
+    public string pageContent {
+        get { return pageTextMesh.text; }
+        set {
+            GetSubcomponents();
+            pageTextMesh.text = value; 
+        }
+    }
 
     private TextMeshProUGUI pageNumberMesh;
     private TextMeshProUGUI pageTextMesh;
     private Image pageBackground;
     private Camera pageCamera;
-    private float textOffset;
 
-    private const float PAGE_OFFSET = 100f;
+    [System.NonSerialized]
+    public RenderTexture renderTexture;
 
-    void OnValidate()
+
+    public void InitPage(int pNum, PageSide pSide, Sprite backgroundImage)
     {
         GetSubcomponents();
-        AutoUpdatePages();
+        pageNumber = pNum;
+        pageSide = pSide;
+        pageBackground.sprite = backgroundImage;
     }
 
     private void GetSubcomponents()
@@ -46,126 +83,30 @@ public class BookPage : MonoBehaviour
         }
     }
 
-    bool IsOverflowing()
-    {
-        pageTextMesh.ForceMeshUpdate();
-        return pageTextMesh ? pageTextMesh.isTextOverflowing : false;
-    }
-
-    // void GeneratePages()
-    // {
-    //     if (IsOverflowing() && pageTextMesh.overflowMode != TextOverflowModes.Linked)
-    //     {
-    //         Debug.Log("Generating new page");
-
-    //         GameObject newPage = Instantiate(gameObject);
-    //         newPage.transform.localPosition = new Vector3(
-    //             transform.localPosition.x + PAGE_OFFSET,
-    //             transform.localPosition.y,
-    //             transform.localPosition.z
-    //         );
-    //         pageTextMesh.overflowMode = TextOverflowModes.Linked;
-    //         pageTextMesh.linkedTextComponent = newPage.GetComponentInChildren<TMP_Text>();
-
-    //         BookPage newPageComponent = newPage.GetComponent<BookPage>();
-    //         newPageComponent.maxPages = maxPages - 1;
-
-    //         newPageComponent.OnValidate();
-    //     }
-    // }
-
-    void AutoUpdatePages()
-    {
-        List<BookPage> siblingPages = FindObjectsOfType<BookPage>()
-            .Where(page => page.transform.parent == transform.parent)
-            .OrderBy(page => page.transform.GetSiblingIndex())
-            .ToList();
-
-        // Allow the first page to apply this logic for all pages
-        if (siblingPages[0] != this)
-        {
-            siblingPages[0].AutoUpdatePages();
-            return;
-        }
-
-        int currentNumber = 0;
-        bool isLeftPage = false;
-        foreach(BookPage bookPage in siblingPages) {
-            if (bookPage.gameObject == null) continue;
-            // if (bookPage.GetPageText().Length == 0 && currentNumber > 0) {
-            //     UnityEditor.EditorApplication.delayCall += () =>
-            //     {
-            //         if (bookPage) DestroyImmediate(bookPage.gameObject);
-            //     };
-            //     continue;
-            // }
-
-            if (bookPage.setNumberAutomatically) {
-                currentNumber++;
-                bookPage.pageNumber = currentNumber;
-                bookPage.gameObject.name = $"Live Book Page ({currentNumber})";
-                bookPage.UpdateRenderTexture();
-            }
-
-            isLeftPage = !isLeftPage;
-            if (bookPage.setSideAutomatically)
-            {
-                bookPage.pageSide = isLeftPage ? PageSide.Left: PageSide.Right;
-            }
-
-            bookPage.SyncState();
-        }
-    }
-
     void UpdateRenderTexture()
     {
-        RenderTexture targetTexture = Resources.Load<RenderTexture>($"Page {pageNumber} texture");
-        if (pageCamera && targetTexture)
+        if (renderTexture == null)
         {
-            pageCamera.targetTexture = targetTexture;
-        } 
+            renderTexture = new RenderTexture(558, 861, 8);
+            renderTexture.name = $"Dynamic texture ({pageNumber})";
+            pageCamera.targetTexture = renderTexture;
+        }
     }
 
-    string GetPageText()
+    public string GetVisibleText()
     {
         pageTextMesh.ForceMeshUpdate();
 
         string fullText = pageTextMesh.GetParsedText();
-        TMP_TextInfo textInfo = pageTextMesh.textInfo;
 
-        int lastVisibleCharIndex = -1;
-        int firstVisibleCharIndex = -1;
-        
-        if (textInfo == null) return "";
-        for (int i = 0; i < textInfo.characterCount; i++)
-        {
-            if (textInfo.characterInfo[i].isVisible)
-            {
-                if (firstVisibleCharIndex == -1) firstVisibleCharIndex = i;
-                lastVisibleCharIndex = i;
-            }
-        }
-
-        if (lastVisibleCharIndex == -1) return "";
-        return fullText.Substring(firstVisibleCharIndex, lastVisibleCharIndex - firstVisibleCharIndex + 1);
+        int overflowIdx = pageTextMesh.firstOverflowCharacterIndex;
+        if (overflowIdx == -1) return fullText;
+        else return fullText.Substring(0, overflowIdx);
     }
 
-    void SyncState()
+    bool IsOverflowing()
     {
-        pageNumberMesh.text = pageNumber.ToString();
-
-        Transform backgroundTransform = pageBackground.gameObject.transform;
-        backgroundTransform.localScale = new Vector3(
-            pageSide == PageSide.Left ? 1f : -1f,
-            backgroundTransform.localScale.y, backgroundTransform.localScale.z
-        );
-
-        Transform textTransform = pageTextMesh.gameObject.transform;
-        textOffset = Mathf.Abs(textTransform.localPosition.x);
-
-        textTransform.localPosition = new Vector3(
-            pageSide == PageSide.Left ? textOffset : -textOffset,
-            textTransform.localPosition.y, textTransform.localPosition.z
-        );
+        pageTextMesh.ForceMeshUpdate();
+        return pageTextMesh ? pageTextMesh.isTextOverflowing : false;
     }
 }
