@@ -48,9 +48,12 @@ public class BookPage : MonoBehaviour
         get { return pageTextMesh.text; }
         set {
             GetSubcomponents();
-            pageTextMesh.text = value; 
+            pageTextMesh.text = value;
         }
     }
+
+    public float pageHeight = 861;
+    public float aspectRatio = 8.5f / 11f;
 
     private TextMeshProUGUI pageNumberMesh;
     private TextMeshProUGUI pageTextMesh;
@@ -61,12 +64,11 @@ public class BookPage : MonoBehaviour
     public RenderTexture renderTexture;
 
 
-    public void InitPage(int pNum, PageSide pSide, Sprite backgroundImage)
+    public void InitPage(int pNum, PageSide pSide)
     {
         GetSubcomponents();
         pageNumber = pNum;
         pageSide = pSide;
-        pageBackground.sprite = backgroundImage;
     }
 
     private void GetSubcomponents()
@@ -87,7 +89,7 @@ public class BookPage : MonoBehaviour
     {
         if (renderTexture == null)
         {
-            renderTexture = new RenderTexture(558, 861, 8);
+            renderTexture = new RenderTexture((int)(pageHeight * aspectRatio), (int)pageHeight, 8);
             renderTexture.name = $"Dynamic texture ({pageNumber})";
             pageCamera.targetTexture = renderTexture;
         }
@@ -97,7 +99,7 @@ public class BookPage : MonoBehaviour
     {
         pageTextMesh.ForceMeshUpdate();
 
-        string fullText = pageTextMesh.GetParsedText();
+        string fullText = pageTextMesh.text;//GetParsedText();
 
         int overflowIdx = pageTextMesh.firstOverflowCharacterIndex;
         if (overflowIdx == -1) return fullText;

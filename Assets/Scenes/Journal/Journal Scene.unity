@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &199070752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,11 +241,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookViewer: {fileID: 1150316105}
   pagePrefab: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
-  bookCover: {fileID: 2800000, guid: 3bf7ce09e6371b0478ca4674646e5258, type: 3}
-  bookBack: {fileID: 2800000, guid: 6e67f8fd6d26021438a8efe25ba551ce, type: 3}
-  pageBackground: {fileID: 21300000, guid: be84d9601ed5c3b4c8884a0a5015641c, type: 3}
-  bookContent: 
-  textAsset: {fileID: 4900000, guid: e5379fc6b7343b540b220b4300ab28be, type: 3}
+  bookCover: {fileID: 2800000, guid: 81c64078c21bda5498334308408bced0, type: 3}
+  bookBack: {fileID: 2800000, guid: c81274ff039f0f54aa8cf2582fb73636, type: 3}
+  contentSource: 2
+  textField: Test
+  textFile: {fileID: 4900000, guid: e5379fc6b7343b540b220b4300ab28be, type: 3}
 --- !u!4 &738699270
 Transform:
   m_ObjectHideFlags: 0
@@ -376,6 +376,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 22433904, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.2340875
+      objectReference: {fileID: 0}
+    - target: {fileID: 22433904, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 665
+      objectReference: {fileID: 0}
+    - target: {fileID: 22433904, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1420.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 22436914, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2191
+      objectReference: {fileID: 0}
+    - target: {fileID: 22437570, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 665
+      objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -402,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1116
+      value: 1330
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_SizeDelta.y
@@ -456,9 +476,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3410908281107726847, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
-      propertyPath: PageFlipTime
-      value: 0.6
+    - target: {fileID: 22488492, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.2340875
+      objectReference: {fileID: 0}
+    - target: {fileID: 22488492, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 665
+      objectReference: {fileID: 0}
+    - target: {fileID: 22488492, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1420.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924483709971549944, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 429.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924483709971549944, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 217.75
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: canvas
@@ -476,6 +512,18 @@ PrefabInstance:
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 738699269}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManageBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217862754216145947, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 432.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217862754216145947, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -216.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -511,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1555930628
 AudioListener:
   m_ObjectHideFlags: 0

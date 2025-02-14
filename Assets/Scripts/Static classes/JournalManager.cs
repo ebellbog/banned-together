@@ -1,6 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Journal-related classes:
+- ShowJournal.cs
+- JournalManager.cs
+- ManageBook.cs
+- BookLive.cs
+- BookPage.cs
+*/
+
 [System.Serializable]
 public class JournalEntry
 {
@@ -82,7 +91,7 @@ public class JournalManager : MonoBehaviour
                 return;
             }
 
-            GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{data.content}";
+            GS.journalContent += $"{(GS.journalContent.Length > 0 ? " \n\n" : "")}{data.content}";
 
             data.alreadyAdded = true;
             unreadNotifications = true;
@@ -91,7 +100,7 @@ public class JournalManager : MonoBehaviour
 
     public void AddDayBreak()
     {
-        GS.journalContent += $"\n\n<b>10/{22+GS.currentDay}/23</b>";
+        GS.journalContent += $" \n\n<b>10/{22+GS.currentDay}/23</b>";
     }
 
     public void MarkAsRead()

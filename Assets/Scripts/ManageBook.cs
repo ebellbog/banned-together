@@ -4,9 +4,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/*
+Journal-related classes:
+- ShowJournal.cs
+- JournalManager.cs
+- ManageBook.cs
+- BookLive.cs
+- BookPage.cs
+*/
+
 public struct PageContent {
     public int startIdx, endIdx;
     public string content;
+}
+
+public enum ContentSource {
+    TextField, File, GameState
 }
 
 public class ManageBook : MonoBehaviour
@@ -18,16 +31,17 @@ public class ManageBook : MonoBehaviour
     [Header("Images")]
     public Texture bookCover;
     public Texture bookBack;
-    public Sprite pageBackground;
 
     [Header("Content")]
+    public ContentSource contentSource;
     [Multiline]
-    public string bookContent;
-    public TextAsset textAsset;
+    public string textField;
+    public TextAsset textFile;
 
     private bool isVisible = true;
     private List<BookPage> bookPages = new List<BookPage>();
     private List<PageContent> contentByPage = new List<PageContent>();
+    private string currentContent = "";
 
     private const int MAX_CHARS_PER_PAGE = 800;
 
@@ -39,6 +53,8 @@ public class ManageBook : MonoBehaviour
         AddPagesToBook();
 
         bookViewer.currentPage = GS.currentJournalPage;
+        UpdatePageContent(bookViewer.currentPage - 2);
+        UpdatePageContent(bookViewer.currentPage - 1);
     }
 
     void InitPages()
@@ -52,8 +68,7 @@ public class ManageBook : MonoBehaviour
             BookPage pageComponent = newPage.GetComponent<BookPage>();
             pageComponent.InitPage(
                 i + 1,
-                i % 2 == 0 ? PageSide.Left : PageSide.Right,
-                pageBackground
+                i % 2 == 0 ? PageSide.Left : PageSide.Right
             );
 
             bookPages.Add(pageComponent);
@@ -65,18 +80,30 @@ public class ManageBook : MonoBehaviour
         contentByPage.Clear();
         BookPage testPage = bookPages[0];
 
-        int startIdx = 0, endIdx = 0;
-        string fullText = textAsset ? textAsset.text : bookContent;
-
-        while (startIdx < fullText.Length)
+        switch(contentSource)
         {
-            testPage.pageContent = fullText.Substring(startIdx, Math.Min(fullText.Length - startIdx, MAX_CHARS_PER_PAGE));
-            endIdx = startIdx + testPage.GetVisibleText().Length;
+            case ContentSource.TextField:
+                currentContent = textField;
+                break;
+            case ContentSource.File:
+                currentContent = textFile.text;
+                break;
+            case ContentSource.GameState:
+                currentContent = GS.journalContent;
+                break;
+        }
+
+        int startIdx = 0, endIdx = 0;
+        while (startIdx < currentContent.Length)
+        {
+            testPage.pageContent = currentContent.Substring(startIdx, Math.Min(currentContent.Length - startIdx, MAX_CHARS_PER_PAGE));
+            string visibleText = testPage.GetVisibleText();
+            endIdx = startIdx + Math.Max(visibleText.Length, 1);
 
             PageContent newContent = new PageContent();
             newContent.startIdx = startIdx;
             newContent.endIdx = endIdx;
-            newContent.content = fullText.Substring(startIdx, endIdx - startIdx).Trim();
+            newContent.content = visibleText.Trim();//currentContent.Substring(startIdx, endIdx - startIdx).Trim();
 
             contentByPage.Add(newContent);
             startIdx = endIdx;
@@ -101,11 +128,20 @@ public class ManageBook : MonoBehaviour
 
     void Update()
     {
-        // if (GS.interactionMode != InteractionType.Journal && isVisible)
-        // {
-        //     book.gameObject.GetComponent<Animator>().SetTrigger("Hide");
-        //     isVisible = false;
-        // }
+        if (GS.interactionMode != null && GS.interactionMode != InteractionType.Journal && isVisible)
+        {
+            bookViewer.gameObject.GetComponent<Animator>().SetTrigger("Hide");
+            isVisible = false;
+        }
+
+        if (contentSource == ContentSource.GameState &&
+            GS.journalContent != null &&
+            currentContent != GS.journalContent)
+        {
+            // TODO: maybe optimize by only rebuilding the last page and beyond?
+            DivideTextIntoPages();
+            AddPagesToBook();
+        }
     }
 
     public void SyncGameState()

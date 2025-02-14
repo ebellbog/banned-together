@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+/*
+Journal-related classes:
+- ShowJournal.cs
+- JournalManager.cs
+- ManageBook.cs
+- BookLive.cs
+- BookPage.cs
+*/
+
 public class ShowJournal : MonoBehaviour
 {
     public Texture2D ReadingCursor;
