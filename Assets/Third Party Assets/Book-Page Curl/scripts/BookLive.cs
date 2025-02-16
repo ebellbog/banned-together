@@ -53,6 +53,7 @@ public class BookLive : MonoBehaviour {
     public UnityEvent OnFlip;
     public UnityEvent OnBeginFlipRight;
     public UnityEvent OnBeginFlipLeft;
+    public UnityEvent OnReleaseEvent;
 
     float radius1, radius2;
     //Spine Bottom
@@ -372,7 +373,7 @@ public class BookLive : MonoBehaviour {
         if (interactable)
             ReleasePage();
     }
-    public void ReleasePage()
+    public void ReleasePage(bool doInvokeEvent = true)
     {
         if (pageDragging)
         {
@@ -384,6 +385,7 @@ public class BookLive : MonoBehaviour {
             else if (distanceToRight > distanceToLeft && mode == FlipMode.LeftToRight)
                 TweenBack();
             else
+                if (OnReleaseEvent != null && doInvokeEvent) OnReleaseEvent.Invoke();
                 TweenForward();
         }
     }

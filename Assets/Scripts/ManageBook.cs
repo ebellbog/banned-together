@@ -28,15 +28,18 @@ public class ManageBook : MonoBehaviour
     public BookLive bookViewer;
     public GameObject pagePrefab;
 
-    [Header("Images")]
-    public Texture bookCover;
-    public Texture bookBack;
-
-    [Header("Content")]
+    [Header("Text content")]
     public ContentSource contentSource;
     [Multiline]
     public string textField;
     public TextAsset textFile;
+
+    [Header("Custom pages")]
+    public List<Texture> customPagesAtStart = new List<Texture>();
+    public List<Texture> customPagesAtEnd = new List<Texture>();
+
+    [Header("Sound effects")]
+    public string pageTurnAudio;
 
     private bool isVisible = true;
     private List<BookPage> bookPages = new List<BookPage>();
@@ -53,8 +56,15 @@ public class ManageBook : MonoBehaviour
         AddPagesToBook();
 
         bookViewer.currentPage = GS.currentJournalPage;
-        UpdatePageContent(bookViewer.currentPage - 2);
-        UpdatePageContent(bookViewer.currentPage - 1);
+        UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count - 1);
+        UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count);
+
+        if (pageTurnAudio != null)
+        {
+            bookViewer.OnReleaseEvent.AddListener(() => {
+                AudioManager.instance.PlaySFX(pageTurnAudio);
+            });
+        }
     }
 
     void InitPages()
@@ -113,22 +123,24 @@ public class ManageBook : MonoBehaviour
     void AddPagesToBook()
     {
         List<Texture> bookTextures = new List<Texture>();
-        bookTextures.Add(bookCover);
+        bookTextures.AddRange(customPagesAtStart);
 
-        int pageCount = Math.Max(contentByPage.Count, 2);
-        pageCount += pageCount % 2; // Back cover won't display right if page count isn't even
+        int customPageCount = customPagesAtStart.Count + customPagesAtEnd.Count;
+        int pageCount = Math.Max(contentByPage.Count, 4 - customPageCount); // Ensure a minimum of four pages
+        if ((pageCount + customPageCount) % 2 == 1) pageCount++; // Back cover won't display right if page count isn't even
 
         for (int i = 0; i < pageCount; i++)
         {
             bookTextures.Add(bookPages[i % bookPages.Count].renderTexture);
         }
-        bookTextures.Add(bookBack);
+
+        bookTextures.AddRange(customPagesAtEnd);
         bookViewer.bookPages = bookTextures.ToArray();
     }
 
     void Update()
     {
-        if (GS.interactionMode != null && GS.interactionMode != InteractionType.Journal && isVisible)
+        if (GS.interactionMode != InteractionType.None && GS.interactionMode != InteractionType.Journal && isVisible)
         {
             bookViewer.gameObject.GetComponent<Animator>().SetTrigger("Hide");
             isVisible = false;
@@ -151,16 +163,16 @@ public class ManageBook : MonoBehaviour
 
     public void HandleRightPageTurn()
     {
-        int nextLeftPageIdx = bookViewer.currentPage;
-        int nextRightPageIdx = bookViewer.currentPage + 1;
+        int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 1;
+        int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 2;
         UpdatePageContent(nextLeftPageIdx);
         UpdatePageContent(nextRightPageIdx);
     }
 
     public void HandleLeftPageTurn()
     {
-        int nextLeftPageIdx = bookViewer.currentPage - 4;
-        int nextRightPageIdx = bookViewer.currentPage - 3;
+        int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count - 3;
+        int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count - 2;
         UpdatePageContent(nextLeftPageIdx);
         UpdatePageContent(nextRightPageIdx);
     }
@@ -172,7 +184,7 @@ public class ManageBook : MonoBehaviour
         BookPage pageComponent = bookPages[pageIdx % bookPages.Count];
 
         pageComponent.pageNumber = pageIdx + 1;
-        pageComponent.pageSide = (pageIdx % 2 == 0) ? PageSide.Left : PageSide.Right;
+        pageComponent.pageSide = ((pageIdx + customPagesAtStart.Count - 1) % 2 == 0) ? PageSide.Left : PageSide.Right;
         pageComponent.pageContent = (pageIdx >= 0 && pageIdx < contentByPage.Count) ? contentByPage[pageIdx].content : "";
     }
 }

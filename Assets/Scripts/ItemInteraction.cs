@@ -280,11 +280,11 @@ namespace StarterAssets
                     _input.anyKey = false;
                     _input.exit = false;
                 }
-                else if (_input.exit)
+                else if (_input.exit && GS.interactionMode != InteractionType.Journal)
                 {
                     _input.exit = false;
                     _input.anyKey = false;
-                    if (GS.interactionMode != InteractionType.Journal) PauseManager.instance.PauseGame();
+                    PauseManager.instance.PauseGame();
                 }
             }
             else if (_playerInput.actions["interact"].IsPressed() == false)

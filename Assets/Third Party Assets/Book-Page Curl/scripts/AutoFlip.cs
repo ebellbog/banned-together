@@ -30,6 +30,7 @@ public class AutoFlip : MonoBehaviour {
     public void FlipRightPage()
     {
         if (isFlipping) return;
+        if (ControledBook.OnReleaseEvent != null) ControledBook.OnReleaseEvent.Invoke();
         if (ControledBook.currentPage >= ControledBook.TotalPageCount) return;
         ControledBook.interactable = false;
         isFlipping = true;
@@ -44,6 +45,7 @@ public class AutoFlip : MonoBehaviour {
     public void FlipLeftPage()
     {
         if (isFlipping) return;
+        if (ControledBook.OnReleaseEvent != null) ControledBook.OnReleaseEvent.Invoke();
         if (ControledBook.currentPage <= 0) return;
         ControledBook.interactable = false;
         isFlipping = true;
@@ -109,7 +111,7 @@ public class AutoFlip : MonoBehaviour {
             yield return new WaitForSeconds(frameTime);
             x -= dx;
         }
-        ControledBook.ReleasePage();
+        ControledBook.ReleasePage(false);
     }
     IEnumerator FlipLTR(float xc, float xl, float h, float frameTime, float dx)
     {
@@ -123,6 +125,6 @@ public class AutoFlip : MonoBehaviour {
             yield return new WaitForSeconds(frameTime);
             x += dx;
         }
-        ControledBook.ReleasePage();
+        ControledBook.ReleasePage(false);
     }
 }

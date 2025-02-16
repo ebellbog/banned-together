@@ -278,9 +278,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 45
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -288,23 +288,50 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.033333335
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -4.459697
+      outSlope: -4.459697
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13262242
+    - serializedVersion: 3
+      time: 0.24870783
+      value: 0.48919678
+      inSlope: -1.7530856
+      outSlope: -1.7530856
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.41449383
+      value: 0.30111694
+      inSlope: -0.9551401
+      outSlope: -0.9551401
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5760885
+      value: 0.17575073
+      inSlope: -0.5622186
+      outSlope: -0.5622186
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.027962238
+      inSlope: -0.033346657
+      outSlope: -0.033346657
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -572,10 +599,42 @@ MonoBehaviour:
     startTime: 0
   - clip: {fileID: 8300000, guid: 08a3f6602f5a39f408186f65129577e2, type: 3}
     name: Journal
-    volumeAdjustment: 0
+    volumeAdjustment: 0.6
     startTime: 0
   soundEffectClips:
-  - clip: {fileID: 8300000, guid: 361c88d1b0180804dacc7377dc62012f, type: 3}
+  - clip: {fileID: 8300000, guid: 957a5e9845168784fa403c62909800d1, type: 3}
     name: Door
-    volumeAdjustment: 0
+    volumeAdjustment: 4.5
     startTime: 0
+  - clip: {fileID: 8300000, guid: 24d630a22b439304683c8dd428f5a9db, type: 3}
+    name: LockedDoor
+    volumeAdjustment: 6
+    startTime: 0
+  - clip: {fileID: 8300000, guid: 4b64b00e9af25cd41b480e51befc8133, type: 3}
+    name: StoneDoor
+    volumeAdjustment: 6.5
+    startTime: 0
+  - clip: {fileID: 8300000, guid: abebc7336e7f5de47b80d6ec56582b5a, type: 3}
+    name: BookButtonPress
+    volumeAdjustment: 8
+    startTime: 0
+  - clip: {fileID: 8300000, guid: e31fa8e587aa8ca4485e61c82aab0b28, type: 3}
+    name: BookButtonReset
+    volumeAdjustment: 8
+    startTime: 0
+  - clip: {fileID: 8300000, guid: 11175b815f12c4542ba4175fc6f2d1b3, type: 3}
+    name: DrawerOpen
+    volumeAdjustment: 8
+    startTime: 0
+  - clip: {fileID: 8300000, guid: 2af41956605ddfd489254f9c8d8e6b60, type: 3}
+    name: DrawerClose
+    volumeAdjustment: 8
+    startTime: 0
+  - clip: {fileID: 8300000, guid: abebc7336e7f5de47b80d6ec56582b5a, type: 3}
+    name: ButtonClick
+    volumeAdjustment: 8
+    startTime: 0
+  - clip: {fileID: 8300000, guid: 61bf03d5cbd9b6d41b32ef8b692e0ae3, type: 3}
+    name: PageTurn
+    volumeAdjustment: 2
+    startTime: 0.2

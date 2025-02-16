@@ -80,7 +80,8 @@ public class AudioManager : MonoBehaviour
         currentMusicInfo = audioInfo;
     }
 
-    public void PlaySFX(string sfxName, Vector3? position = null) {
+    public void PlaySFX(string sfxName, Vector3? position = null)
+    {
         if (effectsTrack.isPlaying) StopSFX();
 
         AudioInfo? infoOrNull = soundEffectClips.FirstOrDefault(a => a.name == sfxName || a.clip.name == sfxName); 

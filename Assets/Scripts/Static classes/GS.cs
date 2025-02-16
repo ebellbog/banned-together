@@ -9,14 +9,15 @@ public enum InteractionType {
     Tutorial,
     Monologue,
     Focus,
-    Paused
+    Paused,
+    None
 }
 
 public static class GS
 {
     public static bool isReady = false;
     public static string journalContent;
-    public static InteractionType interactionMode;
+    public static InteractionType interactionMode = InteractionType.None;
     public static bool isSitting;
     public static int concurrentThoughtBubbles;
     public static float bodyBattery;
@@ -79,7 +80,7 @@ public static class GS
         lostBooksSeen = 0;
 
         journalDict = null;
-        journalContent = "<b>10/22/23</b> \n\nI'm taking poetry workshop this semester, and I haven't told mom about it. She's always been so excited that I'm majoring in journalism. But sometimes I get off track, and I can't explain it to her, or anyone. Especially when I'm supposed to be doing research, my mind seems to want to go off somewhere else. It would mean a lot if I could really break this disappearing books story for the Birchwood Chronicle. Even if sometimes I just want to hide away and write a poem. \n\n<b>10/23/23</b>";
+        journalContent = "10/22/23 \n\nI'm taking poetry workshop this semester, and I haven't told mom about it. She's always been so excited that I'm majoring in journalism. But sometimes I get off track, and I can't explain it to her, or anyone. Especially when I'm supposed to be doing research, my mind seems to want to go off somewhere else. It would mean a lot if I could really break this disappearing books story for the Birchwood Chronicle. Even if sometimes I just want to hide away and write a poem. \n\n10/23/23";
 
         currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
         prevLevelIdx = 0;
