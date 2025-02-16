@@ -325,8 +325,12 @@ public class BookLive : MonoBehaviour {
     }
     public void OnMouseDragRightPage()
     {
-        if (interactable)
-        DragRightPageToPoint(transformPoint(Input.mousePosition));
+        System.Action dragHandler = () => DragRightPageToPoint(transformPoint(Input.mousePosition));
+        if (interactable) dragHandler();
+        else {
+            // TODO: maybe find a way to disentangle these components better
+            GetComponent<AutoFlip>()?.StopWiggling(dragHandler);
+        }
     }
     public void DragLeftPageToPoint(Vector3 point)
     {
@@ -384,10 +388,18 @@ public class BookLive : MonoBehaviour {
                 TweenBack();
             else if (distanceToRight > distanceToLeft && mode == FlipMode.LeftToRight)
                 TweenBack();
-            else
+            else {
                 if (OnReleaseEvent != null && doInvokeEvent) OnReleaseEvent.Invoke();
                 TweenForward();
+            }
         }
+    }
+    // See AutoFlip for context
+    public void ReleaseWiggle(System.Action callback = null)
+    {
+        pageDragging = false;
+        mode = FlipMode.RightToLeft;
+        TweenBack(0.15f, callback);
     }
     Coroutine currentCoroutine;
     void UpdateSprites()
@@ -431,7 +443,7 @@ public class BookLive : MonoBehaviour {
         if (OnFlip != null)
             OnFlip.Invoke();
     }
-    public void TweenBack(float duration = 0.15f)
+    public void TweenBack(float duration = 0.15f, System.Action callback = null)
     {
         if (mode == FlipMode.RightToLeft)
         {
@@ -445,6 +457,7 @@ public class BookLive : MonoBehaviour {
                     Left.gameObject.SetActive(false);
                     Right.gameObject.SetActive(false);
                     pageDragging = false;
+                    if (callback != null) callback();
                 }
                 ));
         }
@@ -461,6 +474,7 @@ public class BookLive : MonoBehaviour {
                     Left.gameObject.SetActive(false);
                     Right.gameObject.SetActive(false);
                     pageDragging = false;
+                    if (callback != null) callback();
                 }
                 ));
         }

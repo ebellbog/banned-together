@@ -330,13 +330,15 @@ MonoBehaviour:
   pagePrefab: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
   contentSource: 2
   textField: 
-  textFile: {fileID: 4900000, guid: e5379fc6b7343b540b220b4300ab28be, type: 3}
+  textFile: {fileID: 4900000, guid: 2871713be93dc274ca3c95be451e05d2, type: 3}
   customPagesAtStart:
   - {fileID: 2800000, guid: 81c64078c21bda5498334308408bced0, type: 3}
   - {fileID: 8600000, guid: 0ef10c2306c1f0f498eb150b4b2d8ab1, type: 2}
   customPagesAtEnd:
   - {fileID: 2800000, guid: c81274ff039f0f54aa8cf2582fb73636, type: 3}
   pageTurnAudio: PageTurn
+  showPageTurnHint: 1
+  delayUntilHint: 1.5
 --- !u!4 &738699270
 Transform:
   m_ObjectHideFlags: 0
@@ -597,8 +599,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 837386565}
     m_Modifications:
     - target: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Name
       value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 22407488, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 22433904, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Pivot.y
@@ -700,6 +710,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22447500, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 22488492, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Pivot.y
       value: 0.2340875
@@ -714,15 +728,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1924483709971549944, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 429.5
+      value: 529.5
       objectReference: {fileID: 0}
     - target: {fileID: 1924483709971549944, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 217.75
+      value: 267.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410908281107726847, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: flipSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410908281107726847, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: wiggleSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3410908281107726847, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: PageFlipTime
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410908281107726847, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: wigglePercent
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410908281107726847, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: AnimationFramesCount
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: canvas
@@ -772,13 +802,21 @@ PrefabInstance:
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5456525428248756697, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlipLeftPage
+      objectReference: {fileID: 0}
     - target: {fileID: 6217862754216145947, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 432.5
+      value: 532.5
       objectReference: {fileID: 0}
     - target: {fileID: 6217862754216145947, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -216.25
+      value: -266.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793139276107150154, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlipRightPage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

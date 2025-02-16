@@ -41,7 +41,13 @@ public class ManageBook : MonoBehaviour
     [Header("Sound effects")]
     public string pageTurnAudio;
 
+    [Header("Tutorial")]
+    public bool showPageTurnHint;
+    public float delayUntilHint = 1.5f;
+    private float wiggleDelay = 0;
+
     private bool isVisible = true;
+    private AutoFlip autoFlip;
     private List<BookPage> bookPages = new List<BookPage>();
     private List<PageContent> contentByPage = new List<PageContent>();
     private string currentContent = "";
@@ -58,6 +64,8 @@ public class ManageBook : MonoBehaviour
         bookViewer.currentPage = GS.currentJournalPage;
         UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count - 1);
         UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count);
+
+        autoFlip = bookViewer.gameObject.GetComponent<AutoFlip>();
 
         if (pageTurnAudio != null)
         {
@@ -154,6 +162,15 @@ public class ManageBook : MonoBehaviour
             DivideTextIntoPages();
             AddPagesToBook();
         }
+
+        if (showPageTurnHint && !GS.didTutorializeJournal)
+        {
+            if (wiggleDelay < delayUntilHint) wiggleDelay += Time.deltaTime;
+            else {
+                autoFlip.StartWiggling();
+                GS.didTutorializeJournal = true;
+            }
+        } 
     }
 
     public void SyncGameState()
@@ -163,6 +180,7 @@ public class ManageBook : MonoBehaviour
 
     public void HandleRightPageTurn()
     {
+        showPageTurnHint = false;
         int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 1;
         int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 2;
         UpdatePageContent(nextLeftPageIdx);

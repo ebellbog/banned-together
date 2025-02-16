@@ -16,6 +16,7 @@ public enum InteractionType {
 public static class GS
 {
     public static bool isReady = false;
+    public static bool didTutorializeJournal = false;
     public static string journalContent;
     public static InteractionType interactionMode = InteractionType.None;
     public static bool isSitting;
@@ -64,6 +65,7 @@ public static class GS
     {
         ResetDaily();
 
+        didTutorializeJournal = false;
         currentJournalPage = 0;
 
         currentDay = 1;
