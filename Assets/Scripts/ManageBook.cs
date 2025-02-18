@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -41,16 +43,12 @@ public class ManageBook : MonoBehaviour
     [Header("Sound effects")]
     public string pageTurnAudio;
 
-    [Header("Tutorial")]
-    public bool showPageTurnHint;
-    public float delayUntilHint = 1.5f;
-    private float wiggleDelay = 0;
+    protected bool isVisible = true;
+    protected AutoFlip autoFlip;
 
-    private bool isVisible = true;
-    private AutoFlip autoFlip;
-    private List<BookPage> bookPages = new List<BookPage>();
-    private List<PageContent> contentByPage = new List<PageContent>();
-    private string currentContent = "";
+    protected List<BookPage> bookPages = new List<BookPage>();
+    protected List<PageContent> contentByPage = new List<PageContent>();
+    protected string currentContent = "";
 
     private const int MAX_CHARS_PER_PAGE = 800;
 
@@ -93,7 +91,7 @@ public class ManageBook : MonoBehaviour
         }
     }
 
-    void DivideTextIntoPages()
+    protected void DivideTextIntoPages()
     {
         contentByPage.Clear();
         BookPage testPage = bookPages[0];
@@ -121,14 +119,14 @@ public class ManageBook : MonoBehaviour
             PageContent newContent = new PageContent();
             newContent.startIdx = startIdx;
             newContent.endIdx = endIdx;
-            newContent.content = visibleText.Trim();//currentContent.Substring(startIdx, endIdx - startIdx).Trim();
+            newContent.content = visibleText.Trim();
 
             contentByPage.Add(newContent);
             startIdx = endIdx;
         }
     }
 
-    void AddPagesToBook()
+    protected void AddPagesToBook()
     {
         List<Texture> bookTextures = new List<Texture>();
         bookTextures.AddRange(customPagesAtStart);
@@ -146,41 +144,8 @@ public class ManageBook : MonoBehaviour
         bookViewer.bookPages = bookTextures.ToArray();
     }
 
-    void Update()
+    virtual public void HandleRightPageTurn()
     {
-        if (GS.interactionMode != InteractionType.None && GS.interactionMode != InteractionType.Journal && isVisible)
-        {
-            bookViewer.gameObject.GetComponent<Animator>().SetTrigger("Hide");
-            isVisible = false;
-        }
-
-        if (contentSource == ContentSource.GameState &&
-            GS.journalContent != null &&
-            currentContent != GS.journalContent)
-        {
-            // TODO: maybe optimize by only rebuilding the last page and beyond?
-            DivideTextIntoPages();
-            AddPagesToBook();
-        }
-
-        if (showPageTurnHint && !GS.didTutorializeJournal)
-        {
-            if (wiggleDelay < delayUntilHint) wiggleDelay += Time.deltaTime;
-            else {
-                autoFlip.StartWiggling();
-                GS.didTutorializeJournal = true;
-            }
-        } 
-    }
-
-    public void SyncGameState()
-    {
-        GS.currentJournalPage = bookViewer.currentPage;
-    }
-
-    public void HandleRightPageTurn()
-    {
-        showPageTurnHint = false;
         int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 1;
         int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 2;
         UpdatePageContent(nextLeftPageIdx);
@@ -196,13 +161,15 @@ public class ManageBook : MonoBehaviour
     }
 
     // pageIdx excludes the cover, starting at 0 for the first page of text
-    void UpdatePageContent(int pageIdx)
+    protected virtual BookPage UpdatePageContent(int pageIdx)
     {
-        if (pageIdx < 0) return;
+        if (pageIdx < 0) return null;
         BookPage pageComponent = bookPages[pageIdx % bookPages.Count];
 
         pageComponent.pageNumber = pageIdx + 1;
         pageComponent.pageSide = ((pageIdx + customPagesAtStart.Count - 1) % 2 == 0) ? PageSide.Left : PageSide.Right;
         pageComponent.pageContent = (pageIdx >= 0 && pageIdx < contentByPage.Count) ? contentByPage[pageIdx].content : "";
+
+        return pageComponent;
     }
 }

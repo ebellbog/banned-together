@@ -91,7 +91,8 @@ public class JournalManager : MonoBehaviour
                 return;
             }
 
-            GS.journalContent += $"{(GS.journalContent.Length > 0 ? " \n\n" : "")}{data.content}";
+            GS.journalContent += $"{(GS.journalContent.Length > 0 ? " \n\n" : "")}{data.content}"
+                .Replace("\r\n", "\n").Replace("\r", "\n");
 
             data.alreadyAdded = true;
             unreadNotifications = true;

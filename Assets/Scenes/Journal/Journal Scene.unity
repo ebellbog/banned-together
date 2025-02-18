@@ -306,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738699270}
-  - component: {fileID: 738699269}
+  - component: {fileID: 738699271}
   m_Layer: 0
   m_Name: Journal Manager
   m_TagString: Untagged
@@ -314,31 +314,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &738699269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738699268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2beae2b78758641ac0f5dd5c13342f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bookViewer: {fileID: 1150316105}
-  pagePrefab: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
-  contentSource: 2
-  textField: 
-  textFile: {fileID: 4900000, guid: 2871713be93dc274ca3c95be451e05d2, type: 3}
-  customPagesAtStart:
-  - {fileID: 2800000, guid: 81c64078c21bda5498334308408bced0, type: 3}
-  - {fileID: 8600000, guid: 0ef10c2306c1f0f498eb150b4b2d8ab1, type: 2}
-  customPagesAtEnd:
-  - {fileID: 2800000, guid: c81274ff039f0f54aa8cf2582fb73636, type: 3}
-  pageTurnAudio: PageTurn
-  showPageTurnHint: 1
-  delayUntilHint: 1.5
 --- !u!4 &738699270
 Transform:
   m_ObjectHideFlags: 0
@@ -355,6 +330,31 @@ Transform:
   - {fileID: 251817065}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &738699271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738699268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a9a7a4b0ad766418c92df5481d98cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookViewer: {fileID: 1150316105}
+  pagePrefab: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  contentSource: 2
+  textField: 
+  textFile: {fileID: 4900000, guid: e5379fc6b7343b540b220b4300ab28be, type: 3}
+  customPagesAtStart:
+  - {fileID: 2800000, guid: 81c64078c21bda5498334308408bced0, type: 3}
+  - {fileID: 8600000, guid: 0ef10c2306c1f0f498eb150b4b2d8ab1, type: 2}
+  customPagesAtEnd:
+  - {fileID: 2800000, guid: c81274ff039f0f54aa8cf2582fb73636, type: 3}
+  pageTurnAudio: PageTurn
+  showPageTurnHint: 1
+  delayUntilHint: 1.5
 --- !u!1 &813413606
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 738699269}
+      objectReference: {fileID: 738699271}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -785,11 +785,11 @@ PrefabInstance:
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipLeft.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 738699269}
+      objectReference: {fileID: 738699271}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 738699269}
+      objectReference: {fileID: 738699271}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ManageBook, Assembly-CSharp

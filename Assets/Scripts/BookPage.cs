@@ -55,10 +55,10 @@ public class BookPage : MonoBehaviour
     public float pageHeight = 861;
     public float aspectRatio = 8.5f / 11f;
 
-    private TextMeshProUGUI pageNumberMesh;
-    private TextMeshProUGUI pageTextMesh;
-    private Image pageBackground;
-    private Camera pageCamera;
+    protected TextMeshProUGUI pageNumberMesh;
+    protected TextMeshProUGUI pageTextMesh;
+    protected Image pageBackground;
+    protected Camera pageCamera;
 
     [System.NonSerialized]
     public RenderTexture renderTexture;
