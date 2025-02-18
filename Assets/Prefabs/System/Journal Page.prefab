@@ -746,3 +746,4 @@ MonoBehaviour:
   pageHeight: 861
   aspectRatio: 0.77272725
   StickerPlaceholder: {fileID: 3901697494263712120}
+  StickerSprite: {fileID: 21300000, guid: 22d5b9f48378ffb44a6ab945c1b17485, type: 3}

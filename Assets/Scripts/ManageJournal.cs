@@ -51,6 +51,15 @@ public class ManageJournal : ManageBook
         } 
     }
 
+    public void OnMouseDown(Vector3 mousePos)
+    {
+        PageSide sideClicked = mousePos.x < 0 ? PageSide.Left : PageSide.Right;
+        StickerPage clickedPage = mousePos.x < 0 ?
+            (StickerPage)GetCurrentLeftPage() :
+            (StickerPage)GetCurrentRightPage();
+        if (clickedPage) clickedPage.OnMouseDown(mousePos);
+    }
+
     protected override BookPage UpdatePageContent(int pageIdx)
     {
         StickerPage updatedPage = (StickerPage)base.UpdatePageContent(pageIdx);

@@ -144,6 +144,20 @@ public class ManageBook : MonoBehaviour
         bookViewer.bookPages = bookTextures.ToArray();
     }
 
+    protected BookPage GetCurrentRightPage()
+    {
+        int pageIdx = bookViewer.currentPage - customPagesAtStart.Count;
+        if (pageIdx < 0) return null;
+        return bookPages[pageIdx % bookPages.Count];
+    }
+
+    protected BookPage GetCurrentLeftPage()
+    {
+        int pageIdx = bookViewer.currentPage - customPagesAtStart.Count - 1;
+        if (pageIdx < 0) return null;
+        return bookPages[pageIdx % bookPages.Count];
+    }
+
     virtual public void HandleRightPageTurn()
     {
         int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 1;

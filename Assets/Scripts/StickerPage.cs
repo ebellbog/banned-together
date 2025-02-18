@@ -6,16 +6,62 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public struct Sticker {
     public int startCharIdx;
     public int endCharIdx;
+    public float stickerCenterY;
     public string paragraphContent;
 }
 
 public class StickerPage: BookPage
 {
     public Image StickerPlaceholder;
+    public Sprite StickerSprite;
+    private Sprite placeholderSprite;
+    private float placeholderHeight;
     private List<GameObject> allPlaceholders = new List<GameObject>();
+    private List<Sticker> stickerData;
+
+    void Start()
+    {
+        placeholderHeight = StickerPlaceholder.GetComponent<RectTransform>().rect.height;
+        placeholderSprite = StickerPlaceholder.sprite;
+    }
+
+    public void OnMouseDown(Vector3 mousePos)
+    {
+        int clickedStickerIdx = -1;
+        for (int i = 0; i < stickerData.Count; i++)
+        {
+            Sticker currentSticker = stickerData[i];
+            if (Math.Abs(currentSticker.stickerCenterY - mousePos.y) < placeholderHeight / 2f)
+            {
+                clickedStickerIdx = i;
+                break;
+            }
+        }
+
+        if (clickedStickerIdx > -1)
+        {
+            Sticker s = stickerData[clickedStickerIdx];
+            Debug.Log($"Clicked sticker on {pageSide} page: {s.paragraphContent}");
+    
+            Image stickerImage = allPlaceholders[clickedStickerIdx].GetComponent<Image>();
+            if (stickerImage.sprite != StickerSprite)
+            {
+                stickerImage.sprite = StickerSprite;
+                pageTextMesh.text = $"{pageTextMesh.text.Substring(0, s.startCharIdx)}<color=\"red\">{s.paragraphContent}</color>{pageTextMesh.text.Substring(s.endCharIdx + 1)}";
+            }
+            else
+            {
+                stickerImage.sprite = placeholderSprite;
+                pageTextMesh.text = pageTextMesh.GetParsedText();
+            }
+            // TODO: persist sticker placement
+            // TODO: clear existing stickers (of same type)
+        }
+    }
 
     public void LoadStickers(List<Sticker> stickers)
     {
@@ -31,13 +77,11 @@ public class StickerPage: BookPage
             newPlaceholder.transform.SetParent(StickerPlaceholder.transform.parent, false);
 
             Sticker currentSticker = stickers[i];
-            float stickerY = GetVerticalCenterOfRange(currentSticker.startCharIdx, currentSticker.endCharIdx);
-            float stickerX = Math.Abs(newPlaceholder.transform.localPosition.x);
-            float stickerHeight = StickerPlaceholder.GetComponent<RectTransform>().rect.height;
+            float stickerCenterX = Math.Abs(newPlaceholder.transform.localPosition.x) * (pageSide == PageSide.Left ? -1.0f : 1.0f);
 
             newPlaceholder.transform.localPosition = new Vector3(
-                stickerX * (pageSide == PageSide.Left ? -1.0f : 1.0f),
-                stickerY - stickerHeight / 4f, // TODO: figure out why stickerHeight / 4f is needed?
+                stickerCenterX,
+                currentSticker.stickerCenterY,
                 0
             );
 
@@ -46,6 +90,7 @@ public class StickerPage: BookPage
 
             allPlaceholders.Add(newPlaceholder);
         }
+        stickerData = stickers;
     }
 
     public List<Sticker> GetStickerPlacements()
@@ -79,6 +124,8 @@ public class StickerPage: BookPage
                 continue;
 
             newSticker.endCharIdx = index - 1;
+            newSticker.stickerCenterY = GetVerticalCenterOfRange(newSticker.startCharIdx, newSticker.endCharIdx) - placeholderHeight / 4f; // TODO: figure out why stickerHeight / 4f is needed?
+
             stickers.Add(newSticker);
 
             // Skip over the paragraph delimiter

@@ -53,6 +53,7 @@ public class BookLive : MonoBehaviour {
     public UnityEvent OnFlip;
     public UnityEvent OnBeginFlipRight;
     public UnityEvent OnBeginFlipLeft;
+    public UnityEvent<Vector3> OnMouseDownEvent;
     public UnityEvent OnReleaseEvent;
 
     float radius1, radius2;
@@ -116,6 +117,12 @@ public class BookLive : MonoBehaviour {
         radius2 = Mathf.Sqrt(pageWidth * pageWidth + pageHeight * pageHeight);
     }
 
+    public void OnMouseDown()
+    {
+        if (OnMouseDownEvent != null)
+            OnMouseDownEvent.Invoke(transformPoint(Input.mousePosition));
+    }
+
     public Vector3 transformPoint(Vector3 mouseScreenPos)
     {
         Vector2 localPos;
@@ -143,7 +150,7 @@ public class BookLive : MonoBehaviour {
         }
 
         // Drag page horizontally from side, if clicking far enough above page corner
-        if (localPos.y > sb.y / 4)
+        if (pageDragging && localPos.y > sb.y / 4)
         {
             localPos.y = Mathf.Ceil(sb.y);
         }
