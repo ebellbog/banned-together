@@ -120,10 +120,10 @@ public class BookLive : MonoBehaviour {
     public void OnMouseDown()
     {
         if (OnMouseDownEvent != null)
-            OnMouseDownEvent.Invoke(transformPoint(Input.mousePosition));
+            OnMouseDownEvent.Invoke(transformPoint(Input.mousePosition, false));
     }
 
-    public Vector3 transformPoint(Vector3 mouseScreenPos)
+    public Vector3 transformPoint(Vector3 mouseScreenPos, bool snapToBottom = true)
     {
         Vector2 localPos;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
@@ -150,7 +150,7 @@ public class BookLive : MonoBehaviour {
         }
 
         // Drag page horizontally from side, if clicking far enough above page corner
-        if (pageDragging && localPos.y > sb.y / 4)
+        if (snapToBottom && localPos.y > sb.y / 4)
         {
             localPos.y = Mathf.Ceil(sb.y);
         }

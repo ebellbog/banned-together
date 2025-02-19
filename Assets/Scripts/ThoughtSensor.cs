@@ -37,8 +37,14 @@ public class ThoughtSensor : MonoBehaviour
             }
 
             // Filter for focus thoughts
-            if (GS.interactionMode == InteractionType.Focus &&
-                thought.thoughtType != ThoughtType.Focus)
+            if ((
+                    GS.interactionMode == InteractionType.Focus ||
+                    GS.redStickerPlacement.filterWords != null
+                ) &&
+                (
+                    thought.thoughtType != ThoughtType.Focus ||
+                    !thought.MatchesCurrentFocus()
+                ))
             {
                 thought.FadeOut();
                 continue;
@@ -46,6 +52,7 @@ public class ThoughtSensor : MonoBehaviour
 
             // Filter for intrusive thoughts
             if (GS.interactionMode != InteractionType.Focus &&
+                GS.redStickerPlacement.filterWords == null &&
                 GS.bodyBattery > 0 &&
                 (
                     thought.thoughtType == ThoughtType.Focus ||

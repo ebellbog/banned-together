@@ -268,138 +268,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 133581236}
     m_Modifications:
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: MaxDistance
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
-      value: 0.033333335
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
-      value: 0.24870783
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
-      value: 0.41449383
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
-      value: 0.5760885
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
-      value: 0.48919678
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
-      value: 0.30111694
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].value
-      value: 0.17575073
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].value
-      value: 0.027962238
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
-      value: -4.459697
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
-      value: -1.7530856
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
-      value: -0.9551401
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inSlope
-      value: -0.5622186
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].inSlope
-      value: -0.033346657
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
-      value: -4.459697
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
-      value: -1.7530856
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
-      value: -0.9551401
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
-      value: -0.5622186
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].outSlope
-      value: -0.033346657
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
-      value: 0.13262242
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1211155848906551, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 203192463861083075, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -440,125 +308,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 957a5e9845168784fa403c62909800d1, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 24d630a22b439304683c8dd428f5a9db, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[1].name
-      value: LockedDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4b64b00e9af25cd41b480e51befc8133, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[2].name
-      value: StoneDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: abebc7336e7f5de47b80d6ec56582b5a, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[3].name
-      value: BookButtonPress
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e31fa8e587aa8ca4485e61c82aab0b28, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[4].name
-      value: BookButtonReset
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 11175b815f12c4542ba4175fc6f2d1b3, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[5].name
-      value: DrawerOpen
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2af41956605ddfd489254f9c8d8e6b60, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[6].name
-      value: DrawerClose
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: abebc7336e7f5de47b80d6ec56582b5a, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[7].name
-      value: ButtonClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f4a34b83a7c56bd41bb1791fd6734580, type: 3}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[8].name
-      value: ShortClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: musicClips.Array.data[1].volumeAdjustment
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[0].volumeAdjustment
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[1].volumeAdjustment
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[2].volumeAdjustment
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[3].volumeAdjustment
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[4].volumeAdjustment
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[5].volumeAdjustment
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[6].volumeAdjustment
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[7].volumeAdjustment
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: soundEffectClips.Array.data[8].volumeAdjustment
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8644326674742428020, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: m_Name
       value: Audio
-      objectReference: {fileID: 0}
-    - target: {fileID: 8644326674742428020, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1357,39 +1109,74 @@ MonoBehaviour:
       Otherwise before I know it, I\u2019ll see the sun coming up outside MacLeod,
       and I\u2019ll have pulled an all-nighter doing nothing but checking out cool
       trinkets.\r\n"
+    focusWords: magpie, investigation
+    addByDefault: 0
   - key: workOrder
     content: Hidden passageways and carefully placed paintings, huh? The journalist
       within me smells... opportunity.
+    focusWords: 
+    addByDefault: 0
   - key: poetryBook
     content: I found Madness, Rack, and Honey by Mary Ruefle! My poetry professor,
       Dee Rodriguez, always said I should read that book. I wanna discuss it with
       them someday, but... They haven't been their usual self lately. I hope everything's
       alright.
+    focusWords: 
+    addByDefault: 0
   - key: carsonEssay1
     content: A dangerous future for MacLeod? What does this student essayist know
       that I don't??
+    focusWords: 
+    addByDefault: 0
   - key: carsonEssay2
     content: "Copeland? That name in the torn essay sounds all too familiar... Doesn\u2019t
       the Architecture School have a David Copeland Auditorium?"
+    focusWords: 
+    addByDefault: 0
   - key: fidgetSpinner
     content: "Guess I\u2019m not the only one in this library who likes to fidget
       spin and chill lol. Doesn't this spinner belong to that cute queer work-study
       student? I feel like I haven't seen them at all since last spring..."
+    focusWords: 
+    addByDefault: 0
   - key: lostBooks
     content: I found a list of "lost" books behind the library checkout desk. I guess
       I should start by seeing if Gender Queer is where it's supposed to be on the
       shelves. I'll have to use Dr. Goodman's crazy anti-Dewey Decimal system on
       the second floor...
+    focusWords: 
+    addByDefault: 0
   - key: carsonNameTag
     content: '"Carson Gaines"... Whoever you are, it seems like you haven''t been
       taking good care of your locker! Or... maybe you just haven''t been back here
       in a while?'
+    focusWords: 
+    addByDefault: 0
   - key: peacockCode
     content: Maybe my most important find yet?? Gender Queer has been moved by someone...
       Possibly even the same someone who sent that anonymous tip to the Chronicle,
       which led to all this sneaking around in the first place! And they left a mysterious
       note... Knowing how forgetful I am, I should probably take a picture of it
       or something!
+    focusWords: 
+    addByDefault: 0
+  - key: intro1
+    content: I'm taking poetry workshop this semester, and I haven't told mom about
+      it. She's always been so excited that I'm majoring in journalism. But sometimes
+      I get off track, especially when I'm supposed to be doing research. And I can't
+      explain it to her, or anyone.
+    focusWords: mom, distraction, poetry
+    addByDefault: 1
+  - key: intro2
+    content: It would mean a lot if I could really break this disappearing books
+      story for the Birchwood Chronicle. Even if sometimes I just want to hide away
+      and write a poem.
+    focusWords: chronicle, disappearing
+    addByDefault: 1
+  - key: canteen
+    content: Hydration = self-care! Wouldn't go anywhere witihout my trusty canteen.
+    focusWords: water, self-care
+    addByDefault: 0
   notificationAnimator: {fileID: 996151446}
   defaultJournalEntry: firstItem
 --- !u!1 &173323837
@@ -2587,6 +2374,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484996651}
   m_CullTransparentMesh: 1
+--- !u!1 &485937204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485937205}
+  - component: {fileID: 485937208}
+  - component: {fileID: 485937207}
+  - component: {fileID: 485937206}
+  m_Layer: 0
+  m_Name: DoorThought
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485937205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485937204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.108, y: 1.7, z: 0.729}
+  m_LocalScale: {x: 0.060730457, y: 0.78877, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4377041982894853762}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485937206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485937204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: Time to head over to MacLeod library for some sleuthing?
+  FadeSpeed: 2.5
+  scale: 1.25
+  thoughtType: 1
+  focusOnWords: chronicle, investigation
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
+--- !u!65 &485937207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485937204}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &485937208
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485937204}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &486266573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3399,6 +3269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &744653115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3413669954387843714, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
+  m_PrefabInstance: {fileID: 1791806020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &752832885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,7 +3857,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4506440197830716850, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482176954}
+    - targetCorrespondingSourceObject: {fileID: 4506440197830716850, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482176953}
   m_SourcePrefab: {fileID: 100100000, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
 --- !u!4 &963769195 stripped
 Transform:
@@ -10277,46 +10158,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276788288}
   m_CullTransparentMesh: 1
---- !u!21 &1278059966
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!21 &1278938598
 Material:
   serializedVersion: 8
@@ -11118,6 +10959,52 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1482176951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4506440197830716850, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
+  m_PrefabInstance: {fileID: 963769194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1482176953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482176951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: My poetry prof Dee Talaman wrote this collection - so gay!
+  FadeSpeed: 2.5
+  scale: 1
+  thoughtType: 1
+  focusOnWords: poetry
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
+--- !u!65 &1482176954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482176951}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25163275, y: 0.32507384, z: 0.28905228}
+  m_Center: {x: 0.02300559, y: 0.028482854, z: -0.1432261}
 --- !u!1 &1490689566
 GameObject:
   m_ObjectHideFlags: 0
@@ -11519,6 +11406,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
+  focusOnWords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -12314,6 +12202,46 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
+--- !u!21 &1780547260
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!114 &1781949735 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6793456013802410833, guid: dc1d07b4ec5b23641b228e1a02b33d89, type: 3}
@@ -12427,13 +12355,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3413669954387843714, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1791806026}
   m_SourcePrefab: {fileID: 100100000, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
 --- !u!4 &1791806021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2599731541609693240, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
   m_PrefabInstance: {fileID: 1791806020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1791806026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744653115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bece944be8107bc478b97f459e96c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionParent: {fileID: 0}
+  isFocusable: 0
+  isExaminable: 1
+  orientToCamera: 0
+  pivotAroundVisualCenter: 1
+  rotationAxis: 0
+  scaleOnInteraction: 1
+  enablePanning: 0
+  affectsBodyBattery: 0
+  showOutline: 0
+  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  cursorOverride: {fileID: 0}
+  gameObjectActions: []
+  componentActions: []
+  audioActions: []
+  journalUpdates:
+  - timing: 3
+    journalEntryName: canteen
+  gameStateUpdates: []
 --- !u!1 &1800809365
 GameObject:
   m_ObjectHideFlags: 0
@@ -13912,6 +13874,8 @@ GameObject:
   - component: {fileID: 4845173323050965}
   - component: {fileID: 33641357431463719}
   - component: {fileID: 23698321227352003}
+  - component: {fileID: 33641357431463721}
+  - component: {fileID: 33641357431463720}
   m_Layer: 0
   m_Name: Pref_Pillow1
   m_TagString: Untagged
@@ -14081,6 +14045,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544399282411513}
   m_Mesh: {fileID: 4300004, guid: 6e1e22a487a6f4d42be5a2254e69ab1e, type: 3}
+--- !u!114 &33641357431463720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544399282411513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: I really haven't been sleeping enough...
+  FadeSpeed: 2.5
+  scale: 1
+  thoughtType: 1
+  focusOnWords: self-care
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
+--- !u!65 &33641357431463721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544399282411513}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.27473947}
+  m_Center: {x: 0.00000011920929, y: 0, z: 0.000000059604645}
 --- !u!33 &33721246950500449
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16116,6 +16121,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
+  focusOnWords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -16368,6 +16374,7 @@ Transform:
   m_Children:
   - {fileID: 225746403590382908}
   - {fileID: 4093066716447065222}
+  - {fileID: 485937205}
   m_Father: {fileID: 1863564416408872732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &4602325486826643702

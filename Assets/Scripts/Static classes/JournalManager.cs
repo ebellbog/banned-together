@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,17 @@ public class JournalEntry
     public string key;
     [Multiline(3)]
     public string content;
+    [Tooltip("Separate terms by commas or spaces")]
+    public string focusWords;
+    public bool addByDefault = false;
+
+    JournalEntry(string key, string content, string focusWords)
+    {
+        this.key = key;
+        this.content = content;
+        this.focusWords = focusWords;
+    }
+
     private bool _alreadyAdded = false;
     public bool alreadyAdded {
         get {
@@ -48,11 +60,23 @@ public class JournalManager : MonoBehaviour
 
     void OnValidate()
     {
-        if (GS.journalDict == null) GS.journalDict = new Dictionary<string, JournalEntry>();
+        if (GS.journalDict == null) {
+            GS.journalDict = new Dictionary<string, JournalEntry>();
+            GS.filterWordsByEntry = new Dictionary<string, List<string>>();
+        }
         foreach(JournalEntry data in journalEntries)
         {
             GS.journalDict.TryAdd(data.key, data);
+
+            if (data.focusWords?.Length > 0)
+            {
+                string[] focusWords = data.focusWords?.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries);
+                GS.filterWordsByEntry.TryAdd(data.content.Trim(), new List<string>(focusWords));
+            }
+
+            if (data.addByDefault) AddToJournal(data.key, false);
         }
+        AddDayBreak();
     }
 
     void Update()
@@ -73,7 +97,7 @@ public class JournalManager : MonoBehaviour
         }
     }
 
-    public void AddToJournal(string key)
+    public void AddToJournal(string key, bool markUnread = true)
     {
         if (key == null || key.Length == 0) key = defaultJournalEntry;
 
@@ -95,7 +119,7 @@ public class JournalManager : MonoBehaviour
                 .Replace("\r\n", "\n").Replace("\r", "\n");
 
             data.alreadyAdded = true;
-            unreadNotifications = true;
+            if (markUnread) unreadNotifications = true;
         }
     }
 

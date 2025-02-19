@@ -44,8 +44,10 @@ public class BookPage : MonoBehaviour
         }
     }
 
-    public string pageContent {
-        get { return pageTextMesh.text; }
+    virtual public string pageContent {
+        get {
+            return pageTextMesh.text;
+        }
         set {
             GetSubcomponents();
             pageTextMesh.text = value;

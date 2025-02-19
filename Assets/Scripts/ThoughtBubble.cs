@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public enum ThoughtType {
     Intrusive,
@@ -15,6 +17,8 @@ public class ThoughtBubble : MonoBehaviour
     public float FadeSpeed = 2.5f;
     public float scale = 1.0f;
     public ThoughtType thoughtType = ThoughtType.Intrusive;
+    [Tooltip("Separate terms by commas or spaces")]
+    public string focusOnWords;
     public int firstDay = 1;
     public int lastDay = 999;
 
@@ -24,6 +28,7 @@ public class ThoughtBubble : MonoBehaviour
     private float InitialScale = 0.6f;
     private bool fadeIn = false;
     private bool fadeOut = true;
+    private List<string> focusList;
 
     private CanvasGroup canvasGroup;
     private GameObject animationParent;
@@ -94,6 +99,18 @@ public class ThoughtBubble : MonoBehaviour
 
         canvasGroup = bubbleCanvas.GetComponentInChildren<CanvasGroup>();
         canvasGroup.alpha = 0;
+    }
+
+    public bool MatchesCurrentFocus()
+    {
+        if (!(GS.redStickerPlacement.filterWords?.Count > 0)) return false;
+        if (focusList == null)
+        {
+            focusList = new List<string>();
+            if (focusOnWords?.Length > 0)
+                focusList.AddRange(focusOnWords.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries));
+        }
+        return GS.redStickerPlacement.filterWords.Intersect(focusList).Count() > 0;
     }
 
     public void FadeIn() {

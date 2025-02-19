@@ -16,17 +16,21 @@ public enum InteractionType {
 public static class GS
 {
     public static bool isReady = false;
+
     public static bool didTutorializeJournal = false;
-    public static string journalContent;
+    public static string journalContent = "";
+    public static int currentJournalPage;
+    public static Sticker redStickerPlacement;
+    public static Sticker blueStickerPlacement;
+
     public static InteractionType interactionMode = InteractionType.None;
+
     public static bool isSitting;
     public static int concurrentThoughtBubbles;
     public static float bodyBattery;
     public static float speedReduction;
-    public static int currentJournalPage;
 
     public static int tutorialItems;
-
     public static int fidgetSpinnerSeen;
     public static int genderQueerSeen;
     public static int paper1Seen;
@@ -37,6 +41,7 @@ public static class GS
 
     public static List<StateTrigger> yarnStateTriggers;
     public static Dictionary<string, JournalEntry> journalDict;
+    public static Dictionary<string, List<string>> filterWordsByEntry;
 
     public static int currentDay;
 
@@ -65,9 +70,6 @@ public static class GS
     {
         ResetDaily();
 
-        didTutorializeJournal = false;
-        currentJournalPage = 0;
-
         currentDay = 1;
 
         concurrentThoughtBubbles = 0;
@@ -81,8 +83,14 @@ public static class GS
         lockedDoorSeen = 0;
         lostBooksSeen = 0;
 
+        currentJournalPage = 0;
+        didTutorializeJournal = false;
         journalDict = null;
-        journalContent = "10/22/23 \n\nI'm taking poetry workshop this semester, and I haven't told mom about it. She's always been so excited that I'm majoring in journalism. But sometimes I get off track, and I can't explain it to her, or anyone. Especially when I'm supposed to be doing research, my mind seems to want to go off somewhere else. It would mean a lot if I could really break this disappearing books story for the Birchwood Chronicle. Even if sometimes I just want to hide away and write a poem. \n\n10/23/23";
+        filterWordsByEntry = null;
+        journalContent = "10/22/23";
+
+        redStickerPlacement = new Sticker();
+        blueStickerPlacement = new Sticker();
 
         currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
         prevLevelIdx = 0;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -37,6 +38,7 @@ public class ManageJournal : ManageBook
             currentContent != GS.journalContent)
         {
             // TODO: maybe optimize by only rebuilding the last page and beyond?
+            stickersByPage.Clear();
             DivideTextIntoPages();
             AddPagesToBook();
         }
@@ -57,7 +59,9 @@ public class ManageJournal : ManageBook
         StickerPage clickedPage = mousePos.x < 0 ?
             (StickerPage)GetCurrentLeftPage() :
             (StickerPage)GetCurrentRightPage();
-        if (clickedPage) clickedPage.OnMouseDown(mousePos);
+        if (clickedPage) {
+            clickedPage.OnMouseDown(mousePos);
+        }
     }
 
     protected override BookPage UpdatePageContent(int pageIdx)
@@ -67,14 +71,14 @@ public class ManageJournal : ManageBook
 
         if (!stickersByPage.ContainsKey(pageIdx))
             stickersByPage[pageIdx] = updatedPage.GetStickerPlacements();
-        
-        updatedPage.LoadStickers(stickersByPage[pageIdx]);
+
+        updatedPage.PlaceStickers(stickersByPage[pageIdx]);
         return updatedPage;
     }
 
     override public void HandleRightPageTurn()
     {
-        showPageTurnHint = false;
+        GS.didTutorializeJournal = true;
         base.HandleRightPageTurn();
     } 
 
