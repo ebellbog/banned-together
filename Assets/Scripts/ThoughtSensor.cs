@@ -75,7 +75,7 @@ public class ThoughtSensor : MonoBehaviour
 
             // Check whether thought is within angle of view
             float angleToThought = Vector3.Angle(transform.forward, thoughtTransform.position - transform.position);
-            if (angleToThought > ViewAngle) {
+            if (angleToThought > ViewAngle && thought.thoughtType != ThoughtType.Focus) {
                 thought.FadeOut();
                 continue;
             }

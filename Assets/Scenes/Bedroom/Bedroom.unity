@@ -308,6 +308,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f4a34b83a7c56bd41bb1791fd6734580, type: 3}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[9].name
+      value: ShortClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[9].startTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[9].volumeAdjustment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8644326674742428020, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: m_Name
       value: Audio
@@ -2422,7 +2442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThoughtText: Time to head over to MacLeod library for some sleuthing?
   FadeSpeed: 2.5
-  scale: 1.25
+  scale: 1.15
   thoughtType: 1
   focusOnWords: chronicle, investigation
   firstDay: 1
@@ -3726,6 +3746,46 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.2656859}
   m_Size: {x: 0.5, y: 0.5, z: 0.29983562}
   m_FadeFactor: 1
+--- !u!21 &948646539
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1001 &963769194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12202,46 +12262,6 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
---- !u!21 &1780547260
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!114 &1781949735 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6793456013802410833, guid: dc1d07b4ec5b23641b228e1a02b33d89, type: 3}
@@ -13856,6 +13876,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4394833613188031}
+  - component: {fileID: 4394833613188033}
+  - component: {fileID: 4394833613188032}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -13923,6 +13945,47 @@ Transform:
   - {fileID: 4699720663888059}
   m_Father: {fileID: 8378167937853174092}
   m_LocalEulerAnglesHint: {x: 0, y: -74.022, z: 0}
+--- !u!114 &4394833613188032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247205214044255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: Literally the most uncomfortable chair imaginable
+  FadeSpeed: 2.5
+  scale: 1
+  thoughtType: 0
+  focusOnWords: 
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
+--- !u!65 &4394833613188033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247205214044255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.63737124, y: 0.92251843, z: 0.87717956}
+  m_Center: {x: 0.034882072, y: 0.7136785, z: -0.0006475161}
 --- !u!4 &4699720663888059
 Transform:
   m_ObjectHideFlags: 0
@@ -14111,7 +14174,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0007180939, y: 0.011313669, z: 0.000631489}
   m_Center: {x: 0.0018286394, y: 0.0056568347, z: 0.0025406228}
@@ -14132,7 +14195,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0006489627, y: 0.0054028393, z: 0.00063149433}
   m_Center: {x: -0.0038056679, y: 0.0027014196, z: -0.002540622}
@@ -14153,7 +14216,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0006489627, y: 0.0054028393, z: 0.00063149346}
   m_Center: {x: -0.0038056658, y: 0.0027014196, z: 0.0025406205}
@@ -14174,7 +14237,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0005008139, y: 0.0026720953, z: 0.004433783}
   m_Center: {x: 0.0019372791, y: 0.0095282495, z: -0.000017281622}
@@ -14195,7 +14258,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0007180939, y: 0.011313669, z: 0.00063149}
   m_Center: {x: 0.0018286415, y: 0.0056568347, z: -0.0025406203}
@@ -14216,7 +14279,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0063178246, y: 0.00045985935, z: 0.0057127317}
   m_Center: {x: -0.0009712291, y: 0.005172906, z: 5.9604643e-10}
@@ -15588,7 +15651,7 @@ Transform:
   m_GameObject: {fileID: 8069516868346380580}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16220,6 +16283,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6306268240699971946}
   - component: {fileID: 8230161175282536682}
+  - component: {fileID: 8230161175282536684}
+  - component: {fileID: 8230161175282536683}
   m_Layer: 0
   m_Name: Circle Trash Can
   m_TagString: Untagged
@@ -17309,7 +17374,7 @@ Transform:
   m_GameObject: {fileID: 4096225431396738973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21856284, y: 0.125, z: -2.1239634}
+  m_LocalPosition: {x: -0.303, y: 0.125, z: -2.1239634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18238,6 +18303,47 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3602939856314394548}
   m_Enabled: 1
+--- !u!114 &8230161175282536683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096225431396738973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: Took out the trash today! Go me!
+  FadeSpeed: 2.5
+  scale: 1
+  thoughtType: 0
+  focusOnWords: 
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
+--- !u!65 &8230161175282536684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096225431396738973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5404061, y: 0.6406731, z: 0.59155667}
+  m_Center: {x: -0.006941676, y: 0.3272777, z: 0.63277}
 --- !u!4 &8292045088057423809
 Transform:
   m_ObjectHideFlags: 0
@@ -18397,6 +18503,7 @@ GameObject:
   - component: {fileID: 4602325486826643702}
   - component: {fileID: 6411270100432629805}
   - component: {fileID: 8597011575076220171}
+  - component: {fileID: 8597011575076220172}
   m_Layer: 0
   m_Name: deskLight_joint3
   m_TagString: Untagged
@@ -18442,6 +18549,26 @@ MonoBehaviour:
     playOnlyOnce: 0
   journalUpdates: []
   gameStateUpdates: []
+--- !u!114 &8597011575076220172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597011575076220170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: Always reminds me of that Pixar lamp!
+  FadeSpeed: 2.5
+  scale: 1
+  thoughtType: 0
+  focusOnWords: 
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
 --- !u!4 &8603673360438593103
 Transform:
   m_ObjectHideFlags: 0

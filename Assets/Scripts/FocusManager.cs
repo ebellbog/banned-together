@@ -82,6 +82,7 @@ public class FocusManager : MonoBehaviour
 
     void Update()
     {
+        starterInputs.focus = false; // TODO: remove old focus functionality properly
         bool isFocusing = starterInputs.focus && canFocus && 
             (allowSpendingBodyBattery || GS.bodyBattery > 0) &&
             (
@@ -207,7 +208,15 @@ public class FocusManager : MonoBehaviour
         }
 
         // Update properties based on focus percent
-        postprocessVolume.weight = focusPercent;
+        // TODO: improve temp code for new filter system
+        if (
+            (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Monologue) &&
+            GS.redStickerPlacement.filterWords?.Count > 0) {
+            postprocessVolume.weight = Mathf.Min(postprocessVolume.weight + Time.deltaTime * focusSpeed, 1f);
+        }
+        else {
+            postprocessVolume.weight = Mathf.Max(postprocessVolume.weight - Time.deltaTime * focusSpeed, 0);
+        }
 
         if (focusPercent > 0)
         {
