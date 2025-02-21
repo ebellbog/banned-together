@@ -1,10 +1,12 @@
+using DG.Tweening;
+using OccaSoftware.Outlines.Runtime;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using DG.Tweening;
-using System;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering.Universal;
 
 namespace StarterAssets
 {
@@ -16,7 +18,8 @@ namespace StarterAssets
         [Header("Outline settings")]
         public Color DefaultExaminableColor = Color.white;
         public Color DefaultSittableColor = Color.white;
-        public ScreenSpaceOutlines outlineManager;
+        public OutlinesRenderfeature renderFeature;
+        public UniversalRendererData rendererData;
 
         [Header("Examination")]
         public Camera ExamineCamera;
@@ -120,6 +123,18 @@ namespace StarterAssets
             #nullable enable
 
             InteractableItem? interactableItem = currentObject?.GetComponent<InteractableItem>();
+
+            // Set hit (aka hover) flags, in modes that allow interaction
+            bool hitExaminable = false, hitSittable = false, hitDoor = false, hitSwitch = false;
+            hitRotatable = false;
+            if (ModeSupportsInteraction())
+            {
+                hitExaminable = interactableItem && interactableItem.isExaminable;
+                hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
+                hitDoor = hitTag == "Door";
+                hitSwitch = hitTag == "Switch";
+            }
+
             if (currentInteractable && currentInteractable != interactableItem)
             {
                 currentInteractable.ApplyCustomEffects(ActionTiming.onHoverExit);
@@ -138,8 +153,7 @@ namespace StarterAssets
                 if (outlineColor != null) {
                     if (GS.interactionMode != InteractionType.Focus)
                     {
-                        outlineManager.SetOutlineColor((Color)outlineColor);
-                        SetOutlined(currentObject);
+                        SetOutlined(currentObject, (Color)outlineColor);
                     }
                 } else {
                     ClearOutlined();
@@ -151,22 +165,11 @@ namespace StarterAssets
                 else CursorImage.sprite = HoverIcon;
             } else
             {
-                ClearOutlined();
+                if (!hitSittable) ClearOutlined();
                 CursorImage.sprite = DefaultIcon;
             }
 
             #nullable disable
-
-            // Set hit (aka hover) flags, in modes that allow interaction
-            bool hitExaminable = false, hitSittable = false, hitDoor = false, hitSwitch = false;
-            hitRotatable = false;
-            if (ModeSupportsInteraction())
-            {
-                hitExaminable = interactableItem && interactableItem.isExaminable;
-                hitSittable = hitTag == "Sittable" && Vector3.Distance(hitInfo.transform.position, transform.position) < SitDistance;
-                hitDoor = hitTag == "Door";
-                hitSwitch = hitTag == "Switch";
-            }
 
             if (!(hitExaminable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
             {
@@ -176,8 +179,7 @@ namespace StarterAssets
             else if (hitSittable)
             { // Highlight for sittable objects
                 CursorImage.sprite = SitIcon;
-                outlineManager.SetOutlineColor(DefaultSittableColor);
-                SetOutlined(hitInfo.transform.gameObject);
+                SetOutlined(hitInfo.transform.gameObject, DefaultSittableColor);
             }
             else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
@@ -304,19 +306,38 @@ namespace StarterAssets
             }
         }
 
-        private void SetOutlined(GameObject gameObject)
+        private void SetOutlined(GameObject gameObject, Color outlineColor)
         {
-            ClearOutlined();
-            prevLayerIdx = gameObject.layer;
-            SetLayer(gameObject, outlineLayerIdx);
+            if (outlinedObject != gameObject) ClearOutlined();
+
+            Outline outlineComponent = gameObject.GetComponent<Outline>();
+            if (outlineComponent == null) outlineComponent = gameObject.AddComponent<Outline>();
+            else outlineComponent.enabled = true;
+
+            outlineComponent.OutlineColor = outlineColor;
+            outlineComponent.OutlineMode = Outline.Mode.OutlineAll;
+            outlineComponent.OutlineWidth = 8f;
+
+            // Render object outline on top of postprocessing outline
+            if (renderFeature.renderPassEvent != RenderPassEvent.BeforeRenderingTransparents)
+            {
+                renderFeature.renderPassEvent = RenderPassEvent.BeforeRenderingTransparents;
+                rendererData.SetDirty();
+            }
+
             outlinedObject = gameObject;
         }
         private void ClearOutlined()
         {
-            if (outlinedObject && outlinedObject.layer == outlineLayerIdx)
+            if (outlinedObject != null)
             {
-                SetLayer(outlinedObject, 0); // TODO: smarter restoration of previous layer?
+                Outline outlineComponent = outlinedObject.GetComponent<Outline>();
+                outlineComponent.enabled = false;
                 outlinedObject = null;
+
+                // Restore to setting that works better for decal lighting effects
+                renderFeature.renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
+                rendererData.SetDirty();
             }
         }
 

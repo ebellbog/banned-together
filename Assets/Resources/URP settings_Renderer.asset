@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb9fef2ac88a7140aced90514f0501d, type: 3}
   m_Name: ScreenSpaceOutlines
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   renderPassEvent: 600
   outlinesLayerMask:
     serializedVersion: 2
     m_Bits: 20480
   outlineSettings:
-    outlineColor: {r: 0.22912085, g: 1, b: 0, a: 1}
+    outlineColor: {r: 0, g: 1, b: 0.045393467, a: 1}
     outlineScale: 3.4
-    depthThreshold: 9.3
-    robertsCrossMultiplier: 0
+    depthThreshold: 17.4
+    robertsCrossMultiplier: 136
     normalThreshold: 1
-    steepAngleThreshold: 0.033
-    steepAngleMultiplier: 8
+    steepAngleThreshold: 0.15
+    steepAngleMultiplier: 208
     colorFormat: 0
     depthBufferBits: 0
     filterMode: 0
@@ -65,10 +65,10 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: 306423373551084547}
   - {fileID: -7843632314151360199}
   - {fileID: -562097544802763928}
-  m_RendererFeatureMap: 03a4634b6fa2400439a93bb6f7d12593687be9d8420733f8
+  - {fileID: 306423373551084547}
+  m_RendererFeatureMap: 39a93bb6f7d12593687be9d8420733f803a4634b6fa24004
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
