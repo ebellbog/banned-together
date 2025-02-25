@@ -18,6 +18,7 @@ namespace StarterAssets
 		public bool journal;
 		public bool sleep;
 		public bool exit;
+		public bool delete;
 		public bool anyKey;
 
 		[Header("Movement Settings")]
@@ -60,12 +61,19 @@ namespace StarterAssets
 			FocusInput(value.isPressed);
 		}
 
-		public void OnJournal(InputValue value) {
+		public void OnJournal(InputValue value)
+		{
 			JournalInput(value.isPressed);
 		}
 
-		public void OnExit(InputValue value) {
+		public void OnExit(InputValue value)
+		{
 			ExitInput(value.isPressed);
+		}
+
+		public void OnDelete(InputValue value)
+		{
+			DeleteInput(value.isPressed);
 		}
 
 		public void OnSleep(InputValue value) {
@@ -117,6 +125,11 @@ namespace StarterAssets
 		public void ExitInput(bool newExitState)
 		{
 			exit = newExitState;
+		}
+
+		public void DeleteInput(bool newDeleteState)
+		{
+			delete = newDeleteState;
 		}
 
 		public void SleepInput(bool newSleepState)

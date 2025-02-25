@@ -82,6 +82,14 @@ public class FocusManager : MonoBehaviour
 
     void Update()
     {
+        // Clear stickers
+        // TODO: support multiple stickers, possibly with a confirmation modal
+        if (starterInputs.delete)
+        {
+            GS.redStickerPlacement = new Sticker();
+            starterInputs.delete = false;
+        }
+
         starterInputs.focus = false; // TODO: remove old focus functionality properly
         bool isFocusing = starterInputs.focus && canFocus && 
             (allowSpendingBodyBattery || GS.bodyBattery > 0) &&

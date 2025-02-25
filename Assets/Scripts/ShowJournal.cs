@@ -47,7 +47,7 @@ public class ShowJournal : MonoBehaviour
             _input.exit = false;
         }
 
-        if (GS.interactionMode == InteractionType.Paused && viewingJournal)
+        if (GS.interactionMode != InteractionType.Journal && viewingJournal)
             CloseJournal();
     }
 
@@ -71,15 +71,19 @@ public class ShowJournal : MonoBehaviour
         AudioManager.instance.MuffleMusic();
     }
 
-    void CloseJournal() {
-        isReady = false;
-        StartCoroutine(_CloseJournal());
+    public void CloseJournal() {
+        if (viewingJournal)
+        {
+            viewingJournal = false;
+            isReady = false;
+
+            GS.interactionMode = InteractionType.Default;
+
+            StartCoroutine(_CloseJournal());
+        }
     }
 
     IEnumerator _CloseJournal() {
-        viewingJournal = false;
-        GS.interactionMode = InteractionType.Default;
-
         UI.FadeOutMatte();
         AudioManager.instance.UnmuffleMusic();
 

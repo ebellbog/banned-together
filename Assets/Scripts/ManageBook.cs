@@ -40,6 +40,12 @@ public class ManageBook : MonoBehaviour
     public List<Texture> customPagesAtStart = new List<Texture>();
     public List<Texture> customPagesAtEnd = new List<Texture>();
 
+    [Header("Cursors")]
+    public Texture2D defaultCursor;
+    public Texture2D pageRightCursor;
+    public Texture2D pageLeftCursor;
+    public Texture2D pageDragCursor;
+
     [Header("Sound effects")]
     public string pageTurnAudio;
 
@@ -50,6 +56,7 @@ public class ManageBook : MonoBehaviour
     protected List<PageContent> contentByPage = new List<PageContent>();
     protected string currentContent = "";
 
+    private bool isDragging = false;
     private const int MAX_CHARS_PER_PAGE = 800;
 
 
@@ -71,6 +78,8 @@ public class ManageBook : MonoBehaviour
                 AudioManager.instance.PlaySFX(pageTurnAudio);
             });
         }
+
+        ResetCursor();
     }
 
     void InitPages()
@@ -172,6 +181,54 @@ public class ManageBook : MonoBehaviour
         int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count - 2;
         UpdatePageContent(nextLeftPageIdx);
         UpdatePageContent(nextRightPageIdx);
+    }
+
+    Vector2 GetCursorCenter(Texture2D texture2D)
+    {
+        return new Vector2(texture2D.width / 2f, texture2D.height / 2f);
+    }
+    public void OnHoverRight()
+    {
+        if (pageRightCursor != null && !isDragging && bookViewer.currentPage < bookViewer.bookPages.Length)
+            Cursor.SetCursor(pageRightCursor, GetCursorCenter(pageRightCursor), CursorMode.Auto);
+    }
+    public void OnHoverLeft()
+    {
+        if (pageLeftCursor != null && !isDragging && bookViewer.currentPage > 0)
+            Cursor.SetCursor(pageLeftCursor, GetCursorCenter(pageLeftCursor), CursorMode.Auto); 
+    }
+    public void OnDrag()
+    {
+        if (pageDragCursor != null && !isDragging)
+        {
+            Cursor.SetCursor(pageDragCursor, GetCursorCenter(pageDragCursor), CursorMode.Auto);
+            isDragging = true;
+        }
+    }
+    public void ResetCursor()
+    {
+        if (defaultCursor != null && !isDragging)
+            Cursor.SetCursor(defaultCursor, GetCursorCenter(defaultCursor), CursorMode.Auto);
+    }
+    public void OnMouseUp()
+    {
+        if (isDragging)
+        {
+            isDragging = false;
+            ResetCursor();
+        }
+    }
+    public void HideBook()
+    {
+        GS.interactionMode = InteractionType.Default;
+    }
+    public void HideOnLeftTurn()
+    {
+        if (bookViewer.currentPage == 0) HideBook();
+    }
+    public void HideOnRightTurn()
+    {
+        if (bookViewer.currentPage >= bookViewer.bookPages.Length) HideBook();
     }
 
     // pageIdx excludes the cover, starting at 0 for the first page of text

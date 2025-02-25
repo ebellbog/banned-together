@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ public class ThoughtBubble : MonoBehaviour
         } else if (fadeOut) {
             if (canvasGroup.alpha > 0) {
                 canvasGroup.alpha -= FadeSpeed * Time.deltaTime;
-            }
+            } // TODO: once fully faded, stop billboarding, for efficiency?
             if (currentScale > InitialScale) {
                 currentScale -= FadeSpeed * Time.deltaTime * (1.0f - InitialScale);
                 animationParent.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
@@ -69,20 +70,25 @@ public class ThoughtBubble : MonoBehaviour
             new Vector3 (position.x, position.y + size.y / 2 - 0.1f, position.z),
             Quaternion.identity
         );
+
         textMesh = bubbleCanvas.GetComponentInChildren<TextMeshProUGUI>();
         textMesh.SetText(ThoughtText);
 
+        Image bgImage = bubbleCanvas.GetComponentInChildren<Image>();
+
         switch(thoughtType) {
             case ThoughtType.Intrusive:
-                bubbleCanvas.transform.Find("ThoughtBubble/IntrusiveBg").gameObject.SetActive(true);
                 break;
             case ThoughtType.Focus:
-                bubbleCanvas.transform.Find("ThoughtBubble/FocusBg").gameObject.SetActive(true);
                 textMesh.color = Color.white;
-                textMesh.fontStyle = FontStyles.Bold;
+                // textMesh.fontStyle = FontStyles.Bold;
+
+                // TODO: set colors based on sticker
+                bgImage.color = new Color(.8f, .2f, .2f);
+                bgImage.material = Instantiate(bgImage.material); // copy material to set independently for each thought bubble
+                bgImage.material.SetColor("_SolidOutline", new Color(.4f, 0, 0));
                 break;
             case ThoughtType.Dark:
-                bubbleCanvas.transform.Find("ThoughtBubble/DarkBg").gameObject.SetActive(true);
                 textMesh.color = Color.white;
                 break;
             default:
