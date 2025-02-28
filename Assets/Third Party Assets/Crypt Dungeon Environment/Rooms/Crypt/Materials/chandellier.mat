@@ -18,9 +18,8 @@ Material:
   - _RIMSPLITCOLOR_NOSPLIT
   - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
-  - _USELIGHTRAMP_STEP
+  - _USELIGHTRAMP_POSTERIZE
   - _USEPURESKETCH_ON
-  - _USESPECULAR_ON
   m_InvalidKeywords:
   - _EMISSION
   - _METALLICGLOSSMAP
@@ -28,7 +27,7 @@ Material:
   - _PARALLAXMAP
   - _SPECGLOSSMAP
   - _USESHADOWS_ON
-  m_LightmapFlags: 1
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -130,11 +129,11 @@ Material:
     - _BacklightHardness: 0
     - _BacklightIntensity: 1
     - _BumpScale: 1
-    - _Cutoff: 0.5
+    - _Cutoff: 0.557
     - _Darken: 0
     - _DetailNormalMapScale: 1
     - _DiffusePosterizeOffset: 0
-    - _DiffusePosterizePower: 1
+    - _DiffusePosterizePower: 3
     - _DiffusePosterizeSteps: 3
     - _DiffuseWarpAffectHalftone: 0
     - _DiffuseWarpBrightnessOffset: 1.12
@@ -219,7 +218,7 @@ Material:
     - _UseEmissiveMap: 1
     - _UseEnvironmentRefletion: 0
     - _UseHatchingConstantScale: 1
-    - _UseLightRamp: 0
+    - _UseLightRamp: 2
     - _UseMetallicMap: 1
     - _UseNormalMap: 1
     - _UseOutline: 0
@@ -230,7 +229,7 @@ Material:
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadows: 1
-    - _UseSpecular: 1
+    - _UseSpecular: 0
     - _UseSpecularMask: 0
     - _WarpStrength: 0
     - _WarpTextureRotation: 0
@@ -238,13 +237,13 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.30971876, g: 0.40814137, b: 0.4528302, a: 1}
+    - _EmissionColor: {r: 0, g: 0.22711392, b: 0.32704395, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimShadowColor: {r: 0, g: 0.05551431, b: 0.9622642, a: 0}
-    - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowColor: {r: 0.41509432, g: 0.3474401, b: 0.25192827, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
     - _UvTiling: {r: 1, g: 1, b: 0, a: 0}

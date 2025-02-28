@@ -115,7 +115,7 @@ MonoBehaviour:
     m_Value: {r: 0, g: 0, b: 0, a: 1}
   maximumOutlineThickness:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.3
   edgeThreshold:
     m_OverrideState: 0
     m_Value: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   depthThreshold:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.1
   depthSoftness:
     m_OverrideState: 0
     m_Value: 0.1
@@ -147,17 +147,17 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.75
   lumaThickness01:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   lumaThreshold:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 0.5
   lumaSoftness:
     m_OverrideState: 0
     m_Value: 0.1
   colorThickness01:
     m_OverrideState: 1
-    m_Value: 0.08
+    m_Value: 0
   colorThreshold:
     m_OverrideState: 1
     m_Value: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
     m_Value: 1
   grazingAngleThreshold:
     m_OverrideState: 0
-    m_Value: 0.2
+    m_Value: 0.3
   grazingAngleOffset:
     m_OverrideState: 0
     m_Value: 3
@@ -222,10 +222,10 @@ MonoBehaviour:
     m_Value: 1
   blurAmount:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 2
   blurNoiseEnabled:
     m_OverrideState: 0
     m_Value: 0
   previewOutlines:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0

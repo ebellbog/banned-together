@@ -14,12 +14,11 @@ Material:
   m_ValidKeywords:
   - _OUTLINETYPE_NORMAL
   - _OVERLAYMODE1_NONE
-  - _OVERLAYMODE_HAFTONE
+  - _OVERLAYMODE_NONE
   - _RIMSPLITCOLOR_NOSPLIT
   - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_POSTERIZE
-  - _USEOUTLINE_ON
   - _USEPURESKETCH_ON
   - _USESCREENUVS_ON
   m_InvalidKeywords:
@@ -30,7 +29,6 @@ Material:
   - _METALLICGLOSSMAP
   - _NORMALMAP
   - _OUTLINE_NML
-  - _OVERLAYMODE_HALFTONE
   - _USESHADOWS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -160,7 +158,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b30fe4002f5cf234e8a13f459c809505, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -341,9 +339,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailNormalScale: 1
     - _DetailSmoothnessScale: 1
-    - _DiffusePosterizeOffset: 0
-    - _DiffusePosterizePower: 1
-    - _DiffusePosterizeSteps: 3
+    - _DiffusePosterizeOffset: -0.06
+    - _DiffusePosterizePower: 2.11
+    - _DiffusePosterizeSteps: 3.81
     - _DiffuseWarpAffectHalftone: 0
     - _DiffuseWarpBrightnessOffset: 1.12
     - _DiffusionProfile: 0
@@ -469,7 +467,7 @@ Material:
     - _OutlineType: 0
     - _OutlineVisible: 1
     - _Outline_Width: 6
-    - _OverlayMode: 1
+    - _OverlayMode: 0
     - _OverlayMode1: 0
     - _OverlayRotation: 20.5
     - _OverlayUVTilling: 50
@@ -601,7 +599,7 @@ Material:
     - _UseEnvironmentRefletion: 0
     - _UseHatchingConstantScale: 1
     - _UseLightRamp: 2
-    - _UseOutline: 1
+    - _UseOutline: 0
     - _UsePureSketch: 1
     - _UseRimLight: 0
     - _UseScreenUvs: 1
@@ -638,7 +636,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5031446, g: 0.3839602, b: 0.23891453, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

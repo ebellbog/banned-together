@@ -63,6 +63,10 @@ public class ManageJournal : ManageBook
             clickedPage.OnMouseDown(mousePos);
         }
     }
+    public void OnHover(Vector3 mousePos)
+    {
+        Debug.Log("Hovering at:"+mousePos);
+    }
 
     protected override BookPage UpdatePageContent(int pageIdx)
     {

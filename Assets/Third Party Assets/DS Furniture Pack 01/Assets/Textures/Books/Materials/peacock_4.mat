@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8ae586c8d7a8921489deaea91a07c4b9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0877d02b2c85a05459193ad4ebdf4f92, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -193,7 +193,7 @@ Material:
     - _WarpTextureScale: 1
     m_Colors:
     - _Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
-    - _EmissionColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    - _EmissionColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}

@@ -92,7 +92,7 @@ public class StickerPage: BookPage
         else
         {
             GS.redStickerPlacement = stickerData[stickerIdx];
-            Debug.Log("Current filter words: "+String.Join("-", GS.redStickerPlacement.filterWords.ToArray()));
+            // Debug.Log("Current filter words: "+String.Join("-", GS.redStickerPlacement.filterWords.ToArray()));
         }
         UpdateSticker(stickerIdx);
         UpdateTextHighlights();
@@ -186,8 +186,8 @@ public class StickerPage: BookPage
             if (DateTime.TryParse(newSticker.paragraphContent, out dt))
                 continue;
 
-            List<string> filterWords;
-            if (GS.filterWordsByEntry.TryGetValue(newSticker.paragraphContent.Trim(), out filterWords))
+            List<string> filterWords = new List<string>();
+            if (GS.filterWordsByEntry != null && GS.filterWordsByEntry.TryGetValue(newSticker.paragraphContent.Trim(), out filterWords))
             {
                 newSticker.filterWords = filterWords;
             }
@@ -203,6 +203,11 @@ public class StickerPage: BookPage
         }
 
         return stickers;
+    }
+
+    public List<Vector3> GetStickerCoords()
+    {
+        return allPlaceholders.Select(placeholder => placeholder.transform.position).ToList();
     }
 
     public float GetLineForCharacter(int charIdx)

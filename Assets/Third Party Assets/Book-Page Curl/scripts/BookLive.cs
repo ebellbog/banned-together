@@ -54,6 +54,7 @@ public class BookLive : MonoBehaviour {
     public UnityEvent OnBeginFlipRight;
     public UnityEvent OnBeginFlipLeft;
     public UnityEvent<Vector3> OnMouseDownEvent;
+    public UnityEvent<Vector3> OnHoverEvent;
     public UnityEvent OnReleaseEvent;
 
     float radius1, radius2;
@@ -71,6 +72,7 @@ public class BookLive : MonoBehaviour {
     Vector3 ebl;
     //follow point 
     Vector3 f;
+    Vector3 lastMousePos;
     bool pageDragging = false;
     //current flip mode
     FlipMode mode;
@@ -162,6 +164,11 @@ public class BookLive : MonoBehaviour {
         if (pageDragging && interactable)
         {
             UpdateBook();
+        } else
+        {
+            if (lastMousePos != Input.mousePosition && OnHoverEvent != null)
+                OnHoverEvent.Invoke(transformPoint(Input.mousePosition, false));
+            lastMousePos = Input.mousePosition;
         }
     }
     public void UpdateBook()

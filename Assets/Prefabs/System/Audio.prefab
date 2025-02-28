@@ -638,3 +638,7 @@ MonoBehaviour:
     name: PageTurn
     volumeAdjustment: 2
     startTime: 0.2
+  - clip: {fileID: 8300000, guid: f4a34b83a7c56bd41bb1791fd6734580, type: 3}
+    name: ShortClick
+    volumeAdjustment: 4
+    startTime: 0
