@@ -50,6 +50,6 @@ public static class UI
 
     public static void SetCursor(Texture2D mouseTexture)
     {
-        Cursor.SetCursor(mouseTexture, new Vector2(32, 32), CursorMode.ForceSoftware);
+        Cursor.SetCursor(mouseTexture, new Vector2(mouseTexture.width / 2f, mouseTexture.height / 2f), CursorMode.Auto);
     }
 }
