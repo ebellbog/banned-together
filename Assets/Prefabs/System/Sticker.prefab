@@ -175,7 +175,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9203457571525758506}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapBackToStart: 1
-  selectionCursor: {fileID: 2800000, guid: 29b17cf2406324e448559868454163c0, type: 3}
+  selectionCursor: {fileID: 2800000, guid: 84e110b6511b4a345969a677b1ae3080, type: 3}
   draggingCursor: {fileID: 2800000, guid: 85e9d1a8f4829d446821104dc8d51332, type: 3}
   defaultCursor: {fileID: 2800000, guid: 3507634bd73a09541be8ec0d725c876e, type: 3}
 --- !u!114 &3370404030908951604

@@ -52,11 +52,13 @@ public class DraggableElement : MonoBehaviour
 
     public void OnHover()
     {
-        UI.SetCursor(selectionCursor);
+        if (!isDragging)
+            UI.SetCursor(selectionCursor);
     }
 
     public void ResetCursor()
     {
-        UI.SetCursor(defaultCursor);
+        if (!isDragging)
+            UI.SetCursor(defaultCursor);
     }
 }

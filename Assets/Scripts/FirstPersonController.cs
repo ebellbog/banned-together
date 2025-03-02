@@ -29,6 +29,7 @@ namespace StarterAssets
 		public float SprintSpeed = 6.0f;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
+		public float SmoothTurnSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
@@ -173,6 +174,10 @@ namespace StarterAssets
                     transform.Rotate(Vector3.up * _rotationVelocity);
                 }
 			}
+			if (_input.sprint && Mathf.Abs(_input.move.x) > 0)
+			{
+                transform.Rotate(Vector3.up * _input.move.x * 10f * SmoothTurnSpeed * Time.deltaTime);
+			}
 		}
 
 		private void Move()
@@ -185,7 +190,14 @@ namespace StarterAssets
 			}
 			else
 			{
-				targetSpeed = _playerInput.actions["sprint"].IsPressed() && GS.bodyBattery > 0 ? SprintSpeed : MoveSpeed;
+				if ( _playerInput.actions["sprint"].IsPressed() && GS.bodyBattery > 0)
+				{
+					if (_input.move.x != 0) targetSpeed = 0;
+					else targetSpeed = SprintSpeed;
+				}
+				else {
+					targetSpeed = MoveSpeed;
+				}
 			}
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon

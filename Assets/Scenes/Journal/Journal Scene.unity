@@ -358,8 +358,8 @@ MonoBehaviour:
   customPagesAtEnd:
   - {fileID: 2800000, guid: c81274ff039f0f54aa8cf2582fb73636, type: 3}
   defaultCursor: {fileID: 2800000, guid: 3507634bd73a09541be8ec0d725c876e, type: 3}
-  pageRightCursor: {fileID: 2800000, guid: 29b17cf2406324e448559868454163c0, type: 3}
-  pageLeftCursor: {fileID: 2800000, guid: 29b17cf2406324e448559868454163c0, type: 3}
+  pageRightCursor: {fileID: 2800000, guid: 84e110b6511b4a345969a677b1ae3080, type: 3}
+  pageLeftCursor: {fileID: 2800000, guid: 84e110b6511b4a345969a677b1ae3080, type: 3}
   pageDragCursor: {fileID: 2800000, guid: 85e9d1a8f4829d446821104dc8d51332, type: 3}
   pageTurnAudio: PageTurn
   showPageTurnHint: 1

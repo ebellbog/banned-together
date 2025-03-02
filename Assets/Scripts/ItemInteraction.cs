@@ -45,6 +45,8 @@ namespace StarterAssets
         public Texture2D RotateAllDirections;
         public Texture2D RotateLeftRight;
         public Texture2D RotateUpDown;
+        public Texture2D HandOpen;
+        public Texture2D HandGrabbing;
         public Texture2D DefaultUnlocked;
 
         private StarterAssetsInputs _input;
@@ -73,6 +75,9 @@ namespace StarterAssets
         private bool isReadyToInspect = false;
         private bool isAnimating = false;
         private bool panningEnabled = false;
+        private bool inertialRotation = false;
+        private Vector2 lastLook = Vector2.zero;
+        private bool useGrabCursor = false;
         private bool affectsBodyBattery = false;
 
         private bool readyToStand = false;
@@ -97,6 +102,12 @@ namespace StarterAssets
         void Update()
         {
             Interact();
+
+            if (inertialRotation && (Mathf.Abs(lastLook.x) + Mathf.Abs(lastLook.y) > .15f) && !isDragging)
+            {
+                lastLook *= Mathf.Pow(.65f, Time.deltaTime);
+                ExamineTarget.Rotate(Vector3.down * lastLook.x * rotationSpeed, rotationSpace);
+            }
         }
 
         private bool ModeSupportsInteraction()
@@ -336,8 +347,8 @@ namespace StarterAssets
                 outlinedObject = null;
 
                 // Restore to setting that works better for decal lighting effects
-                renderFeature.renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
-                rendererData.SetDirty();
+                // renderFeature.renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
+                // rendererData.SetDirty();
             }
         }
 
@@ -398,6 +409,8 @@ namespace StarterAssets
             rotationSpace = currentInteractable.orientToCamera ? Space.Self : Space.World;
             rotationAxis = currentInteractable.rotationAxis;
             panningEnabled = currentInteractable.enablePanning;
+            inertialRotation = currentInteractable.inertialRotation;
+            useGrabCursor = currentInteractable.useGrabCursor;
             affectsBodyBattery = currentInteractable.affectsBodyBattery;
 
             Player.LockPlayer();
@@ -441,6 +454,8 @@ namespace StarterAssets
             UI.FadeOutMatte();
             UI.FadeOutInteractionUI();
 
+            lastLook = Vector2.zero;
+
             examineCallback = null;
             examineCallback += () => {
                 SetLayer(activeObject, 0);
@@ -475,6 +490,7 @@ namespace StarterAssets
                 Vector2 look = value.Get<Vector2>();
                 if (isDragging)
                 {
+                    lastLook = look;
                     if (rotationAxis == RotationAxis.LeftRight || rotationAxis == RotationAxis.All)
                     {
                         ExamineTarget.Rotate(Vector3.down * look.x * rotationSpeed, rotationSpace);
@@ -484,7 +500,8 @@ namespace StarterAssets
                         ExamineTarget.Rotate(-Camera.main.transform.right * look.y * rotationSpeed, Space.World);
                     }
                     if (affectsBodyBattery) BodyBatteryManager.Main.FidgetToRecover();
-                } else if (panningEnabled && !isAnimating && hitRotatable && ZoomManager.GetZoom() < 1)
+                }
+                else if (panningEnabled && !isAnimating && hitRotatable && ZoomManager.GetZoom() < 1)
                 {
                     ExamineTarget.transform.position = ExamineTarget.transform.position
                         - Camera.main.transform.right * look.x * PanSpeed
@@ -494,6 +511,10 @@ namespace StarterAssets
 		}
 
         private Texture2D GetRotationIcon() {
+            if (useGrabCursor)
+            {
+                return isDragging ? HandGrabbing : HandOpen;
+            }
             switch(rotationAxis) {
                 case RotationAxis.LeftRight:
                     return RotateLeftRight;

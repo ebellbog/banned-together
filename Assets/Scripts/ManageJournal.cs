@@ -55,7 +55,6 @@ public class ManageJournal : ManageBook
 
     public void OnMouseDown(Vector3 mousePos)
     {
-        PageSide sideClicked = mousePos.x < 0 ? PageSide.Left : PageSide.Right;
         StickerPage clickedPage = mousePos.x < 0 ?
             (StickerPage)GetCurrentLeftPage() :
             (StickerPage)GetCurrentRightPage();
@@ -65,7 +64,18 @@ public class ManageJournal : ManageBook
     }
     public void OnHover(Vector3 mousePos)
     {
-        Debug.Log("Hovering at:"+mousePos);
+        // Debug.Log("Hovering at:"+mousePos);
+        StickerPage clickedPage = mousePos.x < 0 ?
+            (StickerPage)GetCurrentLeftPage() :
+            (StickerPage)GetCurrentRightPage();
+        if (clickedPage) {
+            int hoveredStickerId = clickedPage.GetStickerByCoords(mousePos);
+            Debug.Log(hoveredStickerId);
+            if (hoveredStickerId > -1)
+            {
+                Debug.Log("Hovering near sticker!");
+            }
+        }
     }
 
     protected override BookPage UpdatePageContent(int pageIdx)

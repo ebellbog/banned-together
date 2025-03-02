@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: OutlinesRenderfeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  renderPassEvent: 600
+  renderPassEvent: 450
   overridePostProcessingBoolean: 0
   renderPassEventOffset: 0
   renderInSceneView: 1

@@ -79,6 +79,8 @@ public class InteractableItem : MonoBehaviour
     public float scaleOnInteraction = 1.0f;
     public bool enablePanning = false;
     public bool affectsBodyBattery = false;
+    public bool inertialRotation = false;
+    public bool useGrabCursor = false;
 
     [Header("UI settings")]
     public bool showOutline = false;

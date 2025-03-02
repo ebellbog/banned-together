@@ -10,9 +10,9 @@ using UnityEngine.UI;
 public struct Sticker {
     public int startCharIdx;
     public int endCharIdx;
-    public float stickerCenterY;
     public string paragraphContent;
     public List<string> filterWords;
+    public Vector2 stickerCenter;
 
     public static bool operator ==(Sticker first, Sticker second)
     {
@@ -63,21 +63,29 @@ public class StickerPage: BookPage
 
     public void OnMouseDown(Vector3 mousePos)
     {
-        int clickedStickerIdx = -1;
-        for (int i = 0; i < stickerData.Count; i++)
-        {
-            Sticker currentSticker = stickerData[i];
-            if (Math.Abs(currentSticker.stickerCenterY - mousePos.y) < placeholderHeight / 2f)
-            {
-                clickedStickerIdx = i;
-                break;
-            }
-        }
 
+        int clickedStickerIdx = GetStickerByCoords(mousePos);
         if (clickedStickerIdx > -1)
         {
             ToggleSticker(clickedStickerIdx);
         }
+    }
+
+    public int GetStickerByCoords(Vector2 coords, float maxDist = 0)
+    {
+        if (maxDist == 0) maxDist = placeholderHeight / 2f;
+        float minDist = 2000f;
+        for (int i = 0; i < stickerData.Count; i++)
+        {
+            Sticker currentSticker = stickerData[i];
+            Debug.Log(currentSticker.stickerCenter);
+            float distanceToSticker = Vector2.Distance(coords, currentSticker.stickerCenter);
+            minDist = Mathf.Min(minDist, distanceToSticker);
+            if (distanceToSticker < maxDist)
+                return i;
+        }
+        Debug.Log($"Closest sticker: {minDist}");
+        return -1;
     }
 
     // TODO: support other sticker types
@@ -86,7 +94,7 @@ public class StickerPage: BookPage
         return GS.redStickerPlacement == stickerData[stickerIdx];
     }
 
-    void ToggleSticker(int stickerIdx)
+    public void ToggleSticker(int stickerIdx)
     {
         if (StickerIsActive(stickerIdx)) GS.redStickerPlacement = new Sticker();
         else
@@ -138,13 +146,15 @@ public class StickerPage: BookPage
             newPlaceholder.transform.SetParent(StickerPlaceholder.transform.parent, false);
 
             Sticker currentSticker = stickers[i];
-            float stickerCenterX = Math.Abs(newPlaceholder.transform.localPosition.x) * (pageSide == PageSide.Left ? -1.0f : 1.0f);
-
-            newPlaceholder.transform.localPosition = new Vector3(
-                stickerCenterX,
-                currentSticker.stickerCenterY,
-                0
+            Vector2 stickerCenter = new Vector2(
+                Math.Abs(newPlaceholder.transform.localPosition.x) * (pageSide == PageSide.Left ? -1.0f : 1.0f),
+                currentSticker.stickerCenter.y
             );
+
+            currentSticker.stickerCenter = stickerCenter;
+            stickers[i] = currentSticker;
+
+            newPlaceholder.transform.localPosition = stickerCenter;
 
             newPlaceholder.name = $"Sticker placeholder - {i + 1}";
             newPlaceholder.SetActive(true);
@@ -193,7 +203,8 @@ public class StickerPage: BookPage
             }
 
             newSticker.endCharIdx = index - 1;
-            newSticker.stickerCenterY = GetVerticalCenterOfRange(newSticker.startCharIdx, newSticker.endCharIdx) - placeholderHeight / 4f; // TODO: figure out why stickerHeight / 4f is needed?
+            newSticker.stickerCenter = new Vector2();
+            newSticker.stickerCenter.y = GetVerticalCenterOfRange(newSticker.startCharIdx, newSticker.endCharIdx) - placeholderHeight / 4f; // TODO: figure out why stickerHeight / 4f is needed?
 
             stickers.Add(newSticker);
 
@@ -203,11 +214,6 @@ public class StickerPage: BookPage
         }
 
         return stickers;
-    }
-
-    public List<Vector3> GetStickerCoords()
-    {
-        return allPlaceholders.Select(placeholder => placeholder.transform.position).ToList();
     }
 
     public float GetLineForCharacter(int charIdx)
