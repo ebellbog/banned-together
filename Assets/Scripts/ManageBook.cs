@@ -60,7 +60,7 @@ public class ManageBook : MonoBehaviour
     private const int MAX_CHARS_PER_PAGE = 800;
 
 
-    void Start()
+    protected void Start()
     {
         InitPages();
         DivideTextIntoPages();

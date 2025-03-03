@@ -13,6 +13,7 @@ public struct Sticker {
     public string paragraphContent;
     public List<string> filterWords;
     public Vector2 stickerCenter;
+    public Color stickerColor;
 
     public static bool operator ==(Sticker first, Sticker second)
     {
@@ -27,8 +28,8 @@ public struct Sticker {
 public class StickerPage: BookPage
 {
     public Image StickerPlaceholder;
-    public Sprite StickerSprite;
     public Sprite PlaceholderSprite;
+    public GameObject stickerPrefab;
     private float placeholderHeight;
     private List<GameObject> allPlaceholders = new List<GameObject>();
     private List<Sticker> stickerData;
@@ -71,21 +72,31 @@ public class StickerPage: BookPage
         }
     }
 
-    public int GetStickerByCoords(Vector2 coords, float maxDist = 0)
+    int GetStickerByCoords(Vector2 coords, float maxDist = 0)
     {
         if (maxDist == 0) maxDist = placeholderHeight / 2f;
-        float minDist = 2000f;
         for (int i = 0; i < stickerData.Count; i++)
         {
             Sticker currentSticker = stickerData[i];
-            Debug.Log(currentSticker.stickerCenter);
-            float distanceToSticker = Vector2.Distance(coords, currentSticker.stickerCenter);
-            minDist = Mathf.Min(minDist, distanceToSticker);
-            if (distanceToSticker < maxDist)
+
+            float distanceToSticker = Mathf.Abs(currentSticker.stickerCenter.y - coords.y);//Vector2.Distance(coords, currentSticker.stickerCenter);
+            if (distanceToSticker < maxDist && Mathf.Abs(coords.x) > 500f) // TODO: incorporate x coord correctly
                 return i;
         }
-        Debug.Log($"Closest sticker: {minDist}");
         return -1;
+    }
+
+    public bool TryPlacingStickerAtCoords(Vector2 coords, Color stickerColor)
+    {
+        int stickerIdx = GetStickerByCoords(coords);
+        if (stickerIdx < 0) return false;
+
+        Sticker targetSticker = stickerData[stickerIdx];
+        targetSticker.stickerColor = stickerColor;
+        stickerData[stickerIdx] = targetSticker;
+
+        ToggleSticker(stickerIdx);
+        return true;
     }
 
     // TODO: support other sticker types
@@ -108,8 +119,29 @@ public class StickerPage: BookPage
 
     void UpdateSticker(int stickerIdx)
     {
-        Image stickerImage = allPlaceholders[stickerIdx].GetComponent<Image>();
-        stickerImage.sprite = StickerIsActive(stickerIdx) ? StickerSprite : PlaceholderSprite;
+        GameObject stickerPlaceholder = allPlaceholders[stickerIdx];
+        if (StickerIsActive(stickerIdx))
+        {
+            stickerPlaceholder.GetComponentInChildren<Image>().enabled = false;
+            if (stickerPlaceholder.transform.childCount == 0)
+            {
+                GameObject newSticker = Instantiate(stickerPrefab);
+
+                newSticker.transform.Find("Sticker border shadow").gameObject.SetActive(false);
+                newSticker.transform.Find("Sticker border plain").gameObject.SetActive(true);
+                newSticker.transform.Find("Sticker center").GetComponent<Image>().color = stickerData[stickerIdx].stickerColor;
+
+                newSticker.transform.SetParent(stickerPlaceholder.transform, false);
+                newSticker.transform.localScale = new Vector3(1.25f, 1.25f, 1f);
+                newSticker.transform.localPosition = Vector3.zero;
+            }
+        }
+        else
+        {
+            stickerPlaceholder.GetComponentInChildren<Image>().enabled = true;
+            if (stickerPlaceholder.transform.childCount > 0)
+                Destroy(stickerPlaceholder.transform.GetChild(0).gameObject);
+        }
     }
 
     void UpdateTextHighlights()
@@ -122,7 +154,7 @@ public class StickerPage: BookPage
             Sticker s = stickerData[i];
             if (StickerIsActive(i))
             {
-                highlightedText += $"{pageContent.Substring(startIdx, s.startCharIdx - startIdx)}<color=#ff0000>{s.paragraphContent}</color>";
+                highlightedText += $"{pageContent.Substring(startIdx, s.startCharIdx - startIdx)}<color=#{ColorUtility.ToHtmlStringRGB(s.stickerColor * .9f)}>{s.paragraphContent}</color>";
                 startIdx = s.endCharIdx + 1;
             }
         }

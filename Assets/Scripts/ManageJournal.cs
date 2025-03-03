@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
 Journal-related classes:
@@ -21,8 +22,20 @@ public class ManageJournal : ManageBook
     public bool showPageTurnHint;
     public float delayUntilHint = 1.5f;
 
+    [Header("Stickers")]
+    public GameObject stickerParent;
+    public GameObject stickerPrefab;
+    public List<Color> stickerColors;
+
     private float wiggleDelay = 0;
     private Dictionary<int, List<Sticker>> stickersByPage = new Dictionary<int, List<Sticker>>();
+    private Vector3 lastMousePos;
+
+    void Start()
+    {
+        base.Start();
+        SetupStickers();
+    }
 
     void Update()
     {
@@ -53,29 +66,36 @@ public class ManageJournal : ManageBook
         } 
     }
 
-    public void OnMouseDown(Vector3 mousePos)
+    void SetupStickers()
     {
-        StickerPage clickedPage = mousePos.x < 0 ?
-            (StickerPage)GetCurrentLeftPage() :
-            (StickerPage)GetCurrentRightPage();
-        if (clickedPage) {
-            clickedPage.OnMouseDown(mousePos);
+        foreach(Color color in stickerColors)
+        {
+            GameObject newSticker = Instantiate(stickerPrefab);
+            newSticker.GetComponent<DraggableElement>().OnReleaseDrag.AddListener(ReleasedSticker);
+            newSticker.transform.Find("Sticker center").GetComponent<Image>().color = color;
+            newSticker.transform.SetParent(stickerParent.transform, false);
         }
     }
-    public void OnHover(Vector3 mousePos)
+
+    public void ReleasedSticker(GameObject stickerObject)
     {
-        // Debug.Log("Hovering at:"+mousePos);
-        StickerPage clickedPage = mousePos.x < 0 ?
+        Color stickerColor = stickerObject.transform.Find("Sticker center").GetComponent<Image>().color;
+        Debug.Log($"Released sticker of color: {stickerColor}");
+
+        StickerPage stickerPage = lastMousePos.x < 0 ?
             (StickerPage)GetCurrentLeftPage() :
             (StickerPage)GetCurrentRightPage();
-        if (clickedPage) {
-            int hoveredStickerId = clickedPage.GetStickerByCoords(mousePos);
-            Debug.Log(hoveredStickerId);
-            if (hoveredStickerId > -1)
+        if (stickerPage) {
+            if (stickerPage.TryPlacingStickerAtCoords(lastMousePos, stickerColor))
             {
-                Debug.Log("Hovering near sticker!");
+                stickerObject.SetActive(false);
             }
         }
+    }
+
+    public void OnHover(Vector3 mousePos)
+    {
+        lastMousePos = mousePos;
     }
 
     protected override BookPage UpdatePageContent(int pageIdx)
