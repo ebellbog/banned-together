@@ -180,6 +180,10 @@ namespace StarterAssets
                     transform.Rotate(Vector3.up * _rotationVelocity);
                 }
 			}
+			else 
+			{
+				_lookBuffer.Clear();
+			}
 		}
 
 		private void Move()
@@ -194,8 +198,7 @@ namespace StarterAssets
 			{
 				if ( _playerInput.actions["sprint"].IsPressed() && GS.bodyBattery > 0)
 				{
-					if (_input.move.x != 0) targetSpeed = 0;
-					else targetSpeed = SprintSpeed;
+					targetSpeed = SprintSpeed;
 				}
 				else {
 					targetSpeed = MoveSpeed;

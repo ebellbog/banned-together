@@ -33,9 +33,9 @@ public class ManageJournal : ManageBook
 
     void Start()
     {
+        bookViewer.currentPage = GS.currentJournalPage;
         base.Start();
         SetupStickers();
-        bookViewer.currentPage = GS.currentJournalPage;
     }
 
     void Update()
