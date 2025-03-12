@@ -471,7 +471,7 @@ Material:
     - _OutlineTextureStrength: 0
     - _OutlineType: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 10
+    - _Outline_Width: 5
     - _OverlayMode: 1
     - _OverlayMode1: 0
     - _OverlayRotation: 0

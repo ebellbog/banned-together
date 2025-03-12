@@ -15,7 +15,7 @@ Journal-related classes:
 
 public class ShowJournal : MonoBehaviour
 {
-    public Texture2D ReadingCursor;
+    public string JournalSceneName = "Journal Scene";
 
     private StarterAssetsInputs _input;
     private PlayerInput _playerInput;
@@ -55,8 +55,8 @@ public class ShowJournal : MonoBehaviour
         GS.interactionMode = InteractionType.Journal;
         UI.FadeInMatte();
 
-        if (!SceneManager.GetSceneByName("Journal Scene").isLoaded) {
-            SceneManager.LoadScene("Journal Scene", LoadSceneMode.Additive);
+        if (!SceneManager.GetSceneByName(JournalSceneName).isLoaded) {
+            SceneManager.LoadScene(JournalSceneName, LoadSceneMode.Additive);
         }
 
         _playerInput.actions.FindAction("Move").Disable();
@@ -64,7 +64,7 @@ public class ShowJournal : MonoBehaviour
         _input.cursorInputForLook = false;
         _input.look = Vector2.zero;
 
-        UI.UnlockCursor(ReadingCursor);
+        UI.UnlockCursor();
         viewingJournal = true;
 
         JournalManager.Main.MarkAsRead();
@@ -88,7 +88,7 @@ public class ShowJournal : MonoBehaviour
         AudioManager.instance.UnmuffleMusic();
 
         yield return new WaitForSeconds(1); // Allow time for animating out
-        SceneManager.UnloadSceneAsync("Journal Scene");
+        SceneManager.UnloadSceneAsync(JournalSceneName);
 
         if (GS.interactionMode == InteractionType.Paused) yield return null;
 

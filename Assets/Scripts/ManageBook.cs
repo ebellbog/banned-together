@@ -29,6 +29,7 @@ public class ManageBook : MonoBehaviour
     [Header("References")]
     public BookLive bookViewer;
     public GameObject pagePrefab;
+    public GameObject bookCover;
 
     [Header("Text content")]
     public ContentSource contentSource;
@@ -66,7 +67,6 @@ public class ManageBook : MonoBehaviour
         DivideTextIntoPages();
         AddPagesToBook();
 
-        bookViewer.currentPage = GS.currentJournalPage;
         UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count - 1);
         UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count);
 
@@ -80,6 +80,19 @@ public class ManageBook : MonoBehaviour
         }
 
         ResetCursor();
+    }
+
+    protected void Update()
+    {
+        // Hide on exiting journal mode
+        if (GS.interactionMode != InteractionType.None && GS.interactionMode != InteractionType.Journal && isVisible)
+        {
+            bookViewer.gameObject.GetComponent<Animator>().SetTrigger("Hide");
+            if (bookCover != null)
+                bookCover.GetComponent<Animator>().SetTrigger("Hide");
+
+            isVisible = false;
+        }
     }
 
     void InitPages()

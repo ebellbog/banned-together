@@ -182,6 +182,7 @@ namespace StarterAssets
 
             #nullable disable
 
+            // TODO: refactor some of this logic to merge with the code block above, for better clarity
             if (!(hitExaminable || hitSittable || hitDoor || hitSwitch)) // Reset if nothing hit
             {
                 hitExaminable = false;
@@ -194,10 +195,6 @@ namespace StarterAssets
             }
             else if (hitDoor) { // Set cursor for doors
                 CursorImage.sprite = DoorIcon;
-            }
-            else
-            {
-                CursorImage.sprite = HoverIcon;
             }
 
             // Set cursor and hit flag for rotating objects during examination

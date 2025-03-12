@@ -35,17 +35,11 @@ public class ManageJournal : ManageBook
     {
         base.Start();
         SetupStickers();
+        bookViewer.currentPage = GS.currentJournalPage;
     }
 
     void Update()
     {
-        // Hide journal on exiting journal mode
-        if (GS.interactionMode != InteractionType.None && GS.interactionMode != InteractionType.Journal && isVisible)
-        {
-            bookViewer.gameObject.GetComponent<Animator>().SetTrigger("Hide");
-            isVisible = false;
-        }
-
         if (contentSource == ContentSource.GameState &&
             GS.journalContent != null &&
             currentContent != GS.journalContent)
@@ -63,7 +57,9 @@ public class ManageJournal : ManageBook
                 autoFlip.StartWiggling();
                 GS.didTutorializeJournal = true;
             }
-        } 
+        }
+
+        base.Update();
     }
 
     void SetupStickers()

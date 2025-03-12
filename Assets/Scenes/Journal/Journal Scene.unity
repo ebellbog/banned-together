@@ -344,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookViewer: {fileID: 1150316105}
   pagePrefab: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
+  bookCover: {fileID: 0}
   contentSource: 2
   textField: 
   textFile: {fileID: 4900000, guid: 2871713be93dc274ca3c95be451e05d2, type: 3}
@@ -363,7 +364,6 @@ MonoBehaviour:
   stickerPrefab: {fileID: 9203457571525758506, guid: 7cf2cd30d7cc5864598a12b94452164e, type: 3}
   stickerColors:
   - {r: 0.9748427, g: 0.35253727, b: 0.35253727, a: 1}
-  - {r: 0, g: 0.5827818, b: 1, a: 1}
 --- !u!1 &813413606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1432,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1179927699}
   - component: {fileID: 1179927700}
+  - component: {fileID: 1179927702}
+  - component: {fileID: 1179927701}
   m_Layer: 5
   m_Name: Stickers
   m_TagString: Untagged
@@ -1484,6 +1486,39 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &1179927701
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179927698}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1179927702
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179927698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9f7dd381b5390c4e8db41c2571c0fa7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1555930627
 GameObject:
   m_ObjectHideFlags: 0

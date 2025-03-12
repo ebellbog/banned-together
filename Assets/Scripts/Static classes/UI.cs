@@ -39,10 +39,10 @@ public static class UI
         ShowCursor();
     }
 
-    public static void UnlockCursor(Texture2D mouseTexture)
+    public static void UnlockCursor(Texture2D mouseTexture = null)
     {
         HideCursor();
-        if (mouseTexture) {
+        if (mouseTexture != null) {
             UI.SetCursor(mouseTexture);
         }
         Cursor.lockState = CursorLockMode.None;

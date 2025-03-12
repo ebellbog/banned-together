@@ -1,12 +1,12 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+
+using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using UnityEngine.Windows;
+
 using System;
-
-
-
-
+using System.Collections.Generic;
+using System.Linq;
 
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -29,7 +29,6 @@ namespace StarterAssets
 		public float SprintSpeed = 6.0f;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
-		public float SmoothTurnSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
@@ -55,22 +54,22 @@ namespace StarterAssets
 		[Tooltip("What layers the character uses as ground")]
 		public LayerMask GroundLayers;
 
-		[Header("Cinemachine")]
-		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
-		public GameObject CinemachineCameraTarget;
+		[Header("Camera settings")]
+		public GameObject PlayerCamera;
 		[Tooltip("How far in degrees can you move the camera up")]
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 		[Tooltip("How far in degrees can you move the camera left")]
+		public int SmoothingAmount = 5;
 
 		public float MaxSeatRotation = 70f;
 		[NonSerialized]
 		public float SeatAngle;
 
-        // cinemachine
-        private float _cinemachineTargetPitch;
-		private float _yaw;
+        // camera
+        private float _cameraTargetPitch;
+		private Queue<Vector2> _lookBuffer = new Queue<Vector2>();
 
 		// player
 		private float _speed;
@@ -154,16 +153,23 @@ namespace StarterAssets
 			// if there is an input
 			if (_input.look.sqrMagnitude >= _threshold)
 			{
-				//Don't multiply mouse input by Time.deltaTime
+				// take average of recent mouse positions to smooth camera motion
+				if (IsCurrentDeviceMouse)
+				{
+					_lookBuffer.Enqueue(_input.look);
+					if (_lookBuffer.Count > SmoothingAmount) _lookBuffer.Dequeue();
+					_input.look = new Vector2(_lookBuffer.Average(l => l.x), _lookBuffer.Average(l => l.y));
+				}
+
+				// don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
+
+				_cameraTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
-                _yaw += _input.look.x * GetComponent<FirstPersonController>().RotationSpeed * deltaTimeMultiplier;
 
                 // clamp our pitch rotation
-                _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-                CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+                _cameraTargetPitch = ClampAngle(_cameraTargetPitch, BottomClamp, TopClamp);
+                PlayerCamera.transform.localRotation = Quaternion.Euler(_cameraTargetPitch, 0.0f, 0.0f);
 
 				float newRotation =  transform.eulerAngles.y + _rotationVelocity;
 				float absDifference = Math.Abs(newRotation - SeatAngle);
@@ -173,10 +179,6 @@ namespace StarterAssets
 				{
                     transform.Rotate(Vector3.up * _rotationVelocity);
                 }
-			}
-			if (_input.sprint && Mathf.Abs(_input.move.x) > 0)
-			{
-                transform.Rotate(Vector3.up * _input.move.x * 10f * SmoothTurnSpeed * Time.deltaTime);
 			}
 		}
 

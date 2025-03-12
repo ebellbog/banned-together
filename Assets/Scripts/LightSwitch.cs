@@ -14,7 +14,6 @@ public class LightSwitch : MonoBehaviour
     void Awake()
     {
         tag = "Switch";
-
         OnValidate();
     }
 
@@ -28,6 +27,30 @@ public class LightSwitch : MonoBehaviour
         foreach (GameObject decal in associatedDecals)
         {
             decal.SetActive(onByDefault);
+        }
+    }
+
+    public void TurnAllLightsOn()
+    {
+        foreach (Light associatedLight in associatedLights)
+        {
+            associatedLight.enabled = true;
+        }
+        foreach (GameObject decal in associatedDecals)
+        {
+            decal.SetActive(true);
+        }
+    }
+
+    public void TurnAllLightsOff()
+    {
+        foreach (Light associatedLight in associatedLights)
+        {
+            associatedLight.enabled = false;
+        }
+        foreach (GameObject decal in associatedDecals)
+        {
+            decal.SetActive(false);
         }
     }
 
