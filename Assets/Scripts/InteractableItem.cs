@@ -81,6 +81,7 @@ public class InteractableItem : MonoBehaviour
     public bool affectsBodyBattery = false;
     public bool inertialRotation = false;
     public bool useGrabCursor = false;
+    public bool keepAfterExamining = false;
 
     [Header("UI settings")]
     public bool showOutline = false;

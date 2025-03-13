@@ -313,12 +313,24 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].clip
       value: 
       objectReference: {fileID: 8300000, guid: c329cd091a1a4f441816acc57fe67842, type: 3}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].name
       value: Dorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5300adb39bd22724b89c49b65716fa30, type: 3}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[12].name
+      value: StowItem
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].volumeAdjustment
@@ -331,6 +343,10 @@ PrefabInstance:
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.data[6].volumeAdjustment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[12].volumeAdjustment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8644326674742428020, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: m_Name
@@ -448,46 +464,6 @@ Transform:
   - {fileID: 859298743}
   m_Father: {fileID: 8378167937853174092}
   m_LocalEulerAnglesHint: {x: -270, y: 0, z: 141.58}
---- !u!21 &103095478
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &108825664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1434,7 @@ MonoBehaviour:
     focusWords: water, self-care
     addByDefault: 0
   notificationAnimator: {fileID: 996151446}
-  defaultJournalEntry: firstItem
+  defaultJournalEntry: 
 --- !u!1 &173323837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,12 +4080,16 @@ MonoBehaviour:
   affectsBodyBattery: 0
   inertialRotation: 0
   useGrabCursor: 0
+  keepAfterExamining: 1
   showOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   cursorOverride: {fileID: 0}
   gameObjectActions: []
   componentActions: []
-  audioActions: []
+  audioActions:
+  - timing: 3
+    sfxName: StowItem
+    playOnlyOnce: 0
   journalUpdates: []
   gameStateUpdates: []
 --- !u!65 &859298745
@@ -4394,6 +4374,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8374330514089192982, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
   m_PrefabInstance: {fileID: 963769194}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &964966032
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &971331149
 GameObject:
   m_ObjectHideFlags: 0
@@ -9771,6 +9791,7 @@ MonoBehaviour:
   affectsBodyBattery: 0
   inertialRotation: 0
   useGrabCursor: 0
+  keepAfterExamining: 0
   showOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   cursorOverride: {fileID: 0}
@@ -12157,6 +12178,7 @@ MonoBehaviour:
   affectsBodyBattery: 1
   inertialRotation: 1
   useGrabCursor: 1
+  keepAfterExamining: 0
   showOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   cursorOverride: {fileID: 21300000, guid: 29b17cf2406324e448559868454163c0, type: 3}
@@ -13874,6 +13896,7 @@ MonoBehaviour:
   affectsBodyBattery: 0
   inertialRotation: 0
   useGrabCursor: 0
+  keepAfterExamining: 0
   showOutline: 0
   outlineColorOverride: {r: 1, g: 0, b: 0, a: 1}
   cursorOverride: {fileID: 21300000, guid: 6f4c9529466b07d4f858ba6a7eaa172a, type: 3}
@@ -18212,6 +18235,7 @@ MonoBehaviour:
   affectsBodyBattery: 0
   inertialRotation: 0
   useGrabCursor: 0
+  keepAfterExamining: 0
   showOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   cursorOverride: {fileID: 0}

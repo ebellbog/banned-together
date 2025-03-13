@@ -454,30 +454,54 @@ namespace StarterAssets
             UI.FadeOutMatte();
             UI.FadeOutInteractionUI();
 
+            InteractableItem activeInteractable = activeObject.GetComponent<InteractableItem>();
+            if (activeInteractable == null)
+                activeInteractable = activeObject.GetComponentInChildren<InteractableItem>();
+
             lastLook = Vector2.zero;
 
             examineCallback = null;
             examineCallback += () => {
-                SetLayer(activeObject, 0);
+                activeInteractable.ApplyCustomEffects(ActionTiming.afterExamine); // Update after examination
+    
+                if (activeInteractable.journalUpdates.Count == 0)
+                {
+                    // Add default entry
+                    JournalManager.Main.AddToJournal("");
+                }
+    
+                if (activeInteractable.keepAfterExamining)
+                {
+                    Destroy(activeObject);
+                } else
+                {
+                    SetLayer(activeObject, 0);
+                    activeObject.transform.SetParent(activeParent.transform);
+                }
 
-                activeObject.transform.SetParent(activeParent.transform);
                 ExamineTarget.transform.rotation = targetStartRotation;
                 
                 if (GS.interactionMode != InteractionType.Journal && GS.interactionMode != InteractionType.Paused)
                     Player.UnlockPlayer();
 
-                currentInteractable.ApplyCustomEffects(ActionTiming.afterExamine); // Update after examination
-                if (currentInteractable.journalUpdates.Count == 0)
-                {
-                    // Add default entry
-                    JournalManager.Main.AddToJournal("");
-                }
-
                 activeObject = null;
+                activeParent = null;
                 examineCallback = null;
             };
 
-            StartCoroutine(MoveForDuration(activeObject, startPosition, startRotation, startScale, putDownDuration));
+            if (activeInteractable != null && activeInteractable.keepAfterExamining)
+            {
+                StartCoroutine(MoveForDuration(
+                    activeObject,
+                    activeObject.transform.position + Vector3.down * .75f,
+                    activeObject.transform.rotation,
+                    activeObject.transform.localScale * 2f,
+                    putDownDuration));
+            }
+            else
+            {
+                StartCoroutine(MoveForDuration(activeObject, startPosition, startRotation, startScale, putDownDuration));
+            }
 
             UI.LockCursor();
             GS.interactionMode = YarnDispatcher.YarnSpinnerIsActive() ? InteractionType.Monologue : InteractionType.Default;
