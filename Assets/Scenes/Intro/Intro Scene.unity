@@ -44051,17 +44051,6 @@ Transform:
   - {fileID: 164766344}
   m_Father: {fileID: 1286824462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &716546361 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
-  m_PrefabInstance: {fileID: 1611622346}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &718307172
 GameObject:
   m_ObjectHideFlags: 0
@@ -45907,7 +45896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.size
@@ -45938,6 +45927,14 @@ PrefabInstance:
       value: Dub
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: musicClips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c329cd091a1a4f441816acc57fe67842, type: 3}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: musicClips.Array.data[5].name
+      value: Dorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 957a5e9845168784fa403c62909800d1, type: 3}
@@ -45966,6 +45963,14 @@ PrefabInstance:
       value: LockedDoor
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 24d630a22b439304683c8dd428f5a9db, type: 3}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: soundEffectClips.Array.data[4].name
+      value: LockedDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[1].volumeAdjustment
       value: 0.6
       objectReference: {fileID: 0}
@@ -45979,6 +45984,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[4].volumeAdjustment
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
+      propertyPath: musicClips.Array.data[5].volumeAdjustment
       value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
@@ -65975,17 +65984,6 @@ Transform:
   - {fileID: 1761830961}
   m_Father: {fileID: 1286824462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1070819352 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8881547451600958215, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
-  m_PrefabInstance: {fileID: 1611622346}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1071914071
 GameObject:
   m_ObjectHideFlags: 0
@@ -96706,11 +96704,6 @@ Transform:
   - {fileID: 891584870}
   m_Father: {fileID: 373433045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1534995512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3315879058424550733, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
-  m_PrefabInstance: {fileID: 8634998132991076041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1536879843
 GameObject:
   m_ObjectHideFlags: 0
@@ -132714,18 +132707,6 @@ PrefabInstance:
       propertyPath: skipText
       value: 
       objectReference: {fileID: 1173938122}
-    - target: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
-      propertyPath: transitionTime
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
-      propertyPath: ambientOcclusion
-      value: 
-      objectReference: {fileID: -6489973438718231856, guid: 31bc9ba171fcb6a41b7d3f879640ca1b, type: 2}
-    - target: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
-      propertyPath: defaultMusicForLevel.Array.data[0]
-      value: Dub
-      objectReference: {fileID: 0}
     - target: {fileID: 2984237236813588094, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1037.542
@@ -132773,46 +132754,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3315879058424550733, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8634998132991076044}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
 --- !u!114 &8634998132991076042 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
   m_PrefabInstance: {fileID: 8634998132991076041}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534995512}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef09516192aa50a48a5351a17609510d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8634998132991076044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534995512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f72b850ff851d48b0b5d0300da8b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDay: 1
-  hideBooks: 0
-  internalMonologueSystem: {fileID: 1070819352}
-  tutorialDialogSystem: {fileID: 0}
-  monologueTextMesh: {fileID: 716546361}
-  managerComponent: {fileID: 0}
-  cursorCanvas: {fileID: 0}
-  player: {fileID: 0}
-  starterAssetsInputs: {fileID: 0}
-  playerInput: {fileID: 0}
-  playerStartPosition: {fileID: 0}
-  startPlayerAtPosition: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

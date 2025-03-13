@@ -98,7 +98,7 @@ public class LevelLoader : MonoBehaviour
     {
         GS.ResetAll();
         LoadNextLevel();
-        StartCoroutine(_StartGame());
+        // StartCoroutine(_StartGame());
     }
 
     public void StartNextDay()

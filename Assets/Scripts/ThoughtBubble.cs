@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -57,6 +58,53 @@ public class ThoughtBubble : MonoBehaviour
                 animationParent.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Color gizmoColor, shadowColor;
+        string iconLabel;
+        if (thoughtType == ThoughtType.Intrusive)
+        {
+            gizmoColor = Color.white;
+            shadowColor = new Color(0, 0, 0, .5f);
+            iconLabel = "Instrusive Thought";
+        } else
+        {
+            gizmoColor = new Color(1f, .55f, .55f);
+            shadowColor = Color.black;
+            iconLabel = "Focused Thought";
+            if (focusOnWords != null && focusOnWords.Length > 0)
+                iconLabel += $"\n({focusOnWords})";
+        }
+
+        Vector3 iconPosition = transform.position - Vector3.down * .3f;
+        Gizmos.DrawIcon(iconPosition, "ThoughtBubbleIcon.png", true, gizmoColor);
+
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = gizmoColor;
+        style.fontSize = 14;
+        style.alignment = TextAnchor.MiddleCenter;
+
+        Vector3 labelPosition = iconPosition + Vector3.down * .25f;
+
+        // Draw shadow
+        if (SceneView.lastActiveSceneView != null)
+        {
+            Camera sceneCamera = SceneView.lastActiveSceneView.camera;
+            if (sceneCamera == null) return;
+
+            float distance = Vector3.Distance(sceneCamera.transform.position, transform.position);
+
+            // Adjust shadow offset based on distance (scales down when close)
+            float shadowOffset = .002f * distance;
+
+            GUIStyle shadowStyle = new GUIStyle(style);
+            shadowStyle.normal.textColor = shadowColor;
+            Handles.Label(labelPosition + new Vector3(shadowOffset, shadowOffset, 0), iconLabel, shadowStyle);
+        }
+
+        Handles.Label(labelPosition, iconLabel, style);
     }
 
     public void InstantiateBubble(GameObject bubblePrefab)

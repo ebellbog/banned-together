@@ -46,10 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1425125740217681193}
-  transitionTime: 5
+  transitionTime: 1
   defaultMusicForLevel:
-  - Journal
+  - Dub
+  - Dorm
   - Library
+  skipText: {fileID: 0}
+  ambientOcclusion: {fileID: -6489973438718231856, guid: 31bc9ba171fcb6a41b7d3f879640ca1b, type: 2}
 --- !u!1 &4939407759049303126
 GameObject:
   m_ObjectHideFlags: 0

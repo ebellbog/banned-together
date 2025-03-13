@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro/Intro Scene.unity
     guid: 694bc2eae66aee24787157c6dfbbb2d6
   - enabled: 1
-    path: Assets/Scenes/Demos/Draknek demo/Draknek demo.unity
-    guid: 17c13b1a9a8256245bdcb0c2d2ae63a6
+    path: Assets/Scenes/Bedroom/Bedroom.unity
+    guid: 36b5dc133cfa54a4d963c120e2e81644
+  - enabled: 1
+    path: Assets/Scenes/Demos/Better Art/Draknek Better Art Demo.unity
+    guid: 3f00c9c61bacfc9408ccfb171a4800e0
   - enabled: 1
     path: Assets/Scenes/Journal/Journal Scene.unity
     guid: 214619670dbbe7642ba98fba1b0c4089

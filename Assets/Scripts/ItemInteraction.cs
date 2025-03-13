@@ -103,9 +103,9 @@ namespace StarterAssets
         {
             Interact();
 
-            if (inertialRotation && (Mathf.Abs(lastLook.x) + Mathf.Abs(lastLook.y) > .15f) && !isDragging)
+            if (inertialRotation && (Mathf.Abs(lastLook.x) + Mathf.Abs(lastLook.y) > .05f) && !isDragging)
             {
-                lastLook *= Mathf.Pow(.65f, Time.deltaTime);
+                lastLook *= Mathf.Pow(.4f, Time.deltaTime);
                 ExamineTarget.Rotate(Vector3.down * lastLook.x * rotationSpeed, rotationSpace);
             }
         }
