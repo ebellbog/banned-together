@@ -347,7 +347,7 @@ MonoBehaviour:
   bookCover: {fileID: 0}
   contentSource: 2
   textField: 
-  textFile: {fileID: 4900000, guid: 2871713be93dc274ca3c95be451e05d2, type: 3}
+  textFile: {fileID: 4900000, guid: e5379fc6b7343b540b220b4300ab28be, type: 3}
   customPagesAtStart:
   - {fileID: 2800000, guid: 81c64078c21bda5498334308408bced0, type: 3}
   - {fileID: 8600000, guid: 0ef10c2306c1f0f498eb150b4b2d8ab1, type: 2}
@@ -1250,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnMouseDownEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179927698}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 

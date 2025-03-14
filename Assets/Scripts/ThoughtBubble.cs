@@ -137,6 +137,7 @@ public class ThoughtBubble : MonoBehaviour
                 bgImage.material.SetColor("_SolidOutline", new Color(.4f, 0, 0));
                 break;
             case ThoughtType.Dark:
+                bgImage.color = Color.black;
                 textMesh.color = Color.white;
                 break;
             default:

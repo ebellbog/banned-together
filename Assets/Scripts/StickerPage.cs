@@ -63,16 +63,6 @@ public class StickerPage: BookPage
         }
     }
 
-    public void OnMouseDown(Vector3 mousePos)
-    {
-
-        int clickedStickerIdx = GetStickerByCoords(mousePos);
-        if (clickedStickerIdx > -1)
-        {
-            ToggleSticker(clickedStickerIdx);
-        }
-    }
-
     int GetStickerByCoords(Vector2 coords, float maxDist = 0)
     {
         if (maxDist == 0) maxDist = placeholderHeight / 2f;
@@ -98,6 +88,16 @@ public class StickerPage: BookPage
 
         ToggleSticker(stickerIdx);
         return true;
+    }
+    public bool TryRemovingStickerAtCoords(Vector3 mousePos)
+    {
+        int clickedStickerIdx = GetStickerByCoords(mousePos);
+        if (clickedStickerIdx > -1 && StickerIsActive(clickedStickerIdx))
+        {
+            ToggleSticker(clickedStickerIdx);
+            return true;
+        }
+        return false;
     }
 
     // TODO: support other sticker types

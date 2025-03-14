@@ -220,7 +220,7 @@ public class ManageBook : MonoBehaviour
     }
     public void ResetCursor()
     {
-        if (defaultCursor != null && !isDragging)
+        if (defaultCursor != null && !isDragging && !Input.GetMouseButton(0))
             Cursor.SetCursor(defaultCursor, GetCursorCenter(defaultCursor), CursorMode.Auto);
     }
     public void OnMouseUp()

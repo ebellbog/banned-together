@@ -19,12 +19,6 @@ public class DraggableElement : MonoBehaviour
     private Vector3 mouseStartPosition;
     private Vector3 elementStartPosition;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (isDragging)
@@ -32,14 +26,22 @@ public class DraggableElement : MonoBehaviour
             Vector3 currentPosition = Input.mousePosition;
             transform.localPosition += currentPosition - mouseStartPosition;
             mouseStartPosition = currentPosition;
+
+            if (!Input.GetMouseButton(0))
+                StopDragging();
         }
     }
 
-    public void StartDragging()
+    public void StartDragging(bool fromMousePosition = false)
     {
         isDragging = true;
+
         mouseStartPosition = Input.mousePosition;
-        elementStartPosition = transform.localPosition;
+        if (fromMousePosition)
+            transform.position = mouseStartPosition;
+
+        if (elementStartPosition == null)
+            elementStartPosition = transform.localPosition;
 
         UI.SetCursor(DraggingCursor);
     }
@@ -47,15 +49,15 @@ public class DraggableElement : MonoBehaviour
     {
         isDragging = false;
 
-        if (snapBackToStart)
-        {
-            transform.localPosition = elementStartPosition;
-        }
-
         if (OnReleaseDrag != null)
             OnReleaseDrag.Invoke(gameObject);
 
         ResetCursor();
+    }
+
+    public void SnapToStart()
+    {
+        transform.localPosition = elementStartPosition;
     }
 
     public void OnHover()
@@ -67,6 +69,8 @@ public class DraggableElement : MonoBehaviour
     public void ResetCursor()
     {
         if (!isDragging)
+        {
             UI.SetCursor(DefaultCursor);
+        }
     }
 }

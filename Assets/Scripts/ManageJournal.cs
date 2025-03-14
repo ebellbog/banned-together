@@ -30,6 +30,7 @@ public class ManageJournal : ManageBook
     private float wiggleDelay = 0;
     private Dictionary<int, List<Sticker>> stickersByPage = new Dictionary<int, List<Sticker>>();
     private Vector3 lastMousePos;
+    private GameObject lastPlacedSticker; // TODO: support multiple stickers
 
     void Start()
     {
@@ -59,7 +60,12 @@ public class ManageJournal : ManageBook
             }
         }
 
-        stickerParent.SetActive(GS.redStickerPlacement.associatedJournalEntry == null);
+
+        foreach(DraggableElement draggable in stickerParent.GetComponentsInChildren<DraggableElement>())
+        {
+            // TODO: support multiple stickers by checking for corresponding sticker placement
+            draggable.gameObject.SetActive(GS.redStickerPlacement.associatedJournalEntry == null);
+        }
 
         base.Update();
     }
@@ -69,25 +75,47 @@ public class ManageJournal : ManageBook
         foreach(Color color in stickerColors)
         {
             GameObject newSticker = Instantiate(stickerPrefab);
-            newSticker.GetComponent<DraggableElement>().OnReleaseDrag.AddListener(ReleasedSticker);
+            newSticker.GetComponent<DraggableElement>().OnReleaseDrag.AddListener(ReleaseSticker);
             newSticker.transform.Find("Sticker center").GetComponent<Image>().color = color;
             newSticker.transform.SetParent(stickerParent.transform, false);
+            newSticker.transform.localPosition = Vector3.zero; // TODO: use layout group in the future
         }
     }
 
-    public void ReleasedSticker(GameObject stickerObject)
+    public void ReleaseSticker(GameObject stickerObject)
     {
         Color stickerColor = stickerObject.transform.Find("Sticker center").GetComponent<Image>().color;
-        Debug.Log($"Released sticker of color: {stickerColor}");
 
         StickerPage stickerPage = lastMousePos.x < 0 ?
             (StickerPage)GetCurrentLeftPage() :
             (StickerPage)GetCurrentRightPage();
-        if (stickerPage) {
-            if (stickerPage.TryPlacingStickerAtCoords(lastMousePos, stickerColor))
-            {
-                stickerObject.SetActive(false);
-            }
+        if (stickerPage && stickerPage.TryPlacingStickerAtCoords(lastMousePos, stickerColor))
+        {
+            stickerObject.SetActive(false);
+            lastPlacedSticker = stickerObject;
+        }
+        else
+        {
+            stickerObject.GetComponent<DraggableElement>().SnapToStart();
+        }
+        bookViewer.interactable = true;
+    }
+
+    public void OnMouseDown(Vector3 mousePos)
+    {
+        StickerPage stickerPage = mousePos.x < 0 ?
+            (StickerPage)GetCurrentLeftPage() :
+            (StickerPage)GetCurrentRightPage();
+        if (stickerPage && stickerPage.TryRemovingStickerAtCoords(mousePos))
+        {
+            bookViewer.interactable = false;
+
+            // TODO: support multiple stickers by getting the corresponding sticker type
+            if (lastPlacedSticker == null)
+                lastPlacedSticker = stickerParent.transform.GetChild(0).gameObject;
+
+            lastPlacedSticker.SetActive(true);
+            lastPlacedSticker.GetComponent<DraggableElement>().StartDragging(true);
         }
     }
 
