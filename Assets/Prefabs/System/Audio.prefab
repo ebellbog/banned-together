@@ -645,8 +645,20 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 9629f102b2ab49045abe990ac4857be9, type: 3}
     name: LockerOpen
     volumeAdjustment: 4
-    startTime: 0
+    startTime: 0.2
   - clip: {fileID: 8300000, guid: 3c38e8070ee4c9043a65a3b01898115f, type: 3}
     name: LockerClose
+    volumeAdjustment: 4
+    startTime: 0
+  - clip: {fileID: 8300000, guid: f740923f593385940bada12d3f3a23cb, type: 3}
+    name: FlamingoOpen
+    volumeAdjustment: 4
+    startTime: 0
+  - clip: {fileID: 8300000, guid: 8afb1c45334107b4a90467442e62a62d, type: 3}
+    name: BetterButtonPress
+    volumeAdjustment: 4
+    startTime: 0
+  - clip: {fileID: 8300000, guid: 8afb1c45334107b4a90467442e62a62d, type: 3}
+    name: BetterButtonPress
     volumeAdjustment: 4
     startTime: 0

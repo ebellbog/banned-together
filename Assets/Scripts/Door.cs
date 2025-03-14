@@ -14,12 +14,16 @@ public class Door : MonoBehaviour
     public bool useSpatialAudio = true;
     public List<Door> connectedDoors;
     public bool closeable;
+    public bool openableByButton;
 
     [HideInInspector] public bool isOpen;
 
     void Start()
     {
-        gameObject.tag = "Door";
+        if (!openableByButton)
+        {
+            gameObject.tag = "Door";
+        }
     }
 
     public void UnlockAndOpen()

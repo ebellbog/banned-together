@@ -130,9 +130,9 @@ Material:
     - _Cutoff: 0.5
     - _Darken: 0
     - _DetailNormalMapScale: 1
-    - _DiffusePosterizeOffset: 0
-    - _DiffusePosterizePower: 1
-    - _DiffusePosterizeSteps: 3
+    - _DiffusePosterizeOffset: -0.5
+    - _DiffusePosterizePower: 0.72
+    - _DiffusePosterizeSteps: 10
     - _DiffuseWarpAffectHalftone: 0
     - _DiffuseWarpBrightnessOffset: 1.12
     - _DstBlend: 0
