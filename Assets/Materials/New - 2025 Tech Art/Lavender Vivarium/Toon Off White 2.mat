@@ -140,7 +140,7 @@ Material:
     - _Darken: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DiffusePosterizeOffset: 0
+    - _DiffusePosterizeOffset: 0.06
     - _DiffusePosterizePower: 1.85
     - _DiffusePosterizeSteps: 3
     - _DiffuseWarpAffectHalftone: 0
