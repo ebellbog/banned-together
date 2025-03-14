@@ -24,6 +24,8 @@ namespace StarterAssets
         [Header("Examination")]
         public Camera ExamineCamera;
         public Transform ExamineTarget;
+        public GameObject TakeItemButton;
+        public string TakeItemSFX;
         public float rotationSpeed = 7.5f;
         public float pickUpDuration = 0.6f;
         public float putDownDuration = .35f;
@@ -413,6 +415,8 @@ namespace StarterAssets
             useGrabCursor = currentInteractable.useGrabCursor;
             affectsBodyBattery = currentInteractable.affectsBodyBattery;
 
+            TakeItemButton.SetActive(currentInteractable.keepAfterExamining);
+
             Player.LockPlayer();
             UI.UnlockCursor(GetRotationIcon());
 
@@ -443,7 +447,13 @@ namespace StarterAssets
             ));
         }
 
-        private void ExitExamination()
+        public void TakeItem()
+        {
+            ExitExamination(true);
+            AudioManager.instance.PlaySFX(TakeItemSFX);
+        }
+
+        private void ExitExamination(bool doTakeItem = false)
         {
             if (GS.interactionMode != InteractionType.Examine) return;
             StopAllCoroutines();
@@ -462,15 +472,15 @@ namespace StarterAssets
 
             examineCallback = null;
             examineCallback += () => {
-                activeInteractable.ApplyCustomEffects(ActionTiming.afterExamine); // Update after examination
+                activeInteractable.ApplyCustomEffects(doTakeItem ? ActionTiming.afterTaking : ActionTiming.afterExamine); // Update after examination
     
                 if (activeInteractable.journalUpdates.Count == 0)
                 {
                     // Add default entry
                     JournalManager.Main.AddToJournal("");
                 }
-    
-                if (activeInteractable.keepAfterExamining)
+
+                if (doTakeItem)
                 {
                     Destroy(activeObject);
                 } else
@@ -489,14 +499,14 @@ namespace StarterAssets
                 examineCallback = null;
             };
 
-            if (activeInteractable != null && activeInteractable.keepAfterExamining)
+            if (doTakeItem)
             {
                 StartCoroutine(MoveForDuration(
                     activeObject,
-                    activeObject.transform.position + Vector3.down * .75f,
+                    activeObject.transform.position + Vector3.down * 1.5f,
                     activeObject.transform.rotation,
-                    activeObject.transform.localScale * 2f,
-                    putDownDuration));
+                    activeObject.transform.localScale * 3f,
+                    putDownDuration * 1.5f));
             }
             else
             {

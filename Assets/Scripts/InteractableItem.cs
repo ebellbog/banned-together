@@ -6,7 +6,8 @@ public enum ActionTiming {
     onHover,
     onHoverExit,
     onClick,
-    afterExamine
+    afterExamine,
+    afterTaking,
 }
 
 public enum EnabledState {

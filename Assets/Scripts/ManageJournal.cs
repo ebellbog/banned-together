@@ -59,6 +59,8 @@ public class ManageJournal : ManageBook
             }
         }
 
+        stickerParent.SetActive(GS.redStickerPlacement.associatedJournalEntry == null);
+
         base.Update();
     }
 

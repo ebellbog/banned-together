@@ -11,7 +11,7 @@ public struct Sticker {
     public int startCharIdx;
     public int endCharIdx;
     public string paragraphContent;
-    public List<string> filterWords;
+    public JournalEntry associatedJournalEntry;
     public Vector2 stickerCenter;
     public Color stickerColor;
 
@@ -54,6 +54,7 @@ public class StickerPage: BookPage
 
     void Update()
     {
+        // Clear old stickers after a new one has been placed
         if (prevRedStickerPlacement != GS.redStickerPlacement && stickerData != null)
         {
             for (int i = 0; i < stickerData.Count; i++) UpdateSticker(i);
@@ -111,7 +112,6 @@ public class StickerPage: BookPage
         else
         {
             GS.redStickerPlacement = stickerData[stickerIdx];
-            // Debug.Log("Current filter words: "+String.Join("-", GS.redStickerPlacement.filterWords.ToArray()));
         }
         UpdateSticker(stickerIdx);
         UpdateTextHighlights();
@@ -129,7 +129,9 @@ public class StickerPage: BookPage
 
                 newSticker.transform.Find("Sticker border shadow").gameObject.SetActive(false);
                 newSticker.transform.Find("Sticker border plain").gameObject.SetActive(true);
-                newSticker.transform.Find("Sticker center").GetComponent<Image>().color = stickerData[stickerIdx].stickerColor;
+
+                Color stickerColor = stickerData[stickerIdx].stickerColor;
+                newSticker.transform.Find("Sticker center").GetComponent<Image>().color = stickerColor;
 
                 newSticker.transform.SetParent(stickerPlaceholder.transform, false);
                 newSticker.transform.localScale = new Vector3(1.25f, 1.25f, 1f);
@@ -223,15 +225,19 @@ public class StickerPage: BookPage
                 index++;
             }
 
+            // Recover color data
+            if (GS.redStickerPlacement == newSticker)
+                newSticker.stickerColor = GS.redStickerPlacement.stickerColor;
+
             // Skip date headers
             DateTime dt;
             if (DateTime.TryParse(newSticker.paragraphContent, out dt))
                 continue;
 
-            List<string> filterWords = new List<string>();
-            if (GS.filterWordsByEntry != null && GS.filterWordsByEntry.TryGetValue(newSticker.paragraphContent.Trim(), out filterWords))
+            JournalEntry journalEntry;
+            if (GS.journalEntryByContent != null && GS.journalEntryByContent.TryGetValue(newSticker.paragraphContent.Trim(), out journalEntry))
             {
-                newSticker.filterWords = filterWords;
+                newSticker.associatedJournalEntry = journalEntry;
             }
 
             newSticker.endCharIdx = index - 1;

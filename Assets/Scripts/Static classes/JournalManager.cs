@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 /*
@@ -17,8 +18,11 @@ public class JournalEntry
     public string key;
     [Multiline(3)]
     public string content;
+    public string focusSummary;
     [Tooltip("Separate terms by commas or spaces")]
     public string focusWords;
+    [NonSerialized]
+    public List<string> focusList;
     public bool addByDefault = false;
 
     JournalEntry(string key, string content, string focusWords)
@@ -46,10 +50,13 @@ public class JournalManager : MonoBehaviour
 {
     public List<JournalEntry> journalEntries = new List<JournalEntry>();
     public Animator notificationAnimator;
+    public Animator activeFocusAnimator;
+    public TextMeshProUGUI activeFocusText;
     public string defaultJournalEntry = "firstItem";
 
     private bool unreadNotifications = false;
     private bool isShowingNotification = false;
+    private bool isShowingStickerSummary = false;
 
     public static JournalManager Main {get; private set;}
 
@@ -60,18 +67,19 @@ public class JournalManager : MonoBehaviour
 
     void OnValidate()
     {
-        if (GS.journalDict == null) {
-            GS.journalDict = new Dictionary<string, JournalEntry>();
-            GS.filterWordsByEntry = new Dictionary<string, List<string>>();
+        if (GS.journalEntryByKey == null) {
+            GS.journalEntryByKey = new Dictionary<string, JournalEntry>();
+            GS.journalEntryByContent = new Dictionary<string, JournalEntry>();
         }
         foreach(JournalEntry data in journalEntries)
         {
-            GS.journalDict.TryAdd(data.key, data);
+            GS.journalEntryByKey.TryAdd(data.key, data);
 
             if (data.focusWords?.Length > 0)
             {
                 string[] focusWords = data.focusWords?.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries);
-                GS.filterWordsByEntry.TryAdd(data.content.Trim(), new List<string>(focusWords));
+                data.focusList = new List<string>(focusWords);
+                GS.journalEntryByContent.TryAdd(data.content.Trim(), data);
             }
 
             if (data.addByDefault) AddToJournal(data.key, false);
@@ -81,7 +89,7 @@ public class JournalManager : MonoBehaviour
 
     void Update()
     {
-        if (GS.journalDict == null)
+        if (GS.journalEntryByKey == null)
         {
             OnValidate();
         }
@@ -95,6 +103,21 @@ public class JournalManager : MonoBehaviour
             notificationAnimator.SetTrigger("Hide");
             isShowingNotification = false;
         }
+
+        if (GS.redStickerPlacement.associatedJournalEntry != null)
+        {
+            if (!isShowingStickerSummary && GS.interactionMode == InteractionType.Default)
+            {
+                activeFocusAnimator.SetTrigger("Show");
+                isShowingStickerSummary = true;
+            }
+            activeFocusText.text = $"\"{GS.redStickerPlacement.associatedJournalEntry.focusSummary}\"";
+        }
+        if (isShowingStickerSummary && (GS.redStickerPlacement.associatedJournalEntry == null || GS.interactionMode != InteractionType.Default))
+        {
+            activeFocusAnimator.SetTrigger("Hide");
+            isShowingStickerSummary = false;
+        }
     }
 
     public void AddToJournal(string key, bool markUnread = true)
@@ -102,7 +125,7 @@ public class JournalManager : MonoBehaviour
         if (key == null || key.Length == 0) key = defaultJournalEntry;
 
         JournalEntry data;
-        if (GS.journalDict.TryGetValue(key, out data))
+        if (GS.journalEntryByKey.TryGetValue(key, out data))
         {
             if (data == null)
             {
@@ -119,7 +142,7 @@ public class JournalManager : MonoBehaviour
                 .Replace("\r\n", "\n").Replace("\r", "\n");
 
             data.alreadyAdded = true;
-            if (markUnread) unreadNotifications = true;
+            if (markUnread && GS.journalEnabled > 0) unreadNotifications = true;
         }
     }
 

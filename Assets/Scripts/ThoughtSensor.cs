@@ -39,7 +39,7 @@ public class ThoughtSensor : MonoBehaviour
             // Filter for focus thoughts
             if ((
                     GS.interactionMode == InteractionType.Focus ||
-                    GS.redStickerPlacement.filterWords != null
+                    GS.redStickerPlacement.associatedJournalEntry != null
                 ) &&
                 (
                     thought.thoughtType != ThoughtType.Focus ||
@@ -52,7 +52,7 @@ public class ThoughtSensor : MonoBehaviour
 
             // Filter for intrusive thoughts
             if (GS.interactionMode != InteractionType.Focus &&
-                GS.redStickerPlacement.filterWords == null &&
+                GS.redStickerPlacement.associatedJournalEntry == null &&
                 GS.bodyBattery > 0 &&
                 (
                     thought.thoughtType == ThoughtType.Focus ||

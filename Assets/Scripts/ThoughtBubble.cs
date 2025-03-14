@@ -157,14 +157,14 @@ public class ThoughtBubble : MonoBehaviour
 
     public bool MatchesCurrentFocus()
     {
-        if (!(GS.redStickerPlacement.filterWords?.Count > 0)) return false;
+        if (GS.redStickerPlacement.associatedJournalEntry == null) return false;
         if (focusList == null)
         {
             focusList = new List<string>();
             if (focusOnWords?.Length > 0)
                 focusList.AddRange(focusOnWords.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries));
         }
-        return GS.redStickerPlacement.filterWords.Intersect(focusList).Count() > 0;
+        return GS.redStickerPlacement.associatedJournalEntry.focusList.Intersect(focusList).Count() > 0;
     }
 
     public void FadeIn() {

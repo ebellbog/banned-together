@@ -219,7 +219,7 @@ public class FocusManager : MonoBehaviour
         // TODO: improve temp code for new filter system
         if (
             (GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Monologue) &&
-            GS.redStickerPlacement.filterWords?.Count > 0) {
+            GS.redStickerPlacement.associatedJournalEntry != null) {
             postprocessVolume.weight = Mathf.Min(postprocessVolume.weight + Time.deltaTime * focusSpeed, 1f);
         }
         else {

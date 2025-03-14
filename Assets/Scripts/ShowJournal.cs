@@ -34,7 +34,7 @@ public class ShowJournal : MonoBehaviour
         {
             if (viewingJournal) {
                 CloseJournal();
-            } else if (GS.interactionMode == InteractionType.Default && isReady) {
+            } else if (GS.journalEnabled > 0 && GS.interactionMode == InteractionType.Default && isReady) {
                 OpenJournal();
             }
             _input.journal = false;

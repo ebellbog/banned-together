@@ -20,6 +20,7 @@ public static class GS
     public static bool didTutorializeJournal = false;
     public static string journalContent = "";
     public static int currentJournalPage;
+    public static int journalEnabled; // using int instead of bool for compatibility with InteractableItem
     public static Sticker redStickerPlacement;
     public static Sticker blueStickerPlacement;
 
@@ -40,8 +41,8 @@ public static class GS
     public static int lostBooksSeen;
 
     public static List<StateTrigger> yarnStateTriggers;
-    public static Dictionary<string, JournalEntry> journalDict;
-    public static Dictionary<string, List<string>> filterWordsByEntry;
+    public static Dictionary<string, JournalEntry> journalEntryByKey;
+    public static Dictionary<string, JournalEntry> journalEntryByContent;
 
     public static int currentDay;
 
@@ -85,9 +86,10 @@ public static class GS
 
         currentJournalPage = 0;
         didTutorializeJournal = false;
-        journalDict = null;
-        filterWordsByEntry = null;
+        journalEntryByKey = null;
+        journalEntryByContent = null;
         journalContent = "10/22/23";
+        journalEnabled = 0;
 
         redStickerPlacement = new Sticker();
         blueStickerPlacement = new Sticker();
