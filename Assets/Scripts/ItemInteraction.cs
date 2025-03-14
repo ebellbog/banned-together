@@ -503,10 +503,10 @@ namespace StarterAssets
             {
                 StartCoroutine(MoveForDuration(
                     activeObject,
-                    activeObject.transform.position + Vector3.down * 1.5f,
+                    activeObject.transform.position + Vector3.down * 2f,
                     activeObject.transform.rotation,
                     activeObject.transform.localScale * 3f,
-                    putDownDuration * 1.5f));
+                    putDownDuration * 2f));
             }
             else
             {
