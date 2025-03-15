@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -70,7 +72,15 @@ public class InteractableItem : MonoBehaviour
     public GameObject interactionParent;
 
     [Header("Focus settings")]
+    [Tooltip("Separate terms by commas or spaces")]
+    public string focusKeywords;
+    private List<string> focusList;
+    [NonSerialized]
     public bool isFocusable = false;
+    public bool highlightOnFocus = false;
+    public bool focusAffectsExamine = false;
+    public bool focusAffectsHover = false;
+    public bool focusAffectsCustomEffects = false;
 
     [Header("Examination settings")]
     public bool isExaminable = false;
@@ -102,9 +112,23 @@ public class InteractableItem : MonoBehaviour
         // if (isFocusable) gameObject.layer = LayerMask.NameToLayer("No post");
     }
 
+    public bool MatchesCurrentFocus()
+    {
+        if (GS.redStickerPlacement.associatedJournalEntry == null) return false;
+        if (focusList == null)
+        {
+            focusList = new List<string>();
+            if (focusKeywords?.Length > 0)
+                focusList.AddRange(focusKeywords.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries));
+        }
+        return GS.redStickerPlacement.associatedJournalEntry.focusList.Intersect(focusList).Count() > 0;
+    }
+
     // TODO: maybe DRY up some of this code?
     public void ApplyCustomEffects(ActionTiming currentTiming)
     {
+        if (focusAffectsCustomEffects && !MatchesCurrentFocus()) return;
+
         foreach(AudioAction audioAction in audioActions)
         {
             if (currentTiming != audioAction.timing) continue;

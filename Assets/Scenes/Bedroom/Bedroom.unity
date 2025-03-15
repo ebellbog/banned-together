@@ -1188,6 +1188,7 @@ Transform:
   - {fileID: 1986167715}
   - {fileID: 659505736}
   - {fileID: 1681820213}
+  - {fileID: 151302486}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &133581237
@@ -1207,6 +1208,7 @@ MonoBehaviour:
   particleEffects: {fileID: 1014784579}
   postprocessVolume: {fileID: 1681820218}
   outlineManager: {fileID: -7843632314151360199, guid: 31bc9ba171fcb6a41b7d3f879640ca1b, type: 2}
+  interactionManager: {fileID: 206203523}
   focusTimeLimit: 8
   focusRingZoom: 1.5
   focusRecoveryRate: 1
@@ -1313,9 +1315,9 @@ MonoBehaviour:
     dialogueType: 1
     propertyName: journalEnabled
     comparatorType: 0
-    comparisonValue: 1
+    comparisonValue: 10
     triggerOnlyOnce: 1
-    triggerAfterDelay: 1
+    triggerAfterDelay: 0.5
 --- !u!114 &133581240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,6 +1459,55 @@ MonoBehaviour:
   activeFocusAnimator: {fileID: 159833944}
   activeFocusText: {fileID: 1922911717}
   defaultJournalEntry: 
+--- !u!1 &151302485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 151302486}
+  - component: {fileID: 151302487}
+  m_Layer: 12
+  m_Name: PP (Outlines only)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &151302486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151302485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 133581236}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151302487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151302485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 8031bb0c8e95d734ca89c056051502c2, type: 2}
 --- !u!1 &159833942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,7 +2914,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 1
-  focusOnWords: chronicle, investigation
+  focusKeywords: chronicle
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -3192,7 +3243,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -511.1804, y: -568}
-  m_SizeDelta: {x: 160, y: 30.7748}
+  m_SizeDelta: {x: 160, y: 46.7175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547696825
 MonoBehaviour:
@@ -3272,7 +3323,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 98789897cadb66847bd43e6339b0c74e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4121,6 +4172,46 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7149172, y: 0.18941048, z: 0.42889}
   m_Center: {x: 0.0035886317, y: 0.09470528, z: -0.0000032186508}
+--- !u!21 &814429852
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &844029491
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,7 +4441,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionParent: {fileID: 71431025}
-  isFocusable: 0
+  focusKeywords: 
+  highlightOnFocus: 0
+  focusAffectsExamine: 0
+  focusAffectsHover: 0
+  focusAffectsCustomEffects: 0
   isExaminable: 1
   orientToCamera: 1
   pivotAroundVisualCenter: 1
@@ -4510,46 +4605,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.2656859}
   m_Size: {x: 0.5, y: 0.5, z: 0.29983562}
   m_FadeFactor: 1
---- !u!21 &953683587
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1001 &963769194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10061,7 +10116,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionParent: {fileID: 0}
-  isFocusable: 0
+  focusKeywords: 
+  highlightOnFocus: 0
+  focusAffectsExamine: 0
+  focusAffectsHover: 0
+  focusAffectsCustomEffects: 0
   isExaminable: 1
   orientToCamera: 0
   pivotAroundVisualCenter: 1
@@ -10936,6 +10995,10 @@ PrefabInstance:
       propertyPath: TakeItemButton
       value: 
       objectReference: {fileID: 547696823}
+    - target: {fileID: 1152227804432156431, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4089469835122884268, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: near clip plane
       value: 0.01
@@ -11322,7 +11385,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 1
-  focusOnWords: poetry
+  focusKeywords: poetry
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -11882,7 +11945,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
-  focusOnWords: 
+  focusKeywords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -12604,7 +12667,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionParent: {fileID: 0}
-  isFocusable: 1
+  focusKeywords: 
+  highlightOnFocus: 0
+  focusAffectsExamine: 0
+  focusAffectsHover: 0
+  focusAffectsCustomEffects: 0
   isExaminable: 1
   orientToCamera: 0
   pivotAroundVisualCenter: 0
@@ -14456,7 +14523,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionParent: {fileID: 0}
-  isFocusable: 0
+  focusKeywords: poetry
+  highlightOnFocus: 1
+  focusAffectsExamine: 0
+  focusAffectsHover: 0
+  focusAffectsCustomEffects: 0
   isExaminable: 0
   orientToCamera: 0
   pivotAroundVisualCenter: 1
@@ -14628,7 +14699,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 1
-  focusOnWords: self-care
+  focusKeywords: self-care
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -14651,8 +14722,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.27473947}
-  m_Center: {x: 0.00000011920929, y: 0, z: 0.000000059604645}
+  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
+  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!33 &33721246950500449
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16546,7 +16617,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
-  focusOnWords: 
+  focusKeywords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -18589,7 +18660,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
-  focusOnWords: 
+  focusKeywords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -18797,7 +18868,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionParent: {fileID: 0}
-  isFocusable: 0
+  focusKeywords: 
+  highlightOnFocus: 0
+  focusAffectsExamine: 0
+  focusAffectsHover: 0
+  focusAffectsCustomEffects: 0
   isExaminable: 0
   orientToCamera: 0
   pivotAroundVisualCenter: 1
@@ -18841,7 +18916,7 @@ MonoBehaviour:
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
-  focusOnWords: 
+  focusKeywords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -19095,6 +19170,7 @@ GameObject:
   - component: {fileID: 9071655443091297330}
   - component: {fileID: 9071655443088430098}
   - component: {fileID: 9071655443089528530}
+  - component: {fileID: 9071655443091523603}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -19102,6 +19178,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &9071655443091523603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071655443091523602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.086402, y: 0.6487378, z: 3.6224754}
+  m_Center: {x: 0.35764718, y: 0.3243689, z: 1.0251876}
 --- !u!1 &9077439371055377957
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using DG.Tweening;
 using OccaSoftware.Outlines.Runtime;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -322,13 +323,17 @@ namespace StarterAssets
         private void SetOutlined(GameObject gameObject, Color outlineColor)
         {
             if (outlinedObject != gameObject) ClearOutlined();
-
+            ApplyOutline(gameObject, outlineColor);
+            outlinedObject = gameObject;
+        }
+        public void ApplyOutline(GameObject gameObject, Color outlineColor, Outline.Mode outlineMode = Outline.Mode.OutlineAll)
+        {
             Outline outlineComponent = gameObject.GetComponent<Outline>();
             if (outlineComponent == null) outlineComponent = gameObject.AddComponent<Outline>();
             else outlineComponent.enabled = true;
 
             outlineComponent.OutlineColor = outlineColor;
-            outlineComponent.OutlineMode = Outline.Mode.OutlineAll;
+            outlineComponent.OutlineMode = outlineMode;
             outlineComponent.OutlineWidth = 8f;
 
             // Render object outline on top of postprocessing outline
@@ -337,20 +342,30 @@ namespace StarterAssets
                 renderFeature.renderPassEvent = RenderPassEvent.BeforeRenderingTransparents;
                 rendererData.SetDirty();
             }
-
-            outlinedObject = gameObject;
         }
         private void ClearOutlined()
         {
             if (outlinedObject != null)
             {
-                Outline outlineComponent = outlinedObject.GetComponent<Outline>();
-                outlineComponent.enabled = false;
+                RemoveOutline(outlinedObject);
                 outlinedObject = null;
 
                 // Restore to setting that works better for decal lighting effects
                 // renderFeature.renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
                 // rendererData.SetDirty();
+            }
+        }
+        public void RemoveOutline(GameObject gameObject)
+        {
+            Outline outlineComponent = gameObject.GetComponent<Outline>();
+            if (outlineComponent) outlineComponent.enabled = false;
+        }
+        public void ClearAllOutlines(List<GameObject> gameObjects)
+        {
+            foreach (GameObject outlinedObject in gameObjects)
+            {
+                Outline outlineComponent = outlinedObject.GetComponent<Outline>();
+                if (outlineComponent) outlineComponent.enabled = false;
             }
         }
 

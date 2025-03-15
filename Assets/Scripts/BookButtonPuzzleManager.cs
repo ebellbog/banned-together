@@ -20,8 +20,8 @@ public class BookButtonPuzzleManager : MonoBehaviour
     void Start()
     {
         buttonCount = 0;
-        bookMasterIndex = "ABCDE";
-        safeMasterIndex = "CBDEA";
+        safeMasterIndex = "ABCDE";
+        bookMasterIndex = "CBDEA"; // not currently in use
     }
 
     // Update is called once per frame

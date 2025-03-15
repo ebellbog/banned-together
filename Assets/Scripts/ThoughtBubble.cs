@@ -20,7 +20,7 @@ public class ThoughtBubble : MonoBehaviour
     public float scale = 1.0f;
     public ThoughtType thoughtType = ThoughtType.Intrusive;
     [Tooltip("Separate terms by commas or spaces")]
-    public string focusOnWords;
+    public string focusKeywords;
     public int firstDay = 1;
     public int lastDay = 999;
 
@@ -74,8 +74,8 @@ public class ThoughtBubble : MonoBehaviour
             gizmoColor = new Color(1f, .55f, .55f);
             shadowColor = Color.black;
             iconLabel = "Focused Thought";
-            if (focusOnWords != null && focusOnWords.Length > 0)
-                iconLabel += $"\n({focusOnWords})";
+            if (focusKeywords != null && focusKeywords.Length > 0)
+                iconLabel += $"\n({focusKeywords})";
         }
 
         Vector3 iconPosition = transform.position - Vector3.down * .3f;
@@ -162,8 +162,8 @@ public class ThoughtBubble : MonoBehaviour
         if (focusList == null)
         {
             focusList = new List<string>();
-            if (focusOnWords?.Length > 0)
-                focusList.AddRange(focusOnWords.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries));
+            if (focusKeywords?.Length > 0)
+                focusList.AddRange(focusKeywords.Split(new[] {",", " "}, StringSplitOptions.RemoveEmptyEntries));
         }
         return GS.redStickerPlacement.associatedJournalEntry.focusList.Intersect(focusList).Count() > 0;
     }
