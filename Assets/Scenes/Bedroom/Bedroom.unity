@@ -851,7 +851,7 @@ Transform:
   m_GameObject: {fileID: 112553574}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09099997, y: 0.5105619, z: 0.552624}
+  m_LocalPosition: {x: 0.098, y: 0.5105619, z: 0.553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -958,7 +958,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -8225,46 +8225,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123499008}
   m_CullTransparentMesh: 1
---- !u!21 &127740072
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &133581234
 GameObject:
   m_ObjectHideFlags: 0
@@ -8531,24 +8491,26 @@ MonoBehaviour:
     focusWords: 
     addByDefault: 0
   - key: intro1
-    content: This first entry discusses Ruby's struggles to focus, and the new sticker
-      system they've been trying out.
+    content: I need to focus on one thing at a time. Maybe I'll use a sticker to
+      mark my place?
     focusSummary: Focus stickers
     focusWords: focus, stickers
     addByDefault: 1
   - key: intro2
-    content: This entry allows Ruby to focus on the drawer containing the anonymous
-      tip to the Birchwood Chronicle
+    content: Someone sent us an anonymous tip at the Birchwood Chronicle... about
+      missing books!
     focusSummary: An anonymous tip
     focusWords: chronicle, tip
     addByDefault: 1
   - key: anonymousLetter1
-    content: This part of the letter might be a red herring?
+    content: Who IS this anonymous letter writer? Can we dust this thing for fingerprints?
+      Do I know a forensic science major!?
     focusSummary: Oops, it's a red herring
     focusWords: 
     addByDefault: 0
   - key: anonymousLetter2
-    content: Here's the important info, which allows Ruby to access the library.
+    content: I need to sneak into MacLeod and investigate the missing books when
+      no one's around.
     focusSummary: Let's go investigate!
     focusWords: ready
     addByDefault: 0
@@ -18967,8 +18929,8 @@ MonoBehaviour:
   ThoughtText: My poetry prof Dee Talaman wrote this collection - so gay!
   FadeSpeed: 2.5
   scale: 1
-  thoughtType: 1
-  focusKeywords: poetry
+  thoughtType: 0
+  focusKeywords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -20437,9 +20399,7 @@ MonoBehaviour:
   gameObjectActions: []
   componentActions: []
   audioActions: []
-  journalUpdates:
-  - timing: 3
-    journalEntryName: fidgetSpinner
+  journalUpdates: []
   gameStateUpdates: []
 --- !u!23 &1714959441
 MeshRenderer:
@@ -20780,6 +20740,46 @@ Transform:
   - {fileID: 112553575}
   m_Father: {fileID: 7381493824634755085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1849789017
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1860465202
 GameObject:
   m_ObjectHideFlags: 0
@@ -22410,8 +22410,8 @@ MonoBehaviour:
   ThoughtText: I really haven't been sleeping enough...
   FadeSpeed: 2.5
   scale: 1
-  thoughtType: 1
-  focusKeywords: self-care
+  thoughtType: 0
+  focusKeywords: 
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
