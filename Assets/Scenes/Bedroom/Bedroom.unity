@@ -532,8 +532,6 @@ GameObject:
   - component: {fileID: 105338087}
   - component: {fileID: 105338091}
   - component: {fileID: 105338090}
-  - component: {fileID: 105338089}
-  - component: {fileID: 105338088}
   m_Layer: 0
   m_Name: Pref_Pillow1 (11)
   m_TagString: Untagged
@@ -556,47 +554,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 526903261}
   m_LocalEulerAnglesHint: {x: 80.05, y: 5.667, z: 4.593}
---- !u!114 &105338088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105338086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &105338089
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105338086}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &105338090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1034,7 +991,7 @@ Transform:
   m_GameObject: {fileID: 112553574}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.423, y: 0.5105619, z: 0.553}
+  m_LocalPosition: {x: 0.089, y: 0.5105619, z: 0.553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8994,8 +8951,6 @@ GameObject:
   - component: {fileID: 226605760}
   - component: {fileID: 226605764}
   - component: {fileID: 226605763}
-  - component: {fileID: 226605762}
-  - component: {fileID: 226605761}
   m_Layer: 0
   m_Name: Pref_Pillow1 (7)
   m_TagString: Untagged
@@ -9018,47 +8973,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5029191318351470963}
   m_LocalEulerAnglesHint: {x: 80.05, y: 5.667, z: 4.593}
---- !u!114 &226605761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226605759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &226605762
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226605759}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &226605763
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9120,8 +9034,6 @@ GameObject:
   - component: {fileID: 247367485}
   - component: {fileID: 247367489}
   - component: {fileID: 247367488}
-  - component: {fileID: 247367487}
-  - component: {fileID: 247367486}
   m_Layer: 0
   m_Name: Pref_Pillow1 (12)
   m_TagString: Untagged
@@ -9144,47 +9056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 526903261}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &247367486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247367484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &247367487
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247367484}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &247367488
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9777,7 +9648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThoughtText: My poetry prof Dee Talaman wrote this collection - so gay!
+  ThoughtText: I should be studying...
   FadeSpeed: 2.5
   scale: 1
   thoughtType: 0
@@ -9935,6 +9806,46 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc1d07b4ec5b23641b228e1a02b33d89, type: 3}
+--- !u!21 &335916197
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &337124248
 GameObject:
   m_ObjectHideFlags: 0
@@ -10080,8 +9991,6 @@ GameObject:
   - component: {fileID: 366393192}
   - component: {fileID: 366393196}
   - component: {fileID: 366393195}
-  - component: {fileID: 366393194}
-  - component: {fileID: 366393193}
   m_Layer: 0
   m_Name: Pref_Pillow1 (6)
   m_TagString: Untagged
@@ -10104,47 +10013,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 112553575}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &366393193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366393191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &366393194
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366393191}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &366393195
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10440,8 +10308,6 @@ GameObject:
   - component: {fileID: 412894639}
   - component: {fileID: 412894643}
   - component: {fileID: 412894642}
-  - component: {fileID: 412894641}
-  - component: {fileID: 412894640}
   m_Layer: 0
   m_Name: Pref_Pillow1 (4)
   m_TagString: Untagged
@@ -10464,47 +10330,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1697592112}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &412894640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412894638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &412894641
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412894638}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &412894642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11006,8 +10831,6 @@ GameObject:
   - component: {fileID: 509591508}
   - component: {fileID: 509591512}
   - component: {fileID: 509591511}
-  - component: {fileID: 509591510}
-  - component: {fileID: 509591509}
   m_Layer: 0
   m_Name: Pref_Pillow1 (5)
   m_TagString: Untagged
@@ -11030,47 +10853,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5029191318351470963}
   m_LocalEulerAnglesHint: {x: 76.647, y: -85.763, z: 3.133}
---- !u!114 &509591509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509591507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &509591510
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509591507}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &509591511
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11541,6 +11323,8 @@ GameObject:
   - component: {fileID: 593436404}
   - component: {fileID: 593436403}
   - component: {fileID: 593436402}
+  - component: {fileID: 593436406}
+  - component: {fileID: 593436405}
   m_Layer: 0
   m_Name: Steven Universe Poster
   m_TagString: Untagged
@@ -11635,6 +11419,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593436400}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &593436405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593436400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThoughtText: Love her!
+  FadeSpeed: 2.5
+  scale: 1
+  thoughtType: 0
+  focusKeywords: 
+  firstDay: 1
+  lastDay: 999
+  bubbleCanvas: {fileID: 0}
+--- !u!65 &593436406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593436400}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000007, y: 0.82780826, z: 0.13536057}
+  m_Center: {x: 0.0000018898382, y: -0.08609653, z: -0.06767897}
 --- !u!1 &606290783
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,8 +11471,6 @@ GameObject:
   - component: {fileID: 606290784}
   - component: {fileID: 606290788}
   - component: {fileID: 606290787}
-  - component: {fileID: 606290786}
-  - component: {fileID: 606290785}
   m_Layer: 0
   m_Name: Pref_Pillow1 (2)
   m_TagString: Untagged
@@ -11670,47 +11493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1697592112}
   m_LocalEulerAnglesHint: {x: 80.05, y: 5.667, z: 4.593}
---- !u!114 &606290785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606290783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &606290786
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606290783}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &606290787
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12131,8 +11913,6 @@ GameObject:
   - component: {fileID: 679384159}
   - component: {fileID: 679384163}
   - component: {fileID: 679384162}
-  - component: {fileID: 679384161}
-  - component: {fileID: 679384160}
   m_Layer: 0
   m_Name: Pref_Pillow1 (10)
   m_TagString: Untagged
@@ -12155,47 +11935,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 526903261}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &679384160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679384158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &679384161
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679384158}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &679384162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13342,8 +13081,6 @@ GameObject:
   - component: {fileID: 914699240}
   - component: {fileID: 914699244}
   - component: {fileID: 914699243}
-  - component: {fileID: 914699242}
-  - component: {fileID: 914699241}
   m_Layer: 0
   m_Name: Pref_Pillow1 (3)
   m_TagString: Untagged
@@ -13366,47 +13103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1697592112}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &914699241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914699239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &914699242
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914699239}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &914699243
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13468,8 +13164,6 @@ GameObject:
   - component: {fileID: 916652697}
   - component: {fileID: 916652701}
   - component: {fileID: 916652700}
-  - component: {fileID: 916652699}
-  - component: {fileID: 916652698}
   m_Layer: 0
   m_Name: Pref_Pillow1 (7)
   m_TagString: Untagged
@@ -13492,47 +13186,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 112553575}
   m_LocalEulerAnglesHint: {x: 80.05, y: 5.667, z: 4.593}
---- !u!114 &916652698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916652696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &916652699
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916652696}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &916652700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13594,8 +13247,6 @@ GameObject:
   - component: {fileID: 963316438}
   - component: {fileID: 963316442}
   - component: {fileID: 963316441}
-  - component: {fileID: 963316440}
-  - component: {fileID: 963316439}
   m_Layer: 0
   m_Name: Pref_Pillow1 (6)
   m_TagString: Untagged
@@ -13618,47 +13269,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5029191318351470963}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &963316439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963316437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &963316440
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963316437}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &963316441
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20356,8 +19966,6 @@ GameObject:
   - component: {fileID: 1300172959}
   - component: {fileID: 1300172963}
   - component: {fileID: 1300172962}
-  - component: {fileID: 1300172961}
-  - component: {fileID: 1300172960}
   m_Layer: 0
   m_Name: Pref_Pillow1 (5)
   m_TagString: Untagged
@@ -20380,47 +19988,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 112553575}
   m_LocalEulerAnglesHint: {x: 76.647, y: -85.763, z: 3.133}
---- !u!114 &1300172960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300172958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &1300172961
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300172958}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &1300172962
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20812,8 +20379,6 @@ GameObject:
   - component: {fileID: 1352935568}
   - component: {fileID: 1352935572}
   - component: {fileID: 1352935571}
-  - component: {fileID: 1352935570}
-  - component: {fileID: 1352935569}
   m_Layer: 0
   m_Name: Pref_Pillow1 (8)
   m_TagString: Untagged
@@ -20836,47 +20401,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5029191318351470963}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &1352935569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352935567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &1352935570
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352935567}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &1352935571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23058,7 +22582,7 @@ Transform:
   m_GameObject: {fileID: 1800180324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.521, y: -0.364, z: -1.14}
+  m_LocalPosition: {x: 0.009, y: -0.364, z: -1.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23217,46 +22741,6 @@ Transform:
   - {fileID: 486266574}
   m_Father: {fileID: 1175250391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1912308270
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1922911715
 GameObject:
   m_ObjectHideFlags: 0
@@ -23508,8 +22992,6 @@ GameObject:
   - component: {fileID: 1978411741}
   - component: {fileID: 1978411745}
   - component: {fileID: 1978411744}
-  - component: {fileID: 1978411743}
-  - component: {fileID: 1978411742}
   m_Layer: 0
   m_Name: Pref_Pillow1 (1)
   m_TagString: Untagged
@@ -23532,47 +23014,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1697592112}
   m_LocalEulerAnglesHint: {x: 76.647, y: -85.763, z: 3.133}
---- !u!114 &1978411742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978411740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &1978411743
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978411740}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &1978411744
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24653,8 +24094,6 @@ GameObject:
   - component: {fileID: 2071481773}
   - component: {fileID: 2071481777}
   - component: {fileID: 2071481776}
-  - component: {fileID: 2071481775}
-  - component: {fileID: 2071481774}
   m_Layer: 0
   m_Name: Pref_Pillow1 (9)
   m_TagString: Untagged
@@ -24677,47 +24116,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 526903261}
   m_LocalEulerAnglesHint: {x: 76.647, y: -85.763, z: 3.133}
---- !u!114 &2071481774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071481772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &2071481775
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071481772}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &2071481776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24988,8 +24386,6 @@ GameObject:
   - component: {fileID: 2141536886}
   - component: {fileID: 2141536890}
   - component: {fileID: 2141536889}
-  - component: {fileID: 2141536888}
-  - component: {fileID: 2141536887}
   m_Layer: 0
   m_Name: Pref_Pillow1 (8)
   m_TagString: Untagged
@@ -25012,47 +24408,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 112553575}
   m_LocalEulerAnglesHint: {x: 80.759, y: 6.099, z: 5.031}
---- !u!114 &2141536887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141536885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
-  FadeSpeed: 2.5
-  scale: 1
-  thoughtType: 0
-  focusKeywords: 
-  firstDay: 1
-  lastDay: 999
-  bubbleCanvas: {fileID: 0}
---- !u!65 &2141536888
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141536885}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.66372776, y: 0.4522595, z: 0.32224143}
-  m_Center: {x: 0.00000012874521, y: -0.0000000013781293, z: -0.023750387}
 --- !u!23 &2141536889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26595,7 +25950,7 @@ Transform:
   m_GameObject: {fileID: 1283011525421322366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.166, y: -1.254, z: -0.51746845}
+  m_LocalPosition: {x: -0.173, y: -1.254, z: -0.51746845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26666,7 +26021,7 @@ Transform:
   m_GameObject: {fileID: 6688387530480114909}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26999998, y: 1.391, z: -1.001}
+  m_LocalPosition: {x: -0.26999998, y: 1.468, z: -1.001}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
