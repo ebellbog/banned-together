@@ -58,7 +58,7 @@ public class JournalManager : MonoBehaviour
     private bool isShowingNotification = false;
     private bool isShowingStickerSummary = false;
 
-    public static JournalManager Main {get; private set;}
+    public static JournalManager Main;
 
     void Awake()
     { 

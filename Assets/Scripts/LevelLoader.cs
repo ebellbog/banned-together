@@ -129,7 +129,7 @@ public class LevelLoader : MonoBehaviour
     {
         yield return new WaitForSeconds(.7f);
         GS.RemoveAllStickers();
-        YarnDispatcher.StartInternalMonologue("EnterLibrary");
+        // YarnDispatcher.StartInternalMonologue("EnterLibrary");
         yield return null;
     }
 
@@ -139,5 +139,9 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex, loadAdditively ? LoadSceneMode.Additive : LoadSceneMode.Single);
         GS.currentSceneIdx = levelIndex;
+
+        // Support independently managed Yarn triggers and journal entries for each scene
+        GS.yarnStateTriggers = null;
+        JournalManager.Main = null;
     }
 }
