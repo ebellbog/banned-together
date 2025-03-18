@@ -8,31 +8,34 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: (Mat)GradientBlack
-  m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _EMISSIVE_SIMPLE
-  - _IS_ANGELRING_OFF
-  - _IS_CLIPPING_OFF
-  - _IS_OUTLINE_CLIPPING_NO
-  - _OUTLINE_NML
-  m_InvalidKeywords:
+  - _OUTLINETYPE_NORMAL
   - _OVERLAYMODE1_NONE
   - _OVERLAYMODE_HAFTONE
-  - _OVERLAYMODE_HALFTONE
+  - _RIMSPLITCOLOR_NOSPLIT
+  - _USEADDITIONALLIGHTSDIFFUSE_ON
   - _USEHATCHINGCONSTANTSCALE_ON
   - _USELIGHTRAMP_STEP
   - _USEOUTLINE_ON
   - _USESCREENUVS_ON
   - _USESPECULAR_ON
+  m_InvalidKeywords:
+  - _EMISSIVE_SIMPLE
+  - _IS_ANGELRING_OFF
+  - _IS_CLIPPING_OFF
+  - _IS_OUTLINE_CLIPPING_NO
+  - _OUTLINE_NML
+  - _OVERLAYMODE_HALFTONE
+  - _USESHADOWS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
-    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -290,6 +293,10 @@ Material:
     - _AdaptiveThicnkess: 0
     - _AddPrecomputedVelocity: 0
     - _Add_Antipodean_RimLight: 0
+    - _AdditionalLightsAmount: 1
+    - _AdditionalLightsFaloff: 1
+    - _AdditionalLightsIntesity: 1
+    - _AdditionalLightsSmoothnessMultiplier: 1
     - _AlbedoAffectEmissive: 0
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
@@ -482,6 +489,7 @@ Material:
     - _PPDPrimitiveWidth: 1
     - _PaperTilling: 1
     - _Parallax: 0.02
+    - _QueueControl: -1
     - _QueueOffset: 0
     - _RampDiffuseTextureLoaded: 1
     - _ReceiveShadows: 1
@@ -593,6 +601,7 @@ Material:
     - _UseAdaptiveScreenUvs: 0
     - _UseAdaptiveScreenUvsWarp: 0
     - _UseAdaptiveUvsSpecular: 0
+    - _UseAdditionalLightsDiffuse: 1
     - _UseBacklight: 0
     - _UseDiffuseWarp: 0
     - _UseDiffuseWarpAsOverlay: 0
@@ -609,6 +618,7 @@ Material:
     - _UseScreenUvsSpecular: 0
     - _UseScreenUvsWarp: 0
     - _UseShadowThreshold: 0
+    - _UseShadows: 1
     - _UseSpecular: 1
     - _UseSpecularMask: 0
     - _Use_1stAs2nd: 0
