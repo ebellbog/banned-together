@@ -59,7 +59,8 @@ public class AudioManager : MonoBehaviour
 
         StopAllCoroutines();
 
-        if (isPlayingTrack1) {
+        if (isPlayingTrack1)
+        {
             if (currentMusicInfo != null) currentMusicInfo.startTime = musicTrack1.time;
             StartCoroutine(FadeOut(musicTrack1));
 
@@ -67,7 +68,8 @@ public class AudioManager : MonoBehaviour
             StartCoroutine(FadeIn(musicTrack2, audioInfo.startTime, 1.0f + audioInfo.volumeAdjustment, delay));
 
             isPlayingTrack1 = false;
-        } else {
+        }
+        else {
             if (currentMusicInfo != null) currentMusicInfo.startTime = musicTrack2.time;
             StartCoroutine(FadeOut(musicTrack2));
 
@@ -78,6 +80,10 @@ public class AudioManager : MonoBehaviour
         }
 
         currentMusicInfo = audioInfo;
+    }
+    public void StopMusic()
+    {
+        StartCoroutine(FadeOut(isPlayingTrack1 ? musicTrack1 : musicTrack2));
     }
 
     public void PlaySFX(string sfxName, Vector3? position = null)

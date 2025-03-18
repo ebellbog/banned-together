@@ -21,6 +21,7 @@ public static class GS
     public static string journalContent = "";
     public static int currentJournalPage;
     public static int journalEnabled; // using int instead of bool for compatibility with InteractableItem
+    public static int stickersEnabled; // (same as above)
     public static Sticker redStickerPlacement;
     public static Sticker blueStickerPlacement;
 
@@ -90,9 +91,9 @@ public static class GS
         journalEntryByContent = null;
         journalContent = "10/22/23";
         journalEnabled = 0;
+        stickersEnabled = 0;
 
-        redStickerPlacement = new Sticker();
-        blueStickerPlacement = new Sticker();
+        RemoveAllStickers();
 
         currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
         prevLevelIdx = 0;
@@ -110,4 +111,9 @@ public static class GS
         speedReduction = 1.0f;
     }
 
+    public static void RemoveAllStickers()
+    {
+        redStickerPlacement = new Sticker();
+        blueStickerPlacement = new Sticker();
+    }
 }

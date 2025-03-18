@@ -1,35 +1,32 @@
-﻿title: Intro
+﻿title: IntroTitles
+---
+BIRCHWOOD COLLEGE<br>FALL SEMESTER<br>2024
+===
+title: Intro
 ---
 Books have been disappearing from the shelves at MacLeod Library, and I’m headed there on a little “after hours” assignment to find out why.
 Some people say it’s ghosts, but the organizers on campus say there’s something more... nefarious... going on.
 The first time I got locked inside MacLeod was a mistake, freshman year. But now I’m back with a purpose…
 ===
-
+title:EnterLibrary
+---
+Ruby narrates entering the library, using Carson's information
+===
 title: LibraryClosed
 ---
 Alright, 9pm: closing time at MacLeod! The coast should be clear, which means I can finally come out of the closet. The... literal... storage closet. #line:ComeOut
 ===
-
+title: LibraryLocked
+---
+Well, made it through the front doors, but these ones won't budge... There's gotta be another way around?
+===
 title: IntrusiveThoughts
 ---
 Ugh, so many intrusive thoughts... Get it together, Ruby. #line:IntrusiveThoughts
 ===
-
-title: Paper1Seen
----
-A dangerous future? Ok, I've really got to focus on this. #line:DangerousFuture
-===
-title: Paper2Seen
----
-Copeland? That name sounds all too familiar. Doesn’t the Architecture School have a David Copeland Auditorium? #line:Copeland
-===
 title: FidgetSpinner
 ---
 Guess I’m not the only one in this library who likes to fidget spin and chill. Didn’t I see a cute queer work-study student here last spring? #line:FidgetSpinner
-===
-title: PoetryBookSeen
----
-Oh my gosh! My poetry professor said I should read this. I’ve got to write down the title so I don’t forget. Madness, Rack, and Honey by Mary Ruefle. #line:PoetryBook
 ===
 title: DoorsLocked
 ---

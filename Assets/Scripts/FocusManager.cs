@@ -92,6 +92,11 @@ public class FocusManager : MonoBehaviour
         // Debug.Log($"Number of spotlights found: {allSpotLights.Count}");
     }
 
+    public bool HasActiveFocus()
+    {
+        return GS.redStickerPlacement.associatedJournalEntry != null;
+    }
+
     void Update()
     {
         // Clear stickers
@@ -102,10 +107,9 @@ public class FocusManager : MonoBehaviour
             starterInputs.delete = false;
         }
 
-        bool hasActiveFocus = GS.redStickerPlacement.associatedJournalEntry != null;
-        string gsFocusWords = hasActiveFocus ? GS.redStickerPlacement.associatedJournalEntry.focusWords : "";
+        string gsFocusWords = HasActiveFocus() ? GS.redStickerPlacement.associatedJournalEntry.focusWords : "";
 
-        if ((GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Monologue) && hasActiveFocus)
+        if ((GS.interactionMode == InteractionType.Default || GS.interactionMode == InteractionType.Monologue) && HasActiveFocus())
         {
             postprocessVolume.weight = Mathf.Min(postprocessVolume.weight + Time.deltaTime * focusSpeed, 1f);
         }
@@ -123,7 +127,7 @@ public class FocusManager : MonoBehaviour
         {
             foreach(InteractableItem interactableItem in allFocusable)
             {
-                bool doHighlight = modeAllowsFocus && hasActiveFocus && interactableItem.highlightOnFocus && interactableItem.MatchesCurrentFocus();
+                bool doHighlight = modeAllowsFocus && HasActiveFocus() && interactableItem.highlightOnFocus && interactableItem.MatchesCurrentFocus();
                 SetLayer(interactableItem.gameObject, doHighlight ? focusLayerIdx : 0);
                 if (doHighlight)
                     interactionManager.ApplyOutline(interactableItem.gameObject, Color.red, Outline.Mode.OutlineVisible);
@@ -297,5 +301,14 @@ public class FocusManager : MonoBehaviour
         {
             child.gameObject.layer = layerIdx;
         }
+    }
+
+    public void SetFocused(GameObject gameObject)
+    {
+        SetLayer(gameObject, focusLayerIdx);
+    }
+    public void ClearFocused(GameObject gameObject)
+    {
+        SetLayer(gameObject, 0);
     }
 }

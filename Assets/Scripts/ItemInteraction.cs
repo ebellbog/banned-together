@@ -15,6 +15,7 @@ namespace StarterAssets
     {
         [Header("General settings")]
         public float RaycastReach;
+        public FocusManager FocusManager;
 
         [Header("Outline settings")]
         public Color DefaultExaminableColor = Color.white;
@@ -155,14 +156,19 @@ namespace StarterAssets
             }
             currentInteractable = interactableItem; // TODO: figure out the appropriate place for this
 
+            bool canHover = false, canExamine = false, canOutline = false;
             if (currentInteractable != null && ModeSupportsInteraction())
             {
                 currentInteractable.ApplyCustomEffects(ActionTiming.onHover);
 
                 // Manage outline
                 Color? outlineColor = null;
-                if (currentInteractable.isExaminable) outlineColor = DefaultExaminableColor;
-                if (currentInteractable.showOutline && currentInteractable.outlineColorOverride != Color.clear)
+                canHover = !currentInteractable.focusAffectsHover || currentInteractable.MatchesCurrentFocus();
+                canOutline = canHover && currentInteractable.showOutline;
+                canExamine = !currentInteractable.focusAffectsExamine || currentInteractable.MatchesCurrentFocus();
+
+                if (currentInteractable.isExaminable && canExamine && canOutline) outlineColor = DefaultExaminableColor;
+                if (currentInteractable.outlineColorOverride != Color.clear && canOutline)
                     outlineColor = currentInteractable.outlineColorOverride;
                 if (outlineColor != null) {
                     if (GS.interactionMode != InteractionType.Focus)
@@ -174,9 +180,14 @@ namespace StarterAssets
                 }
 
                 // Manage cursor
-                if (currentInteractable.cursorOverride) CursorImage.sprite = currentInteractable.cursorOverride;
-                else if (currentInteractable.isExaminable) CursorImage.sprite = InspectIcon;
-                else CursorImage.sprite = HoverIcon;
+                if (currentInteractable.setCursor){
+                    if (currentInteractable.cursorOverride && canHover) CursorImage.sprite = currentInteractable.cursorOverride;
+                    else if (currentInteractable.isExaminable)
+                    {
+                        if (canExamine && canHover) CursorImage.sprite = InspectIcon;
+                    }
+                    else CursorImage.sprite = canHover ? HoverIcon : DefaultIcon;
+                }
             } else
             {
                 if (!hitSittable) ClearOutlined();
@@ -228,7 +239,7 @@ namespace StarterAssets
                 {
                     isDragging = true;
                 }
-                else if (hitExaminable)
+                else if (hitExaminable && canExamine)
                 {
                     BeginExamination();
                 }
@@ -328,6 +339,8 @@ namespace StarterAssets
         }
         public void ApplyOutline(GameObject gameObject, Color outlineColor, Outline.Mode outlineMode = Outline.Mode.OutlineAll)
         {
+            if (FocusManager.HasActiveFocus()) FocusManager.SetFocused(gameObject);
+
             Outline outlineComponent = gameObject.GetComponent<Outline>();
             if (outlineComponent == null) outlineComponent = gameObject.AddComponent<Outline>();
             else outlineComponent.enabled = true;
@@ -357,6 +370,7 @@ namespace StarterAssets
         }
         public void RemoveOutline(GameObject gameObject)
         {
+            FocusManager.ClearFocused(gameObject);
             Outline outlineComponent = gameObject.GetComponent<Outline>();
             if (outlineComponent) outlineComponent.enabled = false;
         }
@@ -520,7 +534,7 @@ namespace StarterAssets
                     activeObject,
                     activeObject.transform.position + Vector3.down * 2f,
                     activeObject.transform.rotation,
-                    activeObject.transform.localScale * 3f,
+                    activeObject.transform.localScale * 3.5f,
                     putDownDuration * 2f));
             }
             else

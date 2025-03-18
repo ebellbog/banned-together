@@ -98,7 +98,13 @@ public class LevelLoader : MonoBehaviour
     {
         GS.ResetAll();
         LoadNextLevel();
-        // StartCoroutine(_StartGame());
+        StartCoroutine(_StartGame());
+    }
+
+    public void EnterLibrary()
+    {
+        LoadNextLevel();
+        StartCoroutine(_EnterLibrary());
     }
 
     public void StartNextDay()
@@ -112,10 +118,18 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator _StartGame()
     {
-        AudioManager.instance.CrossfadeMusic("Intrigue", .7f);
+        AudioManager.instance.StopMusic();
         yield return new WaitForSeconds(.7f);
-        YarnDispatcher.StartInternalMonologue("Intro");
-        AudioManager.instance.PlaySFX("Intro");
+        YarnDispatcher.StartInternalMonologue("IntroTitles");
+        AudioManager.instance.PlaySFX("Typewriter");
+        yield return null;
+    }
+
+    IEnumerator _EnterLibrary()
+    {
+        yield return new WaitForSeconds(.7f);
+        GS.RemoveAllStickers();
+        YarnDispatcher.StartInternalMonologue("EnterLibrary");
         yield return null;
     }
 

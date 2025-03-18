@@ -36,6 +36,12 @@ public class ManageJournal : ManageBook
     {
         bookViewer.currentPage = GS.currentJournalPage;
         base.Start();
+
+        if (GS.stickersEnabled == 0)
+        {
+            bookViewer.transform.parent.localPosition = new Vector3(0, -bookViewer.transform.localPosition.y, 0);
+            stickerParent.SetActive(false);
+        }
         SetupStickers();
     }
 

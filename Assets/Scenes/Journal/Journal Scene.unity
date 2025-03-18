@@ -344,13 +344,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookViewer: {fileID: 1150316105}
   pagePrefab: {fileID: 9071785334113380828, guid: 556922a869741d041b6ea0a240faee24, type: 3}
-  bookCover: {fileID: 0}
+  bookCover: {fileID: 1179927698}
   contentSource: 2
   textField: 
   textFile: {fileID: 4900000, guid: e5379fc6b7343b540b220b4300ab28be, type: 3}
   customPagesAtStart:
   - {fileID: 2800000, guid: 81c64078c21bda5498334308408bced0, type: 3}
-  - {fileID: 8600000, guid: 0ef10c2306c1f0f498eb150b4b2d8ab1, type: 2}
   customPagesAtEnd:
   - {fileID: 2800000, guid: c81274ff039f0f54aa8cf2582fb73636, type: 3}
   defaultCursor: {fileID: 2800000, guid: 3507634bd73a09541be8ec0d725c876e, type: 3}
@@ -534,7 +533,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2126152408}
-  - {fileID: 323400458}
+  - {fileID: 2093018620}
   - {fileID: 1179927699}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -606,7 +605,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 837386565}
+    m_TransformParent: {fileID: 2093018620}
     m_Modifications:
     - target: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Icon
@@ -1154,15 +1153,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1717,6 +1716,42 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
+--- !u!1 &2093018619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093018620}
+  m_Layer: 5
+  m_Name: BookParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2093018620
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093018619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 323400458}
+  m_Father: {fileID: 837386565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1330, y: 861}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2126152407
 GameObject:
   m_ObjectHideFlags: 0

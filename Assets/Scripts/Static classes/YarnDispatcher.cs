@@ -151,7 +151,7 @@ public static class YarnDispatcher
 
     private static void OnMonologueEnd() {
         Debug.Log("Monologue ended");
-        GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{monologueTextMesh.text}";
+        // GS.journalContent += $"{(GS.journalContent.Length > 0 ? "\n\n" : "")}{monologueTextMesh.text}";
         if (GS.interactionMode != InteractionType.Examine) GS.interactionMode = InteractionType.Default;
     }
 }

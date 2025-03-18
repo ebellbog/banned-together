@@ -69,7 +69,14 @@ public class ThoughtBubble : MonoBehaviour
             gizmoColor = Color.white;
             shadowColor = new Color(0, 0, 0, .5f);
             iconLabel = "Instrusive Thought";
-        } else
+        }
+        else if (thoughtType == ThoughtType.Dark)
+        {
+            gizmoColor = new Color(.6f, .6f, .6f);
+            shadowColor = Color.black;
+            iconLabel = "Dark Thought";
+        }
+        else
         {
             gizmoColor = new Color(1f, .55f, .55f);
             shadowColor = Color.black;

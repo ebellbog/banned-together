@@ -45900,7 +45900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[2].clip
@@ -45965,10 +45965,10 @@ PrefabInstance:
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.data[4].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 24d630a22b439304683c8dd428f5a9db, type: 3}
+      objectReference: {fileID: 8300000, guid: acd63b454261eab499d2202646083193, type: 3}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: soundEffectClips.Array.data[4].name
-      value: LockedDoor
+      value: Typewriter
       objectReference: {fileID: 0}
     - target: {fileID: 7260992867378608135, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
       propertyPath: musicClips.Array.data[1].volumeAdjustment
@@ -47506,6 +47506,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768445155}
   m_Mesh: {fileID: 4300000, guid: 27055d22f9b63b447a6fa4fb09a857d7, type: 3}
+--- !u!114 &771166253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8881547451600958215, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
+  m_PrefabInstance: {fileID: 1611622346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &772017760
 GameObject:
   m_ObjectHideFlags: 0
@@ -93205,6 +93216,11 @@ Transform:
   - {fileID: 1090364736}
   m_Father: {fileID: 69586474}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1462840283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3315879058424550733, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
+  m_PrefabInstance: {fileID: 8634998132991076041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1463429994
 GameObject:
   m_ObjectHideFlags: 0
@@ -100959,11 +100975,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 586cab1024cabba4d9119f59384bf34d, type: 2}
+    - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
+      propertyPath: m_lineSpacing
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 80
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3581026967604016308, guid: 586cab1024cabba4d9119f59384bf34d, type: 2}
+    - target: {fileID: 2386609505470917869, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2386609506032338771, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
       propertyPath: holdTime
@@ -100971,7 +101007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386609506032338771, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
       propertyPath: typewriterEffectSpeed
-      value: 24
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2386609506032338774, guid: 5072eb572c40adf4fa3f7ba9e5c6a38c, type: 3}
       propertyPath: m_Pivot.y
@@ -132707,6 +132743,10 @@ PrefabInstance:
       propertyPath: skipText
       value: 
       objectReference: {fileID: 1173938122}
+    - target: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
+      propertyPath: transitionTime
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2984237236813588094, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1037.542
@@ -132754,19 +132794,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3315879058424550733, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8634998132991076044}
   m_SourcePrefab: {fileID: 100100000, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
 --- !u!114 &8634998132991076042 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
   m_PrefabInstance: {fileID: 8634998132991076041}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1462840283}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef09516192aa50a48a5351a17609510d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8634998132991076044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462840283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f72b850ff851d48b0b5d0300da8b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDay: 1
+  hideBooks: 0
+  internalMonologueSystem: {fileID: 771166253}
+  tutorialDialogSystem: {fileID: 0}
+  monologueTextMesh: {fileID: 0}
+  managerComponent: {fileID: 0}
+  cursorCanvas: {fileID: 0}
+  player: {fileID: 0}
+  starterAssetsInputs: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerStartPosition: {fileID: 0}
+  startPlayerAtPosition: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

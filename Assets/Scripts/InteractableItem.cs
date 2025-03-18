@@ -94,9 +94,10 @@ public class InteractableItem : MonoBehaviour
     public bool useGrabCursor = false;
     public bool keepAfterExamining = false;
 
-    [Header("UI settings")]
-    public bool showOutline = false;
+    [Header("Hover settings")]
+    public bool showOutline = true;
     public Color outlineColorOverride;
+    public bool setCursor = true;
     public Sprite cursorOverride;
 
     [Header("Custom effects")]
@@ -128,7 +129,7 @@ public class InteractableItem : MonoBehaviour
     public void ApplyCustomEffects(ActionTiming currentTiming)
     {
         if (focusAffectsCustomEffects && !MatchesCurrentFocus()) return;
-
+        
         foreach(AudioAction audioAction in audioActions)
         {
             if (currentTiming != audioAction.timing) continue;

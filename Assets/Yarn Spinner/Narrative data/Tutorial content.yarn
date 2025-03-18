@@ -1,35 +1,23 @@
-﻿title: EnergyDrained
-tags:
----
-Ruby can't focus when their body battery is depleted. They can rest up by finding somewhere comfortable to sit and letting their mind wander for a little bit!
-===
-title: EnergyDraining
-tags:
----
-When Ruby encounters dark thoughts like this one, they start to feel drained. If their Body Battery runs out, they'll need to rest for the night!
-===
-title: FocusDrained
-tags:
----
-Ruby is taking a little breather after Focusing! You can try Focusing again once the circular Focus Meter has refilled.
-===
-title: JournalTutorial
-tags:
+﻿title: JournalTutorial
 ---
 You found Ruby's journal! You can open it whenever with the tab key, and use your cursor to click and drag through the pages.
+<<if $stickers_enabled > 0>>
+    This is the perfect place to use the heart sticker you found! Try dragging-and-dropping the sticker onto any of the heart-shaped outlines, to help Ruby focus on that journal entry.
+    You can move the sticker as many times as you like, or drag it off the page to remove it!
+<<endif>>
+<<set $journal_enabled to 1>>
 ===
-title: PressF
-tags:
+title: StickerTutorial
 ---
-Press & hold F to Focus. While Focusing, Ruby can clear their mind of darker thoughts and search for important objects in the library.
+<<if $journal_enabled > 0>>
+    You found your first heart sticker for Ruby's journal! Open the journal (Tab), then drag-and-drop the sticker onto any of the heart-shaped outlines, to help Ruby focus on that journal entry.
+    You can move the sticker as many times as you like, or drag it off the page to remove it!
+<<else>>
+    You found your first heart sticker! Hold onto it for now, and keep searching for Ruby's other belongings.
+<<endif>>
+<<set $stickers_enabled to 1>>
 ===
 title: DemoComplete
-tags:
 ---
 In the future, you'll be able to explore all four floors of the library, uncovering more notes, artifacts and banned books. For now, thanks for playing this early demo of Banned Together!
-===
-title: CollectedAllItems
-tags:
----
-Congratulations, you've found everything on this floor!
 ===
