@@ -11,6 +11,7 @@ public class Config : MonoBehaviour
     [Header("Game State")]
     public int currentDay = 1;
     public bool hideBooks = false;
+    public bool journalStartsEnabled = false;
     private bool _oldHideBooks = false;
 
     [Header("Yarn Systems")]
@@ -57,6 +58,12 @@ public class Config : MonoBehaviour
         if(this == null) return;
 
         if (GS.interactionMode == InteractionType.Paused) GS.currentDay = currentDay;
+
+        if (journalStartsEnabled)
+        {
+            GS.journalEnabled = 1;
+            GS.stickersEnabled = 1;
+        }
 
         if (hideBooks != _oldHideBooks)
         {
