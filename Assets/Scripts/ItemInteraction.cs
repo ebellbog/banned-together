@@ -504,6 +504,7 @@ namespace StarterAssets
 
             examineCallback = null;
             examineCallback += () => {
+                // TOOD: consider not waiting for animation to complete, at least for journal entries
                 activeInteractable.ApplyCustomEffects(doTakeItem ? ActionTiming.afterTaking : ActionTiming.afterExamine); // Update after examination
     
                 if (activeInteractable.journalUpdates.Count == 0)
