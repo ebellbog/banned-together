@@ -84,7 +84,12 @@ public class JournalManager : MonoBehaviour
 
             if (data.addByDefault) AddToJournal(data.key, false);
         }
-        AddDayBreak();
+
+        if (!GS.addedDefaultJournalEntries)
+        {
+            AddDayBreak();
+            GS.addedDefaultJournalEntries = true;
+        }
     }
 
     void Update()
@@ -143,6 +148,8 @@ public class JournalManager : MonoBehaviour
 
             data.alreadyAdded = true;
             if (markUnread && GS.journalEnabled > 0) unreadNotifications = true;
+
+            GS.RemoveAllStickers();
         }
     }
 

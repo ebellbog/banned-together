@@ -60,6 +60,7 @@ public class ThoughtBubble : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Color gizmoColor, shadowColor;
@@ -113,6 +114,7 @@ public class ThoughtBubble : MonoBehaviour
 
         Handles.Label(labelPosition, iconLabel, style);
     }
+#endif
 
     public void InstantiateBubble(GameObject bubblePrefab)
     {

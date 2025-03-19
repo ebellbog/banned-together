@@ -22,6 +22,7 @@ public static class GS
     public static int currentJournalPage;
     public static int journalEnabled; // using int instead of bool for compatibility with InteractableItem
     public static int stickersEnabled; // (same as above)
+    public static bool addedDefaultJournalEntries;
     public static Sticker redStickerPlacement;
     public static Sticker blueStickerPlacement;
 
@@ -92,6 +93,7 @@ public static class GS
         journalContent = "10/22/24";
         journalEnabled = 0;
         stickersEnabled = 0;
+        addedDefaultJournalEntries = false;
 
         RemoveAllStickers();
 

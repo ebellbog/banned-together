@@ -360,6 +360,9 @@ namespace StarterAssets
         {
             if (outlinedObject != null)
             {
+                InteractableItem interactable = outlinedObject.GetComponent<InteractableItem>();
+                if (interactable != null && interactable.MatchesCurrentFocus()) return;
+
                 RemoveOutline(outlinedObject);
                 outlinedObject = null;
 

@@ -82,6 +82,7 @@ public class LevelLoader : MonoBehaviour
     {
         StartCoroutine(LoadLevel(0));
         AudioManager.instance.ResetMusicEffects();
+        UI.UnlockCursor();
     }
 
     public void ReturnToGame()
@@ -137,11 +138,13 @@ public class LevelLoader : MonoBehaviour
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex, loadAdditively ? LoadSceneMode.Additive : LoadSceneMode.Single);
-        GS.currentSceneIdx = levelIndex;
 
         // Support independently managed Yarn triggers and journal entries for each scene
         GS.yarnStateTriggers = null;
+        GS.journalEntryByKey = null;
         JournalManager.Main = null;
+
+        SceneManager.LoadScene(levelIndex, loadAdditively ? LoadSceneMode.Additive : LoadSceneMode.Single);
+        GS.currentSceneIdx = levelIndex;
     }
 }

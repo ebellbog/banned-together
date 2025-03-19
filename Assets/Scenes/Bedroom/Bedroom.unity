@@ -457,7 +457,7 @@ Transform:
   m_GameObject: {fileID: 71431025}
   serializedVersion: 2
   m_LocalRotation: {x: -0.36142787, y: 0.60775816, z: -0.6077579, w: -0.36142805}
-  m_LocalPosition: {x: 0.225, y: 0.853, z: -0.476}
+  m_LocalPosition: {x: 0.261, y: 0.853, z: -0.289}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8517,27 +8517,6 @@ MonoBehaviour:
     comparisonValue: 1
     triggerOnlyOnce: 1
     triggerAfterDelay: 0.5
-  - yarnNode: DemoComplete
-    dialogueType: 1
-    propertyName: genderQueerSeen
-    comparatorType: 4
-    comparisonValue: 1
-    triggerOnlyOnce: 1
-    triggerAfterDelay: 1
-  - yarnNode: LibraryLocked
-    dialogueType: 0
-    propertyName: lockedDoorSeen
-    comparatorType: 0
-    comparisonValue: 1
-    triggerOnlyOnce: 0
-    triggerAfterDelay: 0
-  - yarnNode: LibraryLocked
-    dialogueType: 0
-    propertyName: lockedDoorSeen
-    comparatorType: 0
-    comparisonValue: 1
-    triggerOnlyOnce: 0
-    triggerAfterDelay: 0
   - yarnNode: IntroDorm
     dialogueType: 0
     propertyName: journalEnabled
@@ -8598,40 +8577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalEntries:
-  - key: workOrder
-    content: Hidden passageways and carefully placed paintings, huh? The journalist
-      within me smells... opportunity.
-    focusSummary: 
-    focusWords: 
-    addByDefault: 0
   - key: fidgetSpinner
     content: "Guess I\u2019m not the only one in this library who likes to fidget
       spin and chill lol. Doesn't this spinner belong to that cute queer work-study
       student? I feel like I haven't seen them at all since last spring..."
-    focusSummary: 
-    focusWords: 
-    addByDefault: 0
-  - key: lostBooks
-    content: I found a list of "lost" books behind the library checkout desk. I guess
-      I should start by seeing if Gender Queer is where it's supposed to be on the
-      shelves. I'll have to use Dr. Goodman's crazy anti-Dewey Decimal system on
-      the second floor...
-    focusSummary: 
-    focusWords: 
-    addByDefault: 0
-  - key: carsonNameTag
-    content: '"Carson Gaines"... Whoever you are, it seems like you haven''t been
-      taking good care of your locker! Or... maybe you just haven''t been back here
-      in a while?'
-    focusSummary: 
-    focusWords: 
-    addByDefault: 0
-  - key: peacockCode
-    content: Maybe my most important find yet?? Gender Queer has been moved by someone...
-      Possibly even the same someone who sent that anonymous tip to the Chronicle,
-      which led to all this sneaking around in the first place! And they left a mysterious
-      note... Knowing how forgetful I am, I should probably take a picture of it
-      or something!
     focusSummary: 
     focusWords: 
     addByDefault: 0
@@ -8647,12 +8596,6 @@ MonoBehaviour:
     focusSummary: An anonymous tip
     focusWords: chronicle, tip
     addByDefault: 1
-  - key: anonymousLetter1
-    content: Who IS this anonymous letter writer? Can we dust this thing for fingerprints?
-      Do I know a forensic science major!?
-    focusSummary: Oops, it's a red herring
-    focusWords: none
-    addByDefault: 0
   - key: anonymousLetter2
     content: I need to sneak into MacLeod and investigate the missing books when
       no one's around.
@@ -9106,46 +9049,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247367484}
   m_Mesh: {fileID: 4300004, guid: 6e1e22a487a6f4d42be5a2254e69ab1e, type: 3}
---- !u!21 &250072292
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!4 &262106246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2505988068745921993, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
@@ -9614,7 +9517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374330514089192982, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.998
+      value: 0.936
       objectReference: {fileID: 0}
     - target: {fileID: 8374330514089192982, guid: 26a2420e41111fa4384c8adc35b250b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13051,7 +12954,7 @@ Transform:
   m_GameObject: {fileID: 859298742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.70710677, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 0.171, y: -0.093, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 82.87559, y: 40.140064, z: 75.362}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21525,6 +21428,46 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.66817564, y: 0.5885516, z: 1.0007211}
   m_Center: {x: 0.05528776, y: 0.07041189, z: 0.00036046875}
+--- !u!21 &1569661705
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1576151184
 GameObject:
   m_ObjectHideFlags: 0
@@ -23760,7 +23703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013764795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23986,7 +23929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
       propertyPath: transitionTime
-      value: 1
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 2720070886278413512, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
       propertyPath: ambientOcclusion

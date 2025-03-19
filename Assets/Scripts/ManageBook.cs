@@ -36,6 +36,7 @@ public class ManageBook : MonoBehaviour
     [Multiline]
     public string textField;
     public TextAsset textFile;
+    public bool AllowBreakingParagraphs = false;
 
     [Header("Custom pages")]
     public List<Texture> customPagesAtStart = new List<Texture>();
@@ -135,7 +136,7 @@ public class ManageBook : MonoBehaviour
         while (startIdx < currentContent.Length)
         {
             testPage.pageContent = currentContent.Substring(startIdx, Math.Min(currentContent.Length - startIdx, MAX_CHARS_PER_PAGE));
-            string visibleText = testPage.GetVisibleText();
+            string visibleText = testPage.GetVisibleText(AllowBreakingParagraphs);
             endIdx = startIdx + Math.Max(visibleText.Length, 1);
 
             PageContent newContent = new PageContent();

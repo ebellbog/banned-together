@@ -23,7 +23,8 @@ public class DraggableElement : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector3 currentPosition = Input.mousePosition;
+            Vector3 currentPosition = GetNormalizedMouse();
+
             transform.localPosition += currentPosition - mouseStartPosition;
             mouseStartPosition = currentPosition;
 
@@ -32,13 +33,18 @@ public class DraggableElement : MonoBehaviour
         }
     }
 
+    Vector3 GetNormalizedMouse()
+    {
+        return new Vector3(1920f * Input.mousePosition.x / Screen.width, 1080f * Input.mousePosition.y / Screen.height, 0);
+    }
+
     public void StartDragging(bool fromMousePosition = false)
     {
         isDragging = true;
 
-        mouseStartPosition = Input.mousePosition;
+        mouseStartPosition = GetNormalizedMouse();
         if (fromMousePosition)
-            transform.position = mouseStartPosition;
+            transform.position = Input.mousePosition;
 
         if (elementStartPosition == null)
             elementStartPosition = transform.localPosition;

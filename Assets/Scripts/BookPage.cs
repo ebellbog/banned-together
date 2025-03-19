@@ -97,7 +97,7 @@ public class BookPage : MonoBehaviour
         }
     }
 
-    public string GetVisibleText()
+    public string GetVisibleText(bool allowBreakingParagraphs = false)
     {
         pageTextMesh.ForceMeshUpdate();
 
@@ -105,7 +105,12 @@ public class BookPage : MonoBehaviour
 
         int overflowIdx = pageTextMesh.firstOverflowCharacterIndex;
         if (overflowIdx == -1) return fullText;
-        else return fullText.Substring(0, overflowIdx);
+        if (!allowBreakingParagraphs)
+        {
+            while (overflowIdx > 0 && fullText[overflowIdx] != '\n')
+                overflowIdx--;
+        }
+        return fullText.Substring(0, overflowIdx);
     }
 
     bool IsOverflowing()

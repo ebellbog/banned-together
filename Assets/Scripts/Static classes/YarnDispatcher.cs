@@ -110,6 +110,9 @@ public static class YarnDispatcher
         UI.FadeOutMatte();
         UI.ShowCursor();
         Player.UnlockPlayer();
+
+        if (GS.genderQueerSeen == 1) // TODO: find a better way to configure this
+            LevelLoader.current.LoadMainMenu();
     }
 
     public static bool StartInternalMonologue(string monologueNode) {

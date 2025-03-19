@@ -81,7 +81,10 @@ public class ManageJournal : ManageBook
         foreach(Color color in stickerColors)
         {
             GameObject newSticker = Instantiate(stickerPrefab);
-            newSticker.GetComponent<DraggableElement>().OnReleaseDrag.AddListener(ReleaseSticker);
+
+            DraggableElement draggable = newSticker.GetComponent<DraggableElement>();
+            draggable.OnReleaseDrag.AddListener(ReleaseSticker);
+
             newSticker.transform.Find("Sticker center").GetComponent<Image>().color = color;
             newSticker.transform.SetParent(stickerParent.transform, false);
             newSticker.transform.localPosition = Vector3.zero; // TODO: use layout group in the future
