@@ -89,7 +89,7 @@ public static class GS
         didTutorializeJournal = false;
         journalEntryByKey = null;
         journalEntryByContent = null;
-        journalContent = "10/22/23";
+        journalContent = "10/22/24";
         journalEnabled = 0;
         stickersEnabled = 0;
 

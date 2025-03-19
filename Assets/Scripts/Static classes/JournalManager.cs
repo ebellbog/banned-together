@@ -148,7 +148,7 @@ public class JournalManager : MonoBehaviour
 
     public void AddDayBreak()
     {
-        GS.journalContent += $" \n\n10/{22+GS.currentDay}/23";
+        GS.journalContent += $" \n\n10/{22+GS.currentDay}/24";
     }
 
     public void MarkAsRead()
