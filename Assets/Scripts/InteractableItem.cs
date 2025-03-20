@@ -205,7 +205,7 @@ public class InteractableItem : MonoBehaviour
 
         foreach(JournalUpdate journalUpdate in journalUpdates)
         {
-            if (currentTiming != journalUpdate.timing) continue;
+            if (currentTiming != ActionTiming.onClick) continue; // override timing so journal entries always appear immediately
             JournalManager.Main.AddToJournal(journalUpdate.journalEntryName);
         }
     }
