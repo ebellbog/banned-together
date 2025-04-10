@@ -8587,8 +8587,8 @@ MonoBehaviour:
   - key: intro1
     content: I need to focus on one thing at a time. Maybe I should find a cute little
       sticker to mark my place?
-    focusSummary: Focus stickers
-    focusWords: focus, stickers
+    focusSummary: Easily distractable
+    focusWords: distractable
     addByDefault: 1
   - key: intro2
     content: Someone sent us an anonymous tip at the Birchwood Chronicle... about
@@ -10999,7 +10999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -511.1804, y: -582}
+  m_AnchoredPosition: {x: -511.1804, y: 14}
   m_SizeDelta: {x: 160, y: 46.7175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547696825
@@ -19084,6 +19084,7 @@ GameObject:
   - component: {fileID: 1099252749}
   - component: {fileID: 1099252748}
   - component: {fileID: 1099252747}
+  - component: {fileID: 1099252752}
   m_Layer: 0
   m_Name: Sticker
   m_TagString: Untagged
@@ -19098,16 +19099,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099252745}
-  m_LocalRotation: {x: -0.2571394, y: 0.9646845, z: -0.036419902, w: -0.044007912}
-  m_LocalPosition: {x: 0, y: 0, z: -0.221}
-  m_LocalScale: {x: 0.10447926, y: 0.10447926, z: 0.10447926}
+  m_LocalRotation: {x: -0.30594438, y: 0.90518415, z: -0.0990043, w: 0.27791706}
+  m_LocalPosition: {x: 0, y: 0, z: 0.384}
+  m_LocalScale: {x: 0.10447926, y: 0.10447926, z: 0.44287714}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3355114412972021616}
-  m_LocalEulerAnglesHint: {x: 174.67, y: 3.8110046, z: -209.673}
+  m_LocalEulerAnglesHint: {x: 0.526, y: 145.685, z: -37.512}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.152, y: 1.399}
+  m_AnchoredPosition: {x: 1.225, y: 1.795}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099252747
@@ -19175,7 +19176,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -19230,6 +19231,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099252745}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1099252752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099252745}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 1.0000002, z: 0}
+  m_Center: {x: 0.0000019016423, y: -0.0000019016418, z: 0.00000003794779}
 --- !u!1001 &1101222902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19734,46 +19756,6 @@ Transform:
   - {fileID: 634714356}
   m_Father: {fileID: 1398722278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1187983706
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1001 &1190733832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22105,6 +22087,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619215391}
   m_CullTransparentMesh: 1
+--- !u!21 &1651458091
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1655008127
 GameObject:
   m_ObjectHideFlags: 0
@@ -25172,11 +25194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9522581a23e952348bdac02476d16460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThoughtText: I really haven't been sleeping enough...
+  ThoughtText: I really need better sleep hygiene... Why is it so hard to stop scrolling??
   FadeSpeed: 2.5
   scale: 1
-  thoughtType: 0
-  focusKeywords: 
+  thoughtType: 1
+  focusKeywords: distractable
   firstDay: 1
   lastDay: 999
   bubbleCanvas: {fileID: 0}
@@ -29415,8 +29437,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.367264, y: 2.722598, z: 0.1637438}
-  m_Center: {x: -0.6836324, y: 0.030193934, z: 0.021973407}
+  m_Size: {x: 1.3672642, y: 2.722598, z: 0.19965062}
+  m_Center: {x: -0.68363225, y: 0.030193934, z: -0.07288575}
 --- !u!114 &8643743922867644775
 MonoBehaviour:
   m_ObjectHideFlags: 0

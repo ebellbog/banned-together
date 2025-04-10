@@ -123,6 +123,7 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(.7f);
         YarnDispatcher.StartInternalMonologue("IntroTitles");
         AudioManager.instance.PlaySFX("Typewriter");
+        GS.interactionMode = InteractionType.Default;
         yield return null;
     }
 
