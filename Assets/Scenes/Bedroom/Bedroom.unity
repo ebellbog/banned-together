@@ -1169,6 +1169,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 0
+  expandHotspot: 1
   showOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 0
@@ -8490,7 +8491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54f1891f9e4e9e549882a02ba8f9f7c3, type: 3}
   m_Name: 
@@ -8824,6 +8825,46 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!21 &187553154
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!224 &194914715 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4964723262838630965, guid: dc1d07b4ec5b23641b228e1a02b33d89, type: 3}
@@ -12988,6 +13029,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 1
+  expandHotspot: 1.75
   showOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
@@ -19081,7 +19123,6 @@ GameObject:
   - component: {fileID: 1099252746}
   - component: {fileID: 1099252751}
   - component: {fileID: 1099252750}
-  - component: {fileID: 1099252749}
   - component: {fileID: 1099252748}
   - component: {fileID: 1099252747}
   - component: {fileID: 1099252752}
@@ -19139,6 +19180,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 1
+  expandHotspot: 2
   showOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
@@ -19159,28 +19201,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099252745}
   m_CullTransparentMesh: 1
---- !u!64 &1099252749
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099252745}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1099252750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19246,7 +19266,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -20139,7 +20159,6 @@ GameObject:
   - component: {fileID: 1331721682}
   - component: {fileID: 1331721686}
   - component: {fileID: 1331721685}
-  - component: {fileID: 1331721684}
   - component: {fileID: 1331721683}
   - component: {fileID: 1331721687}
   m_Layer: 0
@@ -20193,6 +20212,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 0
+  expandHotspot: 1.1
   showOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
@@ -20206,28 +20226,6 @@ MonoBehaviour:
   - timing: 3
     journalEntryName: anonymousLetter2
   gameStateUpdates: []
---- !u!64 &1331721684
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331721681}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1331721685
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20325,7 +20323,7 @@ PrefabInstance:
       objectReference: {fileID: 133581237}
     - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: rotationSpeed
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: TakeItemButton
@@ -22087,46 +22085,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619215391}
   m_CullTransparentMesh: 1
---- !u!21 &1651458091
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1655008127
 GameObject:
   m_ObjectHideFlags: 0
@@ -22423,6 +22381,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 0
+  expandHotspot: 1
   showOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
@@ -22724,6 +22683,7 @@ MonoBehaviour:
   inertialRotation: 1
   useGrabCursor: 1
   keepAfterExamining: 0
+  expandHotspot: 1.2
   showOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
@@ -29365,6 +29325,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 0
+  expandHotspot: 1
   showOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
@@ -29467,6 +29428,7 @@ MonoBehaviour:
   inertialRotation: 0
   useGrabCursor: 0
   keepAfterExamining: 0
+  expandHotspot: 1
   showOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1

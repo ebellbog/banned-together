@@ -95,6 +95,7 @@ public class InteractableItem : MonoBehaviour
     public bool keepAfterExamining = false;
 
     [Header("Hover settings")]
+    public float expandHotspot = 1f;
     public bool showOutline = true;
     public Color outlineColorOverride;
     public bool setCursor = true;
@@ -107,10 +108,33 @@ public class InteractableItem : MonoBehaviour
     public List <JournalUpdate> journalUpdates;
     public List <StateUpdate> gameStateUpdates;
 
+    private Collider collider;
+    private Vector3 originalBoundingSize;
+
     public void Awake()
     {
         gameObject.tag = "Interactable";
-        // if (isFocusable) gameObject.layer = LayerMask.NameToLayer("No post");
+    }
+
+    public void Start()
+    {
+        collider = GetComponent<Collider>();
+
+        if (expandHotspot > 1f)
+            ExpandHotspot(true);
+    }
+
+    public void ExpandHotspot(bool doExpand)
+    {
+        collider.isTrigger = true;
+
+        if (collider.GetType() == typeof(BoxCollider))
+        {
+            if (originalBoundingSize == Vector3.zero) {
+                originalBoundingSize = ((BoxCollider)collider).size;
+            }
+            ((BoxCollider)collider).size = originalBoundingSize * (doExpand ? expandHotspot : 1f);
+        }
     }
 
     public bool MatchesCurrentFocus()

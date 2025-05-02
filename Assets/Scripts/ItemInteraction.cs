@@ -407,6 +407,7 @@ namespace StarterAssets
         private void BeginExamination()
         {
             StopAllCoroutines();
+
             if (activeObject) {
                 activeObject.transform.position = startPosition;
                 activeObject.transform.rotation = startRotation;
@@ -433,6 +434,8 @@ namespace StarterAssets
 
             ClearOutlined();
             SetLayer(activeObject, examineLayerIdx);
+
+            currentInteractable.ExpandHotspot(false);
 
             UI.FadeInMatte();
             UI.FadeInInteractionUI();
@@ -520,6 +523,7 @@ namespace StarterAssets
                 {
                     SetLayer(activeObject, 0);
                     activeObject.transform.SetParent(activeParent.transform);
+                    activeInteractable.ExpandHotspot(true);
                 }
 
                 ExamineTarget.transform.rotation = targetStartRotation;
