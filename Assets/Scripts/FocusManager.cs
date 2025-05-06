@@ -130,7 +130,7 @@ public class FocusManager : MonoBehaviour
                 bool doHighlight = modeAllowsFocus && HasActiveFocus() && interactableItem.highlightOnFocus && interactableItem.MatchesCurrentFocus();
                 SetLayer(interactableItem.gameObject, doHighlight ? focusLayerIdx : 0);
                 if (doHighlight)
-                    interactionManager.ApplyOutline(interactableItem.gameObject, Color.red, Outline.Mode.OutlineVisible);
+                    interactionManager.ApplyOutline(interactableItem.gameObject, Color.red);
                 else
                     interactionManager.RemoveOutline(interactableItem.gameObject);
             }

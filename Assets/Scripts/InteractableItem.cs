@@ -97,6 +97,7 @@ public class InteractableItem : MonoBehaviour
     [Header("Hover settings")]
     public float expandHotspot = 1f;
     public bool showOutline = true;
+    public bool useSpriteOutline = false;
     public Color outlineColorOverride;
     public bool setCursor = true;
     public Sprite cursorOverride;

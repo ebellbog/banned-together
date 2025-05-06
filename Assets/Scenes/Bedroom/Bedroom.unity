@@ -127,6 +127,46 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1425125740217681193, guid: df7247d756e5a644a9daaac0566757b1, type: 3}
   m_PrefabInstance: {fileID: 2056825568}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &8723752
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &20073769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1211,7 @@ MonoBehaviour:
   keepAfterExamining: 0
   expandHotspot: 1
   showOutline: 1
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 0
   cursorOverride: {fileID: 0}
@@ -8491,7 +8532,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54f1891f9e4e9e549882a02ba8f9f7c3, type: 3}
   m_Name: 
@@ -8825,46 +8866,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!21 &187553154
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!224 &194914715 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4964723262838630965, guid: dc1d07b4ec5b23641b228e1a02b33d89, type: 3}
@@ -13031,6 +13032,7 @@ MonoBehaviour:
   keepAfterExamining: 1
   expandHotspot: 1.75
   showOutline: 1
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 0}
@@ -19181,7 +19183,8 @@ MonoBehaviour:
   useGrabCursor: 0
   keepAfterExamining: 1
   expandHotspot: 2
-  showOutline: 0
+  showOutline: 1
+  useSpriteOutline: 1
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 0}
@@ -20214,6 +20217,7 @@ MonoBehaviour:
   keepAfterExamining: 0
   expandHotspot: 1.1
   showOutline: 1
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 0}
@@ -20329,6 +20333,34 @@ PrefabInstance:
       propertyPath: TakeItemButton
       value: 
       objectReference: {fileID: 547696823}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: spriteOutliner
+      value: 
+      objectReference: {fileID: 4800000, guid: 62505ee61d20098489c6f861ed25cce1, type: 3}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: renderFeature2D
+      value: 
+      objectReference: {fileID: -7843632314151360199, guid: 31bc9ba171fcb6a41b7d3f879640ca1b, type: 2}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: renderFeature3D
+      value: 
+      objectReference: {fileID: -562097544802763928, guid: 31bc9ba171fcb6a41b7d3f879640ca1b, type: 2}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: outlinesRenderFeature
+      value: 
+      objectReference: {fileID: -562097544802763928, guid: 31bc9ba171fcb6a41b7d3f879640ca1b, type: 2}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: DefaultExaminableColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: DefaultExaminableColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 578355871423477373, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: DefaultExaminableColor.r
+      value: 0.055775166
+      objectReference: {fileID: 0}
     - target: {fileID: 1152227804432156431, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
@@ -22383,6 +22415,7 @@ MonoBehaviour:
   keepAfterExamining: 0
   expandHotspot: 1
   showOutline: 0
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 0}
@@ -22685,6 +22718,7 @@ MonoBehaviour:
   keepAfterExamining: 0
   expandHotspot: 1.2
   showOutline: 1
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 21300000, guid: 29b17cf2406324e448559868454163c0, type: 3}
@@ -25001,7 +25035,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.6310706, y: 0.5821738, z: 0.69244}
   m_Center: {x: 0.031731624, y: 0.5435058, z: 0.091722146}
@@ -25012,7 +25046,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247205214044255}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 9fe384d72c0d8564583d81a502521820, type: 2}
   m_Animations: []
@@ -25473,7 +25507,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.0174918, y: 0.43457574, z: 0.61023116}
   m_Center: {x: 0.48677137, y: 0.025504977, z: -0.025914192}
@@ -25909,7 +25943,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.01405, y: 0.22130123, z: 0.61023116}
   m_Center: {x: 0.4643676, y: 0.04957731, z: -0.025914192}
@@ -26393,7 +26427,7 @@ Transform:
   m_GameObject: {fileID: 1283011525421322366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.173, y: -1.254, z: -0.51746845}
+  m_LocalPosition: {x: -0.125, y: -1.254, z: -0.51746845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28719,7 +28753,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.9673333, y: 0.6803889, z: 0.61360383}
   m_Center: {x: 0.11103189, y: -0.27407682, z: -0.026398763}
@@ -29327,6 +29361,7 @@ MonoBehaviour:
   keepAfterExamining: 0
   expandHotspot: 1
   showOutline: 1
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 0}
@@ -29430,6 +29465,7 @@ MonoBehaviour:
   keepAfterExamining: 0
   expandHotspot: 1
   showOutline: 1
+  useSpriteOutline: 0
   outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
   setCursor: 1
   cursorOverride: {fileID: 21300000, guid: 415fc5ab940aede4b914e093c0eba0e7, type: 3}

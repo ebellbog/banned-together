@@ -20,7 +20,8 @@ namespace StarterAssets
         [Header("Outline settings")]
         public Color DefaultExaminableColor = Color.white;
         public Color DefaultSittableColor = Color.white;
-        public OutlinesRenderfeature renderFeature;
+        public OutlinesRenderfeature outlinesRenderFeature;
+        public Shader spriteOutliner;
         public UniversalRendererData rendererData;
 
         [Header("Examination")]
@@ -63,6 +64,7 @@ namespace StarterAssets
         private InteractableItem currentInteractable;
         private GameObject outlinedObject;
         private int prevLayerIdx;
+        private Shader prevShader;
         private GameObject activeObject;
         private GameObject activeParent;
         private Vector3 startPosition;
@@ -98,7 +100,7 @@ namespace StarterAssets
             _playerController = GetComponent<FirstPersonController>();
 
             examineLayerIdx = LayerMask.NameToLayer("Examine Object");
-            outlineLayerIdx = LayerMask.NameToLayer("Outlined");
+            outlineLayerIdx = LayerMask.NameToLayer("No post");
 
             characterHeight = GetComponent<CharacterController>().height;
         }
@@ -173,7 +175,7 @@ namespace StarterAssets
                 if (outlineColor != null) {
                     if (GS.interactionMode != InteractionType.Focus)
                     {
-                        SetOutlined(currentObject, (Color)outlineColor);
+                        SetOutlined(currentObject, (Color)outlineColor, currentInteractable.useSpriteOutline);
                     }
                 } else {
                     ClearOutlined();
@@ -331,30 +333,46 @@ namespace StarterAssets
             }
         }
 
-        private void SetOutlined(GameObject gameObject, Color outlineColor)
+        private void SetOutlined(GameObject gameObject, Color outlineColor, bool isSprite = false)
         {
             if (outlinedObject != gameObject) ClearOutlined();
-            ApplyOutline(gameObject, outlineColor);
+            ApplyOutline(gameObject, outlineColor, isSprite);
             outlinedObject = gameObject;
         }
-        public void ApplyOutline(GameObject gameObject, Color outlineColor, Outline.Mode outlineMode = Outline.Mode.OutlineAll)
+        public void ApplyOutline(GameObject gameObject, Color outlineColor, bool isSprite = false)
         {
             if (FocusManager.HasActiveFocus()) FocusManager.SetFocused(gameObject);
 
-            Outline outlineComponent = gameObject.GetComponent<Outline>();
-            if (outlineComponent == null) outlineComponent = gameObject.AddComponent<Outline>();
-            else outlineComponent.enabled = true;
-
-            outlineComponent.OutlineColor = outlineColor;
-            outlineComponent.OutlineMode = outlineMode;
-            outlineComponent.OutlineWidth = 8f;
-
-            // Render object outline on top of postprocessing outline
-            if (renderFeature.renderPassEvent != RenderPassEvent.BeforeRenderingTransparents)
+            if (isSprite)
             {
-                renderFeature.renderPassEvent = RenderPassEvent.BeforeRenderingTransparents;
-                rendererData.SetDirty();
+                Material objectMaterial = gameObject.GetComponent<MeshRenderer>().materials[0];
+                if (objectMaterial.shader != spriteOutliner)
+                {
+                    prevShader = objectMaterial.shader;
+                    objectMaterial.shader = spriteOutliner;
+                    objectMaterial.SetColor("_SolidOutline", outlineColor);
+                    gameObject.transform.localScale *= 1.1f;
+                }
+                SetLayer(gameObject, outlineLayerIdx);
             }
+            else
+            {
+                Outline outlineComponent = gameObject.GetComponent<Outline>();
+                if (outlineComponent == null) outlineComponent = gameObject.AddComponent<Outline>();
+                else outlineComponent.enabled = true;
+
+                outlineComponent.OutlineColor = outlineColor;
+                outlineComponent.OutlineMode = Outline.Mode.OutlineVisible;
+                outlineComponent.OutlineWidth = 8f;
+
+                // Render object outline on top of postprocessing outline
+                if (outlinesRenderFeature.renderPassEvent != RenderPassEvent.BeforeRenderingTransparents)
+                {
+                    outlinesRenderFeature.renderPassEvent = RenderPassEvent.BeforeRenderingTransparents;
+                    rendererData.SetDirty();
+                }
+            }
+
         }
         private void ClearOutlined()
         {
@@ -363,7 +381,7 @@ namespace StarterAssets
                 InteractableItem interactable = outlinedObject.GetComponent<InteractableItem>();
                 if (interactable != null && interactable.MatchesCurrentFocus()) return;
 
-                RemoveOutline(outlinedObject);
+                RemoveOutline(outlinedObject, interactable.useSpriteOutline);
                 outlinedObject = null;
 
                 // Restore to setting that works better for decal lighting effects
@@ -371,11 +389,22 @@ namespace StarterAssets
                 // rendererData.SetDirty();
             }
         }
-        public void RemoveOutline(GameObject gameObject)
+        public void RemoveOutline(GameObject gameObject, bool isSprite = false)
         {
             FocusManager.ClearFocused(gameObject);
-            Outline outlineComponent = gameObject.GetComponent<Outline>();
-            if (outlineComponent) outlineComponent.enabled = false;
+
+            if (isSprite)
+            {
+                Material objectMaterial = gameObject.GetComponent<MeshRenderer>().materials[0];
+                objectMaterial.shader = prevShader;
+                gameObject.transform.localScale /= 1.1f;
+                SetLayer(gameObject, 0);
+            }
+            else
+            {
+                Outline outlineComponent = gameObject.GetComponent<Outline>();
+                if (outlineComponent) outlineComponent.enabled = false;
+            }
         }
         public void ClearAllOutlines(List<GameObject> gameObjects)
         {

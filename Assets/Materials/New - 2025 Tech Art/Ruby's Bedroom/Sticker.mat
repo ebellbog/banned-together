@@ -53,6 +53,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FrameTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _HalftoneTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -118,7 +122,9 @@ Material:
     - _AdditionalLightsSmoothnessMultiplier: 1
     - _AlphaClip: 1
     - _AlphaCutoff: 0.5
+    - _AlphaThreshold: 0
     - _AlphaToMask: 1
+    - _Angle: 45
     - _BacklightAmount: 0.5
     - _BacklightHardness: 0
     - _BacklightIntensity: 1
@@ -128,6 +134,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ConnectedAlpha: 0
     - _Cull: 0
     - _Cutoff: 1
     - _Darken: 0
@@ -161,8 +168,12 @@ Material:
     - _NormalMapStrength: 1
     - _OcclusionStrength: 1
     - _OutlineDynamicSpeed: 0
+    - _OutlineEnabled: 1
+    - _OutlineMode: 0
     - _OutlineNoiseIntesity: 1
     - _OutlineNoiseScale: 10
+    - _OutlinePosition: 2
+    - _OutlineShape: 0
     - _OutlineTextureStrength: 0
     - _OutlineType: 0
     - _OverlayMode: 0
@@ -203,7 +214,9 @@ Material:
     - _StepOffset: 0
     - _Strength: 0
     - _Surface: 0
+    - _Thickness: 13
     - _Thicnkess: 0
+    - _TileMode: 0
     - _UVAnimationSpeed: 0
     - _UVAnimationSpeedSpec: 0
     - _UVAnimationSpeedWarp: 0
@@ -237,18 +250,23 @@ Material:
     - _WarpStrength: 0
     - _WarpTextureRotation: 0
     - _WarpTextureScale: 1
+    - _Weight: 0.337
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GradientOutline1: {r: 1, g: 1, b: 1, a: 1}
+    - _GradientOutline2: {r: 1, g: 1, b: 1, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ImageOutline: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimShadowColor: {r: 0, g: 0.05551431, b: 0.9622642, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
+    - _SolidOutline: {r: 0.51321614, g: 1, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5182792384909756201
