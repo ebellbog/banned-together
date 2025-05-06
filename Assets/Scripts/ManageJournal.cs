@@ -26,6 +26,7 @@ public class ManageJournal : ManageBook
     public GameObject stickerParent;
     public GameObject stickerPrefab;
     public List<Color> stickerColors;
+    public bool alwaysShowStickers = false;
 
     private float wiggleDelay = 0;
     private Dictionary<int, List<Sticker>> stickersByPage = new Dictionary<int, List<Sticker>>();
@@ -37,7 +38,7 @@ public class ManageJournal : ManageBook
         bookViewer.currentPage = GS.currentJournalPage;
         base.Start();
 
-        if (GS.stickersEnabled == 0)
+        if (GS.stickersEnabled == 0 && !alwaysShowStickers)
         {
             bookViewer.transform.parent.localPosition = new Vector3(0, -bookViewer.transform.localPosition.y, 0);
             stickerParent.SetActive(false);

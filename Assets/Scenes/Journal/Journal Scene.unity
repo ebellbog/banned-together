@@ -364,6 +364,7 @@ MonoBehaviour:
   stickerPrefab: {fileID: 9203457571525758506, guid: 7cf2cd30d7cc5864598a12b94452164e, type: 3}
   stickerColors:
   - {r: 0.9748427, g: 0.35253727, b: 0.35253727, a: 1}
+  alwaysShowStickers: 0
 --- !u!1 &813413606
 GameObject:
   m_ObjectHideFlags: 0

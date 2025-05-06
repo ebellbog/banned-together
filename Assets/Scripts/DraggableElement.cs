@@ -16,17 +16,13 @@ public class DraggableElement : MonoBehaviour
     public UnityEvent<GameObject> OnReleaseDrag;
 
     private bool isDragging = false;
-    private Vector3 mouseStartPosition;
     private Vector3 elementStartPosition;
 
     void Update()
     {
         if (isDragging)
         {
-            Vector3 currentPosition = GetNormalizedMouse();
-
-            transform.localPosition += currentPosition - mouseStartPosition;
-            mouseStartPosition = currentPosition;
+            transform.position = Input.mousePosition;
 
             if (!Input.GetMouseButton(0))
                 StopDragging();
@@ -38,13 +34,9 @@ public class DraggableElement : MonoBehaviour
         return new Vector3(1920f * Input.mousePosition.x / Screen.width, 1080f * Input.mousePosition.y / Screen.height, 0);
     }
 
-    public void StartDragging(bool fromMousePosition = false)
+    public void StartDragging(bool fromMousePosition = true) // TODO: either support this parameter or drop it
     {
         isDragging = true;
-
-        mouseStartPosition = GetNormalizedMouse();
-        if (fromMousePosition)
-            transform.position = Input.mousePosition;
 
         if (elementStartPosition == null)
             elementStartPosition = transform.localPosition;
