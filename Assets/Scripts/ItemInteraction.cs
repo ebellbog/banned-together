@@ -346,7 +346,7 @@ namespace StarterAssets
             if (isSprite)
             {
                 Material objectMaterial = gameObject.GetComponent<MeshRenderer>().materials[0];
-                if (objectMaterial.shader != spriteOutliner)
+                if (spriteOutliner != null && objectMaterial.shader != spriteOutliner)
                 {
                     prevShader = objectMaterial.shader;
                     objectMaterial.shader = spriteOutliner;
@@ -393,7 +393,7 @@ namespace StarterAssets
         {
             FocusManager.ClearFocused(gameObject);
 
-            if (isSprite)
+            if (isSprite && prevShader != null)
             {
                 Material objectMaterial = gameObject.GetComponent<MeshRenderer>().materials[0];
                 objectMaterial.shader = prevShader;
