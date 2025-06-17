@@ -71,6 +71,8 @@ public class BookButtonPuzzleManager : MonoBehaviour
     IEnumerator OpenSafe()
     {
         yield return new WaitForSeconds(.6f);
+
+        GS.RemoveAllStickers();
         safeAnimator.SetTrigger("Open");
 
         if (soundEffect != null)
