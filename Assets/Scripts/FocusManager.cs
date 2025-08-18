@@ -128,11 +128,15 @@ public class FocusManager : MonoBehaviour
             foreach(InteractableItem interactableItem in allFocusable)
             {
                 bool doHighlight = modeAllowsFocus && HasActiveFocus() && interactableItem.highlightOnFocus && interactableItem.MatchesCurrentFocus();
-                SetLayer(interactableItem.gameObject, doHighlight ? focusLayerIdx : 0);
-                if (doHighlight)
-                    interactionManager.ApplyOutline(interactableItem.gameObject, Color.red);
-                else
-                    interactionManager.RemoveOutline(interactableItem.gameObject);
+                if (doHighlight) {
+                    SetFocused(interactableItem.gameObject);
+                    Debug.Log($"Applying focus outline for object {interactableItem.gameObject.name} with sprite outline: {interactableItem.useSpriteOutline}");
+                    interactionManager.ApplyOutline(interactableItem.gameObject, Color.red, interactableItem.useSpriteOutline);
+                }
+                else {
+                    ClearFocused(interactableItem.gameObject);
+                    interactionManager.RemoveOutline(interactableItem.gameObject, interactableItem.useSpriteOutline);
+                }
             }
             currentFocusWords = gsFocusWords;
             canFocus = modeAllowsFocus;
@@ -309,6 +313,7 @@ public class FocusManager : MonoBehaviour
     }
     public void ClearFocused(GameObject gameObject)
     {
-        SetLayer(gameObject, 0);
+        if (gameObject.layer == focusLayerIdx)
+            SetLayer(gameObject, 0);
     }
 }

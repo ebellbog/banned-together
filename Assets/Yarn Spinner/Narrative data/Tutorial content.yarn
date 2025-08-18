@@ -1,4 +1,8 @@
-﻿title: JournalTutorial
+﻿title: JournalFound
+---
+<<set $journal_enabled to 1>>
+===
+title: JournalTutorial
 ---
 You found Ruby's journal! You can open it whenever with the tab key, and use your cursor to click and drag through the pages.
 <<if $stickers_enabled > 0>>

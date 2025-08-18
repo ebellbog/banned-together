@@ -64,7 +64,7 @@ namespace StarterAssets
         private InteractableItem currentInteractable;
         private GameObject outlinedObject;
         private int prevLayerIdx;
-        private Shader prevShader;
+        private Shader prevShader = null;
         private GameObject activeObject;
         private GameObject activeParent;
         private Vector3 startPosition;
@@ -352,25 +352,27 @@ namespace StarterAssets
                     objectMaterial.shader = spriteOutliner;
                     objectMaterial.SetColor("_SolidOutline", outlineColor);
                     gameObject.transform.localScale *= 1.1f;
+                    SetLayer(gameObject, outlineLayerIdx);
                 }
-                SetLayer(gameObject, outlineLayerIdx);
             }
             else
             {
                 Outline outlineComponent = gameObject.GetComponent<Outline>();
                 if (outlineComponent == null) outlineComponent = gameObject.AddComponent<Outline>();
-                else outlineComponent.enabled = true;
+                else if (outlineComponent.enabled == true) return;
 
                 outlineComponent.OutlineColor = outlineColor;
                 outlineComponent.OutlineMode = Outline.Mode.OutlineVisible;
                 outlineComponent.OutlineWidth = 8f;
 
+                outlineComponent.enabled = true;
+
                 // Render object outline on top of postprocessing outline
-                if (outlinesRenderFeature.renderPassEvent != RenderPassEvent.BeforeRenderingTransparents)
-                {
-                    outlinesRenderFeature.renderPassEvent = RenderPassEvent.BeforeRenderingTransparents;
-                    rendererData.SetDirty();
-                }
+                // if (outlinesRenderFeature.renderPassEvent != RenderPassEvent.BeforeRenderingTransparents)
+                // {
+                //     outlinesRenderFeature.renderPassEvent = RenderPassEvent.BeforeRenderingTransparents;
+                //     rendererData.SetDirty();
+                // }
             }
 
         }
@@ -381,7 +383,7 @@ namespace StarterAssets
                 InteractableItem interactable = outlinedObject.GetComponent<InteractableItem>();
                 if (interactable != null && interactable.MatchesCurrentFocus()) return;
 
-                RemoveOutline(outlinedObject, interactable.useSpriteOutline);
+                RemoveOutline(outlinedObject, (interactable != null) ? interactable.useSpriteOutline : false);
                 outlinedObject = null;
 
                 // Restore to setting that works better for decal lighting effects
@@ -395,10 +397,15 @@ namespace StarterAssets
 
             if (isSprite && prevShader != null)
             {
-                Material objectMaterial = gameObject.GetComponent<MeshRenderer>().materials[0];
+                MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
+                Material objectMaterial = renderer.materials[0];
                 objectMaterial.shader = prevShader;
+                prevShader = null;
+
                 gameObject.transform.localScale /= 1.1f;
-                SetLayer(gameObject, 0);
+
+                if (GS.interactionMode != InteractionType.Examine)
+                    SetLayer(gameObject, 0);
             }
             else
             {

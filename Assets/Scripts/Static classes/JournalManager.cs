@@ -82,7 +82,11 @@ public class JournalManager : MonoBehaviour
                 GS.journalEntryByContent.TryAdd(data.content.Trim(), data);
             }
 
-            if (data.addByDefault) AddToJournal(data.key, false);
+            if (data.addByDefault)
+            {
+                AddToJournal(data.key, false);
+                // unreadNotifications = true; TODO: tutorialize journal this way!
+            }
         }
 
         if (!GS.addedDefaultJournalEntries)
@@ -98,7 +102,7 @@ public class JournalManager : MonoBehaviour
         {
             OnValidate();
         }
-        if (unreadNotifications && !isShowingNotification && GS.interactionMode == InteractionType.Default)
+        if (unreadNotifications && GS.journalEnabled == 1 && !isShowingNotification && GS.interactionMode == InteractionType.Default)
         {
             notificationAnimator.SetTrigger("Show");
             isShowingNotification = true;
@@ -149,7 +153,7 @@ public class JournalManager : MonoBehaviour
             data.alreadyAdded = true;
             if (markUnread && GS.journalEnabled > 0) unreadNotifications = true;
 
-            GS.RemoveAllStickers();
+            GS.RemoveAllStickers(); //TODO: fix this!
         }
     }
 

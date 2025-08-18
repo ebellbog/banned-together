@@ -135,13 +135,13 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.469
     - _Darken: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DiffusePosterizeOffset: 0
-    - _DiffusePosterizePower: 1.85
-    - _DiffusePosterizeSteps: 3
+    - _DiffusePosterizeOffset: 0.5
+    - _DiffusePosterizePower: 1.25
+    - _DiffusePosterizeSteps: 4.85
     - _DiffuseWarpAffectHalftone: 0
     - _DiffuseWarpBrightnessOffset: 1.12
     - _DstBlend: 0
