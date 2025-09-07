@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &199070752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +374,8 @@ MonoBehaviour:
   bookCover: {fileID: 697173301}
   contentSource: 1
   textField: 
-  textFile: {fileID: 4900000, guid: a61ce0d5ce030a248be0ecf9c4383bc8, type: 3}
+  textFile: {fileID: 4900000, guid: 8a0ec14035ef8664ba0c43f14b0366cf, type: 3}
+  AllowBreakingParagraphs: 1
   customPagesAtStart: []
   customPagesAtEnd: []
   defaultCursor: {fileID: 2800000, guid: fe3ada0ab170ed3498df50f426a89893, type: 3}
@@ -1185,7 +1186,7 @@ PrefabInstance:
       objectReference: {fileID: 837386564}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: currentPage
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnFlip.m_PersistentCalls.m_Calls.Array.size
@@ -1435,7 +1436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1555930628
 AudioListener:
   m_ObjectHideFlags: 0
