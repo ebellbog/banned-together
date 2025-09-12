@@ -95,9 +95,16 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(GS.prevLevelIdx));
     }
 
-    public void StartGame()
+    public void StartIntroCutscene()
     {
         GS.ResetAll();
+        LoadNextLevel();
+        StartCoroutine(_StartIntroCutscene());
+    }
+
+    public void StartGame()
+    {
+        //GS.ResetAll();
         LoadNextLevel();
         StartCoroutine(_StartGame());
     }
@@ -117,12 +124,22 @@ public class LevelLoader : MonoBehaviour
         // AudioManager.instance.ResetMusicEffects();
     }
 
+    IEnumerator _StartIntroCutscene()
+    {
+        AudioManager.instance.StopMusic();
+        yield return new WaitForSeconds(.7f);
+        //YarnDispatcher.StartInternalMonologue("IntroTitles");
+        //AudioManager.instance.PlaySFX("Typewriter");
+        GS.interactionMode = InteractionType.Default;
+        yield return null;
+    }
+
     IEnumerator _StartGame()
     {
         AudioManager.instance.StopMusic();
         yield return new WaitForSeconds(.7f);
-        YarnDispatcher.StartInternalMonologue("IntroTitles");
-        AudioManager.instance.PlaySFX("Typewriter");
+        //YarnDispatcher.StartInternalMonologue("IntroTitles");
+        //AudioManager.instance.PlaySFX("Typewriter");
         GS.interactionMode = InteractionType.Default;
         yield return null;
     }

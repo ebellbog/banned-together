@@ -542,7 +542,7 @@ Material:
     - _StencilWriteMaskGBuffer: 3
     - _StencilWriteMaskMV: 128
     - _StepHalftoneTexture: 0
-    - _StepOffset: 0.017
+    - _StepOffset: -0.135
     - _Strength: 0
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
@@ -637,7 +637,7 @@ Material:
     - _BaseColor: {r: 0.58, g: 0.39306813, b: 0.31436, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.17610055, g: 0.12880161, b: 0.109093726, a: 1}
+    - _Color: {r: 0.4901961, g: 0.32156864, b: 0.20000002, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
