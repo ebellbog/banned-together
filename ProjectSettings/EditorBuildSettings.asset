@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Bedroom/Bedroom.unity
     guid: 36b5dc133cfa54a4d963c120e2e81644
   - enabled: 1
-    path: Assets/Scenes/Demos/Better Art/Draknek Better Art Demo.unity
-    guid: 3f00c9c61bacfc9408ccfb171a4800e0
+    path: Assets/Scenes/Demos/QGCon demo/QGCon demo.unity
+    guid: ecdb39fc879384547b1b0e6c38f29df6
   - enabled: 1
     path: Assets/Scenes/Journal/Journal Scene.unity
     guid: 214619670dbbe7642ba98fba1b0c4089
