@@ -20,7 +20,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
     void Start()
     {
         buttonCount = 0;
-        safeMasterIndex = "ABCDE";
+        safeMasterIndex = "ACBDE";
         bookMasterIndex = "CBDEA"; // not currently in use
     }
 
@@ -65,7 +65,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
             AudioManager.instance.PlaySFX(soundEffect, secretDoorAnimator.gameObject.transform.position);
         }
 
-        StartCoroutine("ResetBooks", false);
+        //StartCoroutine("ResetBooks", false);
     }
 
     IEnumerator OpenSafe()
@@ -80,7 +80,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
             AudioManager.instance.PlaySFX(soundEffect, safeAnimator.gameObject.transform.position);
         }
 
-        StartCoroutine("ResetBooks", false);
+        //StartCoroutine("ResetBooks", false);
     }
 
     IEnumerator ResetBooks(bool playSFX = true)
