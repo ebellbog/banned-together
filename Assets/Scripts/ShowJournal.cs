@@ -67,7 +67,7 @@ public class ShowJournal : MonoBehaviour
         UI.UnlockCursor();
         viewingJournal = true;
 
-        JournalManager.Main.MarkAsRead();
+        JournalManager.Main.MarkAllEntriesRead(); // TODO: mark by page viewed
         AudioManager.instance.MuffleMusic();
     }
 

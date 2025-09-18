@@ -26,7 +26,7 @@ public class LevelLoader : MonoBehaviour
             GS.ResetAll();
             GS.isReady = true;
         }
-        if (defaultMusicForLevel.Length > GS.currentSceneIdx)
+        if (defaultMusicForLevel.Length > GS.currentSceneIdx && defaultMusicForLevel[GS.currentSceneIdx] != null)
         {
             AudioManager.instance.CrossfadeMusic(defaultMusicForLevel[GS.currentSceneIdx]);
         }

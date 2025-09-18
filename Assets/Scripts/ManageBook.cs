@@ -67,9 +67,7 @@ public class ManageBook : MonoBehaviour
         InitPages();
         DivideTextIntoPages();
         AddPagesToBook();
-
-        UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count - 1);
-        UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count);
+        UpdateCurrentPageContent();
 
         autoFlip = bookViewer.gameObject.GetComponent<AutoFlip>();
 
@@ -256,5 +254,11 @@ public class ManageBook : MonoBehaviour
         pageComponent.pageContent = (pageIdx >= 0 && pageIdx < contentByPage.Count) ? contentByPage[pageIdx].content : "";
 
         return pageComponent;
+    }
+
+    protected void UpdateCurrentPageContent()
+    {
+        UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count - 1);
+        UpdatePageContent(bookViewer.currentPage - customPagesAtStart.Count);
     }
 }

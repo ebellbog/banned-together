@@ -508,7 +508,7 @@ Material:
     - _SideShineAmount: 0.2717647
     - _SideShineHardness: 0
     - _SideShineIntensity: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessMultiplier: 1
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0

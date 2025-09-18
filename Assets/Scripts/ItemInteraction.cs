@@ -52,6 +52,7 @@ namespace StarterAssets
         public Texture2D RotateUpDown;
         public Texture2D HandOpen;
         public Texture2D HandGrabbing;
+        public Texture2D HoverButton;
         public Texture2D DefaultUnlocked;
 
         private StarterAssetsInputs _input;
@@ -221,7 +222,34 @@ namespace StarterAssets
             {
                 int? hitLayer = hitInfo.transform?.gameObject.layer;
                 hitRotatable = hitLayer == examineLayerIdx;
-                UI.SetCursor(hitRotatable || isDragging ? GetRotationIcon() : DefaultUnlocked);
+
+                if (hitRotatable || isDragging)
+                {
+                    UI.SetCursor(GetRotationIcon());
+                }
+                else
+                {
+                    // Check if the cursor is specifically over a UI button component
+                    bool overUIButton = false;
+                    if (EventSystem.current != null)
+                    {
+                        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+                        {
+                            position = Input.mousePosition
+                        };
+                        List<RaycastResult> raycastResults = new List<RaycastResult>();
+                        EventSystem.current.RaycastAll(pointerData, raycastResults);
+                        foreach (RaycastResult result in raycastResults)
+                        {
+                            if (result.gameObject.GetComponent<UnityEngine.UI.Button>() != null)
+                            {
+                                overUIButton = true;
+                                break;
+                            }
+                        }
+                    }
+                    UI.SetCursor(overUIButton ? HoverButton : DefaultUnlocked);
+                }
 
                 if (ZoomManager.GetZoom() >= 1 && !isAnimating)
                 {
@@ -324,12 +352,15 @@ namespace StarterAssets
 
         /* HELPER METHODS */
 
-        private void SetLayer(GameObject targetObject, int layerIdx = 0)
+        private void SetLayer(GameObject targetObject, int layerIdx = 0, int maxDepth = 4, int currentDepth = 0)
         {
+            if (currentDepth > maxDepth || targetObject == null) return;
+
             targetObject.layer = layerIdx;
+
             foreach (Transform child in targetObject.transform)
             {
-                child.gameObject.layer = layerIdx;
+                SetLayer(child.gameObject, layerIdx, maxDepth, currentDepth + 1);
             }
         }
 

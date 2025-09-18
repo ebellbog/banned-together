@@ -35,8 +35,15 @@ public class ManageJournal : ManageBook
 
     void Start()
     {
-        bookViewer.currentPage = GS.currentJournalPage;
+        bookViewer.currentPage = Math.Max(GS.currentJournalPage, 0);
         base.Start();
+
+        // Open to latest page, if a new journal entry has been added
+        if (GS.currentJournalPage < 0) {
+            bookViewer.currentPage = GS.didTutorializeJournal ? bookViewer.bookPages.Length - 2 : 0;
+            UpdateCurrentPageContent();
+            SyncGameState();
+        }
 
         if (GS.stickersEnabled == 0 && !alwaysShowStickers)
         {

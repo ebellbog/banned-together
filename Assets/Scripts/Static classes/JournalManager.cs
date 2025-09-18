@@ -16,14 +16,20 @@ Journal-related classes:
 public class JournalEntry
 {
     public string key;
+
     [Multiline(3)]
     public string content;
+
     public string focusSummary;
     [Tooltip("Separate terms by commas or spaces")]
     public string focusWords;
     [NonSerialized]
     public List<string> focusList;
+
     public bool addByDefault = false;
+
+    [NonSerialized]
+    public bool hasBeenRead = false;
 
     JournalEntry(string key, string content, string focusWords)
     {
@@ -50,11 +56,11 @@ public class JournalManager : MonoBehaviour
 {
     public List<JournalEntry> journalEntries = new List<JournalEntry>();
     public Animator notificationAnimator;
+    public TextMeshProUGUI notificationText;
     public Animator activeFocusAnimator;
     public TextMeshProUGUI activeFocusText;
     public string defaultJournalEntry = "firstItem";
 
-    private bool unreadNotifications = false;
     private bool isShowingNotification = false;
     private bool isShowingStickerSummary = false;
 
@@ -85,7 +91,6 @@ public class JournalManager : MonoBehaviour
             if (data.addByDefault)
             {
                 AddToJournal(data.key, false);
-                // unreadNotifications = true; TODO: tutorialize journal this way!
             }
         }
 
@@ -102,12 +107,12 @@ public class JournalManager : MonoBehaviour
         {
             OnValidate();
         }
-        if (unreadNotifications && GS.journalEnabled == 1 && !isShowingNotification && GS.interactionMode == InteractionType.Default)
+        if (GS.journalEnabled == 1 && !isShowingNotification && GS.interactionMode == InteractionType.Default && GetUnreadCount() > 0)
         {
             notificationAnimator.SetTrigger("Show");
             isShowingNotification = true;
         }
-        else if (isShowingNotification && (!unreadNotifications || GS.interactionMode != InteractionType.Default))
+        else if (isShowingNotification && (GS.interactionMode != InteractionType.Default || GetUnreadCount() == 0))
         {
             notificationAnimator.SetTrigger("Hide");
             isShowingNotification = false;
@@ -129,6 +134,26 @@ public class JournalManager : MonoBehaviour
         }
     }
 
+    public int GetUnreadCount()
+    {
+        int unreadCount = 0;
+        foreach (JournalEntry entry in journalEntries)
+        {
+            if (entry != null && entry.alreadyAdded && !entry.hasBeenRead)
+                unreadCount++;
+        }
+        return unreadCount;
+    }
+
+    public void MarkAllEntriesRead()
+    {
+        foreach (JournalEntry entry in journalEntries)
+        {
+            if (entry != null && entry.alreadyAdded)
+                entry.hasBeenRead = true;
+        }
+    }
+
     public void AddToJournal(string key, bool markUnread = true)
     {
         if (key == null || key.Length == 0) key = defaultJournalEntry;
@@ -147,23 +172,25 @@ public class JournalManager : MonoBehaviour
                 return;
             }
 
+            GS.currentJournalPage = -1; // set journal to open to most recent entry
             GS.journalContent += $"{(GS.journalContent.Length > 0 ? " \n\n" : "")}{data.content}"
                 .Replace("\r\n", "\n").Replace("\r", "\n");
 
             data.alreadyAdded = true;
-            if (markUnread && GS.journalEnabled > 0) unreadNotifications = true;
 
+            UpdateNotificationText();
             GS.RemoveAllStickers(); //TODO: fix this!
         }
+    }
+
+    void UpdateNotificationText()
+    {
+        int unreadCount = GetUnreadCount();
+        notificationText.text = $"{unreadCount} unread {(unreadCount > 1 ? "entries" : "entry")}!";
     }
 
     public void AddDayBreak()
     {
         GS.journalContent += $" \n\n10/{22+GS.currentDay}/24";
-    }
-
-    public void MarkAsRead()
-    {
-        unreadNotifications = false;
     }
 }

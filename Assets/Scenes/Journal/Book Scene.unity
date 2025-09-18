@@ -374,7 +374,7 @@ MonoBehaviour:
   bookCover: {fileID: 697173301}
   contentSource: 1
   textField: 
-  textFile: {fileID: 4900000, guid: 8a0ec14035ef8664ba0c43f14b0366cf, type: 3}
+  textFile: {fileID: 4900000, guid: a61ce0d5ce030a248be0ecf9c4383bc8, type: 3}
   AllowBreakingParagraphs: 1
   customPagesAtStart: []
   customPagesAtEnd: []
