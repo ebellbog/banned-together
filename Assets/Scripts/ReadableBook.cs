@@ -1,25 +1,83 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
-public class ReadableBook : InteractableItem
+
+[RequireComponent(typeof(InteractableItem))]
+public class ReadableBook : MonoBehaviour
 {
-    [Header("Book settings")]
-    public int bookIdx;
+    [Dropdown("GetBookTitles")]
+    public string bookTitle;
+    public bool assignRandomBook = false;
+
+    private InteractableItem _interactableItem;
 
     void Start() {
-        // isExaminable = true;
-        base.Start();
+        OnValidate();
     }
 
-    public void ApplyCustomEffects(ActionTiming currentTiming)
+    void OnValidate()
     {
-        Debug.Log("Applying custom effects for book");
-        base.ApplyCustomEffects(currentTiming);
+        ConfigureInteractableItem();
+        if (assignRandomBook) AssignRandomBook();
+    }
 
-        if (currentTiming == ActionTiming.onClick)
+    private List<string> GetBookTitles()
+    {
+        List<string> titles = new List<string>();
+ 
+        if (LibraryManager.Main != null && LibraryManager.Main.novels != null)
         {
-            GS.currentNovelIdx = bookIdx;
-            LibraryManager.Main.LoadBookFromLibrary();
+            foreach (NovelData novel in LibraryManager.Main.novels)
+            {
+                if (!string.IsNullOrEmpty(novel.novelTitle))
+                {
+                    titles.Add(novel.novelTitle);
+                }
+            }
         }
+        
+        // Add a default empty option
+        if (titles.Count == 0)
+        {
+            titles.Add("No books available");
+        }
+        
+        return titles;
+    }
+
+    private void ConfigureInteractableItem()
+    {
+        if (!_interactableItem) {
+            _interactableItem = GetComponent<InteractableItem>();
+        }
+
+        // Clear existing component actions to avoid duplicates
+        _interactableItem.componentActions.Clear();
+
+        // Add click action to read the book
+        ComponentAction readBookAction = new ComponentAction
+        {
+            timing = ActionTiming.onClick,
+            targetComponent = this,
+            callFunctionByName = "ReadBook",
+            callOnlyOnce = false
+        };
+
+        _interactableItem.componentActions.Add(readBookAction);
+    }
+
+    private void AssignRandomBook()
+    {
+        // if (bookTitle != null) return;
+        List<string> titles = GetBookTitles();
+        int randomIndex = UnityEngine.Random.Range(0, titles.Count);
+        bookTitle = titles[randomIndex];
+    }
+
+    public void ReadBook()
+    {
+        LibraryManager.Main.OpenBook(bookTitle);
     }
 }

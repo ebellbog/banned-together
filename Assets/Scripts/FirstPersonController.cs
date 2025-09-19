@@ -67,6 +67,8 @@ namespace StarterAssets
 		[NonSerialized]
 		public float SeatAngle;
 
+		public static FirstPersonController Main;
+
         // camera
         private float _cameraTargetPitch;
 		private Queue<Vector2> _lookBuffer = new Queue<Vector2>();
@@ -87,8 +89,10 @@ namespace StarterAssets
 		private PlayerInput _playerInput;
 #endif
 		private CharacterController _controller;
-		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
+
+		private StarterAssetsInputs _input;
+		public StarterAssetsInputs StarterInputs => _input;
 
 		private const float _threshold = 0.01f;
 
@@ -111,6 +115,8 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+
+			Main = this;
 		}
 
 		private void Start()
@@ -139,6 +145,21 @@ namespace StarterAssets
 		private void LateUpdate()
 		{
 			CameraRotation();
+		}
+
+		public void LockPlayer()
+		{
+			_playerInput.actions.FindAction("Move").Disable();
+			_playerInput.actions.FindAction("Interact").Disable();
+			_input.cursorInputForLook = false;
+			_input.look = Vector2.zero;
+		}
+
+		public void UnlockPlayer()
+		{
+			_playerInput.actions.FindAction("Move").Enable();
+			_playerInput.actions.FindAction("Interact").Enable();
+			_input.cursorInputForLook = true;
 		}
 
 		private void GroundedCheck()

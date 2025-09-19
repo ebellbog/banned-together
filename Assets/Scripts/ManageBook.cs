@@ -62,7 +62,7 @@ public class ManageBook : MonoBehaviour
     private const int MAX_CHARS_PER_PAGE = 800;
 
 
-    protected void Start()
+    protected virtual void Start()
     {
         InitPages();
         DivideTextIntoPages();
@@ -81,7 +81,7 @@ public class ManageBook : MonoBehaviour
         ResetCursor();
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         // Hide on exiting journal mode
         if (GS.interactionMode != InteractionType.None && GS.interactionMode != InteractionType.Journal && isVisible)

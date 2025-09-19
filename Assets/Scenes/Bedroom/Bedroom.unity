@@ -8552,6 +8552,7 @@ GameObject:
   - component: {fileID: 133581238}
   - component: {fileID: 133581237}
   - component: {fileID: 133581242}
+  - component: {fileID: 133581243}
   m_Layer: 0
   m_Name: GAME MANAGEMENT
   m_TagString: Untagged
@@ -8766,6 +8767,26 @@ MonoBehaviour:
   activeFocusAnimator: {fileID: 159833944}
   activeFocusText: {fileID: 1922911717}
   defaultJournalEntry: 
+--- !u!114 &133581243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133581234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d9bf8d00a42bd40b61f532f9967c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BookSceneName: Book Scene
+  novels:
+  - novelTitle: The Picture of Dorian Gray
+    novelAuthor: Oscar Wilde
+    novelFile: {fileID: 4900000, guid: af5258e56c4907a4bb4553efd303bd7f, type: 3}
+  - novelTitle: Carmilla
+    novelAuthor: Joseph Sheridan Le Fanu
+    novelFile: {fileID: 4900000, guid: 99609244d1b493f4e948602a7ffaddc8, type: 3}
 --- !u!1 &151302485
 GameObject:
   m_ObjectHideFlags: 0
@@ -11864,46 +11885,6 @@ Transform:
   - {fileID: 5509434245195439762}
   m_Father: {fileID: 1175250391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &639043471
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!4 &659505736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 203192463861083075, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
@@ -13042,6 +13023,7 @@ GameObject:
   - component: {fileID: 859298746}
   - component: {fileID: 859298745}
   - component: {fileID: 859298744}
+  - component: {fileID: 859298748}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -13082,7 +13064,7 @@ MonoBehaviour:
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
-  isExaminable: 1
+  isExaminable: 0
   orientToCamera: 1
   pivotAroundVisualCenter: 1
   rotationAxis: 1
@@ -13099,7 +13081,14 @@ MonoBehaviour:
   setCursor: 1
   cursorOverride: {fileID: 0}
   gameObjectActions: []
-  componentActions: []
+  componentActions:
+  - timing: 2
+    targetComponent: {fileID: 859298748}
+    setEnabled: 0
+    setDisabled: 0
+    toggleEnabled: 0
+    callFunctionByName: ReadBook
+    callOnlyOnce: 0
   audioActions: []
   journalUpdates: []
   gameStateUpdates:
@@ -13177,6 +13166,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859298742}
   m_Mesh: {fileID: 4300000, guid: 27055d22f9b63b447a6fa4fb09a857d7, type: 3}
+--- !u!114 &859298748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859298742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d53af8275c88e44d89ecd3b24b9fa33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookTitle: Carmilla
+  assignRandomBook: 0
 --- !u!114 &860693474 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7284800122800507806, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
@@ -21022,6 +21025,46 @@ Transform:
   - {fileID: 2058323747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1401760357
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1434426161
 GameObject:
   m_ObjectHideFlags: 0

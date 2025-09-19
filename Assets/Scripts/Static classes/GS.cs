@@ -20,7 +20,7 @@ public static class GS
     public static bool didTutorializeJournal = false;
     public static string journalContent = "";
     public static int currentJournalPage;
-    public static int currentNovelIdx;
+    public static NovelData currentNovel;
     public static int journalEnabled; // using int instead of bool for compatibility with InteractableItem
     public static int stickersEnabled; // (same as above)
     public static bool addedDefaultJournalEntries;
@@ -88,7 +88,7 @@ public static class GS
         lostBooksSeen = 0;
 
         currentJournalPage = 0;
-        currentNovelIdx = -1;
+        currentNovel = null;
         didTutorializeJournal = false;
         journalEntryByKey = null;
         journalEntryByContent = null;
