@@ -43,11 +43,11 @@ public class LibraryManager : MonoBehaviour
 
     void Update()
     {
-        if (bookScene == null)
-        {
-            bookScene = SceneManager.LoadSceneAsync(BookSceneName, LoadSceneMode.Additive);
-            bookScene.allowSceneActivation = false;
-        }
+        // if (bookScene == null)
+        // {
+        //     bookScene = SceneManager.LoadSceneAsync(BookSceneName, LoadSceneMode.Additive);
+        //     bookScene.allowSceneActivation = false;
+        // }
 
         StarterAssetsInputs input = FirstPersonController.Main.StarterInputs;
         if (input.anyKey && viewingBook)

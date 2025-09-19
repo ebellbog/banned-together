@@ -9898,6 +9898,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337124248}
   m_CullTransparentMesh: 1
+--- !u!21 &355342711
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &366393191
 GameObject:
   m_ObjectHideFlags: 0
@@ -13023,7 +13063,6 @@ GameObject:
   - component: {fileID: 859298746}
   - component: {fileID: 859298745}
   - component: {fileID: 859298744}
-  - component: {fileID: 859298748}
   m_Layer: 3
   m_Name: Book
   m_TagString: Untagged
@@ -13064,7 +13103,7 @@ MonoBehaviour:
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
-  isExaminable: 0
+  isExaminable: 1
   orientToCamera: 1
   pivotAroundVisualCenter: 1
   rotationAxis: 1
@@ -13081,14 +13120,7 @@ MonoBehaviour:
   setCursor: 1
   cursorOverride: {fileID: 0}
   gameObjectActions: []
-  componentActions:
-  - timing: 2
-    targetComponent: {fileID: 859298748}
-    setEnabled: 0
-    setDisabled: 0
-    toggleEnabled: 0
-    callFunctionByName: ReadBook
-    callOnlyOnce: 0
+  componentActions: []
   audioActions: []
   journalUpdates: []
   gameStateUpdates:
@@ -13166,20 +13198,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859298742}
   m_Mesh: {fileID: 4300000, guid: 27055d22f9b63b447a6fa4fb09a857d7, type: 3}
---- !u!114 &859298748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859298742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d53af8275c88e44d89ecd3b24b9fa33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bookTitle: Carmilla
-  assignRandomBook: 0
 --- !u!114 &860693474 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7284800122800507806, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
@@ -21025,46 +21043,6 @@ Transform:
   - {fileID: 2058323747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1401760357
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1434426161
 GameObject:
   m_ObjectHideFlags: 0
