@@ -49,9 +49,10 @@ public class GameObjectAction {
 
 [System.Serializable]
 public class JournalUpdate {
-    public ActionTiming timing;
+    public ActionTiming timing = ActionTiming.afterExamine;
     [Tooltip("Make sure this entry is present in the JournalManager component")]
     public string journalEntryName;
+    public bool disableThisEntry = false;
 }
 
 [System.Serializable]
@@ -228,12 +229,13 @@ public class InteractableItem : MonoBehaviour
             }
         }
 
-        if (currentTiming == ActionTiming.afterExamine)
+        foreach(JournalUpdate journalUpdate in journalUpdates)
         {
-            foreach(JournalUpdate journalUpdate in journalUpdates)
-            {
+            if (currentTiming != journalUpdate.timing) continue;
+            if (journalUpdate.disableThisEntry)
+                JournalManager.Main.DisableJournalEntry(journalUpdate.journalEntryName);
+            else
                 JournalManager.Main.AddToJournal(journalUpdate.journalEntryName);
-            }
         }
     }
 }

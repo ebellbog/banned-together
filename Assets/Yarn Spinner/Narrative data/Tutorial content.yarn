@@ -13,12 +13,7 @@ You found Ruby's journal! You can open it whenever with the tab key, and use you
 ===
 title: StickerTutorial
 ---
-<<if $journal_enabled > 0>>
-    You found your first heart sticker for Ruby's journal! Open the journal (Tab), then drag-and-drop the sticker onto any of the heart-shaped outlines, to help Ruby focus on that journal entry.
-    You can move the sticker as many times as you like, or drag it off the page to remove it!
-<<else>>
-    You found your first heart sticker! Hold onto it for now, and keep searching for Ruby's other belongings.
-<<endif>>
+You found your first heart sticker! This should be perfect for helping Ruby focus on entries in their journal...
 <<set $stickers_enabled to 1>>
 ===
 title: DemoComplete

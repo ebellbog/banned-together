@@ -280,7 +280,7 @@ MonoBehaviour:
   snapBackToStart: 1
   SelectionCursor: {fileID: 2800000, guid: 84e110b6511b4a345969a677b1ae3080, type: 3}
   DraggingCursor: {fileID: 2800000, guid: 85e9d1a8f4829d446821104dc8d51332, type: 3}
-  DefaultCursor: {fileID: 2800000, guid: 3507634bd73a09541be8ec0d725c876e, type: 3}
+  DefaultCursor: {fileID: 2800000, guid: e555f168a3d5b0e44914c91d0f94dc7f, type: 3}
   OnReleaseDrag:
     m_PersistentCalls:
       m_Calls: []

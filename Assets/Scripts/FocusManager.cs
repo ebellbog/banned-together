@@ -100,10 +100,10 @@ public class FocusManager : MonoBehaviour
     void Update()
     {
         // Clear stickers
-        // TODO: support multiple stickers, possibly with a confirmation modal
+        // TODO: ask for confirmation before removing multiple stickers?
         if (starterInputs.delete)
         {
-            GS.redStickerPlacement = new Sticker();
+            GS.RemoveAllStickers();
             starterInputs.delete = false;
         }
 

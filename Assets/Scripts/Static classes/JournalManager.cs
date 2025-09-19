@@ -30,6 +30,8 @@ public class JournalEntry
 
     [NonSerialized]
     public bool hasBeenRead = false;
+    [NonSerialized]
+    public bool isDisabled = false;
 
     JournalEntry(string key, string content, string focusWords)
     {
@@ -180,6 +182,30 @@ public class JournalManager : MonoBehaviour
 
             UpdateNotificationText();
             GS.RemoveAllStickers(); //TODO: fix this!
+        }
+    }
+
+    public void DisableJournalEntry(string key)
+    {
+        JournalEntry data;
+        if (GS.journalEntryByKey.TryGetValue(key, out data))
+        {
+            if (data == null)
+            {
+                Debug.Log("No matching journal entry found to disable");
+                return;
+            }
+
+            if (GS.redStickerPlacement.associatedJournalEntry == data) // TODO: support multiple stickers
+            {
+                GS.RemoveAllStickers();
+            }
+
+            data.isDisabled = true;
+        }
+        else
+        {
+            Debug.Log("No matching journal entry found to disable");
         }
     }
 

@@ -8667,7 +8667,7 @@ MonoBehaviour:
     dialogueType: 0
     propertyName: concurrentThoughtBubbles
     comparatorType: 4
-    comparisonValue: 3
+    comparisonValue: 4
     triggerOnlyOnce: 1
     triggerAfterDelay: 0
   - yarnNode: JournalTutorial
@@ -8737,28 +8737,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journalEntries:
-  - key: fidgetSpinner
-    content: "Guess I\u2019m not the only one in this library who likes to fidget
-      spin and chill lol. Doesn't this spinner belong to that cute queer work-study
-      student? I feel like I haven't seen them at all since last spring..."
-    focusSummary: 
-    focusWords: 
-    addByDefault: 0
-  - key: intro1
-    content: I need to focus on one thing at a time. Maybe I should find a cute little
-      sticker to mark my place?
-    focusSummary: Easily distractable
-    focusWords: distractable
-    addByDefault: 1
-  - key: intro2
+  - key: introAnonymousTip
     content: Someone sent us an anonymous tip at the Birchwood Chronicle... about
       missing books!
     focusSummary: An anonymous tip
     focusWords: chronicle, tip
     addByDefault: 1
-  - key: anonymousLetter2
-    content: I need to sneak into MacLeod and investigate the missing books when
-      no one's around.
+  - key: introSticker
+    content: I need to focus on one thing at a time if I'm gonna crack this case.
+      Maybe I should find a cute little sticker to mark my place?
+    focusSummary: Easily distractable
+    focusWords: distractable
+    addByDefault: 1
+  - key: anonymousLetter
+    content: Library should be closing... Time to sneak into MacLeod and investigate
+      those missing books?
     focusSummary: Let's go investigate!
     focusWords: ready
     addByDefault: 0
@@ -11871,6 +11864,46 @@ Transform:
   - {fileID: 5509434245195439762}
   m_Father: {fileID: 1175250391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &639043471
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!4 &659505736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 203192463861083075, guid: 92bd27796f322764e985bb50719d8cf1, type: 3}
@@ -19239,7 +19272,10 @@ MonoBehaviour:
   gameObjectActions: []
   componentActions: []
   audioActions: []
-  journalUpdates: []
+  journalUpdates:
+  - timing: 4
+    journalEntryName: introSticker
+    disableThisEntry: 1
   gameStateUpdates:
   - timing: 4
     propertyToIncrement: stickersEnabled
@@ -20484,9 +20520,11 @@ MonoBehaviour:
   audioActions: []
   journalUpdates:
   - timing: 3
-    journalEntryName: anonymousLetter1
-  - timing: 3
-    journalEntryName: anonymousLetter2
+    journalEntryName: anonymousLetter
+    disableThisEntry: 0
+  - timing: 2
+    journalEntryName: introAnonymousTip
+    disableThisEntry: 1
   gameStateUpdates: []
 --- !u!1001 &1337207496
 PrefabInstance:
@@ -22349,46 +22387,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619215391}
   m_CullTransparentMesh: 1
---- !u!21 &1637563345
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!4 &1641199908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 697422240011838758, guid: 0177ee00efab698438288ebb753747ce, type: 3}

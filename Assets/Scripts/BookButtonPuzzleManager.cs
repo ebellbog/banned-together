@@ -72,8 +72,8 @@ public class BookButtonPuzzleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(.6f);
 
-        GS.RemoveAllStickers();
         safeAnimator.SetTrigger("Open");
+        JournalManager.Main.DisableJournalEntry("peacockArt");
 
         if (soundEffect != null)
         {

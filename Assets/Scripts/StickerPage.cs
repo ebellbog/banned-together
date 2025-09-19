@@ -30,11 +30,13 @@ public class StickerPage: BookPage
     public Image StickerPlaceholder;
     public Sprite PlaceholderSprite;
     public GameObject stickerPrefab;
+
     private float placeholderHeight;
     private List<GameObject> allPlaceholders = new List<GameObject>();
     private List<Sticker> stickerData;
     private Sticker prevRedStickerPlacement;
     private string originalText;
+    private string disabledTextColor = "#666666";
 
     override public string pageContent {
         get {
@@ -68,6 +70,9 @@ public class StickerPage: BookPage
         if (maxDist == 0) maxDist = placeholderHeight / 2f;
         for (int i = 0; i < stickerData.Count; i++)
         {
+            if (StickerIsDisabled(i))
+                continue;
+
             Sticker currentSticker = stickerData[i];
 
             float distanceToSticker = Mathf.Abs(currentSticker.stickerCenter.y - coords.y);//Vector2.Distance(coords, currentSticker.stickerCenter);
@@ -106,9 +111,19 @@ public class StickerPage: BookPage
         return GS.redStickerPlacement == stickerData[stickerIdx];
     }
 
+    bool StickerIsDisabled(int stickerIdx)
+    {
+        if (stickerData == null || stickerIdx > stickerData.Count)
+            return false;
+        JournalEntry entry = stickerData[stickerIdx].associatedJournalEntry;
+        if (entry == null)
+            return true;
+        return entry.isDisabled;
+    }
+
     public void ToggleSticker(int stickerIdx)
     {
-        if (StickerIsActive(stickerIdx)) GS.redStickerPlacement = new Sticker();
+        if (StickerIsActive(stickerIdx)) GS.redStickerPlacement = new Sticker(); // ie remove sticker
         else
         {
             GS.redStickerPlacement = stickerData[stickerIdx];
@@ -120,10 +135,14 @@ public class StickerPage: BookPage
     void UpdateSticker(int stickerIdx)
     {
         GameObject stickerPlaceholder = allPlaceholders[stickerIdx];
-        if (StickerIsActive(stickerIdx))
+
+        bool isActive = StickerIsActive(stickerIdx);
+        bool isDisabled = StickerIsDisabled(stickerIdx);
+
+        if (isActive || isDisabled)
         {
             stickerPlaceholder.GetComponentInChildren<Image>().enabled = false;
-            if (stickerPlaceholder.transform.childCount == 0)
+            if (!isDisabled && stickerPlaceholder.transform.childCount == 0)
             {
                 GameObject newSticker = Instantiate(stickerPrefab);
 
@@ -154,7 +173,12 @@ public class StickerPage: BookPage
         for (int i = 0; i < stickerData.Count; i++)
         {
             Sticker s = stickerData[i];
-            if (StickerIsActive(i))
+            if (StickerIsDisabled(i))
+            {
+                highlightedText += $"{pageContent.Substring(startIdx, s.startCharIdx - startIdx)}<s><color={disabledTextColor}>{s.paragraphContent}</color></s>";
+                startIdx = s.endCharIdx + 1;
+            }
+            else if (StickerIsActive(i))
             {
                 highlightedText += $"{pageContent.Substring(startIdx, s.startCharIdx - startIdx)}<color=#{ColorUtility.ToHtmlStringRGB(s.stickerColor * .9f)}>{s.paragraphContent}</color>";
                 startIdx = s.endCharIdx + 1;
@@ -274,6 +298,8 @@ public class StickerPage: BookPage
         TMP_CharacterInfo[] charInfo = pageTextMesh.textInfo.characterInfo;
         float top = charInfo[startIdx].topLeft.y;
         float bottom = charInfo[endIdx].bottomRight.y;
+        // Debug.Log($"Getting range with first line number: {charInfo[startIdx].lineNumber}");
+        // Debug.Log("And last line number: " + charInfo[endIdx].lineNumber);
         return (top + bottom) / 2f;
     }
 }
