@@ -758,7 +758,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51d93704a6c1a5a4eb5791f5e0d8352c, type: 3}
   m_Name: 
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5583912c1f8acd84eb9d442cf874056c, type: 3}
   m_Name: 
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 007788c1b0a60f4498438d97d898c0da, type: 3}
   m_Name: 
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54f1891f9e4e9e549882a02ba8f9f7c3, type: 3}
   m_Name: 
@@ -890,7 +890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26500cc74033ce4449cc19ee57d4c3cb, type: 3}
   m_Name: 
@@ -912,6 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDay: 1
   hideBooks: 0
+  makeBooksReadable: 0
   journalStartsEnabled: 0
   internalMonologueSystem: {fileID: 1021986967}
   tutorialDialogSystem: {fileID: 262106248}
@@ -930,7 +931,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133581234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fc7c1305107e044891896a52621a20a, type: 3}
   m_Name: 
@@ -8229,31 +8230,31 @@ PrefabInstance:
       objectReference: {fileID: 263929181}
     - target: {fileID: 7284800121885548591, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7284800121885548591, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7284800121885548591, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 934.5781
       objectReference: {fileID: 0}
     - target: {fileID: 7284800121885548591, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 393.07
       objectReference: {fileID: 0}
     - target: {fileID: 7284800121885548591, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 532.28906
       objectReference: {fileID: 0}
     - target: {fileID: 7284800121885548591, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -261.535
       objectReference: {fileID: 0}
     - target: {fileID: 7284800122800507803, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 548.07
       objectReference: {fileID: 0}
     - target: {fileID: 7284800122800507803, guid: 27c4ca3d87e1b1b48b830c214a6f05f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8414,46 +8415,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105742123}
   m_CullTransparentMesh: 1
---- !u!21 &1119500281
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1209519336
 GameObject:
   m_ObjectHideFlags: 0
@@ -8972,6 +8933,46 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!21 &1439343008
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!43 &1466022818
 Mesh:
   m_ObjectHideFlags: 0
@@ -9809,7 +9810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1608232936
 Transform:
   m_ObjectHideFlags: 0
