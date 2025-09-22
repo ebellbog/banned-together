@@ -179,7 +179,7 @@ public class ManageBook : MonoBehaviour
         return bookPages[pageIdx % bookPages.Count];
     }
 
-    virtual public void HandleRightPageTurn()
+    public virtual void HandleRightPageTurn()
     {
         int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 1;
         int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count + 2;
@@ -187,7 +187,7 @@ public class ManageBook : MonoBehaviour
         UpdatePageContent(nextRightPageIdx);
     }
 
-    public void HandleLeftPageTurn()
+    public virtual void HandleLeftPageTurn()
     {
         int nextLeftPageIdx = bookViewer.currentPage - customPagesAtStart.Count - 3;
         int nextRightPageIdx = bookViewer.currentPage - customPagesAtStart.Count - 2;
@@ -254,6 +254,12 @@ public class ManageBook : MonoBehaviour
         pageComponent.pageContent = (pageIdx >= 0 && pageIdx < contentByPage.Count) ? contentByPage[pageIdx].content : "";
 
         return pageComponent;
+    }
+
+    protected void SetCurrentPage(int pageIdx)
+    {
+        bookViewer.currentPage = pageIdx;
+        UpdateCurrentPageContent();
     }
 
     protected void UpdateCurrentPageContent()

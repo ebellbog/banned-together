@@ -9,9 +9,13 @@ public class ReadableBook : MonoBehaviour
 {
     [Dropdown("GetBookTitles")]
     public string bookTitle;
-    public bool assignRandomBook = false;
+    public bool assignRandomBook = true;
+
+    [NonSerialized]
+    public int currentPage = 0;
 
     private InteractableItem _interactableItem;
+    private bool _wasExaminable;
 
     void Start() {
         OnValidate();
@@ -21,6 +25,11 @@ public class ReadableBook : MonoBehaviour
     {
         ConfigureInteractableItem();
         if (assignRandomBook) AssignRandomBook();
+    }
+
+    void OnDestroy()
+    {
+        ResetInteractableItem();
     }
 
     private List<string> GetBookTitles()
@@ -51,7 +60,10 @@ public class ReadableBook : MonoBehaviour
     {
         if (!_interactableItem) {
             _interactableItem = GetComponent<InteractableItem>();
+            _wasExaminable = _interactableItem.isExaminable;
         }
+
+        _interactableItem.isExaminable = false;
 
         // Clear existing component actions to avoid duplicates
         _interactableItem.componentActions.Clear();
@@ -66,6 +78,22 @@ public class ReadableBook : MonoBehaviour
         };
 
         _interactableItem.componentActions.Add(readBookAction);
+
+        // Set hover effects
+        if (LibraryManager.Main != null)
+        {
+            _interactableItem.cursorOverride = LibraryManager.Main.hoverCursor;
+            _interactableItem.outlineColorOverride = LibraryManager.Main.hoverOutlineColor;
+        }
+    }
+
+    public void ResetInteractableItem()
+    {
+        if (!_interactableItem) {
+            _interactableItem = GetComponent<InteractableItem>();
+        }
+        _interactableItem.isExaminable = true;//_wasExaminable;
+        _interactableItem.componentActions.Clear();
     }
 
     private void AssignRandomBook()
@@ -78,6 +106,6 @@ public class ReadableBook : MonoBehaviour
 
     public void ReadBook()
     {
-        LibraryManager.Main.OpenBook(bookTitle);
+        LibraryManager.Main.OpenBook(this);
     }
 }

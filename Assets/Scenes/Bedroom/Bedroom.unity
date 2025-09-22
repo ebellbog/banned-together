@@ -840,7 +840,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 791b81dcbe1ed9e489a8991b94e9d9e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8714,6 +8714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDay: 1
   hideBooks: 0
+  makeBooksReadable: 0
   journalStartsEnabled: 0
   internalMonologueSystem: {fileID: 1021986967}
   tutorialDialogSystem: {fileID: 262106248}
@@ -8784,9 +8785,29 @@ MonoBehaviour:
   - novelTitle: The Picture of Dorian Gray
     novelAuthor: Oscar Wilde
     novelFile: {fileID: 4900000, guid: af5258e56c4907a4bb4553efd303bd7f, type: 3}
+    useMetadataFromFile: 1
   - novelTitle: Carmilla
     novelAuthor: Joseph Sheridan Le Fanu
     novelFile: {fileID: 4900000, guid: 99609244d1b493f4e948602a7ffaddc8, type: 3}
+    useMetadataFromFile: 1
+  - novelTitle: Dracula
+    novelAuthor: Bram Stoker
+    novelFile: {fileID: 4900000, guid: da7674d0449714f4eaa472395c3aea7e, type: 3}
+    useMetadataFromFile: 1
+  - novelTitle: Anne of Green Gables
+    novelAuthor: Lucy Maud Montgomery
+    novelFile: {fileID: 4900000, guid: 310c7910c85d12d449f332422ee3a882, type: 3}
+    useMetadataFromFile: 1
+  - novelTitle: Frankenstein; or, the Modern Prometheus
+    novelAuthor: Mary Wollstonecraft (Godwin) Shelley
+    novelFile: {fileID: 4900000, guid: ca8b802690205da4db578368c9e7b25b, type: 3}
+    useMetadataFromFile: 1
+  - novelTitle: The King in Yellow
+    novelAuthor: Robert W. Chambers
+    novelFile: {fileID: 4900000, guid: 595097c149901674d9e662f014329759, type: 3}
+    useMetadataFromFile: 1
+  hoverOutlineColor: {r: 0.058410764, g: 1, b: 0, a: 1}
+  hoverCursor: {fileID: 21300000, guid: 746eeb57f3eecd640ad53cc8e2de64a7, type: 3}
 --- !u!1 &151302485
 GameObject:
   m_ObjectHideFlags: 0
@@ -9898,46 +9919,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337124248}
   m_CullTransparentMesh: 1
---- !u!21 &355342711
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &366393191
 GameObject:
   m_ObjectHideFlags: 0
@@ -13116,7 +13097,7 @@ MonoBehaviour:
   expandHotspot: 1.4
   showOutline: 1
   useSpriteOutline: 0
-  outlineColorOverride: {r: 0, g: 0, b: 0, a: 0}
+  outlineColorOverride: {r: 0.058410764, g: 1, b: 0, a: 1}
   setCursor: 1
   cursorOverride: {fileID: 0}
   gameObjectActions: []
@@ -13431,6 +13412,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916652696}
   m_Mesh: {fileID: 4300004, guid: 6e1e22a487a6f4d42be5a2254e69ab1e, type: 3}
+--- !u!21 &938203297
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!4 &955754278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7692636920190884178, guid: c02a999a44edfa048a0420775c83cf3d, type: 3}

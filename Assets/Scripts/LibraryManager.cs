@@ -10,6 +10,7 @@ public class NovelData
     public string novelTitle;
     public string novelAuthor;
     public TextAsset novelFile;
+    public bool useMetadataFromFile = true;
 }
 
 public class LibraryManager : MonoBehaviour
@@ -18,13 +19,15 @@ public class LibraryManager : MonoBehaviour
 
     public string BookSceneName;
     public List<NovelData> novels = new List<NovelData>();
-
+    public Color hoverOutlineColor;
+    public Sprite hoverCursor;
 
     private bool viewingBook = false;
     private bool isReady = true;
 
-    private AsyncOperation bookScene;
+    // private AsyncOperation bookScene;
     private Dictionary<string, NovelData> novelsByTitle = new Dictionary<string, NovelData>();
+    private ReadableBook currentBook;
 
     void Awake()
     {
@@ -38,6 +41,15 @@ public class LibraryManager : MonoBehaviour
         foreach(NovelData novel in novels)
         {
             novelsByTitle[novel.novelTitle] = novel;
+
+            if (novel.useMetadataFromFile && novel.novelFile != null)
+            {
+                string[] lines = novel.novelFile.text.Split(new[] { '\r', '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+                if (lines.Length > 1) {
+                    novel.novelTitle = lines[0];
+                    novel.novelAuthor = lines[1];
+                }
+            }
         }
     }
 
@@ -50,7 +62,7 @@ public class LibraryManager : MonoBehaviour
         // }
 
         StarterAssetsInputs input = FirstPersonController.Main.StarterInputs;
-        if (input.anyKey && viewingBook)
+        if (viewingBook && (input.anyKey || GS.interactionMode != InteractionType.Journal))
         {
             input.anyKey = false;
             input.exit = false;
@@ -58,24 +70,28 @@ public class LibraryManager : MonoBehaviour
         }
     }
 
-    public void OpenBook(string novelTitle) {
+    public void OpenBook(ReadableBook book) {
         if (viewingBook || !isReady) return;
+        currentBook = book;
 
         NovelData novel;
-        if (novelsByTitle.TryGetValue(novelTitle, out novel))
+        if (novelsByTitle.TryGetValue(book.bookTitle, out novel))
         {
             GS.currentNovel = novel;
-            Debug.Log($"Set current novel: {novel.novelTitle}, by {novel.novelAuthor}");
+            GS.currentNovelPage = book.currentPage;
         } else
         {
-            Debug.Log($"Could not find novel with title: {novelTitle}");
+            Debug.Log($"Couldn't find book with title: {book.bookTitle}");
             return;
         }
 
         GS.interactionMode = InteractionType.Journal;
         UI.FadeInMatte();
 
-        bookScene.allowSceneActivation = true;
+        if (!SceneManager.GetSceneByName(BookSceneName).isLoaded) {
+            SceneManager.LoadSceneAsync(BookSceneName, LoadSceneMode.Additive);
+        }
+        // bookScene.allowSceneActivation = true;
 
         FirstPersonController.Main.LockPlayer();
         UI.UnlockCursor();
@@ -90,6 +106,12 @@ public class LibraryManager : MonoBehaviour
 
         viewingBook = false;
         isReady = false;
+
+        if (currentBook != null)
+        {
+            currentBook.currentPage = GS.currentNovelPage;
+            currentBook = null;
+        }
 
         GS.interactionMode = InteractionType.Default;
 
@@ -108,7 +130,7 @@ public class LibraryManager : MonoBehaviour
         FirstPersonController.Main.UnlockPlayer();
         UI.LockCursor();
 
-        bookScene = null;
+        // bookScene = null;
         isReady = true;
     
         yield return null;

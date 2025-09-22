@@ -59,12 +59,9 @@ public class ShowJournal : MonoBehaviour
             SceneManager.LoadScene(JournalSceneName, LoadSceneMode.Additive);
         }
 
-        _playerInput.actions.FindAction("Move").Disable();
-        _playerInput.actions.FindAction("Interact").Disable();
-        _input.cursorInputForLook = false;
-        _input.look = Vector2.zero;
-
+        FirstPersonController.Main.LockPlayer();
         UI.UnlockCursor();
+
         viewingJournal = true;
 
         JournalManager.Main.MarkAllEntriesRead(); // TODO: mark by page viewed
@@ -92,10 +89,7 @@ public class ShowJournal : MonoBehaviour
 
         if (GS.interactionMode == InteractionType.Paused) yield return null;
 
-        _playerInput.actions.FindAction("Move").Enable();
-        _playerInput.actions.FindAction("Interact").Enable();
-        _input.cursorInputForLook = true;
-
+        FirstPersonController.Main.UnlockPlayer();
         UI.LockCursor();
 
         isReady = true;

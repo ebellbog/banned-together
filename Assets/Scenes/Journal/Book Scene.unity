@@ -215,11 +215,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
   m_PrefabInstance: {fileID: 1150316095}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &687736036 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
-  m_PrefabInstance: {fileID: 1150316095}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697173301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,15 +1103,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1207,6 +1202,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1239,9 +1238,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 738699268}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 738699271}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipLeft.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1261,6 +1268,14 @@ PrefabInstance:
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnMouseDownEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateCurrentPage
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1291,6 +1306,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ManageNovel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ManageBook, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1305,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnHoverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: OnReleaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: OnBeginFlipRight.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1355,6 +1378,10 @@ PrefabInstance:
       value: -266.25
       objectReference: {fileID: 0}
     - target: {fileID: 6518224981343931034, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518224981343931034, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f71f7defc071b354e984eb5bc8ee6397, type: 2}
@@ -1396,7 +1423,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1150316109}
+      addedObject: {fileID: 1150316106}
     - targetCorrespondingSourceObject: {fileID: 282580832431590599, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2055795115}
@@ -1404,24 +1431,29 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1879453250}
   m_SourcePrefab: {fileID: 100100000, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+--- !u!1 &1150316096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 1150316095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1150316105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5278422842850650247, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
   m_PrefabInstance: {fileID: 1150316095}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687736036}
+  m_GameObject: {fileID: 1150316096}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a35dfe3f35629364aa79bb064c1d55d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &1150316109
+--- !u!225 &1150316106
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687736036}
+  m_GameObject: {fileID: 1150316096}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
@@ -1437,22 +1469,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4570010966866056169, guid: db15795918dc34d439179c3792317a3c, type: 3}
       propertyPath: m_text
-      value: '
-
-
-
-
-
-
-        <align="center">
-
-        <b>The Picture of Dorian Gray</b>
-
-
-        by
-
-        Oscar
-        Wilde'
+      value: "\\n\\n\\n\\n\n<align=\"center\">\n <b><size=\"38px\">The Picture of
+        Dorian Gray</size></b>\\n\n <i>by\\n<size=\"30px\">Oscar Wilde</size></i>"
       objectReference: {fileID: 0}
     - target: {fileID: 6636382049795237268, guid: db15795918dc34d439179c3792317a3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1746,7 +1764,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126152407}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1813,7 +1831,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 738699271}
           m_TargetAssemblyTypeName: ManageBook, Assembly-CSharp
           m_MethodName: HideBook
           m_Mode: 1
