@@ -75,7 +75,7 @@ public class BookButtonPuzzleManager : MonoBehaviour
         safeAnimator.SetTrigger("Open");
 
         // For demo only - remove in full game
-        JournalManager.Main.DisableJournalEntry("peacockArt");
+        JournalManager.Main.DisableJournalEntry("workOrder");
         JournalManager.Main.DisableJournalEntry("hiddenMechanisms");
 
         if (soundEffect != null)
