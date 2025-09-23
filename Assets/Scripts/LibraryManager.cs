@@ -11,6 +11,16 @@ public class NovelData
     public string novelAuthor;
     public TextAsset novelFile;
     public bool useMetadataFromFile = true;
+
+    [System.NonSerialized]
+    public Sprite novelCoverImage;
+}
+
+[System.Serializable]
+public class MaterialSpritePair
+{
+    public Material bookMaterial;
+    public Sprite bookCoverImage;
 }
 
 public class LibraryManager : MonoBehaviour
@@ -19,6 +29,9 @@ public class LibraryManager : MonoBehaviour
 
     public string BookSceneName;
     public List<NovelData> novels = new List<NovelData>();
+
+    public List<MaterialSpritePair> mapBookMaterialsToCoverImages = new List<MaterialSpritePair>();
+
     public Color hoverOutlineColor;
     public Sprite hoverCursor;
 
@@ -77,6 +90,15 @@ public class LibraryManager : MonoBehaviour
         NovelData novel;
         if (novelsByTitle.TryGetValue(book.bookTitle, out novel))
         {
+            Material bookMaterial = book.GetBookMaterial();
+            if (bookMaterial != null && mapBookMaterialsToCoverImages.Count > 0)
+            {
+                MaterialSpritePair pair = mapBookMaterialsToCoverImages
+                    .Find(pair => pair.bookMaterial == bookMaterial);
+                if (pair != null)
+                    novel.novelCoverImage = pair.bookCoverImage;
+            }
+
             GS.currentNovel = novel;
             GS.currentNovelPage = book.currentPage;
         } else

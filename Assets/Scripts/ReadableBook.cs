@@ -108,4 +108,14 @@ public class ReadableBook : MonoBehaviour
     {
         LibraryManager.Main.OpenBook(this);
     }
+
+    public Material GetBookMaterial()
+    {
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        if (meshRenderer != null && meshRenderer.sharedMaterials.Length > 0)
+        {
+            return meshRenderer.sharedMaterials[0];
+        }
+        return null;
+    }
 }

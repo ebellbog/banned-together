@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
 Journal-related classes:
@@ -39,8 +40,10 @@ public class ManageNovel : ManageBook
             $"<b><size=\"38px\">{bookTitle}</size></b>\n\n" +
             $"<i>by\n<size=\"30px\">{bookAuthor}</size></i>";
 
+        SetBookCover(GS.currentNovel.novelCoverImage);
 
         base.Start();
+
         SetCurrentPage(GS.currentNovelPage);
     }
 
@@ -96,6 +99,15 @@ public class ManageNovel : ManageBook
 
             // If we didn't find 3 non-empty lines, set to empty
             textFile = new TextAsset("");
+        }
+    }
+
+    void SetBookCover(Sprite coverImage)
+    {
+        Image imageComponent = bookCover.GetComponent<Image>();
+        if (imageComponent != null)
+        {
+            imageComponent.sprite = coverImage;
         }
     }
 
