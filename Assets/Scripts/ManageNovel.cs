@@ -39,8 +39,8 @@ public class ManageNovel : ManageBook
             $"<b><size=\"38px\">{bookTitle}</size></b>\n\n" +
             $"<i>by\n<size=\"30px\">{bookAuthor}</size></i>";
 
-        base.Start();
 
+        base.Start();
         SetCurrentPage(GS.currentNovelPage);
     }
 

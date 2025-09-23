@@ -377,6 +377,7 @@ MonoBehaviour:
   textField: 
   textFile: {fileID: 4900000, guid: af5258e56c4907a4bb4553efd303bd7f, type: 3}
   AllowBreakingParagraphs: 1
+  maxPages: 50
   customPagesAtStart:
   - {fileID: 8600000, guid: 5a2ee36c0d409f84c819aecdecc8d7ed, type: 2}
   customPagesAtEnd: []

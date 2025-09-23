@@ -38,6 +38,9 @@ public class ManageBook : MonoBehaviour
     public TextAsset textFile;
     public bool AllowBreakingParagraphs = false;
 
+    [Tooltip("Set to 0 to allow any number of pages")]
+    public int maxPages = 0;
+
     [Header("Custom pages")]
     public List<Texture> customPagesAtStart = new List<Texture>();
     public List<Texture> customPagesAtEnd = new List<Texture>();
@@ -65,9 +68,7 @@ public class ManageBook : MonoBehaviour
     protected virtual void Start()
     {
         InitPages();
-        DivideTextIntoPages();
-        AddPagesToBook();
-        UpdateCurrentPageContent();
+        LoadContent();
 
         autoFlip = bookViewer.gameObject.GetComponent<AutoFlip>();
 
@@ -79,6 +80,13 @@ public class ManageBook : MonoBehaviour
         }
 
         ResetCursor();
+    }
+
+    protected void LoadContent()
+    {
+        DivideTextIntoPages();
+        AddPagesToBook();
+        UpdateCurrentPageContent();
     }
 
     protected virtual void Update()
@@ -131,7 +139,7 @@ public class ManageBook : MonoBehaviour
         }
 
         int startIdx = 0, endIdx = 0;
-        while (startIdx < currentContent.Length)
+        while (startIdx < currentContent.Length && (maxPages == 0 ||contentByPage.Count <= maxPages))
         {
             testPage.pageContent = currentContent.Substring(startIdx, Math.Min(currentContent.Length - startIdx, MAX_CHARS_PER_PAGE));
             string visibleText = testPage.GetVisibleText(AllowBreakingParagraphs);
