@@ -68391,7 +68391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1173938121
 RectTransform:
   m_ObjectHideFlags: 0
@@ -124664,6 +124664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDay: 1
   hideBooks: 0
+  makeBooksReadable: 0
   journalStartsEnabled: 0
   internalMonologueSystem: {fileID: 771166253}
   tutorialDialogSystem: {fileID: 0}

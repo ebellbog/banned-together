@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1.0f;
     public string[] defaultMusicForLevel;
-    public TextMeshProUGUI skipText;
+    public GameObject skipText;
     public ScriptableRendererFeature ambientOcclusion;
     public static LevelLoader current {get; private set;}
 
@@ -36,7 +36,7 @@ public class LevelLoader : MonoBehaviour
             Debug.Log("No default music for level");
         }
 
-        if (skipText) skipText.enabled = false;
+        if (skipText) skipText.SetActive(false);
 
         ambientOcclusion?.SetActive(SceneManager.GetActiveScene().name != "Intro Scene"); // TODO: figure out whether we still need this?
 
@@ -55,26 +55,28 @@ public class LevelLoader : MonoBehaviour
 
     public void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Intro Scene")
+        if (SceneManager.GetActiveScene().name == "Introduction")
         {
             // if (Input.GetKeyDown(KeyCode.Escape))
             // {
             //     Quit();
             // }
+
             if (Input.anyKeyDown && YarnDispatcher.YarnSpinnerIsActive())
             {
-                if ((bool)skipText?.enabled)
+                if (skipText && skipText.activeSelf)
                 {
                     YarnDispatcher.Stop(false);
                     AudioManager.instance.StopSFX();
 
                     StopAllCoroutines();
 
-                    transitionTime = 0.5f;
+                    transitionTime = 0.75f;
                     LoadNextLevel();
                 } else if (skipText)
                 {
-                    skipText.enabled = true;
+                    skipText.SetActive(true);
+                    StartCoroutine(_SkipTextTimer());
                 }
             }
         }
@@ -171,5 +173,15 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex, loadAdditively ? LoadSceneMode.Additive : LoadSceneMode.Single);
         GS.currentSceneIdx = levelIndex;
+    }
+
+    // Hide skip text after 2 seconds of inactivity
+    IEnumerator _SkipTextTimer()
+    {
+        yield return new WaitForSeconds(2.0f);
+        if (skipText && skipText.activeSelf)
+        {
+            skipText.SetActive(false);
+        }
     }
 }
