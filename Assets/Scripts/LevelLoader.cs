@@ -26,6 +26,7 @@ public class LevelLoader : MonoBehaviour
             GS.ResetAll();
             GS.isReady = true;
         }
+
         if (defaultMusicForLevel.Length > GS.currentSceneIdx && defaultMusicForLevel[GS.currentSceneIdx] != null)
         {
             AudioManager.instance.CrossfadeMusic(defaultMusicForLevel[GS.currentSceneIdx]);
@@ -34,9 +35,15 @@ public class LevelLoader : MonoBehaviour
         {
             Debug.Log("No default music for level");
         }
+
         if (skipText) skipText.enabled = false;
 
-        ambientOcclusion?.SetActive(SceneManager.GetActiveScene().name != "Intro Scene");
+        ambientOcclusion?.SetActive(SceneManager.GetActiveScene().name != "Intro Scene"); // TODO: figure out whether we still need this?
+
+        if (SceneManager.GetActiveScene().name == "Introduction")
+        {
+            YarnDispatcher.StartInternalMonologue("IntroCutscene");
+        }
     }
 
     public void Quit()
