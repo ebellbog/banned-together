@@ -131,11 +131,17 @@ public class FocusManager : MonoBehaviour
                 if (doHighlight) {
                     SetFocused(interactableItem.gameObject);
                     Debug.Log($"Applying focus outline for object {interactableItem.gameObject.name} with sprite outline: {interactableItem.useSpriteOutline}");
-                    interactionManager.ApplyOutline(interactableItem.gameObject, Color.red, interactableItem.useSpriteOutline);
+                    if (!interactableItem.highlightWithoutOutline)
+                    {
+                        interactionManager.ApplyOutline(interactableItem.gameObject, Color.red, interactableItem.useSpriteOutline);
+                    }
                 }
                 else {
                     ClearFocused(interactableItem.gameObject);
-                    interactionManager.RemoveOutline(interactableItem.gameObject, interactableItem.useSpriteOutline);
+                    if (!interactableItem.highlightWithoutOutline)
+                    {
+                        interactionManager.RemoveOutline(interactableItem.gameObject, interactableItem.useSpriteOutline);
+                    }
                 }
             }
             currentFocusWords = gsFocusWords;
@@ -300,10 +306,15 @@ public class FocusManager : MonoBehaviour
 
     private void SetLayer(GameObject targetObject, int layerIdx = 0)
     {
-        targetObject.layer = layerIdx;
-        foreach (Transform child in targetObject.transform)
+        SetLayerRecursive(targetObject, layerIdx);
+
+        void SetLayerRecursive(GameObject obj, int layer)
         {
-            child.gameObject.layer = layerIdx;
+            obj.layer = layer;
+            foreach (Transform child in obj.transform)
+            {
+                SetLayerRecursive(child.gameObject, layer);
+            }
         }
     }
 

@@ -79,6 +79,7 @@ public class InteractableItem : MonoBehaviour
     [NonSerialized]
     public bool isFocusable = false;
     public bool highlightOnFocus = false;
+    public bool highlightWithoutOutline = false;
     public bool focusAffectsExamine = false;
     public bool focusAffectsHover = false;
     public bool focusAffectsCustomEffects = false;
