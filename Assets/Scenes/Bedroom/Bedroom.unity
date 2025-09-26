@@ -1321,6 +1321,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: tip
   highlightOnFocus: 1
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 1
   focusAffectsCustomEffects: 0
@@ -8668,23 +8669,23 @@ MonoBehaviour:
     dialogueType: 0
     propertyName: concurrentThoughtBubbles
     comparatorType: 4
-    comparisonValue: 4
+    comparisonValue: 3
     triggerOnlyOnce: 1
     triggerAfterDelay: 0
-  - yarnNode: JournalTutorial
-    dialogueType: 1
-    propertyName: journalEnabled
-    comparatorType: 0
-    comparisonValue: 2
-    triggerOnlyOnce: 1
-    triggerAfterDelay: 0.5
-  - yarnNode: StickerTutorial
-    dialogueType: 1
+  - yarnNode: CuteSticker
+    dialogueType: 0
     propertyName: stickersEnabled
     comparatorType: 0
     comparisonValue: 1
     triggerOnlyOnce: 1
     triggerAfterDelay: 0.5
+  - yarnNode: UnifiedTutorial
+    dialogueType: 1
+    propertyName: tutorialItems
+    comparatorType: 0
+    comparisonValue: 2
+    triggerOnlyOnce: 1
+    triggerAfterDelay: 80
 --- !u!114 &133581240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10555,13 +10556,14 @@ MonoBehaviour:
   interactionParent: {fileID: 1815500276}
   focusKeywords: 
   highlightOnFocus: 0
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
   isExaminable: 1
   orientToCamera: 1
   pivotAroundVisualCenter: 0
-  rotationAxis: 0
+  rotationAxis: 2
   scaleOnInteraction: 1.2
   enablePanning: 1
   affectsBodyBattery: 0
@@ -11430,46 +11432,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000007, y: 0.82780826, z: 0.13536057}
   m_Center: {x: 0.0000018898382, y: -0.08609653, z: -0.06767897}
---- !u!21 &601631471
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &606290783
 GameObject:
   m_ObjectHideFlags: 0
@@ -13087,6 +13049,7 @@ MonoBehaviour:
   interactionParent: {fileID: 71431025}
   focusKeywords: 
   highlightOnFocus: 0
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
@@ -13113,6 +13076,9 @@ MonoBehaviour:
   gameStateUpdates:
   - timing: 4
     propertyToIncrement: journalEnabled
+    incrementOnlyOnce: 1
+  - timing: 4
+    propertyToIncrement: tutorialItems
     incrementOnlyOnce: 1
 --- !u!65 &859298745
 BoxCollider:
@@ -19092,6 +19058,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1045452159
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 1064.5781, g: 548.07, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!4 &1086494407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2599731541609693240, guid: 019a9cd7792a2774d98a7612b20ad6fa, type: 3}
@@ -19258,6 +19264,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: 
   highlightOnFocus: 0
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
@@ -19287,6 +19294,9 @@ MonoBehaviour:
   gameStateUpdates:
   - timing: 4
     propertyToIncrement: stickersEnabled
+    incrementOnlyOnce: 1
+  - timing: 4
+    propertyToIncrement: tutorialItems
     incrementOnlyOnce: 1
 --- !u!222 &1099252748
 CanvasRenderer:
@@ -20504,6 +20514,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: tip
   highlightOnFocus: 1
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
@@ -22683,6 +22694,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: 
   highlightOnFocus: 0
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
@@ -22986,6 +22998,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: 
   highlightOnFocus: 0
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
@@ -29810,6 +29823,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: 
   highlightOnFocus: 0
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 0
   focusAffectsCustomEffects: 0
@@ -29914,6 +29928,7 @@ MonoBehaviour:
   interactionParent: {fileID: 0}
   focusKeywords: ready
   highlightOnFocus: 1
+  highlightWithoutOutline: 0
   focusAffectsExamine: 0
   focusAffectsHover: 1
   focusAffectsCustomEffects: 1

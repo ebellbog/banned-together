@@ -111,6 +111,9 @@ public class InteractableItem : MonoBehaviour
     public List <JournalUpdate> journalUpdates;
     public List <StateUpdate> gameStateUpdates;
 
+    [NonSerialized]
+    public Shader originalShader;
+
     private Collider collider;
     private Vector3 originalBoundingSize;
 

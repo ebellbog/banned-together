@@ -16,6 +16,10 @@ title: StickerTutorial
 You found your first heart sticker! This should be perfect for helping Ruby focus on entries in their journal...
 <<set $stickers_enabled to 1>>
 ===
+title: UnifiedTutorial
+---
+You can help focus Ruby's thoughts by pressing Tab to open their journal, then clicking the heart sticker and dragging it onto one of the heart-shaped outlines!
+===
 title: DemoComplete
 ---
 In the future, you'll be able to explore all four floors of the library, uncovering more notes, artifacts and banned books. For now, thanks for playing this early demo of Banned Together!

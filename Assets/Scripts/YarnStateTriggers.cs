@@ -45,47 +45,54 @@ public class YarnStateTriggers : MonoBehaviour
             StateTrigger trigger = GS.yarnStateTriggers[i];
             if (trigger.triggerOnlyOnce && trigger.alreadyTriggered) continue;
 
-            #nullable enable
-            FieldInfo? fieldInfo = typeof(GS).GetField(trigger.propertyName);
-            #nullable disable
-
-            if (fieldInfo == null) {
-                Debug.Log($"The game state does not include the specified property: {trigger.propertyName}");
-                return;
-            }
-
-            int currentValue = (int)fieldInfo.GetValue(null);
-            int comparisonValue = trigger.comparisonValue;
-
-            bool doTrigger = false;
-            switch(trigger.comparatorType) {
-                case ComparatorType.Equals:
-                    doTrigger = currentValue == trigger.comparisonValue;
-                    break;
-                case ComparatorType.LessThan:
-                    doTrigger = currentValue < comparisonValue;
-                    break;
-                case ComparatorType.LessThanOrEqual:
-                    doTrigger = currentValue <= comparisonValue;
-                    break;
-                case ComparatorType.GreaterThan:
-                    doTrigger = currentValue > comparisonValue;
-                    break;
-                case ComparatorType.GreaterThanOrEqual:
-                    doTrigger = currentValue >= comparisonValue;
-                    break;
-            }
-
-            if (doTrigger) {
+            if (CheckTriggerCondition(trigger)) {
                 StartCoroutine(DispatchWithDelay(trigger));
             }
         }
     }
 
+    private bool CheckTriggerCondition(StateTrigger trigger)
+    {
+        #nullable enable
+        FieldInfo? fieldInfo = typeof(GS).GetField(trigger.propertyName);
+        #nullable disable
+
+        if (fieldInfo == null) {
+            Debug.Log($"The game state does not include the specified property: {trigger.propertyName}");
+            return false;
+        }
+
+        int currentValue = (int)fieldInfo.GetValue(null);
+        int comparisonValue = trigger.comparisonValue;
+
+        bool doTrigger = false;
+        switch(trigger.comparatorType) {
+            case ComparatorType.Equals:
+                doTrigger = currentValue == trigger.comparisonValue;
+                break;
+            case ComparatorType.LessThan:
+                doTrigger = currentValue < comparisonValue;
+                break;
+            case ComparatorType.LessThanOrEqual:
+                doTrigger = currentValue <= comparisonValue;
+                break;
+            case ComparatorType.GreaterThan:
+                doTrigger = currentValue > comparisonValue;
+                break;
+            case ComparatorType.GreaterThanOrEqual:
+                doTrigger = currentValue >= comparisonValue;
+                break;
+        }
+
+        return doTrigger;
+    }
+
     IEnumerator DispatchWithDelay(StateTrigger trigger)
     {
         if (trigger.triggerAfterDelay > 0) yield return new WaitForSeconds(trigger.triggerAfterDelay);
+
         if (trigger.alreadyTriggered) yield break; // in case this happened in parallel, while waiting
+        if (!CheckTriggerCondition(trigger)) yield break; // in case the trigger condition no longer applies after the delay
 
         bool didTrigger;
         if (trigger.dialogueType == DialogueType.InternalMonologue) {

@@ -110,6 +110,7 @@ public class ManageJournal : ManageBook
         {
             stickerObject.SetActive(false);
             lastPlacedSticker = stickerObject;
+            GS.tutorialItems = 3; // Prevent tutorial from triggering, since the player has already figured out how to use stickers!
         }
         else
         {

@@ -65,7 +65,6 @@ namespace StarterAssets
         private InteractableItem currentInteractable;
         private GameObject outlinedObject;
         private int prevLayerIdx;
-        private Shader prevShader = null;
         private GameObject activeObject;
         private GameObject activeParent;
         private Vector3 startPosition;
@@ -379,9 +378,12 @@ namespace StarterAssets
                 Material objectMaterial = gameObject.GetComponent<MeshRenderer>().materials[0];
                 if (spriteOutliner != null && objectMaterial.shader != spriteOutliner)
                 {
-                    prevShader = objectMaterial.shader;
+                    InteractableItem interactableItem = gameObject.GetComponent<InteractableItem>();
+                    if (interactableItem) interactableItem.originalShader = objectMaterial.shader;
+
                     objectMaterial.shader = spriteOutliner;
                     objectMaterial.SetColor("_SolidOutline", outlineColor);
+
                     gameObject.transform.localScale *= 1.1f;
                     SetLayer(gameObject, outlineLayerIdx);
                 }
@@ -426,12 +428,16 @@ namespace StarterAssets
         {
             FocusManager.ClearFocused(gameObject);
 
-            if (isSprite && prevShader != null)
+            if (isSprite)
             {
+                InteractableItem interactableItem = gameObject.GetComponent<InteractableItem>();
+                if (interactableItem == null || interactableItem.originalShader == null) return;
+
                 MeshRenderer renderer = gameObject.GetComponent<MeshRenderer>();
                 Material objectMaterial = renderer.materials[0];
-                objectMaterial.shader = prevShader;
-                prevShader = null;
+
+                objectMaterial.shader = interactableItem.originalShader;
+                interactableItem.originalShader = null;
 
                 gameObject.transform.localScale /= 1.1f;
 
