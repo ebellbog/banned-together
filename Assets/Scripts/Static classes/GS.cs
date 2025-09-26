@@ -36,6 +36,8 @@ public static class GS
     public static float speedReduction;
 
     public static int tutorialItems;
+
+    public static int carsonNameTagSeen;
     public static int fidgetSpinnerSeen;
     public static int genderQueerSeen;
     public static int paper1Seen;
@@ -43,6 +45,7 @@ public static class GS
     public static int poetryBookSeen;
     public static int lockedDoorSeen;
     public static int lostBooksSeen;
+    public static int paintingPassagewayOpened;
 
     public static List<StateTrigger> yarnStateTriggers;
     public static Dictionary<string, JournalEntry> journalEntryByKey;
@@ -80,6 +83,7 @@ public static class GS
         concurrentThoughtBubbles = 0;
         tutorialItems = 0;
 
+        carsonNameTagSeen = 0;
         fidgetSpinnerSeen = 0;
         genderQueerSeen = 0;
         paper1Seen = 0;
@@ -87,6 +91,7 @@ public static class GS
         poetryBookSeen = 0;
         lockedDoorSeen = 0;
         lostBooksSeen = 0;
+        paintingPassagewayOpened = 0;
 
         currentJournalPage = 0;
         currentNovel = null;
