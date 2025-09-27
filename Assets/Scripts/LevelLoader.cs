@@ -133,6 +133,11 @@ public class LevelLoader : MonoBehaviour
         // AudioManager.instance.ResetMusicEffects();
     }
 
+    public void FadeToBlack()
+    {
+        transition.SetTrigger("Start");
+    }
+
     IEnumerator _StartIntroCutscene()
     {
         AudioManager.instance.StopMusic();
@@ -163,7 +168,7 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex, bool loadAdditively = false)
     {
-        transition.SetTrigger("Start");
+        FadeToBlack();
         yield return new WaitForSeconds(transitionTime);
 
         // Support independently managed Yarn triggers and journal entries for each scene
